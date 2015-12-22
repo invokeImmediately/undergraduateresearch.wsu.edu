@@ -1,6 +1,27 @@
-/* ███████████████████████████████████████████████████████████████████████████████████████████████████████████████
- * █░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░ GENERIC CLASSES & SELECTORS ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░█
- * ███████████████████████████████████████████████████████████████████████████████████████████████████████████████
+/*
+Welcome to custom CSS for the WSU Spine Theme!
+
+You may delete these comments and get started with your custom stylesheet.
+Before doing so, please review the WSU web standards:
+
+http://brand.wsu.edu/media/web/web-standards/
+
+As a general rule of thumb, if your styles target aspects of the spine
+(#spine), that's against standard, whereas if you're styling elsewhere on
+the page, it's all good.
+*/
+.margin-centered {
+  margin-right: auto;
+  margin-left: auto;
+}
+.breaks-words {
+  word-wrap: break-word;
+}
+/*  ╔══════════════════════════════════════════════════════════════════════════════════════════════╗
+ *  ║ #### GENERIC CLASSES & SELECTORS ########################################################### ║
+ *  ╠==============================================================================================╣
+ *  ║ Styling of classes applied to multiple elements with low specificity.                        ║
+ *  ╚══════════════════════════════════════════════════════════════════════════════════════════════╝
  */
 .indent-1x {
   padding-left: 2rem;
@@ -18,59 +39,102 @@
   display: none;
 }
 .fade-in-from-left {
-  animation-name: anim-fade-in-from-left;
-  -webkit-animation-name: anim-fade-in-from-left;
-  animation-duration: 1s;
-  -webkit-animation-duration: 1s;
+  animation: anim-fade-in-from-left 1s;
+  -webkit-animation: anim-fade-in-from-left 1s;
+  -moz-animation: anim-fade-in-from-left 1s;
+  -o-animation: anim-fade-in-from-left 1s;
 }
 @keyframes anim-fade-in-from-left {
   0% {
     opacity: 0;
-    -webkit-transform: translate3d(-100%, 0, 0);
     transform: translate3d(-100%, 0, 0);
+    -webkit-transform: translate3d(-100%, 0, 0);
+    -moz-transform: translate3d(-100%, 0, 0);
+    -o-transform: translate3d(-100%, 0, 0);
   }
   100% {
     opacity: 1;
-    -webkit-transform: none;
     transform: none;
+    -webkit-transform: none;
+    -moz-transform: none;
+    -o-transform: none;
   }
 }
 @-webkit-keyframes anim-fade-in-from-left {
   0% {
     opacity: 0;
-    -webkit-transform: translate3d(-100%, 0, 0);
     transform: translate3d(-100%, 0, 0);
+    -webkit-transform: translate3d(-100%, 0, 0);
+    -moz-transform: translate3d(-100%, 0, 0);
+    -o-transform: translate3d(-100%, 0, 0);
   }
   100% {
     opacity: 1;
-    -webkit-transform: none;
     transform: none;
+    -webkit-transform: none;
+    -moz-transform: none;
+    -o-transform: none;
+  }
+}
+@-moz-keyframes anim-fade-in-from-left {
+  0% {
+    opacity: 0;
+    transform: translate3d(-100%, 0, 0);
+    -webkit-transform: translate3d(-100%, 0, 0);
+    -moz-transform: translate3d(-100%, 0, 0);
+    -o-transform: translate3d(-100%, 0, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: none;
+    -webkit-transform: none;
+    -moz-transform: none;
+    -o-transform: none;
+  }
+}
+@-o-keyframes anim-fade-in-from-left {
+  0% {
+    opacity: 0;
+    transform: translate3d(-100%, 0, 0);
+    -webkit-transform: translate3d(-100%, 0, 0);
+    -moz-transform: translate3d(-100%, 0, 0);
+    -o-transform: translate3d(-100%, 0, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: none;
+    -webkit-transform: none;
+    -moz-transform: none;
+    -o-transform: none;
   }
 }
 :target {
-  animation-name: animFlashHighlight;
-  animation-delay: .175s;
-  animation-duration: 2.0375s;
-  animation-timing-function: linear;
-  animation-iteration-count: 1;
-  animation-direction: normal;
-  animation-play-state: running;
-  -webkit-animation-name: animFlashHighlight;
-  -webkit-animation-delay: .175s;
-  -webkit-animation-duration: 2.0375s;
-  -webkit-animation-timing-function: linear;
-  -webkit-animation-iteration-count: 1;
-  -webkit-animation-direction: normal;
-  -webkit-animation-play-state: running;
+  position: relative;
+}
+:target:before {
+  content: "";
+  position: absolute;
+  top: -1px;
+  right: -1px;
+  bottom: -1px;
+  left: -1px;
   background-color: rgba(198, 12, 48, 0);
   border: 1px solid rgba(198, 12, 48, 0);
-  margin-left: -5px;
-  padding-left: 5px;
+  z-index: -1;
+  animation: animFlashHighlight 1.325s linear .175s 1 normal;
+  -webkit-animation: animFlashHighlight 1.325s linear .175s 1 normal;
+  -moz-animation: animFlashHighlight 1.325s linear .175s 1 normal;
+  -o-animation: animFlashHighlight 1.325s linear .175s 1 normal;
+  animation-play-state: running;
+  -webkit-animation-play-state: running;
+  -moz-animation-play-state: running;
+  -o-animation-play-state: running;
 }
-@-webkit-keyframes animFlashHighlight {
+@keyframes animFlashHighlight {
   0% {
     background-color: rgba(198, 12, 48, 0);
     border-color: rgba(198, 12, 48, 0);
+    z-index: 10;
   }
   10% {
     background-color: rgba(198, 12, 48, 0.1);
@@ -97,10 +161,73 @@
     border-color: rgba(198, 12, 48, 0);
   }
 }
-@keyframes animFlashHighlight {
+@-webkit-keyframes animFlashHighlight {
   0% {
     background-color: rgba(198, 12, 48, 0);
     border-color: rgba(198, 12, 48, 0);
+    z-index: 10;
+  }
+  10% {
+    background-color: rgba(198, 12, 48, 0.1);
+    border-color: rgba(198, 12, 48, 0.5);
+  }
+  20% {
+    background-color: rgba(198, 12, 48, 0);
+    border-color: rgba(198, 12, 48, 0);
+  }
+  31% {
+    background-color: rgba(198, 12, 48, 0.1);
+    border-color: rgba(198, 12, 48, 0.5);
+  }
+  41% {
+    background-color: rgba(198, 12, 48, 0);
+    border-color: rgba(198, 12, 48, 0);
+  }
+  51% {
+    background-color: rgba(198, 12, 48, 0.1);
+    border-color: rgba(198, 12, 48, 0.5);
+  }
+  100% {
+    background-color: rgba(198, 12, 48, 0);
+    border-color: rgba(198, 12, 48, 0);
+  }
+}
+@-moz-keyframes animFlashHighlight {
+  0% {
+    background-color: rgba(198, 12, 48, 0);
+    border-color: rgba(198, 12, 48, 0);
+    z-index: 10;
+  }
+  10% {
+    background-color: rgba(198, 12, 48, 0.1);
+    border-color: rgba(198, 12, 48, 0.5);
+  }
+  20% {
+    background-color: rgba(198, 12, 48, 0);
+    border-color: rgba(198, 12, 48, 0);
+  }
+  31% {
+    background-color: rgba(198, 12, 48, 0.1);
+    border-color: rgba(198, 12, 48, 0.5);
+  }
+  41% {
+    background-color: rgba(198, 12, 48, 0);
+    border-color: rgba(198, 12, 48, 0);
+  }
+  51% {
+    background-color: rgba(198, 12, 48, 0.1);
+    border-color: rgba(198, 12, 48, 0.5);
+  }
+  100% {
+    background-color: rgba(198, 12, 48, 0);
+    border-color: rgba(198, 12, 48, 0);
+  }
+}
+@-o-keyframes animFlashHighlight {
+  0% {
+    background-color: rgba(198, 12, 48, 0);
+    border-color: rgba(198, 12, 48, 0);
+    z-index: 10;
   }
   10% {
     background-color: rgba(198, 12, 48, 0.1);
@@ -147,9 +274,11 @@
     border-color: rgba(141, 203, 241, 0.5);
   }
 }
-/* ███████████████████████████████████████████████████████████████████████████████████████████████████████████████
- * █░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░ ASIDES ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░█
- * ███████████████████████████████████████████████████████████████████████████████████████████████████████████████
+/*  ╔══════════════════════════════════════════════════════════════════════════════════════════════╗ 
+ *  ║ #### ASIDES ################################################################################ ║
+ *  ╠==============================================================================================╣
+ *  ║ Styling applied to [aside]...[/aside] elements.                                              ║
+ *  ╚══════════════════════════════════════════════════════════════════════════════════════════════╝
  */
 aside:not(:first-child).widget header {
   margin-top: 1rem;
@@ -158,25 +287,59 @@ aside.widget header {
   font-weight: bold;
   font-size: 1rem;
 }
-/* ███████████████████████████████████████████████████████████████████████████████████████████████████████████████
- * █░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░ CHARACTER FORMATTING ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░█
- * ███████████████████████████████████████████████████████████████████████████████████████████████████████████████
+aside.widget_archive label.screen-reader-text {
+  display: none;
+}
+section.side-right div.column.two aside,
+section.row.side-right div.column.two aside {
+  padding: 1rem;
+  background: rgba(215, 218, 219, 0.8);
+  box-shadow: 0px 0px 0px 1px rgba(255, 255, 255, 0.9), 0px 0px 0px 2px rgba(0, 0, 0, 0.2);
+}
+section.side-right div.column.two aside p:not(.centered),
+section.row.side-right div.column.two aside p:not(.centered) {
+  text-align: left;
+}
+/*  ╔══════════════════════════════════════════════════════════════════════════════════════════════╗ 
+ *  ║ #### CHARACTER FORMATTING ################################################################## ║
+ *  ╠==============================================================================================╣
+ *  ║ Styling applied to [strong]...[/strong], [span]...[/span], [mark][/mark], etc. elements.     ║
+ *  ╚══════════════════════════════════════════════════════════════════════════════════════════════╝
  */
 strong.opening-line {
-  color: #72652a;
   font-size: 1.0625em;
+  color: #72652a;
   text-shadow: 1px 1px 1px rgba(57, 50, 21, 0.3333);
 }
-/* ███████████████████████████████████████████████████████████████████████████████████████████████████████████████
- * █░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░ CITES ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░█
- * ███████████████████████████████████████████████████████████████████████████████████████████████████████████████
+mark.highlight {
+  background-color: transparent;
+  font-style: normal;
+  color: #AEC7CB;
+}
+span.accentuated-text {
+  font-family: 'Open Sans Condensed', 'Open Sans', 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Geneva, Verdana, sans-serif;
+  font-weight: bold;
+  font-size: 1.3em;
+  line-height: normal;
+  color: #3f6b72;
+}
+span.accentuated-text.gray {
+  color: #5e6a71;
+}
+/*  ╔══════════════════════════════════════════════════════════════════════════════════════════════╗ 
+ *  ║ #### CITES ################################################################################# ║
+ *  ╠==============================================================================================╣
+ *  ║ Styling applied to [cite]...[/cite] elements.                                                ║
+ *  ╚══════════════════════════════════════════════════════════════════════════════════════════════╝
  */
 cite.article-author {
   display: none;
 }
-/* ███████████████████████████████████████████████████████████████████████████████████████████████████████████████
- * █░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░ DIVS ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░█
- * ███████████████████████████████████████████████████████████████████████████████████████████████████████████████
+/*  ╔══════════════════════════════════════════════════════════════════════════════════════════════╗ 
+ *  ║ #### DIVS ################################################################################## ║
+ *  ╠==============================================================================================╣
+ *  ║ Styling applied to [div]...[/div] elements.                                                  ║
+ *  ╚══════════════════════════════════════════════════════════════════════════════════════════════╝
  */
 div.award-banner {
   margin-top: 1rem;
@@ -191,14 +354,31 @@ div.article-summary p.article-media-contacts {
 div.article-summary img.attachment-spine-thumbnail_size {
   display: block;
 }
+section.pad-top.half-pad,
+section.pad-top div.column.half-pad {
+  padding-top: 1rem;
+}
+/*  ┌──────────────────────────────────────────────────────────────────────────────────────────────┐
+ *  │ ++++++++ div.column ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ │
+ *  ├----------------------------------------------------------------------------------------------┤
+ *  │ Highly specific styling applied to div.column container elements as specified in the WSU     │
+ *  │ Spine WordPress Theme.                                                                       │
+ *  ├----------------------------------------------------------------------------------------------┤
+ */
 div.column {
   font-family: 'Open Sans', 'Lucida Sans Unicode', 'Lucida Sans', 'Lucida Grande';
-  /*header.article-header {
-		display: none;
-	}
-	header.article-header.show-header {
-		display: block;
-	}*/
+  /*	header.article-header {
+        display: none;
+    }
+    header.article-header.show-header {
+        display: block;
+    }*/
+}
+div.column:nth-child(1) {
+  margin-top: 0;
+}
+div.column.hides-overflow {
+  overflow: hidden;
 }
 div.column.make-me-a-wrapper {
   padding: 0;
@@ -209,17 +389,105 @@ div.column.no-top-pad {
 div.column.with-right-margin {
   margin-right: 2rem;
 }
-div.column h1 {
+div.column dl.faq dt {
+  position: relative;
+  width: 100%;
+  padding: 5px 20px 5px 10px;
+  margin: 5px -10px;
+  background-color: #d7dadb;
+  font-weight: bold;
+  transition: all 0.25s linear;
+  -webkit-transition: all 0.25s linear;
+  -moz-transition: all 0.25s linear;
+  -o-transition: all 0.25s linear;
+}
+@media all {
+  div.column dl.faq dt {
+    line-height: 1.375em;
+  }
+}
+@media all and (min-width: 481px) {
+  div.column dl.faq dt {
+    font-size: 1rem;
+  }
+}
+@media all and (max-width: 480px) {
+  div.column dl.faq dt {
+    font-size: 0.875rem;
+    text-align: left;
+  }
+}
+div.column dl.faq dt:after {
+  content: "";
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  width: 0;
+  height: 0;
+  transform: translateY(-50%);
+  border-top: 8px solid #5e6a71;
+  border-right: 8px solid transparent;
+  border-bottom: none;
+  border-left: 8px solid transparent;
+  transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+}
+div.column dl.faq dt:hover {
+  background-color: #5e6a71;
+  color: #ffffff;
+}
+div.column dl.faq dt:hover:after {
+  border-top: 8px solid #ffffff;
+  border-right: 8px solid transparent;
+  border-bottom: none;
+  border-left: 8px solid transparent;
+}
+div.column dl.faq dt.activated {
+  background-color: #d3b0b8;
   color: #464e54;
+}
+div.column dl.faq dt.activated:after {
+  border-top: none;
+  border-right: 8px solid transparent;
+  border-bottom: 8px solid #5e6a71;
+  border-left: 8px solid transparent;
+}
+div.column dl.faq dt.activated:hover {
+  background-color: #725764;
+  color: #ffffff;
+}
+div.column dl.faq dt.activated:hover:after {
+  border-top: none;
+  border-right: 8px solid transparent;
+  border-bottom: 8px solid #ffffff;
+  border-left: 8px solid transparent;
+}
+div.column dl.toggled dd {
+  display: none;
+}
+div.column h1 {
+  padding-bottom: 0;
+  margin-top: 1.5rem;
+  margin-bottom: .75rem;
   font-family: 'Open Sans', 'Lucida Sans Unicode', 'Lucida Sans', 'Lucida Grande', sans-serif;
   font-size: 3rem;
   font-weight: 900;
-  margin-top: 1.5rem;
-  margin-bottom: .75rem;
-  padding-bottom: 0;
   text-transform: uppercase;
+  color: #464e54;
 }
-div.column h1:nth-child(1) {
+@media all and (min-width: 481px) and (max-width: 890px) {
+  div.column h1 {
+    font-size: 2.625rem;
+  }
+}
+@media all and (max-width: 480px) {
+  div.column h1 {
+    font-size: 2.296875rem;
+  }
+}
+div.column h1:first-child {
   margin-top: 0;
 }
 div.column h1 + h2 {
@@ -228,32 +496,32 @@ div.column h1 + h2 {
 div.column h1.centered {
   text-align: center;
 }
-@media all and (max-width: 375px) {
-  div.column h1 {
-    font-size: 2.296875rem;
-  }
-}
-@media all and (min-width: 376px) and (max-width: 1208px) {
-  div.column h1 {
-    font-size: 2.625rem;
-  }
-}
 div.column header:first-child + h1 {
   margin-top: 0;
 }
 div.column h2 {
-  color: #464e54;
-  font-family: 'Open Sans', 'Lucida Sans Unicode', 'Lucida Sans', 'Lucida Grande', sans-serif;
-  font-size: 2.2rem;
-  font-weight: 800;
-  line-height: 1.375em;
+  padding: 0 0 0 .1em;
   margin-top: 1.5rem;
   margin-bottom: .75rem;
   margin-left: -0.1em;
-  padding: 0 0 0 .1em;
+  font-family: 'Open Sans', 'Lucida Sans Unicode', 'Lucida Sans', 'Lucida Grande', sans-serif;
+  font-size: 2.2rem;
+  line-height: 1.375em;
+  font-weight: 800;
+  color: #464e54;
   text-transform: uppercase;
 }
-div.column h2:nth-child(1) {
+@media all and (min-width: 481px) and (max-width: 890px) {
+  div.column h2 {
+    font-size: 1.925rem;
+  }
+}
+@media all and (max-width: 480px) {
+  div.column h2 {
+    font-size: 1.684375rem;
+  }
+}
+div.column h2:first-child {
   margin-top: 0;
 }
 div.column h2.centered {
@@ -262,22 +530,12 @@ div.column h2.centered {
 div.column h2.narrower-top-margin {
   margin-top: 1.25rem;
 }
-@media all and (max-width: 375px) {
-  div.column h2 {
-    font-size: 1.684375rem;
-  }
-}
-@media all and (max-width: 1208px) and (min-width: 376px) {
-  div.column h2 {
-    font-size: 1.925rem;
-  }
-}
-@media all and (max-width: 375px) {
+@media all and (max-width: 480px) {
   div.column h2.article-title {
     font-size: 1.3125rem;
   }
 }
-@media all and (max-width: 1208px) and (min-width: 376px) {
+@media all and (max-width: 1208px) and (min-width: 481px) {
   div.column h2.article-title {
     font-size: 1.5rem;
   }
@@ -286,77 +544,81 @@ div.column hr:not(.subSection) + h2 {
   margin-top: 0;
 }
 div.column h3 {
-  color: #981e32;
-  font-family: 'Open Sans', 'Lucida Sans Unicode', 'Lucida Sans', 'Lucida Grande', sans-serif;
-  font-size: 1.7rem;
-  font-weight: 600;
+  padding: 0 0 0 .1em;
   margin-top: 1.5rem;
   margin-bottom: .75rem;
   margin-left: -0.1em;
-  padding: 0 0 0 .1em;
+  font-family: 'Open Sans', 'Lucida Sans Unicode', 'Lucida Sans', 'Lucida Grande', sans-serif;
+  font-size: 1.7rem;
+  font-weight: 600;
   text-transform: uppercase;
+  color: #981e32;
 }
-div.column h3.centered {
-  text-align: center;
-}
-@media all and (max-width: 375px) {
-  div.column h3 {
-    font-size: 1.3015625rem;
-  }
-}
-@media all and (min-width: 376px) and (max-width: 1208px) {
+@media all and (min-width: 481px) and (max-width: 890px) {
   div.column h3 {
     font-size: 1.4875rem;
   }
 }
-div.column:nth-child(1) {
+@media all and (max-width: 480px) {
+  div.column h3 {
+    font-size: 1.3015625rem;
+  }
+}
+div.column h3:first-child {
   margin-top: 0;
+}
+div.column h3.centered {
+  text-align: center;
 }
 div.column hr:not(.subSection) + h3 {
   margin-top: 0;
 }
 div.column h4 {
-  color: #981e32;
-  font-family: 'Open Sans', 'Lucida Sans Unicode', 'Lucida Sans', 'Lucida Grande', sans-serif;
-  font-size: 1.4rem;
-  font-weight: 600;
+  padding: 0;
   margin-top: 1rem;
   margin-bottom: .5rem;
-  padding: 0;
+  font-family: 'Open Sans', 'Lucida Sans Unicode', 'Lucida Sans', 'Lucida Grande', sans-serif;
+  font-size: 1.4rem;
+  line-height: 1.2em;
+  font-weight: 600;
+  color: #981e32;
 }
-div.column h4.centered {
-  text-align: center;
-}
-@media all and (max-width: 375px) {
-  div.column h4 {
-    font-size: 1.071875rem;
-  }
-}
-@media all and (min-width: 376px) and (max-width: 1208px) {
+@media all and (min-width: 481px) and (max-width: 890px) {
   div.column h4 {
     font-size: 1.225rem;
   }
 }
-div.column:nth-child(1) {
+@media all and (max-width: 480px) {
+  div.column h4 {
+    font-size: 1.071875rem;
+  }
+}
+div.column h4:first-child {
   margin-top: 0;
 }
+div.column h4.centered {
+  text-align: center;
+}
 div.column hr {
+  height: 0;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
   background: none;
   border: 0;
   border-top: 1px solid rgba(94, 106, 113, 0.5);
   border-bottom: 1px solid rgba(160, 160, 160, 0.25);
-  height: 0;
-  margin-top: 2rem;
-  margin-bottom: 2rem;
+}
+div.column hr:first-child {
+  margin-top: 0;
 }
 div.column hr.subSection {
+  width: 85%;
+  margin: 2rem auto;
   background: none;
   border: 0;
   border-top: 1px dashed rgba(94, 106, 113, 0.5);
   border-bottom: 1px dashed rgba(160, 160, 160, 0.25);
-  margin: 2rem auto;
   text-align: center;
-  width: 85%;
 }
 div.column hr.spacer {
   border: none;
@@ -366,14 +628,14 @@ div.column hr.crimson {
   border-bottom: 1px solid rgba(152, 30, 50, 0.375);
 }
 div.column hr.dark-gray {
-  border-top: 1px solid rgba(94, 106, 113, 0.55);
-  border-bottom: 1px solid rgba(94, 106, 113, 0.275);
+  border-top: 1px solid rgba(70, 78, 84, 0.6667);
+  border-bottom: 1px solid rgba(70, 78, 84, 0.3333);
 }
 div.column hr.no-top-margin {
   margin-top: 0;
 }
 div.column hr.narrow-top-margin {
-  margin-top: .5rem;
+  margin-top: 0.5rem;
 }
 div.column hr.half-top-margin {
   margin-top: 1rem;
@@ -382,7 +644,7 @@ div.column hr.no-bottom-margin {
   margin-bottom: 0;
 }
 div.column hr.narrow-bottom-margin {
-  margin-bottom: .5rem;
+  margin-bottom: 0.5rem;
 }
 div.column hr.half-bottom-margin {
   margin-top: 1rem;
@@ -390,35 +652,40 @@ div.column hr.half-bottom-margin {
 div.column hr.does-not-clear {
   clear: none;
 }
+div.column hr.thicker {
+  border-top-width: 2px;
+}
 div.column a {
+  margin-bottom: -3px;
+  border-bottom: 1px dotted rgba(152, 30, 50, 0.25);
   color: #981e32;
-  border-bottom: 1px dotted rgba(79, 16, 26, 0);
   text-decoration: none;
   transition-property: color, background, border-color;
   -webkit-transition-property: color, background, border-color;
-  transition-duration: .4s, .4s, .4s;
-  -webkit-transition-duration: .4s, .4s, .4s;
-  transition-timing-function: linear, ease-in, linear;
-  -webkit-transition-timing-function: linear, ease-in, linear;
+  transition-duration: .3s, .3s, .3s;
+  -webkit-transition-duration: .3s, .3s, .3s;
+  transition-timing-function: ease, ease, ease;
+  -webkit-transition-timing-function: ease, ease, ease;
 }
 div.column a:hover {
+  background-color: rgba(239, 120, 121, 0.2);
+  border-color: rgba(152, 30, 50, 0.67);
   color: #c60c30;
-  background-color: rgba(239, 120, 121, 0.1);
 }
 div.column a.subtle-link {
-  border-bottom: 1px dotted rgba(79, 16, 26, 0);
+  border-bottom: 1px dotted rgba(152, 30, 50, 0);
   transition-property: border-color;
   -webkit-transition-property: border-color;
-  transition-duration: .4s;
-  -webkit-transition-duration: .4s;
-  transition-timing-function: linear;
-  -webkit-transition-timing-function: linear;
+  transition-duration: .3s;
+  -webkit-transition-duration: .3s;
+  transition-timing-function: ease;
+  -webkit-transition-timing-function: ease;
 }
 div.column a.subtle-link:not(.quiet):hover {
-  border-bottom: 1px dotted rgba(79, 16, 26, 0.3);
+  border-bottom: 1px dotted rgba(152, 30, 50, 0.67);
 }
 div.column a.pop-out-link {
-  border-bottom: 1px dotted rgba(79, 16, 26, 0.3);
+  border-bottom: 1px dotted rgba(152, 30, 50, 0.3);
   color: #981e32;
   text-decoration: none;
   transition-property: color, background, font-size;
@@ -432,41 +699,80 @@ div.column a.pop-out-link.subtle-link {
   border-bottom: none;
 }
 div.column a.pop-out-link:hover {
-  color: #f6861f;
   background-color: rgba(211, 130, 53, 0.1);
   font-size: 1.05em;
   line-height: calc(1.05em * 1.05);
+  color: #f6861f;
+}
+div.column a.dark-red-button {
+  display: block;
+  color: #ffffff;
+  background-color: #981e32;
+  text-transform: uppercase;
+  font-size: 1em;
+  font-weight: bold;
+  letter-spacing: 1px;
+  transition: background-color 0.3333s linear;
+  padding: 0.5em 1em;
+}
+div.column a.dark-red-button:hover {
+  background-color: #c60c30;
 }
 div.column a img {
   border: 1px solid rgba(94, 106, 113, 0.5);
   box-shadow: 2px 2px 2px rgba(94, 106, 113, 0.25);
   text-decoration: none;
-  -webkit-transition-property: border, box-shadow;
-  -webkit-transition-duration: .4s, .4s;
-  -webkit-transition-timing-function: linear, ease-in;
-  /* For browsers that implement CSS3 */
   transition-property: border, box-shadow;
+  -webkit-transition-property: border, box-shadow;
   transition-duration: .4s, .4s;
+  -webkit-transition-duration: .4s, .4s;
   transition-timing-function: linear, ease-in;
+  -webkit-transition-timing-function: linear, ease-in;
 }
 div.column a img:hover {
   border: 1px solid #981e32;
   box-shadow: 2px 2px 2px rgba(152, 30, 50, 0.3333);
 }
-div.column:hover a:not(.subtle-link) {
+div.column a[data-title] {
+  position: relative;
+}
+div.column a[data-title]:hover:after {
+  content: attr(data-title);
+  width: 220px;
+  position: absolute;
+  left: 5px;
+  top: 100%;
+  padding: 4px 8px;
+  background: #eddccc;
+  background: -webkit-linear-gradient(top, #eddccc, #ffffff);
+  background: -moz-linear-gradient(top, #eddccc, #ffffff);
+  background: -o-linear-gradient(top, #eddccc, #ffffff);
+  background: linear-gradient(top, #eddccc, #ffffff);
+  border: 1px solid #925b29;
+  color: #464e54;
+  z-index: 20;
+}
+div.column:hover a.loud-link {
   border-bottom: 1px dotted rgba(79, 16, 26, 0.3);
 }
+div.column h1 > a,
+div.column h2 > a,
+div.column h3 > a,
+div.column h4 > a {
+  line-height: 1.35em;
+}
 div.column aside.article-sidebar {
+  float: right;
+  width: 33%;
+  min-width: 230px;
+  padding: .8rem;
+  margin-left: 1rem;
+  margin-bottom: 1rem;
   background: #f8f1eb;
   border: 1px solid #6d441f;
   box-shadow: 1px 1px 2px rgba(109, 68, 31, 0.5);
-  color: #464e54;
-  float: right;
   font-size: .8rem;
-  margin-left: 1rem;
-  margin-bottom: 1rem;
-  padding: .8rem;
-  width: 33%;
+  color: #464e54;
 }
 div.column aside.article-sidebar:first-child + h1,
 div.column aside.article-sidebar:first-child + h2,
@@ -505,43 +811,101 @@ div.column aside.article-sidebar h3:first-child {
 div.column aside.article-sidebar h4 {
   font-size: 1.05rem;
 }
+div.column aside.article-sidebar h4:first-child {
+  margin-top: 0;
+}
+@media screen and (min-width: 792px) and (max-width: 900px) {
+  div.column aside.article-sidebar {
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    width: 230px;
+    transform-origin: 100% 0%;
+    -webkit-transform-origin: 100% 0%;
+    -ms-transform-origin: 100% 0%;
+    transform: rotate(-90deg);
+    -webkit-transform: rotate(-90deg);
+    -ms-transform: rotate(-90deg);
+    transition: transform 0.25s ease-out;
+    -webkit-transition: transform 0.25s ease-out;
+    -moz-transition: transform 0.25s ease-out;
+    -o-transition: transform 0.25s ease-out;
+  }
+  div.column aside.article-sidebar:hover {
+    transform: none;
+    -webkit-transform: none;
+    -ms-transform: none;
+  }
+}
+@media screen and (max-width: 640px) {
+  div.column aside.article-sidebar {
+    position: absolute;
+    right: -2rem;
+    top: 0px;
+    width: 230px;
+    transform-origin: 100% 0%;
+    -webkit-transform-origin: 100% 0%;
+    -ms-transform-origin: 100% 0%;
+    transform: rotate(-90deg) translateY(-2rem);
+    -webkit-transform: rotate(-90deg) translateY(-2rem);
+    -ms-transform: rotate(-90deg) translateY(-2rem);
+    -webkit-transition: transform 0.25s ease-out;
+    transition: transform 0.25s ease-out;
+    -moz-transition: transform 0.25s ease-out;
+    -o-transition: transform 0.25s ease-out;
+  }
+  div.column aside.article-sidebar:hover {
+    transform: none;
+    -webkit-transform: none;
+    -ms-transform: none;
+  }
+}
 div.column ul {
   padding-bottom: 0;
 }
 div.column ul:last-child:not(.no-bottom-pad) {
   padding-bottom: 1rem;
 }
+div.column ul.centered {
+  text-align: center;
+}
 div.column ul + p {
   margin-top: 1rem;
 }
-@media all and (min-width: 1209px) {
+@media all {
+  div.column ul {
+    line-height: 1.375em;
+  }
+}
+@media all and (min-width: 481px) {
   div.column ul {
     font-size: 1rem;
-    line-height: 1.375rem;
   }
 }
-@media all and (max-width: 1208px) {
+@media all and (max-width: 480px) {
   div.column ul {
-    font-size: .875rem;
-    line-height: 1.203125rem;
+    font-size: 0.875rem;
   }
 }
-div.column ul li {
-  list-style-image: url(/wp-content/uploads/sites/906/2015/08/ico-cougar-bullet-point.png);
+div.column ul li.no-bottom-pad {
+  padding-bottom: 0;
 }
 div.column p + ul {
-  margin-top: .5rem;
+  margin-top: 1rem;
 }
-@media all and (min-width: 1209px) {
+@media all {
   div.column ol {
-    font-size: 1rem;
-    line-height: 1.375rem;
+    line-height: 1.375em;
   }
 }
-@media all and (max-width: 1208px) {
+@media all and (min-width: 481px) {
   div.column ol {
-    font-size: .875rem;
-    line-height: 1.203125rem;
+    font-size: 1rem;
+  }
+}
+@media all and (max-width: 480px) {
+  div.column ol {
+    font-size: 0.875rem;
   }
 }
 div.column ol ol {
@@ -550,6 +914,48 @@ div.column ol ol {
 div.column ol ol ol {
   list-style-type: lower-roman;
 }
+div.column section {
+  position: relative;
+}
+div.column .crimson-text {
+  color: #981e32;
+}
+div.column .blue-text {
+  color: #4f868e;
+}
+div.column .dark-blue-text {
+  color: #3f6b72;
+}
+div.column .centered-text {
+  text-align: center;
+}
+div.column .larger-text {
+  font-size: larger;
+}
+@media (min-width: 1050px) {
+  div.column .large-format-friendly {
+    margin-right: auto;
+    margin-left: auto;
+    max-width: 700px;
+  }
+}
+@media (min-width: 891px) and (max-width: 1049px) {
+  div.column .large-format-friendly {
+    max-width: 700px;
+  }
+}
+/*  └──────────────────────────────────────────────────────────────────────────────────────────────┘
+ */
+/*  ┌──────────────────────────────────────────────────────────────────────────────────────────────┐
+ *  │ ++++++++ div.column ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ │
+ *  │ ++++++++ PARAGRAPHS ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ │
+ *  ├----------------------------------------------------------------------------------------------┤
+ *  │ Styling for paragraph elements intended as children of div.column elements as defined in the │
+ *  │ WSU Spine theme for WordPress.                                                               │
+ *  │  ╘═» This file assumes [//github.com/invokeImmediately/WSU-UE---CSS/color-palette.less] has  │
+ *  │       already been imported.                                                                 │
+ *  ├----------------------------------------------------------------------------------------------┤
+ */
 div.column p {
   padding-bottom: 0;
   text-align: justify;
@@ -557,39 +963,53 @@ div.column p {
 div.column p.centered {
   text-align: center;
 }
-@media all and (min-width: 1209px) {
+div.column p.align-left {
+  text-align: left;
+}
+@media all {
   div.column p {
-    font-size: 1rem;
-    line-height: 1.35em;
+    line-height: 1.375em;
   }
 }
-@media all and (max-width: 1208px) {
+@media all and (min-width: 481px) {
   div.column p {
-    font-size: calc(1rem * 0.875);
-    line-height: 1.35em;
+    font-size: 1rem;
+  }
+}
+@media all and (max-width: 480px) {
+  div.column p {
+    font-size: 0.875rem;
+    text-align: left;
   }
 }
 div.column p:last-child:not(.no-bottom-pad) {
   padding-bottom: 1rem;
 }
-div.column p:not(:last-child) {
+div.column p:not(:last-child):not(.no-btm-margin) {
   margin-bottom: 1rem;
+}
+div.column p.double-margins:not(:last-child) {
+  margin-bottom: 2rem;
+}
+div.column p.half-margins:not(:last-child) {
+  margin-bottom: 0.5rem;
 }
 div.column p.article-deck {
   color: #72652a;
-  font-size: 1.2rem;
-  line-height: 1.35em;
 }
-@media all and all and (max-width: 480px) {
+@media all {
   div.column p.article-deck {
-    font-size: calc(1.2rem * 0.875 * 0.875);
-    line-height: 1.35em;
+    font-size: 1.2rem;
   }
 }
-@media all and (min-width: 481px) and (max-width: 1208px) {
+@media all and (min-width: 481px) and (max-width: 1049px) {
   div.column p.article-deck {
-    font-size: calc(1.2rem * 0.875);
-    line-height: 1.35em;
+    font-size: 1.05rem;
+  }
+}
+@media all and (max-width: 480px) {
+  div.column p.article-deck {
+    font-size: 0.91875rem;
   }
 }
 div.column p.article-deck strong {
@@ -601,50 +1021,49 @@ div.column p.article-tagline {
   line-height: normal;
   font-weight: 550;
 }
+@media all and (min-width: 481px) and (max-width: 1049px) {
+  div.column p.article-tagline {
+    font-size: 1.4rem;
+  }
+}
 @media all and (max-width: 480px) {
   div.column p.article-tagline {
     font-size: 1.225rem;
-  }
-}
-@media all and (min-width: 481px) and (max-width: 1208px) {
-  div.column p.article-tagline {
-    font-size: 1.4rem;
   }
 }
 div.column p.no-bottom-pad {
   padding-bottom: 0;
 }
 div.column p.vpue-jump-bar {
-  background-color: rgba(0, 165, 189, 0.5);
-  color: #464e54;
-  margin-top: 2rem;
-  margin-bottom: 2rem;
+  width: 100%;
   padding-top: 0;
   padding-bottom: .25em;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  background-color: rgba(0, 165, 189, 0.5);
+  color: #464e54;
   text-align: center;
-  width: 100%;
 }
 div.column p.vpue-jump-bar span.title {
   font-size: 1em;
-  font-variant: small-caps;
-  font-weight: bold;
   line-height: 2em;
+  font-weight: bold;
+  font-variant: small-caps;
 }
 div.column p.vpue-jump-back {
-  font-size: .6875rem;
-  line-height: calc(0.6875rem * 1.35);
-  padding-bottom: .3333rem;
-  margin-bottom: .3333rem;
+  padding-bottom: 0.33333333rem;
+  margin-bottom: 0.33333333rem;
+  font-size: 0.6875rem;
 }
 div.column p.article-media-contacts {
-  font-size: .8em;
-  line-height: normal;
   padding-left: 2em;
+  font-size: .8em;
+  line-height: 1.375em;
 }
 div.column p.award-quote {
-  margin-right: 2rem;
   margin-left: 2rem;
-  margin-bottom: .5rem;
+  margin-bottom: 0.5rem;
+  margin-right: 2rem;
 }
 div.column p.award-quote-source {
   font-style: italic;
@@ -654,7 +1073,7 @@ div.column p.award-quote-source {
   padding-left: 2rem;
 }
 div.column p.banner-text-gray-with-towers {
-  color: #2A3033;
+  color: #2a3033;
   background-color: rgba(141, 149, 154, 0.5);
   border: 32px solid transparent;
   -webkit-border-image: url(/wp-content/uploads/sites/906/2015/08/Gray-Clock-Tower-Border-Template.png) 32 32 round;
@@ -663,20 +1082,55 @@ div.column p.banner-text-gray-with-towers {
   margin-bottom: 15px;
   padding: 7px;
 }
-@media all and (min-width: 1209px) {
+@media all and (min-width: 1050px) {
   div.column p.banner-text-gray-with-towers {
     font-size: 1.25rem;
-    line-height: calc(1.25rem * 1.35);
   }
 }
-@media all and (max-width: 1208px) {
+@media all and (max-width: 1049px) {
   div.column p.banner-text-gray-with-towers {
-    font-size: calc(1.25rem * 0.875);
-    line-height: calc(1.25rem * 1.35 *0.875);
+    font-size: 1.09375rem;
   }
+}
+div.column p.banner-text {
+  max-width: 700px;
+  padding: 7px;
+  margin-right: auto;
+  margin-left: auto;
+  margin-bottom: 2rem;
+  background-color: rgba(94, 106, 113, 0.5);
+  border: 1px solid #2a3033;
+  line-height: 1.375em;
+  color: #2a3033;
+}
+@media all and (min-width: 1050px) {
+  div.column p.banner-text {
+    font-size: 1.25rem;
+  }
+}
+@media all and (max-width: 1049px) {
+  div.column p.banner-text {
+    font-size: 1.09375rem;
+  }
+}
+div.column p.banner-text.orange {
+  background-color: rgba(182, 114, 51, 0.5);
+  border: 1px solid #492e14;
+}
+div.column p.banner-text.blue {
+  background-color: rgba(79, 134, 142, 0.5);
+  border: 1px solid #203639;
+}
+div.column p.banner-text.yellow {
+  background-color: rgba(198, 146, 20, 0.5);
+  border: 1px solid #4f3a08;
+}
+div.column p.banner-text.green {
+  background-color: rgba(143, 126, 53, 0.5);
+  border: 1px solid #393215;
 }
 div.column p.banner-text-orange-with-towers {
-  color: #492E14;
+  color: #492e14;
   background-color: rgba(182, 114, 51, 0.5);
   border: 32px solid transparent;
   -webkit-border-image: url(/wp-content/uploads/sites/50/2015/09/Orange-Clock-Tower-Border-Template-v3.png) 32 32 round;
@@ -685,94 +1139,102 @@ div.column p.banner-text-orange-with-towers {
   margin-bottom: 15px;
   padding: 7px;
 }
-@media all and (min-width: 1209px) {
+@media all and (min-width: 1050px) {
   div.column p.banner-text-orange-with-towers {
     font-size: 1.25rem;
-    line-height: calc(1.25rem * 1.35);
   }
 }
-@media all and (max-width: 1208px) {
+@media all and (max-width: 1049px) {
   div.column p.banner-text-orange-with-towers {
-    font-size: calc(1.25rem * 0.875);
-    line-height: calc(1.25rem * 1.35 *0.875);
+    font-size: 1.09375rem;
   }
 }
+/*  └──────────────────────────────────────────────────────────────────────────────────────────────┘
+ */
+/*  ┌──────────────────────────────────────────────────────────────────────────────────────────────┐
+ *  │ ++++++++ div.column ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ │
+ *  │ ++++++++ TABLES     ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ │
+ *  ├----------------------------------------------------------------------------------------------┤
+ *  │ Styling for tables intended as children of div.column elements as defined in the WSU Spine   │
+ *  │ Theme for WordPress.                                                                         │
+ *  ├----------------------------------------------------------------------------------------------┤
+ */
 div.column table.plain {
+  background: #ffffff url(/wp-content/uploads/sites/906/2015/08/bg-dark.jpg) repeat fixed left top;
   border-collapse: separate;
   border-spacing: 0;
   border-top: 1px solid #5e6a71;
   border-bottom: 1px solid #5e6a71;
-  background: #ffffff url(/wp-content/uploads/sites/906/2015/08/bg-dark.jpg) repeat fixed left top;
 }
 div.column table.plain thead tr th {
-  border-top: 1px solid #ffffff;
-  border-bottom: 1px solid #B6BCBF;
   padding-top: .25rem;
   padding-left: .25rem;
   padding-bottom: .25rem;
+  border-top: 1px solid #ffffff;
+  border-bottom: 1px solid #B6BCBF;
   text-align: inherit;
 }
 div.column table.plain tbody tr td {
-  background-color: #eff0f1;
-  border-top: 1px solid #ffffff;
-  border-bottom: 1px solid #b5babe;
   padding-top: .25rem;
   padding-left: .25rem;
   padding-bottom: .25rem;
+  background-color: #eff0f1;
+  border-top: 1px solid #ffffff;
+  border-bottom: 1px solid #b5babe;
   text-align: inherit;
   vertical-align: top;
 }
 div.column table.plain tbody tr:nth-of-type(2n) td {
-  background-color: #ffffff;
-  border-top: 1px solid #eff0f1;
-  border-bottom: 1px solid #d7dadb;
   padding-top: .25rem;
   padding-left: .25rem;
   padding-bottom: .25rem;
+  background-color: #ffffff;
+  border-top: 1px solid #eff0f1;
+  border-bottom: 1px solid #d7dadb;
   text-align: inherit;
   vertical-align: top;
 }
 div.column table.award-recipients {
+  background: #ffffff url(/wp-content/uploads/sites/906/2015/08/bg-dark.jpg) repeat fixed left top;
   border-collapse: separate;
   border-spacing: 0;
   border-top: 1px solid #5e6a71;
   border-bottom: 1px solid #5e6a71;
-  background: #ffffff url(/wp-content/uploads/sites/906/2015/08/bg-dark.jpg) repeat fixed left top;
 }
 div.column table.award-recipients thead tr th {
-  border-top: 1px solid #ffffff;
-  border-bottom: 1px solid #B6BCBF;
   padding-top: .25rem;
   padding-left: .25rem;
   padding-bottom: .25rem;
+  border-top: 1px solid #ffffff;
+  border-bottom: 1px solid #B6BCBF;
   text-align: inherit;
 }
 div.column table.award-recipients tbody tr td {
-  background-color: #ffffff;
-  border-top: 1px solid #eff0f1;
-  border-bottom: 1px solid #d7dadb;
   padding-top: .25rem;
   padding-left: .25rem;
   padding-bottom: .25rem;
+  background-color: #ffffff;
+  border-top: 1px solid #eff0f1;
+  border-bottom: 1px solid #d7dadb;
   text-align: inherit;
   vertical-align: top;
 }
 div.column table.award-recipients tbody:nth-of-type(2n) tr td {
-  background-color: #eff0f1;
-  border-top: 1px solid #ffffff;
-  border-bottom: 1px solid #b5babe;
   padding-top: .25rem;
   padding-left: .25rem;
   padding-bottom: .25rem;
+  background-color: #eff0f1;
+  border-top: 1px solid #ffffff;
+  border-bottom: 1px solid #b5babe;
   text-align: inherit;
   vertical-align: top;
 }
 div.column table.peopleList {
   width: 100%;
+  background: #ffffff;
   border-collapse: separate;
   border-spacing: 0;
   border-top: 1px solid #e5e5e5;
-  background: #ffffff;
 }
 div.column table.peopleList tbody td {
   width: 80%;
@@ -786,89 +1248,261 @@ div.column table.peopleList tbody td:first-of-type {
   width: 20%;
   text-align: center;
 }
-div.column .crimson-text {
+div.column table.navigational-map {
+  width: 100%;
+  margin: 0 auto;
+  margin-bottom: 20px;
+  font-size: 13px;
+  text-align: left;
   color: #981e32;
 }
-div.column .dark-blue-text {
-  color: #3f6b72;
+div.column table.navigational-map a {
+  border-bottom: 1px dotted rgba(152, 30, 50, 0);
+  color: inherit;
 }
-div.column .centered-text {
-  text-align: center;
+div.column table.navigational-map th {
+  border-bottom: 1px solid #b5babe;
+  font-size: 1.1em;
+  line-height: 1.375em;
+  font-weight: bold;
+  text-transform: uppercase;
+  vertical-align: bottom;
+  /*&:nth-child(2):hover {
+                    background-color: #d3e1e3;
+                }*/
 }
-div.interactively-flipped-panels {
+div.column table.navigational-map th.table-spacer {
+  width: 15px;
+}
+div.column table.navigational-map th:nth-child(4n+1) {
+  color: #4e2a32;
+}
+div.column table.navigational-map th:nth-child(4n+1) a:hover {
+  background-color: rgba(239, 120, 121, 0.2);
+}
+div.column table.navigational-map th:nth-child(4n+3) {
+  color: #781d31;
+}
+div.column table.navigational-map th:nth-child(4n+3) a:hover {
+  background-color: rgba(239, 120, 121, 0.3);
+  color: #d13c59;
+}
+div.column table.navigational-map td p {
+  padding-bottom: 0px;
+  font-size: inherit;
+  text-align: inherit;
+}
+div.column table.navigational-map td p:not(:last-child) {
+  margin-bottom: 0;
+  border-bottom: 1px solid #d7dadb;
+}
+div.column table.navigational-map td:nth-child(4n+3) {
+  color: #c60c30;
+}
+div.column table.wsu-blue-theme {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  border-top: 1px solid #3f6b72;
+}
+div.column table.wsu-blue-theme:not(.no-bottom-border) {
+  border-bottom: 1px solid #3f6b72;
+}
+@media all and (min-width: 891px) {
+  div.column table.wsu-blue-theme {
+    font-size: 14px;
+  }
+}
+@media all and (max-width: 890px) {
+  div.column table.wsu-blue-theme {
+    font-size: 12px;
+  }
+}
+div.column table.wsu-blue-theme > thead > tr > th {
+  padding: 3px;
+  background-color: #2f5055;
+  vertical-align: bottom;
+  color: #ffffff;
+}
+div.column table.wsu-blue-theme > thead > tr.supra-header-row > th {
+  padding-top: 1em;
+  padding-right: 0.5em;
+  padding-left: 1.5em;
+  background-color: #203639;
+  vertical-align: bottom;
+  text-indent: -1em;
+  font-variant: small-caps;
+  font-weight: bold;
+  color: #ffffff;
+}
+div.column table.wsu-blue-theme:not(.has-row-spans) > tbody > tr:nth-child(2n) > td {
+  padding-top: 3px;
+  padding-right: 0.5em;
+  padding-bottom: 0.5em;
+  padding-left: 1.5em;
+  background-color: #ffffff;
+  text-indent: -1em;
+  vertical-align: top;
+  line-height: normal;
+}
+div.column table.wsu-blue-theme:not(.has-row-spans) > tbody > tr:nth-child(2n + 1) > td {
+  padding-top: 3px;
+  padding-right: 0.5em;
+  padding-bottom: 0.5em;
+  padding-left: 1.5em;
+  background-color: #d3e1e3;
+  text-indent: -1em;
+  vertical-align: top;
+  line-height: normal;
+}
+div.column table.wsu-blue-theme.has-row-spans > tbody:nth-child(2n) > tr > td {
+  padding-top: 3px;
+  padding-right: 0.5em;
+  padding-bottom: 0.5em;
+  padding-left: 1.5em;
+  background-color: #ffffff;
+  text-indent: -1em;
+  vertical-align: top;
+  line-height: normal;
+}
+div.column table.wsu-blue-theme.has-row-spans > tbody:nth-child(2n + 1) > tr > td {
+  padding-top: 3px;
+  padding-right: 0.5em;
+  padding-bottom: 0.5em;
+  padding-left: 1.5em;
+  background-color: #d3e1e3;
+  text-indent: -1em;
+  vertical-align: top;
+  line-height: normal;
+}
+div.column table.wsu-gray-theme {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  border-top: 1px solid #464e54;
+  border-bottom: 1px solid #464e54;
+  vertical-align: top;
+  font-variant: small-caps;
+}
+@media all and (min-width: 891px) {
+  div.column table.wsu-gray-theme {
+    font-size: 14px;
+  }
+}
+@media all and (max-width: 890px) {
+  div.column table.wsu-gray-theme {
+    font-size: 12px;
+  }
+}
+div.column table.wsu-gray-theme > thead > tr > th {
+  padding: 3px;
   background-color: #5e6a71;
-  margin-top: 1em;
-  margin-bottom: 1em;
+  vertical-align: top;
+  color: #ffffff;
+}
+div.column table.wsu-gray-theme > thead > tr.sub-heading-row > th {
+  padding: 3px;
+  background-color: #000000;
+  vertical-align: bottom;
+  text-indent: -1em;
+  font-variant: small-caps;
+  font-weight: bold;
+  color: #ffffff;
+}
+div.column table.wsu-gray-theme > tbody > tr:nth-child(2n) > td {
+  padding: 3px;
+  background-color: #ffffff;
+  vertical-align: top;
+  line-height: normal;
+}
+div.column table.wsu-gray-theme > tbody > tr:nth-child(2n + 1) > td {
+  padding: 3px;
+  background-color: #d7dadb;
+  vertical-align: top;
+  line-height: normal;
+}
+/*  └──────────────────────────────────────────────────────────────────────────────────────────────┘
+ */
+/*  ┌──────────────────────────────────────────────────────────────────────────────────────────────┐
+ *  │ ++++++++ div.interactively-flipped-panels ++++++++++++++++++++++++++++++++++++++++++++++++++ │
+ *  ├----------------------------------------------------------------------------------------------┤
+ *  │ Content container that gradually fades into full view, persists for a short time, and then   │
+ *  │ rapidly fades out, either automatically via CSS3, or upon user interaction via JavaScript.   │
+ *  ├----------------------------------------------------------------------------------------------┤
+ */
+div.interactively-flipped-panels {
   position: relative;
   top: 0;
   left: 0;
   width: 100%;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  background-color: #5e6a71;
 }
 div.interactively-flipped-panels div.container {
-  background: #ffffff;
-  height: 0;
-  margin: 1em auto;
-  overflow: hidden;
-  padding-bottom: 48%;
-  padding-bottom: calc(((50% * 0.6) * 0.8 - 1.5em) * 2 + 3em);
   position: relative;
   top: 0;
   left: 0;
   width: 60%;
+  height: 0;
+  padding-bottom: 48%;
+  padding-bottom: calc(((50% * 0.6) * 0.8 - 1.5em) * 2 + 3em);
+  margin: 1em auto;
+  background: #ffffff;
+  overflow: hidden;
 }
 @media all and (max-width: 1030px) and (min-width: 792px) {
   div.interactively-flipped-panels div.container {
+    width: 70%;
     padding-bottom: 56%;
     padding-bottom: calc(((50% * 0.7) * 0.8 - 1.5em) * 2 + 3em);
-    width: 70%;
   }
 }
 @media all and (max-width: 791px) and (min-width: 592px) {
   div.interactively-flipped-panels div.container {
+    width: 80%;
     padding-bottom: 64%;
     padding-bottom: calc(((50% * 0.8) * 0.8 - 1.5em) * 2 + 3em);
-    width: 80%;
   }
 }
 @media all and (max-width: 591px) and (min-width: 481px) {
   div.interactively-flipped-panels div.container {
+    width: 100%;
     padding-bottom: 80%;
     padding-bottom: calc((50% * 0.8 - 1.5em) * 2 + 3em);
-    width: 100%;
   }
 }
 @media all and (max-width: 480px) {
   div.interactively-flipped-panels div.container {
+    width: 100%;
     padding-bottom: 320%;
     padding-bottom: calc((100% * 0.8) * 4);
-    width: 100%;
   }
 }
 div.interactively-flipped-panels div.container div.panel-wrapper {
   float: left;
-  height: 0;
-  margin: 1em;
-  padding-bottom: 36.9762%;
-  padding-bottom: calc(50% * 0.8 - 1.5em);
   position: relative;
+  height: 0;
   width: 46.9762%;
   width: calc(50% - 1.5em);
+  padding-bottom: 36.9762%;
+  padding-bottom: calc(50% * 0.8 - 1.5em);
+  margin: 1em;
 }
 @media all and (max-width: 480px) {
   div.interactively-flipped-panels div.container div.panel-wrapper {
-    margin: 0;
     padding-bottom: 76.9762%;
     padding-bottom: calc(100% * 0.8);
-    width: 96.9762%;
+    margin: 0;
     width: 100%;
   }
 }
 div.interactively-flipped-panels div.container div.panel-wrapper.top-left {
   float: none;
   position: absolute;
-  margin: 0;
   top: 1em;
   left: 1em;
+  margin: 0;
 }
 @media all and (max-width: 480px) {
   div.interactively-flipped-panels div.container div.panel-wrapper.top-left {
@@ -879,10 +1513,10 @@ div.interactively-flipped-panels div.container div.panel-wrapper.top-left {
 }
 div.interactively-flipped-panels div.container div.panel-wrapper.top-right {
   float: none;
-  margin: 0;
   position: absolute;
   top: 1em;
   right: 1em;
+  margin: 0;
 }
 @media all and (max-width: 480px) {
   div.interactively-flipped-panels div.container div.panel-wrapper.top-right {
@@ -893,10 +1527,10 @@ div.interactively-flipped-panels div.container div.panel-wrapper.top-right {
 }
 div.interactively-flipped-panels div.container div.panel-wrapper.bottom-left {
   float: none;
-  margin: 0;
   position: absolute;
   bottom: 1em;
   left: 1em;
+  margin: 0;
 }
 @media all and (max-width: 480px) {
   div.interactively-flipped-panels div.container div.panel-wrapper.bottom-left {
@@ -907,10 +1541,10 @@ div.interactively-flipped-panels div.container div.panel-wrapper.bottom-left {
 }
 div.interactively-flipped-panels div.container div.panel-wrapper.bottom-right {
   float: none;
-  margin: 0;
   position: absolute;
   right: 1em;
   bottom: 1em;
+  margin: 0;
 }
 @media all and (max-width: 480px) {
   div.interactively-flipped-panels div.container div.panel-wrapper.bottom-right {
@@ -920,28 +1554,28 @@ div.interactively-flipped-panels div.container div.panel-wrapper.bottom-right {
   }
 }
 div.interactively-flipped-panels div.container div.panel-wrapper div.panel {
-  height: 100%;
   position: absolute;
   width: 100%;
+  height: 100%;
 }
 div.interactively-flipped-panels div.container div.panel-wrapper div.panel div.front {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  height: 100%;
-  opacity: 1.0;
   position: absolute;
   top: 0;
   left: 0;
-  text-transform: uppercase;
   width: 100%;
+  height: 100%;
   z-index: 10;
+  opacity: 1.0;
+  text-transform: uppercase;
 }
 div.interactively-flipped-panels div.container div.panel-wrapper div.panel div.front p {
-  font-size: 2.5em;
   padding: 0.25em;
-  line-height: 1.175em;
   text-align: center;
+  font-size: 2.5em;
+  line-height: 1.175em;
 }
 @media all and (max-width: 1205px) and (min-width: 792px) {
   div.interactively-flipped-panels div.container div.panel-wrapper div.panel div.front p {
@@ -1045,19 +1679,19 @@ div.interactively-flipped-panels div.container div.panel-wrapper div.panel.crims
 }
 div.interactively-flipped-panels div.container div.panel-wrapper:hover {
   float: none;
-  padding-bottom: 76.9762%;
-  padding-bottom: calc((50% * 0.8 - 2em) * 2 + 2em);
   position: absolute;
   width: 93.9525%;
   width: calc(100% - 4em);
+  padding-bottom: 76.9762%;
+  padding-bottom: calc((50% * 0.8 - 2em) * 2 + 2em);
   z-index: 11;
 }
 @media all and (max-width: 480px) {
   div.interactively-flipped-panels div.container div.panel-wrapper:hover {
-    padding-bottom: 313.3477%;
-    padding-bottom: calc(100% * 0.8 * 4);
     width: 96.9762%;
     width: 100%;
+    padding-bottom: 313.3477%;
+    padding-bottom: calc(100% * 0.8 * 4);
   }
 }
 div.interactively-flipped-panels div.container div.panel-wrapper:hover div.panel div.front {
@@ -1086,6 +1720,7 @@ div.interactively-flipped-panels div.container div.panel-wrapper.top-left:hover,
 div.interactively-flipped-panels div.container div.panel-wrapper.top-right:hover,
 div.interactively-flipped-panels div.container div.panel-wrapper.bottom-left:hover,
 div.interactively-flipped-panels div.container div.panel-wrapper.bottom-right:hover {
+  width: calc(100% - 2em);
   padding-bottom: calc((50% * 0.8 - 2em) * 2 + 2em);
   transition-property: width, padding;
   -webkit-transition-property: width, padding;
@@ -1093,7 +1728,6 @@ div.interactively-flipped-panels div.container div.panel-wrapper.bottom-right:ho
   -webkit-transition-duration: 0.25s, 0.25s;
   transition-timing-function: linear, linear;
   -webkit-transition-timing-function: linear, linear;
-  width: calc(100% - 2em);
 }
 @media all and (max-width: 480px) {
   div.interactively-flipped-panels div.container div.panel-wrapper.top-left:hover,
@@ -1101,8 +1735,8 @@ div.interactively-flipped-panels div.container div.panel-wrapper.bottom-right:ho
   div.interactively-flipped-panels div.container div.panel-wrapper.bottom-left:hover,
   div.interactively-flipped-panels div.container div.panel-wrapper.bottom-right:hover {
     position: relative;
-    padding-bottom: calc(100% * 0.8 * 4);
     width: 100%;
+    padding-bottom: calc(100% * 0.8 * 4);
   }
 }
 @media all and (max-width: 480px) {
@@ -1116,28 +1750,34 @@ div.interactively-flipped-panels div.container div.panel-wrapper.bottom-right:ho
     -webkit-transition-timing-function: linear;
   }
 }
-/* PAGE-COVERING NOTICE: Gradually fades into full view, persists for a short time, and then rapidly fades out */
+/*  ┌──────────────────────────────────────────────────────────────────────────────────────────────┐
+ *  │ ++++++++ div.page-covering-notice-... ++++++++++++++++++++++++++++++++++++++++++++++++++++++ │
+ *  ├----------------------------------------------------------------------------------------------┤
+ *  │ Content container that gradually fades into full view, persists for a short time, and then   │
+ *  │ rapidly fades out, either automatically via CSS3, or upon user interaction via JavaScript.   │
+ *  ├----------------------------------------------------------------------------------------------┤
+ */
 div.page-covering-notice-css3 {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background-color: rgba(255, 255, 255, 0.95);
+  opacity: 0;
+  text-align: center;
   animation-name: anim-page-notice-fade;
   -webkit-animation-name: anim-page-notice-fade;
   animation-duration: 4.9s;
   -webkit-animation-duration: 4.9s;
-  background-color: rgba(255, 255, 255, 0.95);
-  height: 100%;
-  opacity: 0;
-  position: fixed;
-  top: 0;
-  left: 0;
-  text-align: center;
-  width: 100%;
-  z-index: -1;
 }
 div.page-covering-notice-css3 div.notice-content {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
   text-align: center;
+  transform: translate(-50%, -50%);
 }
 div.page-covering-notice-css3 div.notice-content img {
   margin: 0 auto 20px;
@@ -1148,30 +1788,30 @@ div.page-covering-notice-css3 div.notice-content p {
 }
 @keyframes anim-page-notice-fade {
   0% {
-    opacity: 0;
     z-index: 99166;
+    opacity: 0;
   }
   31% {
-    opacity: 1;
     z-index: 99166;
+    opacity: 1;
   }
   92% {
-    opacity: 1;
     z-index: 99166;
+    opacity: 1;
   }
   100% {
-    opacity: 0;
     z-index: 99166;
+    opacity: 0;
   }
 }
 @-webkit-keyframes anim-page-notice-fade {
   0% {
-    opacity: 0;
     z-index: 99166;
+    opacity: 0;
   }
   31% {
-    opacity: 1;
     z-index: 99166;
+    opacity: 1;
   }
   92% {
     opacity: 1;
@@ -1183,22 +1823,22 @@ div.page-covering-notice-css3 div.notice-content p {
   }
 }
 div.page-covering-notice-js {
-  background-color: rgba(255, 255, 255, 0.95);
   display: none;
-  height: 100%;
   position: fixed;
   top: 0;
   left: 0;
-  text-align: center;
   width: 100%;
+  height: 100%;
   z-index: 99166;
+  background-color: rgba(255, 255, 255, 0.95);
+  text-align: center;
 }
 div.page-covering-notice-js div.notice-content {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
   text-align: center;
+  transform: translate(-50%, -50%);
 }
 div.page-covering-notice-js div.notice-content img {
   margin: 0 auto 20px;
@@ -1207,47 +1847,8 @@ div.page-covering-notice-js div.notice-content p {
   font-size: 2rem;
   line-height: 1.35em;
 }
-header.main-header span.sup-header-default {
-  font-size: .9rem;
-  margin-bottom: .5rem;
-}
-@media all and (max-width: 561px) {
-  header.main-header span.sup-header-default {
-    font-size: .75rem;
-  }
-}
-header.main-header span.sub-header-default {
-  font-size: 2.5rem;
-  line-height: 2rem;
-}
-@media all and (max-width: 493px) {
-  header.main-header span.sub-header-default {
-    font-size: 1.3rem;
-    line-height: 1.3rem;
-  }
-}
-@media all and (min-width: 494px) and (max-width: 561px) {
-  header.main-header span.sub-header-default {
-    font-size: 2.08333rem;
-    line-height: 2.08333rem;
-  }
-}
-header.main-header sub.sub-header {
-  font-size: 2.5rem;
-  line-height: 2rem;
-}
-@media all and (max-width: 493px) {
-  header.main-header sub.sub-header {
-    font-size: 1.3rem;
-    line-height: 1.3rem;
-  }
-}
-@media all and (min-width: 494px) and (max-width: 561px) {
-  header.main-header sub.sub-header {
-    font-size: 2.08333rem;
-    line-height: 2.08333rem;
-  }
-}
+/*  └──────────────────────────────────────────────────────────────────────────────────────────────┘
+ */
 /* ===============================================================================================================
  * "Recent Updates" Ticker Section
  * ---------------------------------------------------------------------------------------------------------------
@@ -1454,46 +2055,109 @@ div.auto-scroller {
   position: relative;
 }
 div.auto-scroller .inner-scroll-area {
-  overflow: hidden;
   position: absolute;
-  left: 0;
-  right: 0;
   top: 0;
+  right: 0;
   bottom: 0;
+  left: 0;
+  overflow: hidden;
 }
 div.auto-scroller ul {
+  position: relative;
   padding: 0;
   margin: 0;
-  position: relative;
 }
 div.auto-scroller ul li {
+  position: absolute;
   padding: 0;
   margin: 0;
   list-style-type: none;
   list-style-image: none;
-  position: absolute;
 }
-div.read-more-target {
-  margin-top: .5rem;
-  height: 0;
-  opacity: 0;
-  overflow: hidden;
-  transition: .333s ease;
-  -webkit-transition: .333s ease;
+/*  ╔══════════════════════════════════════════════════════════════════════════════════════════════╗ 
+ *  ║ #### FOOTERS ############################################################################### ║
+ *  ╠==============================================================================================╣
+ *  ║ Styling applied to [footer]...[/footer] elements and their children.                         ║
+ *  ╚══════════════════════════════════════════════════════════════════════════════════════════════╝
+ */
+footer.article-footer div.author-info {
+  display: none;
 }
-.read-more-state:checked ~ p label.read-more-trigger:before {
-  content: 'Show less';
-}
-/* ███████████████████████████████████████████████████████████████████████████████████████████████████████████████
- * █░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░ HEADERS ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░█
- * ███████████████████████████████████████████████████████████████████████████████████████████████████████████████
+/*  ╔══════════════════════════════════════════════════════════════════════════════════════════════╗ 
+ *  ║ #### HEADERS ############################################################################### ║
+ *  ╠==============================================================================================╣
+ *  ║ Styling applied to [header]...[/header], [h1]...[/h1], [h2]...[/h2], etc. elements.          ║
+ *  ╚══════════════════════════════════════════════════════════════════════════════════════════════╝
  */
 h2.article-title a {
   border-bottom: none;
 }
-/* ███████████████████████████████████████████████████████████████████████████████████████████████████████████████
- * █░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░ IMAGES ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░█
- * ███████████████████████████████████████████████████████████████████████████████████████████████████████████████
+div.column header.article-header h1.article-title,
+div.column header.article-header h2.article-title {
+  font-size: 2rem;
+}
+@media all and (min-width: 481px) and (max-width: 1049px) {
+  div.column header.article-header h1.article-title,
+  div.column header.article-header h2.article-title {
+    font-size: 1.75rem;
+  }
+}
+@media all and (max-width: 480px) {
+  div.column header.article-header h1.article-title,
+  div.column header.article-header h2.article-title {
+    font-size: 1.53125rem;
+  }
+}
+header.main-header span.sup-header-default {
+  margin-bottom: .5rem;
+  font-size: .9rem;
+}
+@media all and (max-width: 561px) {
+  header.main-header span.sup-header-default {
+    font-size: .75rem;
+  }
+}
+@media all {
+  header.main-header span.sub-header-default {
+    font-size: 2.5rem;
+    line-height: 0.8em;
+  }
+}
+@media all and (max-width: 493px) {
+  header.main-header span.sub-header-default {
+    font-size: 2.08333rem;
+    line-height: 1em;
+  }
+}
+@media all and (min-width: 494px) and (max-width: 561px) {
+  header.main-header span.sub-header-default {
+    font-size: 1.3rem;
+    line-height: 1em;
+  }
+}
+@media all {
+  header.main-header sub.sub-header {
+    font-size: 2.5rem;
+    line-height: 0.8em;
+  }
+}
+@media all and (max-width: 493px) {
+  header.main-header sub.sub-header {
+    font-size: 2.08333rem;
+    line-height: 1em;
+  }
+}
+@media all and (min-width: 494px) and (max-width: 561px) {
+  header.main-header sub.sub-header {
+    font-size: 1.3rem;
+    line-height: 1em;
+  }
+}
+/*  ╔══════════════════════════════════════════════════════════════════════════════════════════════╗ 
+ *  ║ #### IMAGES ################################################################################ ║
+ *  ╠==============================================================================================╣
+ *  ║ Styling applied to [img]...[/img] elements.                                                  ║
+ *  ╚══════════════════════════════════════════════════════════════════════════════════════════════╝
  */
 img.autoScaled {
   height: auto;
@@ -1549,41 +2213,54 @@ img.autoScaledTo10 {
 }
 img.shiftToCenter {
   display: block;
-  margin-left: auto;
   margin-right: auto;
   margin-bottom: 2rem;
+  margin-left: auto;
+}
+img.shiftToCenter.no-margins {
+  margin-bottom: 0;
 }
 img.shiftToLeft {
   float: left;
   margin-right: 2rem;
   margin-bottom: 1rem;
 }
+img.shiftToLeft.no-margins {
+  margin-right: 0;
+  margin-bottom: 0;
+}
 img.shiftToRight {
   float: right;
-  margin-left: 2rem;
   margin-bottom: 1rem;
+  margin-left: 2rem;
+}
+img.shiftToRight.no-margins {
+  margin-bottom: 0;
+  margin-left: 0;
 }
 img.fancy {
   border: 1px solid rgba(94, 106, 113, 0.5);
   box-shadow: 2px 2px 2px rgba(94, 106, 113, 0.5);
 }
 img.symbolic-image {
-  border: 1px solid rgba(94, 106, 113, 0.5);
-  box-shadow: 2px 2px 2px rgba(94, 106, 113, 0.5);
   float: right;
+  width: 144px;
+  height: auto;
   margin-left: 20px;
   margin-bottom: 15px;
-  height: auto;
-  width: 144px;
+  border: 1px solid rgba(94, 106, 113, 0.5);
+  box-shadow: 2px 2px 2px rgba(94, 106, 113, 0.5);
 }
-@media screen and (max-width: 1208px) {
+@media screen and (max-width: 1049px) {
   img.symbolic-image img.symbolic-image {
     width: 96px;
   }
 }
-/* ███████████████████████████████████████████████████████████████████████████████████████████████████████████████
- * █░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░ INPUTS ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░█
- * ███████████████████████████████████████████████████████████████████████████████████████████████████████████████
+/*  ╔══════════════════════════════════════════════════════════════════════════════════════════════╗ 
+ *  ║ #### INPUTS ################################################################################ ║
+ *  ╠==============================================================================================╣
+ *  ║ Styling applied to [input]...[/input] and [label]...[/label] elements.                       ║
+ *  ╚══════════════════════════════════════════════════════════════════════════════════════════════╝
  */
 input.read-more-state {
   display: none;
@@ -1597,33 +2274,34 @@ input.read-more-state ~ p label.read-more-trigger:before {
   content: 'Show more';
 }
 label.read-more-trigger {
-  animation-name: read-more-trigger-glow;
-  -webkit-animation-name: read-more-trigger-glow;
-  animation-duration: 5s;
-  -webkit-animation-duration: 5s;
-  animation-iteration-count: infinite;
-  -webkit-animation-iteration-count: infinite;
-  background-color: rgba(255, 184, 28, 0.25);
-  cursor: pointer;
   display: inline-block;
   padding: 0 .5rem;
-  color: #5e6a71;
-  font-size: .9rem;
-  line-height: 2;
+  background-color: rgba(255, 184, 28, 0.25);
   border: 1px solid #2a3033;
   border-radius: .25rem;
+  font-size: .9rem;
+  line-height: 2;
+  color: #5e6a71;
   transition: .333s ease;
   -webkit-transition: .333s ease;
+  -moz-transition: .333s ease;
+  -o-transition: .333s ease;
+  animation: read-more-trigger-glow 5s linear 0 infinite;
+  -webkit-animation: read-more-trigger-glow 5s linear 0 infinite;
+  -moz-animation: read-more-trigger-glow 5s linear 0 infinite;
+  -o-animation: read-more-trigger-glow 5s linear 0 infinite;
+  cursor: pointer;
 }
 @keyframes read-more-trigger-glow {
   0% {
-    color: #5e6a71;
     background-color: rgba(255, 184, 28, 0.25);
     box-shadow: 0 0 9px rgba(255, 184, 28, 0);
+    color: #5e6a71;
   }
   50% {
-    background-color: rgba(255, 184, 28, 0.5);
-    box-shadow: 0 0 18px rgba(255, 184, 28, 0.5);
+    background-color: rgba(198, 146, 20, 0.5);
+    box-shadow: 0 0 18px rgba(198, 146, 20, 0.5);
+    color: #2a3033;
   }
   100% {
     background-color: rgba(255, 184, 28, 0.25);
@@ -1634,33 +2312,83 @@ label.read-more-trigger {
   0% {
     background-color: rgba(255, 184, 28, 0.25);
     box-shadow: 0 0 9px rgba(255, 184, 28, 0);
+    color: #5e6a71;
   }
   50% {
+    background-color: rgba(198, 146, 20, 0.5);
+    box-shadow: 0 0 18px rgba(198, 146, 20, 0.5);
     color: #2a3033;
-    background-color: rgba(255, 184, 28, 0.5);
-    box-shadow: 0 0 18px rgba(255, 184, 28, 0.5);
   }
   100% {
+    background-color: rgba(255, 184, 28, 0.25);
+    box-shadow: 0 0 9px rgba(255, 184, 28, 0);
+  }
+}
+@-moz-keyframes read-more-trigger-glow {
+  0% {
+    background-color: rgba(255, 184, 28, 0.25);
+    box-shadow: 0 0 9px rgba(255, 184, 28, 0);
     color: #5e6a71;
+  }
+  50% {
+    background-color: rgba(198, 146, 20, 0.5);
+    box-shadow: 0 0 18px rgba(198, 146, 20, 0.5);
+    color: #2a3033;
+  }
+  100% {
+    background-color: rgba(255, 184, 28, 0.25);
+    box-shadow: 0 0 9px rgba(255, 184, 28, 0);
+  }
+}
+@-o-keyframes read-more-trigger-glow {
+  0% {
+    background-color: rgba(255, 184, 28, 0.25);
+    box-shadow: 0 0 9px rgba(255, 184, 28, 0);
+    color: #5e6a71;
+  }
+  50% {
+    background-color: rgba(198, 146, 20, 0.5);
+    box-shadow: 0 0 18px rgba(198, 146, 20, 0.5);
+    color: #2a3033;
+  }
+  100% {
     background-color: rgba(255, 184, 28, 0.25);
     box-shadow: 0 0 9px rgba(255, 184, 28, 0);
   }
 }
 label.read-more-trigger:hover {
-  background-color: rgba(255, 184, 28, 0.5);
-  color: #2a3033;
+  animation: none;
+  -webkit-animation: none;
+  background-color: #ffb81c;
+  box-shadow: 0 0 18px rgba(255, 184, 28, 0.6667);
   border: 1px solid #2a3033;
+  color: #2a3033;
+}
+div.read-more-target {
+  height: 0;
+  overflow: hidden;
+  margin-top: .5rem;
+  opacity: 0;
+  transition: .333s ease;
+  -webkit-transition: .333s ease;
+  -moz-transition: .333s ease;
+  -o-transition: .333s ease;
+}
+.read-more-state:checked ~ p label.read-more-trigger:before {
+  content: 'Show less';
 }
 @media screen and (min-width: 906px) {
   div.readability-controlled {
-    /*margin-right: auto;
-		margin-left: auto;*/
+    /*      margin-right: auto;
+        margin-left: auto; */
     width: 70%;
   }
 }
-/* ███████████████████████████████████████████████████████████████████████████████████████████████████████████████
- * █░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░ FORMS ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░█
- * ███████████████████████████████████████████████████████████████████████████████████████████████████████████████
+/*  ╔══════════════════════════════════════════════════════════════════════════════════════════════╗ 
+ *  ║ #### INPUT FORMS ########################################################################### ║
+ *  ╠==============================================================================================╣
+ *  ║ Styling applied to input elements to which the gravity form classes have been applied.       ║
+ *  ╚══════════════════════════════════════════════════════════════════════════════════════════════╝
  */
 div.column .gform_wrapper {
   max-width: 990px;
@@ -1684,42 +2412,37 @@ div.column .gform_wrapper .ginput_complex span.address_zip {
   margin-top: 0.75em;
 }
 div.column .gform_wrapper label.gfield_label {
-  font-size: 1.125em;
   margin-top: 0;
   margin-bottom: 0;
+  font-size: 1.125em;
 }
 div.column .gform_wrapper ul:last-child {
   padding-bottom: 0;
 }
 div.column .gform_wrapper .gform_body > ul > li:not(.gsection):not(.gfield_html) + li:not(.gsection):not(.no-top-border)::before {
-  border-top: 1px dashed rgba(94, 106, 113, 0.3333);
-  border-bottom: 1px dashed rgba(160, 160, 160, 0.25);
   display: block;
-  content: "";
+  width: 95%;
   height: 0;
   margin: 1.5em auto;
-  width: 95%;
+  border-top: 1px dashed rgba(94, 106, 113, 0.3333);
+  border-bottom: 1px dashed rgba(160, 160, 160, 0.25);
+  content: "";
 }
 /*, li + li:not(.gsection)::before*/
-/* ███████████████████████████████████████████████████████████████████████████████████████████████████████████████
- * █░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░ LISTS ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░█
- * ███████████████████████████████████████████████████████████████████████████████████████████████████████████████
+/*  ╔══════════════════════════════════════════════════════════════════════════════════════════════╗ 
+ *  ║ #### LISTS ################################################################################# ║
+ *  ╠==============================================================================================╣
+ *  ║ Styling applied to [ul]...[/ul] and [ol]...[/ol] elements with low specificity.              ║
+ *  ╚══════════════════════════════════════════════════════════════════════════════════════════════╝
  */
 ul.external-links li {
   list-style-image: url(/wp-content/uploads/sites/906/2015/08/external-link-bullet.png);
 }
-/* ███████████████████████████████████████████████████████████████████████████████████████████████████████████████
- * █░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░ MARKS ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░█
- * ███████████████████████████████████████████████████████████████████████████████████████████████████████████████
- */
-mark.highlight {
-  background-color: transparent;
-  color: #AEC7CB;
-  font-style: normal;
-}
-/* ███████████████████████████████████████████████████████████████████████████████████████████████████████████████
- * █░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░ SECTIONS ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░█
- * ███████████████████████████████████████████████████████████████████████████████████████████████████████████████
+/*  ╔══════════════════════════════════════════════════════════════════════════════════════════════╗ 
+ *  ║ #### SECTIONS ############################################################################## ║
+ *  ╠==============================================================================================╣
+ *  ║ Styling applied to [section]...[/section] elements with low specificity.                     ║
+ *  ╚══════════════════════════════════════════════════════════════════════════════════════════════╝
  */
 section.column-one-with-bottom-margin > div.one {
   margin-bottom: 2rem;
@@ -1729,118 +2452,253 @@ section.article-header {
   margin-bottom: 1rem;
 }
 section.article-header div.header-content {
-  margin-right: 1rem;
-  margin-left: 1rem;
   position: relative;
   top: 50%;
+  margin-right: 1rem;
+  margin-left: 1rem;
   transform: translateY(-50%);
 }
 @media screen {
   section.article-header div.header-content h1 {
-    color: #ffffff;
+    font-family: 'Open Sans Condensed', 'Open Sans';
     font-size: 70px;
-    line-height: 75px;
-    -webkit-font-smoothing: antialiased !important;
+    line-height: 1.071428571428571em;
+    color: #ffffff;
     text-shadow: 0 1px 0 #bbbbbb, 0 2px 0 #999999, 0 3px 0 #777777, 0 4px 1px rgba(0, 0, 0, 0.1), 0 0 5px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.3), 0 3px 5px rgba(0, 0, 0, 0.2), 0 5px 10px rgba(0, 0, 0, 0.25), 0 0 2px #000000, 0 4px 2px #000000;
+    -webkit-font-smoothing: antialiased !important;
   }
   section.article-header div.header-content h2 {
-    color: #ffffff;
-    font-size: 3.0238rem;
-    line-height: calc(3.0238rem * 0.8);
+    font-family: 'Open Sans Condensed', 'Open Sans';
     margin-bottom: .75rem;
+    font-size: 3.0238rem;
+    line-height: 0.8em;
     text-transform: uppercase;
+    color: #ffffff;
     text-shadow: 0 1px 0 #bbbbbb, 0 2px 0 #999999, 0 3px 0 #777777, 0 4px 1px rgba(0, 0, 0, 0.1), 0 0 5px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.3), 0 3px 5px rgba(0, 0, 0, 0.2), 0 5px 10px rgba(0, 0, 0, 0.25), 0 0 2px #000000, 0 4px 2px #000000;
     -webkit-font-smoothing: antialiased !important;
   }
   section.article-header div.header-content h3 {
-    color: #ffffff;
+    padding: .1rem .2rem .2rem;
+    margin-top: 0;
+    margin-bottom: 0;
     background-color: rgba(152, 30, 50, 0.95);
     border: 1px solid white;
     font-size: 1.35rem;
-    margin-top: 0;
-    margin-bottom: 0;
-    padding: .1rem .2rem .2rem;
     text-transform: uppercase;
+    color: #ffffff;
     text-shadow: 0 0.5px 0 #aaaaaa, 0 1px 0 #888888, 0 1.5px 0.5px rgba(152, 30, 50, 0.1), 0 0 2.5px rgba(152, 30, 50, 0.1), 0 0.5px 1.5px rgba(152, 30, 50, 0.3), 0 1px 2.5px rgba(152, 30, 50, 0.2), 0 0 0.5px #000000, 0 1.5px 1px #000000;
     -webkit-font-smoothing: antialiased !important;
   }
 }
-/* ███████████████████████████████████████████████████████████████████████████████████████████████████████████████
- * █░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░ "SUPERCLASS" SPECIFICATIONS ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░█
- * ███████████████████████████████████████████████████████████████████████████████████████████████████████████████
+section.halves div.column p {
+  text-align: left;
+}
+@media all and (min-width: 1051px) {
+  section.side-right.large-format-friendly,
+  section.row.side-right.large-format-friendly {
+    /* .rgb-bright-gray(); background: -webkit-linear-gradient(left,
+                 rgba(@rval, @gval, @bval, 0.0) 0px, rgba(@rval, @gval, @bval, 0.0) 676px,
+                 rgba(@rval, @gval, @bval, 1.0) 676px);
+                background: -moz-linear-gradient(left,
+                 rgba(@rval, @gval, @bval, 0.0) 0px, rgba(@rval, @gval, @bval, 0.0) 676px,
+                 rgba(@rval, @gval, @bval, 1.0) 676px);
+                background: -ms-linear-gradient(left,
+                 rgba(@rval, @gval, @bval, 0.0) 0px, rgba(@rval, @gval, @bval, 0.0) 676px,
+                 rgba(@rval, @gval, @bval, 1.0) 676px);
+                background: -o-linear-gradient(left,
+                 rgba(@rval, @gval, @bval, 0.0) 0px, rgba(@rval, @gval, @bval, 0.0) 676px,
+                 rgba(@rval, @gval, @bval, 1.0) 676px);
+                background: linear-gradient(to right,
+                 rgba(@rval, @gval, @bval, 0.0) 0px, rgba(@rval, @gval, @bval, 0.0) 676px,
+                 rgba(@rval, @gval, @bval, 1.0) 676px); */
+  }
+  section.side-right.large-format-friendly div.column.one,
+  section.row.side-right.large-format-friendly div.column.one {
+    width: 660px;
+  }
+  section.side-right.large-format-friendly div.column.two,
+  section.row.side-right.large-format-friendly div.column.two {
+    width: calc(100% -  660px );
+    height: 0;
+    position: relative;
+  }
+  section.side-right.large-format-friendly div.column.two:before,
+  section.row.side-right.large-format-friendly div.column.two:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 1rem;
+    right: 0;
+    bottom: 0;
+    /* padding-bottom: 1000em;
+                        margin-bottom: -1000em; */
+    background: #eff0f1;
+  }
+}
+@media all and (min-width: 891px) and (max-width: 1050px) {
+  section.side-right.large-format-friendly div.column.one,
+  section.row.side-right.large-format-friendly div.column.one {
+    width: 660px;
+  }
+  section.side-right.large-format-friendly div.column.two,
+  section.row.side-right.large-format-friendly div.column.two {
+    width: calc(100% -  660px );
+    height: 0;
+    position: relative;
+  }
+  section.side-right.large-format-friendly div.column.two:before,
+  section.row.side-right.large-format-friendly div.column.two:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 1rem;
+    right: 0;
+    bottom: 0;
+    /* padding-bottom: 1000em;
+                        margin-bottom: -1000em; */
+    background: none;
+  }
+}
+@media all and (max-width: 890px) {
+  section.side-right.large-format-friendly div.column.one,
+  section.row.side-right.large-format-friendly div.column.one {
+    width: 100%;
+    max-width: 660px;
+    float: none;
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: 2rem;
+  }
+  section.side-right.large-format-friendly div.column.two,
+  section.row.side-right.large-format-friendly div.column.two {
+    display: none;
+  }
+}
+@media all and (min-width: 1050px) {
+  section.side-right.pad-top.large-format-friendly div.column.two:before,
+  section.row.side-right.pad-top.large-format-friendly div.column.two:before {
+    top: 1rem;
+  }
+}
+/*  ╔══════════════════════════════════════════════════════════════════════════════════════════════╗ 
+ *  ║ #### "SUPERCLASS" SPECIFICATIONS ########################################################### ║
+ *  ╠==============================================================================================╣
+ *  ║ Styling of classes designed according to object-oriented principles and applied to elements  ║
+ *  ║ with high specificity.                                                                       ║
+ *  ╚══════════════════════════════════════════════════════════════════════════════════════════════╝
  */
-/* ===============================================================================================================
- * Article Superclasses
- * ---------------------------------------------------------------------------------------------------------------
- * Modification of article related superclasses
- * ===============================================================================================================
+/*  ┌──────────────────────────────────────────────────────────────────────────────────────────────┐
+ *  │ ++++++++ Article Superclasses ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ │
+ *  ├----------------------------------------------------------------------------------------------┤
+ *  │ Modification of article related superclasses                                                 │
+ *  └──────────────────────────────────────────────────────────────────────────────────────────────┘
  */
 div.column article + article {
   margin-top: 1.5em;
 }
-/* ===============================================================================================================
- * Faded White Backing Superclass
- * ---------------------------------------------------------------------------------------------------------------
- * Specification of the faded white backing superclass.
- * ===============================================================================================================
+/*  ┌──────────────────────────────────────────────────────────────────────────────────────────────┐
+ *  │ ++++++++ Faded White Backing Superclass ++++++++++++++++++++++++++++++++++++++++++++++++++++ │
+ *  ├----------------------------------------------------------------------------------------------┤
+ *  │ Specification of the faded white backing superclass.                                         │
+ *  └──────────────────────────────────────────────────────────────────────────────────────────────┘
  */
 .fadedwhitebacking p {
   background-color: rgba(255, 255, 255, 0.95);
   padding: 1em 3em;
-  /* box-shadow: 5px 5px 3px rgba(64,64,64,0.5); */
 }
 .fadedwhitebacking h1,
 .fadedwhitebacking h2 {
-  color: white;
+  padding: .25em .5em;
+  margin-bottom: 10px;
   background-color: rgba(89, 106, 113, 0.95);
   border: 1px solid white;
   text-transform: uppercase;
-  padding: .25em .5em;
-  margin-bottom: 10px;
-  /* box-shadow: 5px 5px 3px rgba(64,64,64,0.5); */
+  color: white;
   text-shadow: 0 1px 0 #aaaaaa, 0 2px 0 #888888, 0 3px 1px rgba(0, 0, 0, 0.1), 0 0 5px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.3), 0 2px 5px rgba(0, 0, 0, 0.2), 0 0 1px #000000, 0 3px 2px #000000;
 }
 .fadedwhitebacking hgroup h2 a {
-  /* text-shadow: 0 1px 0 #a00, 0 2px 0 #800, 0 3px 1px rgba(64,0,0,.1), 0 0 5px rgba(64,0,0,.1), 0 1px 3px rgba(64,0,0,.3), 0 2px 5px rgba(64,0,0,.2), 0 0 1px #300, 0 3px 2px #300; */
+  /*      text-shadow: 0 1px 0 #a00, 0 2px 0 #800, 0 3px 1px rgba(64,0,0,.1), 0 0 5px rgba(64,0,0,.1)
+         0 1px 3px rgba(64,0,0,.3), 0 2px 5px rgba(64,0,0,.2), 0 0 1px #300, 0 3px 2px #300; */
   text-shadow: none;
 }
 .fadedwhitebacking h3 {
-  color: white;
-  background-color: rgba(152, 30, 50, 0.95);
-  border: 1px solid white;
   padding: .25em .5em;
   margin-top: 10px;
-  /* box-shadow: 5px 5px 3px rgba(64,64,64,0.5); */
+  background-color: rgba(152, 30, 50, 0.95);
+  border: 1px solid white;
+  color: white;
   text-shadow: 0 0.5px 0 #aaaaaa, 0 1px 0 #888888, 0 1.5px 0.5px rgba(152, 30, 50, 0.1), 0 0 2.5px rgba(152, 30, 50, 0.1), 0 0.5px 1.5px rgba(152, 30, 50, 0.3), 0 1px 2.5px rgba(152, 30, 50, 0.2), 0 0 0.5px #000000, 0 1.5px 1px #000000;
 }
 .fadedwhitebacking h4 {
-  background-color: rgba(255, 255, 255, 0.95);
   padding: .25em .5em;
-  /* box-shadow: 5px 5px 3px rgba(64,64,64,0.5); */
+  background-color: rgba(255, 255, 255, 0.95);
 }
 .fadedwhitebacking hr {
-  background-color: rgba(255, 255, 255, 0.95);
   padding: 5px;
   margin: 0;
+  background-color: rgba(255, 255, 255, 0.95);
   border-bottom: 1px solid #E4E6E7;
-  /* box-shadow: 5px 5px 3px rgba(64,64,64,0.5); */
 }
-/* ███████████████████████████████████████████████████████████████████████████████████████████████████████████████
- * █░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░ INTERACTIVE EFFECTS & ANIMATIONS ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░█
- * ███████████████████████████████████████████████████████████████████████████████████████████████████████████████
+/*  ╔══════════════════════════════════════════════════════════════════════════════════════════════╗ 
+ *  ║ #### INTERACTIVE EFFECTS & ANIMATIONS ###################################################### ║
+ *  ╠==============================================================================================╣
+ *  ║ Advanced CSS3 styling of classes that effect animations and transitions.                     ║
+ *  ╚══════════════════════════════════════════════════════════════════════════════════════════════╝
  */
-/* ===============================================================================================================
- * Subtle Panels
- * ---------------------------------------------------------------------------------------------------------------
- * Content panels with highly faded appearence until mousehover.
- * ===============================================================================================================
+.drop-down-toggle {
+  position: relative;
+}
+.drop-down-toggle:after {
+  content: "";
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  width: 0;
+  height: 0;
+  transform: translateY(-50%);
+  border-top: 8px solid #981e32;
+  border-right: 8px solid transparent;
+  border-bottom: none;
+  border-left: 8px solid transparent;
+  transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+}
+.drop-down-toggle:hover:after {
+  border-top: 8px solid #c60c30;
+  border-right: 8px solid transparent;
+  border-bottom: none;
+  border-left: 8px solid transparent;
+}
+.drop-down-toggle.activated:after {
+  border-top: none;
+  border-right: 8px solid transparent;
+  border-bottom: 8px solid #981e32;
+  border-left: 8px solid transparent;
+}
+.drop-down-toggle.activated:hover:after {
+  border-top: none;
+  border-right: 8px solid transparent;
+  border-bottom: 8px solid #c60c30;
+  border-left: 8px solid transparent;
+}
+/*  ┌──────────────────────────────────────────────────────────────────────────────────────────────┐
+ *  │ ++++++++ Subtle Panels +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ │
+ *  ├----------------------------------------------------------------------------------------------┤
+ *  │ Content panels with highly faded appearence until mousehover.                                │
+ *  └──────────────────────────────────────────────────────────────────────────────────────────────┘
  */
 div .subtlePanel {
   opacity: .3333;
-  -webkit-animation: subtlePanel-FadeOut 1.5s linear 0 1;
-  animation: subtlePanel-FadeOut 1.5s linear 0 1;
-  -webkit-transition: opacity .3333s;
   transition: opacity .3333s;
+  -webkit-transition: opacity .3333s;
+  -moz-transition: opacity .3333s;
+  -o-transition: opacity .3333s;
+  animation: subtlePanel-FadeOut 1.5s linear 0 1;
+  -webkit-animation: subtlePanel-FadeOut 1.5s linear 0 1;
+  -moz-animation: subtlePanel-FadeOut 1.5s linear 0 1;
+  -o-animation: subtlePanel-FadeOut 1.5s linear 0 1;
 }
 @-webkit-keyframes subtlePanel-FadeOut {
   0% {
@@ -1867,23 +2725,24 @@ div .subtlePanel {
 div .subtlePanel:hover {
   opacity: 1;
 }
-/* ===============================================================================================================
- * CSS3 Driven Tooltips
- * ---------------------------------------------------------------------------------------------------------------
- * Specification of tooltips driven purely by CSS3.
- * ===============================================================================================================
+/*  ┌──────────────────────────────────────────────────────────────────────────────────────────────┐
+ *  │ ++++++++ CSS3 Driven Tooltips ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ │
+ *  ├----------------------------------------------------------------------------------------------┤
+ *  │ Specification of tooltips driven purely by CSS3.                                             │
+ *  └──────────────────────────────────────────────────────────────────────────────────────────────┘
  */
 a.vpue-tooltip {
+  position: relative;
+  border-bottom: dotted 1px #b67233;
   outline: none;
   text-decoration: none;
   color: #b67233;
-  border-bottom: dotted 1px #b67233;
-  position: relative;
 }
 a.vpue-tooltip strong {
   line-height: 30px;
 }
 a.vpue-tooltip > span {
+  position: absolute;
   width: 300px;
   padding: 10px 20px;
   margin-top: 20px;
@@ -1891,74 +2750,102 @@ a.vpue-tooltip > span {
   opacity: 0;
   visibility: hidden;
   z-index: 10;
-  position: absolute;
+  border-radius: 3px;
+  box-shadow: 2px 2px 2px rgba(146, 91, 41, 0.5);
+  -webkit-box-shadow: 2px 2px 2px rgba(146, 91, 41, 0.5);
+  -moz-box-shadow: 2px 2px 2px rgba(146, 91, 41, 0.5);
   font-family: inherit;
   font-size: .9em;
   font-style: normal;
-  border-radius: 3px;
-  box-shadow: 2px 2px 2px rgba(146, 91, 41, 0.5);
-  -webkit-transition-property: opacity, margin-top, visibility, margin-left;
-  -webkit-transition-duration: 0.4s, 0.3s, 0.4s, .3s;
-  -webkit-transition-timing-function: ease-in-out, ease-in-out, ease-in-out, ease-in-out;
   transition-property: opacity, margin-top, visibility, margin-left;
+  -webkit-transition-property: opacity, margin-top, visibility, margin-left;
+  -moz-transition-property: opacity, margin-top, visibility, margin-left;
+  -o-transition-property: opacity, margin-top, visibility, margin-left;
   transition-duration: 0.4s, 0.3s, 0.4s, .3s;
+  -webkit-transition-duration: 0.4s, 0.3s, 0.4s, .3s;
+  -moz-transition-duration: 0.4s, 0.3s, 0.4s, .3s;
+  -o-transition-duration: 0.4s, 0.3s, 0.4s, .3s;
   transition-timing-function: ease-in-out, ease-in-out, ease-in-out, ease-in-out;
+  -webkit-transition-timing-function: ease-in-out, ease-in-out, ease-in-out, ease-in-out;
+  -moz-transition-timing-function: ease-in-out, ease-in-out, ease-in-out, ease-in-out;
+  -o-transition-timing-function: ease-in-out, ease-in-out, ease-in-out, ease-in-out;
 }
 a.vpue-tooltip:hover > span {
-  opacity: 1;
-  text-decoration: none;
-  visibility: visible;
-  overflow: visible;
-  margin-top: 40px;
   display: inline;
+  margin-top: 40px;
   margin-left: -90px;
+  overflow: visible;
+  opacity: 1;
+  visibility: visible;
+  text-decoration: none;
 }
 a.vpue-tooltip span b {
-  width: 15px;
-  height: 15px;
-  margin-left: 40px;
-  margin-top: -19px;
   display: block;
   position: absolute;
+  width: 15px;
+  height: 15px;
+  margin-top: -19px;
+  margin-left: 40px;
+  transform: rotate(-45deg);
   -webkit-transform: rotate(-45deg);
   -moz-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
   -o-transform: rotate(-45deg);
-  transform: rotate(-45deg);
+  box-shadow: inset 0 1px 0 #ffffff;
   -webkit-box-shadow: inset -1px 1px 0 #ffffff;
   -moz-box-shadow: inset 0 1px 0 #ffffff;
   -o-box-shadow: inset 0 1px 0 #ffffff;
-  box-shadow: inset 0 1px 0 #ffffff;
   /*display: none;*/
 }
 a.vpue-tooltip > span {
-  color: #5e6a71;
   background: #eddccc;
   background: -webkit-linear-gradient(top, #eddccc, #ffffff);
+  background: -moz-linear-gradient(top, #eddccc, #ffffff);
+  background: -o-linear-gradient(top, #eddccc, #ffffff);
   background: linear-gradient(top, #eddccc, #ffffff);
   border: 1px solid #925b29;
+  color: #5e6a71;
 }
 a.vpue-tooltip span b {
   background: #eddccc;
   border-top: 1px solid #925b29;
   border-right: 1px solid #925b29;
 }
-/* ===============================================================================================================
- * Builder Template Slideshows
- * ---------------------------------------------------------------------------------------------------------------
- * Styling modifications of builder template slideshows added through the WordPress interface.
- * ===============================================================================================================
+/*  ┌──────────────────────────────────────────────────────────────────────────────────────────────┐
+ *  │ ++++++++ Builder Template Slideshows +++++++++++++++++++++++++++++++++++++++++++++++++++++++ │
+ *  ├----------------------------------------------------------------------------------------------┤
+ *  │ Styling modifications of builder template slideshows added through the WordPress interface.  │
+ *  └──────────────────────────────────────────────────────────────────────────────────────────────┘
  */
 div.column div.builder-banner-content {
-  padding: 0;
+  padding: 0 0 10px 0;
+  font-size: 1rem;
+  line-height: 1.35rem;
+  transition: font-size 0.15s linear, line-height 0.15s linear;
+  -webkit-transition: font-size 0.15s linear, line-height 0.15s linear;
+  -moz-transition: font-size 0.15s linear, line-height 0.15s linear;
+  -o-transition: font-size 0.15s linear, line-height 0.15s linear;
+}
+div.column div.builder-banner-content:hover {
+  font-size: 1.3333rem;
+  line-height: 1.799955rem;
+}
+div.column div.builder-banner-content:hover ~ .builder-banner-overlay {
+  background-color: rgba(0, 0, 0, 0.9);
+  height: calc(3.59991rem + 20px);
+  top: calc(100% - 3.59991rem - 20px);
 }
 div.column div.builder-banner-inner-content {
   vertical-align: bottom;
 }
 div.column div.builder-banner-inner-content p {
   padding: 10px;
-  text-align: center;
   font-size: inherit;
   line-height: inherit;
+  text-align: center;
+}
+div.column div.builder-banner-inner-content p:last-child:not(.no-bottom-pad) {
+  padding-bottom: 10px;
 }
 div.column div.builder-banner-inner-content strong {
   color: #f6861f;
@@ -1968,37 +2855,23 @@ div.column div.builder-banner-inner-content a {
   border-bottom: 1px dotted rgba(246, 134, 31, 0.4);
   transition: color 0.4s linear, border-color 0.4s linear;
   -webkit-transition: color 0.4s linear, border-color 0.4s linear;
+  -moz-transition: color 0.4s linear, border-color 0.4s linear;
+  -o-transition: color 0.4s linear, border-color 0.4s linear;
 }
 div.column div.builder-banner-inner-content a:hover {
   color: #949b9d;
   border-color: rgba(141, 149, 154, 0.4);
 }
-div.column div.builder-banner-content {
-  font-size: 1rem;
-  line-height: 1.35rem;
-  padding-bottom: 10px;
-  transition: font-size 0.15s linear, line-height 0.15s linear;
-  -webkit-transition: font-size 0.15s linear, line-height 0.15s linear;
-}
-div.column div.builder-banner-content:hover {
-  font-size: 1.3333rem;
-  line-height: 1.799955rem;
-}
 div.column div.builder-banner-overlay {
   height: calc(2.7rem + 20px);
   top: calc(100% - 2.7rem - 20px);
-}
-div.column div.builder-banner-overlay {
   background-color: rgba(0, 0, 0, 0.6667);
   border-color: rgba(0, 0, 0, 0.4);
   color: #949b9d;
   transition: background-color 0.4s linear, height 0.15s linear, top 0.15s linear;
   -webkit-transition: background-color 0.4s linear, height 0.15s linear, top 0.15s linear;
-}
-div.column div.builder-banner-content:hover ~ .builder-banner-overlay {
-  background-color: rgba(0, 0, 0, 0.9);
-  height: calc(3.59991rem + 20px);
-  top: calc(100% - 3.59991rem - 20px);
+  -moz-transition: background-color 0.4s linear, height 0.15s linear, top 0.15s linear;
+  -o-transition: background-color 0.4s linear, height 0.15s linear, top 0.15s linear;
 }
 @media screen and (max-width: 1204px) {
   div.column div.builder-banner-content {
@@ -2009,25 +2882,44 @@ div.column div.builder-banner-content:hover ~ .builder-banner-overlay {
     font-size: 1.7704vw;
     line-height: 2.39004vw;
   }
-  div.column div.builder-banner-overlay {
-    height: calc(3.58506vw + 1.66vw);
-    top: calc(100% - 3.58506vw - 1.66vw);
-  }
   div.column div.builder-banner-content:hover ~ div.builder-banner-overlay {
-    height: calc(4.78008vw + 1.66vw);
     top: calc(100% - 4.78008vw - 1.66vw);
+    height: calc(4.78008vw + 1.66vw);
+  }
+  div.column div.builder-banner-overlay {
+    top: calc(100% - 3.58506vw - 1.66vw);
+    height: calc(3.58506vw + 1.66vw);
   }
   div.column div.builder-banner-inner-content p {
-    padding: .83vw;
+    padding: 1.0vw;
+  }
+  div.column div.builder-banner-inner-content p:last-child:not(.no-bottom-pad) {
+    padding-bottom: 1.0vw;
   }
 }
-/* ███████████████████████████████████████████████████████████████████████████████████████████████████████████████
- * █░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░ ELEMENTS FROM JAVASCRIPTS ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░█
- * ███████████████████████████████████████████████████████████████████████████████████████████████████████████████
+@media screen and (max-width: 791px) {
+  div.column div.builder-banner-content {
+    font-size: 12px;
+    line-height: 16.2px;
+  }
+  div.column div.builder-banner-content:hover {
+    font-size: 14px;
+    line-height: 18.9px;
+  }
+  div.column div.builder-banner-overlay {
+    height: auto;
+  }
+}
+/*  ╔══════════════════════════════════════════════════════════════════════════════════════════════╗ 
+ *  ║ #### ELEMENTS FROM JAVASCRIPTS ############################################################# ║
+ *  ╠==============================================================================================╣
+ *  ║ Styling applied to dynamic, interactive elemenets that do not function as intended without   ║
+ *  ║ the support of JavaScript.                                                                   ║
+ *  ╚══════════════════════════════════════════════════════════════════════════════════════════════╝
  */
 .flipped-content-back {
-  width: 100%;
   display: none;
+  width: 100%;
 }
 /* ===============================================================================================================
  * qTip2 JavaScript Plugin for Tooltips
@@ -2627,8 +3519,7 @@ x:-o-prefocus {
   opacity: .5;
   filter: alpha(opacity=50);
 }
-/* 
-    media queries 
+/*  media queries 
     some style overrides to make things more pleasant on mobile devices
 */
 @media only screen and (max-width: 480px), only screen and (max-device-width: 480px) {
@@ -2643,20 +3534,18 @@ x:-o-prefocus {
     right: 4px;
   }
 }
-/* ███████████████████████████████████████████████████████████████████████████████████████████████████████████████
- * █░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░ OVERWRITES ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░█
- * ███████████████████████████████████████████████████████████████████████████████████████████████████████████████
- */
-/* ███████████████████████████████████████████████████████████████████████████████████████████████████████████████
- * █░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░ UGR SPECIFIC STYLING ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░█
- * ███████████████████████████████████████████████████████████████████████████████████████████████████████████████
+/*  ╔══════════════════════════════════════════════════════════════════════════════════════════════╗ 
+ *  ║ #### UNDERGRADUATE RESEARCH CUSTOM THEME --- BACKGROUNDS ################################### ║
+ *  ╠==============================================================================================╣
+ *  ║ Custom styling, unique to the Undergraduate Research website, of elements associated with    ║
+ *  ║ the WordPress WSU Spine Theme.                                                               ║
+ *  ╚══════════════════════════════════════════════════════════════════════════════════════════════╝
  */
 body {
   background: #2a3033 url(/wp-content/uploads/sites/51/2015/04/tileable-eroded-scratch-metal-texture_512x512.png) left top fixed repeat;
   font-family: 'Open Sans', 'Lucida Sans Unicode', 'Lucida Sans', 'Lucida Grande';
 }
 main {
-  /*background: #fff url(/wp-content/uploads/sites/51/2015/04/tileable-papar-texture_500x500_opacity-0.75.png) left top repeat;*/
   background: #ffffff url(/wp-content/uploads/sites/51/2015/04/tileable-lab-papar-texture_500x500_opacity-0.10.png) left top repeat;
 }
 #binder {
@@ -2668,14 +3557,10 @@ main {
   background-position: right bottom;
   background-attachment: fixed;
 }
-#spine.lighter #glue:before {
-  background: #b5babe url(/wp-content/uploads/sites/51/2015/04/tileable-concrete-texture_500x300_opacity-0.20.png) left top repeat scroll;
-}
 header.main-header {
   background: #981e32 url(/wp-content/uploads/sites/50/2015/04/seamless-marble-texture_528x528.png) left top repeat;
-  /*	background: url(/wp-content/uploads/sites/51/2015/05/WSU-UGR-Logo-80px-height_v2015-05-06c.png) no-repeat right bottom, #981e32 url(/wp-content/uploads/sites/50/2015/04/seamless-marble-texture_528x528.png) left top repeat;*/
-  color: #fff !important;
   font-family: 'Open Sans', 'Lucida Sans Unicode', 'Lucida Sans', 'Lucida Grande';
+  color: #fff !important;
   text-shadow: .5px .5px 1px #000;
 }
 @media print {
@@ -2683,51 +3568,17 @@ header.main-header {
     background: #981e32 url(/wp-content/uploads/sites/50/2015/04/seamless-marble-texture_528x528.png) left top repeat;
   }
 }
-/*@media all and (min-width: 906px) and (max-width: 1279px) {
-	header.main-header {
-		background: url(/wp-content/uploads/sites/51/2015/05/WSU-UGR-Logo-60px-height_v2015-05-21.png) no-repeat right top, #981e32 url(/wp-content/uploads/sites/50/2015/04/seamless-marble-texture_528x528.png) left top repeat;
-	}
-}
-
-@media all and (min-width: 792px) and (max-width: 905px) {
-	header.main-header {
-		background: #981e32 url(/wp-content/uploads/sites/50/2015/04/seamless-marble-texture_528x528.png) left top repeat;
-	}
-}
-
-@media all and (min-width: 710px) and (max-width: 791px) {
-	header.main-header {
-		background: url(/wp-content/uploads/sites/51/2015/05/WSU-UGR-Logo-60px-height_v2015-05-21.png) no-repeat right top, #981e32 url(/wp-content/uploads/sites/50/2015/04/seamless-marble-texture_528x528.png) left top repeat;
-	}
-}
-
-@media all and (max-width: 709px) {
-	header.main-header {
-		background: #981e32 url(/wp-content/uploads/sites/50/2015/04/seamless-marble-texture_528x528.png) left top repeat;
-	}
-}*/
 .main-header sub:not(.unset),
 .main-header sup:not(.unset) {
   color: #fff !important;
 }
-nav.spine-sitenav ul li a[href="#disabled"] {
-  pointer-events: none;
-}
-nav.spine-sitenav ul li h4 {
-  color: #981E32;
-  font-size: .85rem;
-  margin-top: .85rem;
-  padding-top: 0;
-  padding-bottom: 0;
-  text-transform: uppercase;
-}
-nav.spine-sitenav ul li h4.normal {
-  margin-top: 0;
-}
-nav.spine-sitenav ul li:nth-child(1) h4 {
-  margin-top: 0;
-  padding-top: 0;
-}
+/*  ╔══════════════════════════════════════════════════════════════════════════════════════════════╗ 
+ *  ║ #### DIV.SIDEBAR ########################################################################### ║
+ *  ╠==============================================================================================╣
+ *  ║ Containers designed to be used as custom sidebars within a div.column element.               ║
+ *  ║  ╘═» Customized here for use on the Undergraduate Research website.                          ║
+ *  ╚══════════════════════════════════════════════════════════════════════════════════════════════╝
+ */
 div.green-marble-sidebar {
   background: #e3dfcd url(/wp-content/uploads/sites/51/2015/04/seamless-marble-texture_528x528.png) left top repeat;
   border: 1px solid #afa370;
@@ -2768,13 +3619,6 @@ div.gray-acrylic-sidebar {
   padding-right: 1rem;
   padding-bottom: 1em;
 }
-div.bluish-gray-acrylic-sidebar,
-div.green-marble-sidebar,
-div.gray-acrylic-sidebar {
-  /*div.bluish-gray-acrylic-sidebar p~hr {
-		margin-top: 0;
-	}*/
-}
 div.bluish-gray-acrylic-sidebar p,
 div.green-marble-sidebar p,
 div.gray-acrylic-sidebar p {
@@ -2801,6 +3645,13 @@ div.green-marble-sidebar h4,
 div.gray-acrylic-sidebar h4 {
   font-size: 1.05rem;
 }
+/*  ╔══════════════════════════════════════════════════════════════════════════════════════════════╗ 
+ *  ║ #### ASIDE.ARTICLE-SIDEBAR ################################################################# ║
+ *  ╠==============================================================================================╣
+ *  ║ Containers designed to be used as custom sidebars within a div.column element.               ║
+ *  ║  ╘═» Customized here for use on the Undergraduate Research website.                          ║
+ *  ╚══════════════════════════════════════════════════════════════════════════════════════════════╝
+ */
 div.column aside.article-sidebar {
   background: #f8f1eb url(/wp-content/uploads/sites/51/2015/04/tileable-concrete-texture_128x128.png) left top repeat;
   border: 1px solid #6d441f;
