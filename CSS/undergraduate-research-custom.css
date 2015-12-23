@@ -3678,7 +3678,6 @@ div.column aside.article-sidebar p {
 .ugrf-wsu-id.gfield_contains_required input:not(.value-entered),
 .ugrf-email.gfield_contains_required input:not(.value-entered),
 .ugrf-institution.gfield_contains_required input:not(.value-entered),
-.ugrf-mailing-address.gfield_contains_required input:not(.value-entered),
 .ugrf-phone.gfield_contains_required input:not(.value-entered) {
   background-color: rgba(255, 0, 0, 0.1);
 }
@@ -3686,8 +3685,13 @@ div.column aside.article-sidebar p {
 .ugrf-wsu-id.gfield_contains_required input:focus,
 .ugrf-email.gfield_contains_required input:focus,
 .ugrf-institution.gfield_contains_required input:focus,
-.ugrf-mailing-address.gfield_contains_required input:focus,
 .ugrf-phone.gfield_contains_required input:focus {
+  background-color: #ffffff;
+}
+.ugrf-mailing-address.gfield_contains_required input:not(.value-entered):not(:nth-child(2)) {
+  background-color: rgba(255, 0, 0, 0.1);
+}
+.ugrf-mailing-address.gfield_contains_required input:focus {
   background-color: #ffffff;
 }
 .ugrf-name {
