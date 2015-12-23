@@ -23,29 +23,65 @@
                 $inputs.each(function () {
                     var $thisChild = $(this);
                     $thisChild.blur(function () {
-                        var idx;
+                        var idx, $thisParent, $parentsInputs;
                         var inputReady = true;
+                        
                         if ($thisChild.val() == "") {
                             $thisChild.removeClass('value-entered');
                         }
                         else {
                             $thisChild.addClass('value-entered');
                         }
-                        for (idx = 0; idx < $inputs.length; idx++) {
-                            if ($inputs.get(idx).val() == "") {
+                        
+                        $thisParent = $thisChild.parents('.ugrf-name');
+                        $parentsInputs = $thisParent.find('input');
+                        $parentsInputs.each(function () {
+                            if ($(this).val() == "") {
                                 inputReady = false;
                             }
-                        }
+                        });
                         if (inputReady) {
-                            $this.addClass('inputs-ready');
+                            $thisParent.addClass('inputs-ready');
                         }
                         else {
-                            $this.removeClass('inputs-ready');
+                            $thisParent.removeClass('inputs-ready');
                         }
                     });
                 });
             });
             
+            $('.ugrf-wsu-id').each(function () {
+                var $this = $(this);
+                var $inputs = $this.find('input');
+                $inputs.each(function () {
+                    var $thisChild = $(this);
+                    $thisChild.blur(function () {
+                        var idx, $thisParent, $parentsInputs;
+                        var inputReady = true;
+                        
+                        if ($thisChild.val() == "") {
+                            $thisChild.removeClass('value-entered');
+                        }
+                        else {
+                            $thisChild.addClass('value-entered');
+                        }
+                        
+                        $thisParent = $thisChild.parents('.ugrf-name');
+                        $parentsInputs = $thisParent.find('input');
+                        $parentsInputs.each(function () {
+                            if ($(this).val() == "") {
+                                inputReady = false;
+                            }
+                        });
+                        if (inputReady) {
+                            $thisParent.addClass('inputs-ready');
+                        }
+                        else {
+                            $thisParent.removeClass('inputs-ready');
+                        }
+                    });
+                });
+            });
 	});
 })(jQuery);/**********************************************************************************************************************
  CUSTOM JQUERY-BASED DYNAMIC CONTENT
