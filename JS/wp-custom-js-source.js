@@ -22,6 +22,11 @@
         traverseInputs('.ugrf-wsu-id');
         traverseInputs('.ugrf-institution');
         traverseAddressInputs('.ugrf-mailing-address');
+        traverseAddressInputs('.ugrf-permanent-address');
+        traverseInputs('.ugrf-email');
+        traverseInputs('.ugrf-phone');
+        traverseInputs('.ugrf-mentor-name');
+        traverseInputs('.ugrf-mentor-email');
 	});
     
     function traverseInputs (selector) {
