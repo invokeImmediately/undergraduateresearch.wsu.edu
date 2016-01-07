@@ -23,6 +23,7 @@
         traverseInputs('.ugrf-institution');
         traverseAddressInputs('.ugrf-mailing-address');
         traverseAddressInputs('.ugrf-permanent-address');
+        traverseInputs('.ugrf-major');
         traverseInputs('.ugrf-email');
         traverseInputs('.ugrf-phone');
         traverseInputs('.ugrf-mentor-name');
