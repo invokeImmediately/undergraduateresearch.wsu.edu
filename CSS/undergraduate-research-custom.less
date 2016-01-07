@@ -148,9 +148,19 @@ div.column {
  */
 .ugrf-name, .ugrf-wsu-id, .ugrf-email, .ugrf-institution, .ugrf-phone, .ugrf-major,
  .ugrf-mentor-name, .ugrf-mentor-email {
+    transition: background 0.25s ease;
+     -webkit-transition: background 0.25s ease;
+     -moz-transition: background 0.25s ease;
+     -o-transition: background 0.25s ease;
     &.gfield_contains_required {
-        input:not(.value-entered) {
-            background-color: rgba(255,0,0,0.1);
+        input {
+            transition: background 0.25s ease;
+             -webkit-transition: background 0.25s ease;
+             -moz-transition: background 0.25s ease;
+             -o-transition: background 0.25s ease;
+            &:not(.value-entered) {
+                background-color: rgba(255,0,0,0.1);
+            }
         }
         input:focus {
             background-color: @hex-white;
@@ -159,9 +169,19 @@ div.column {
 }
 
 .ugrf-mailing-address, .ugrf-permanent-address {
+    transition: background 0.25s ease;
+     -webkit-transition: background 0.25s ease;
+     -moz-transition: background 0.25s ease;
+     -o-transition: background 0.25s ease;
     &.gfield_contains_required {
-        input:not(.value-entered) {
-            background-color: rgba(255,0,0,0.1);
+        input {
+            transition: background 0.25s ease;
+             -webkit-transition: background 0.25s ease;
+             -moz-transition: background 0.25s ease;
+             -o-transition: background 0.25s ease;
+            &:not(.value-entered) {
+                background-color: rgba(255,0,0,0.1);
+            }
         }
         div span:nth-child(2) input {
             background-color: @hex-white;
