@@ -3712,6 +3712,7 @@ div.column aside.article-sidebar p {
 .ugrf-email.gfield_contains_required input:not(.value-entered),
 .ugrf-institution.gfield_contains_required input:not(.value-entered),
 .ugrf-phone.gfield_contains_required input:not(.value-entered),
+.ugrf-major.gfield_contains_required input:not(.value-entered),
 .ugrf-mentor-name.gfield_contains_required input:not(.value-entered),
 .ugrf-mentor-email.gfield_contains_required input:not(.value-entered) {
   background-color: rgba(255, 0, 0, 0.1);
@@ -3721,6 +3722,7 @@ div.column aside.article-sidebar p {
 .ugrf-email.gfield_contains_required input:focus,
 .ugrf-institution.gfield_contains_required input:focus,
 .ugrf-phone.gfield_contains_required input:focus,
+.ugrf-major.gfield_contains_required input:focus,
 .ugrf-mentor-name.gfield_contains_required input:focus,
 .ugrf-mentor-email.gfield_contains_required input:focus {
   background-color: #ffffff;
@@ -3766,6 +3768,15 @@ div.column aside.article-sidebar p {
 }
 .ugrf-permanent-address.inputs-ready {
   background: url(/wp-content/uploads/sites/51/2015/12/form-icon_permanent-address_filled.png) right 1.5em no-repeat;
+}
+.ugrf-class-standing {
+  background: url(/wp-content/uploads/sites/51/2016/01/form-icon_class-standing_filled.png) right top no-repeat;
+}
+.ugrf-major {
+  background: url(/wp-content/uploads/sites/51/2016/01/form-icon_major.png) right top no-repeat;
+}
+.ugrf-major.inputs-ready {
+  background: url(/wp-content/uploads/sites/51/2016/01/form-icon_major_filled.png) right top no-repeat;
 }
 .ugrf-phone {
   background: url(/wp-content/uploads/sites/51/2015/12/form-icon_phone.png) right 1.5em no-repeat;
