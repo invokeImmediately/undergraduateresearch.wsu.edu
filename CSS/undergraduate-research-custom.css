@@ -3707,6 +3707,32 @@ div.column aside.article-sidebar p {
  *  ║  ╘═» Customized here for use on the Undergraduate Research website.                          ║
  *  ╚══════════════════════════════════════════════════════════════════════════════════════════════╝
  */
+.ugrf-name,
+.ugrf-wsu-id,
+.ugrf-email,
+.ugrf-institution,
+.ugrf-phone,
+.ugrf-major,
+.ugrf-mentor-name,
+.ugrf-mentor-email {
+  transition: background 0.25s ease;
+  -webkit-transition: background 0.25s ease;
+  -moz-transition: background 0.25s ease;
+  -o-transition: background 0.25s ease;
+}
+.ugrf-name.gfield_contains_required input,
+.ugrf-wsu-id.gfield_contains_required input,
+.ugrf-email.gfield_contains_required input,
+.ugrf-institution.gfield_contains_required input,
+.ugrf-phone.gfield_contains_required input,
+.ugrf-major.gfield_contains_required input,
+.ugrf-mentor-name.gfield_contains_required input,
+.ugrf-mentor-email.gfield_contains_required input {
+  transition: background 0.25s ease;
+  -webkit-transition: background 0.25s ease;
+  -moz-transition: background 0.25s ease;
+  -o-transition: background 0.25s ease;
+}
 .ugrf-name.gfield_contains_required input:not(.value-entered),
 .ugrf-wsu-id.gfield_contains_required input:not(.value-entered),
 .ugrf-email.gfield_contains_required input:not(.value-entered),
@@ -3726,6 +3752,20 @@ div.column aside.article-sidebar p {
 .ugrf-mentor-name.gfield_contains_required input:focus,
 .ugrf-mentor-email.gfield_contains_required input:focus {
   background-color: #ffffff;
+}
+.ugrf-mailing-address,
+.ugrf-permanent-address {
+  transition: background 0.25s ease;
+  -webkit-transition: background 0.25s ease;
+  -moz-transition: background 0.25s ease;
+  -o-transition: background 0.25s ease;
+}
+.ugrf-mailing-address.gfield_contains_required input,
+.ugrf-permanent-address.gfield_contains_required input {
+  transition: background 0.25s ease;
+  -webkit-transition: background 0.25s ease;
+  -moz-transition: background 0.25s ease;
+  -o-transition: background 0.25s ease;
 }
 .ugrf-mailing-address.gfield_contains_required input:not(.value-entered),
 .ugrf-permanent-address.gfield_contains_required input:not(.value-entered) {
