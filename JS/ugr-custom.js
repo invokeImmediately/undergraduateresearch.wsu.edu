@@ -20,6 +20,7 @@
          **********************************************************************************************/
         traverseInputs('.ugrf-name');
         traverseInputs('.ugrf-wsu-id');
+        traverseCheckboxInputs('.ugrf-scholarship-selections');
         traverseInputs('.ugrf-institution');
         traverseAddressInputs('.ugrf-mailing-address');
         traverseAddressInputs('.ugrf-permanent-address');
@@ -38,7 +39,7 @@
                 $inputs.each(function () {
                     var $thisChild = $(this);
                     $thisChild.blur(function () {
-                        var idx, $thisParent, $parentsInputs;
+                        var $thisParent, $parentsInputs;
                         var inputReady = true;
                         
                         if ($thisChild.val() == "") {
@@ -74,10 +75,7 @@
                 var $inputs = $this.find('input');
                 $inputs.each(function () {
                     var $thisChild = $(this);
-                    $thisChild.blur(function () {
-                        var idx, $thisParent, $parentsInputs, counter;
-                        var inputReady = true;
-                        
+                    $thisChild.blur(function () {                      
                         if ($thisChild.val() == "") {
                             $thisChild.removeClass('value-entered');
                         }
@@ -85,14 +83,46 @@
                             $thisChild.addClass('value-entered');
                         }
                         
-                        $thisParent = $thisChild.parents(selector);
-                        $parentsInputs = $thisParent.find('input');
-                        counter = 0;
+                        var $thisParent = $thisChild.parents(selector);
+                        var $parentsInputs = $thisParent.find('input');
+                        var counter = 0;
+                        var inputReady = true;
                         $parentsInputs.each(function () {
                             if (counter != 1 && $(this).val() == "") {
                                 inputReady = false;
                             }
                             counter++;
+                        });
+                        
+                        if (inputReady) {
+                            $thisParent.addClass('inputs-ready');
+                        }
+                        else {
+                            $thisParent.removeClass('inputs-ready');
+                        }
+                    });
+                });
+            });
+        }
+    }
+    
+    function traverseCheckboxInputs (selector) {
+        if ($.type(selector) === "string") {
+            $(selector).each(function () {
+                var $this = $(this);
+                var $inputs = $this.find('input');
+                $inputs.each(function () {
+                    var $thisChild = $(this);
+                    $thisChild.blur(function () {
+                        var $thisParent, $parentsInputs;
+                        var inputReady = false;
+                        
+                        $thisParent = $thisChild.parents(selector);
+                        $parentsInputs = $thisParent.find('input');
+                        $parentsInputs.each(function () {
+                            if ($(this).prop('checked') == true && !inputReady) {
+                                inputReady = true;
+                            }
                         });
                         if (inputReady) {
                             $thisParent.addClass('inputs-ready');
