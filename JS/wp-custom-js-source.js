@@ -20,6 +20,7 @@
          **********************************************************************************************/
         traverseInputs('.ugrf-name');
         traverseInputs('.ugrf-wsu-id');
+        traverseCheckboxInputs('.ugrf-scholarship-selections');
         traverseInputs('.ugrf-institution');
         traverseAddressInputs('.ugrf-mailing-address');
         traverseAddressInputs('.ugrf-permanent-address');
