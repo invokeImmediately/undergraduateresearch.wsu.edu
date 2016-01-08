@@ -113,7 +113,7 @@
                 var $inputs = $this.find('input');
                 $inputs.each(function () {
                     var $thisChild = $(this);
-                    $thisChild.blur(function () {
+                    $thisChild.change(function () {
                         var $thisParent, $parentsInputs;
                         var inputReady = false;
                         
