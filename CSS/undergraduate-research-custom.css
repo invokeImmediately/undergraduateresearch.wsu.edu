@@ -3779,6 +3779,24 @@ div.column aside.article-sidebar p {
 .ugrf-permanent-address.gfield_contains_required input:focus {
   background-color: #ffffff;
 }
+.ugrf-scholarship-selections {
+  transition: background 0.5s ease;
+  -webkit-transition: background 0.5s ease;
+  -moz-transition: background 0.5s ease;
+  -o-transition: background 0.5s ease;
+}
+.ugrf-scholarship-selections.gfield_contains_required:not(.inputs-ready) input {
+  background-color: rgba(255, 0, 0, 0.1);
+}
+.ugrf-scholarship-selections.gfield_contains_required input {
+  transition: background 0.3s ease;
+  -webkit-transition: background 0.3s ease;
+  -moz-transition: background 0.3s ease;
+  -o-transition: background 0.3s ease;
+}
+.ugrf-scholarship-selections.gfield_contains_required input:focus {
+  background-color: #ffffff;
+}
 .ugrf-name {
   background: url(/wp-content/uploads/sites/51/2015/12/form-icon_name.png) right top no-repeat;
 }
@@ -3790,6 +3808,12 @@ div.column aside.article-sidebar p {
 }
 .ugrf-wsu-id.inputs-ready {
   background: url(/wp-content/uploads/sites/51/2015/12/form-icon_id-card_filled.png) right 1.5em no-repeat;
+}
+.ugrf-scholarship-selections {
+  background: url(/wp-content/uploads/sites/51/2016/01/form-icon_scholarship-selections.png) right 1.5em no-repeat;
+}
+.ugrf-scholarship-selections.inputs-ready {
+  background: url(/wp-content/uploads/sites/51/2016/01/form-icon_scholarship-selections_filled.png) right 1.5em no-repeat;
 }
 .ugrf-institution {
   background: url(/wp-content/uploads/sites/51/2015/12/form-icon_institution.png) right 1.5em no-repeat;
