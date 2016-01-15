@@ -144,23 +144,42 @@
 			/**********************************************************************************************
 			 * As desired, tweak the CSS of the previous sibling of certain selected elements in the DOM  *
 			 **********************************************************************************************/
-			$('div.column > h2, div.column > section > h2').each(function () {
-					$(this).prev('hr').addClass('narrow-bottom-margin dark-gray thicker');
+			$('div.column > h2:not(.fancy), div.column > section > h2:not(.fancy)').each(function () {
+					var $this = $(this);
+                    $this.addClass('no-top-margin');
+                    $this.prev('hr:not(.subSection)').addClass('narrow-bottom-margin dark-gray thicker', 250);
 			});
-			$('div.column > h3, div.column > section > h3').each(function () {
-					$(this).prev('hr:not(.subSection)').addClass('narrow-bottom-margin crimson');
+			$('div.column > h2.fancy, div.column > section > h2.fancy').each(function () {
+					$(this).prev('hr:not(.subSection)').addClass('no-bottom-margin dark-gray thicker encroach-horizontal', 250);
+			});
+			$('div.column > h3:not(.fancy), div.column > section > h3:not(.fancy)').each(function () {
+					$(this).prev('hr:not(.subSection)').addClass('narrow-bottom-margin crimson', 250);
+			});
+			$('div.column > h3.fancy, div.column > section > h3.fancy').each(function () {
+					$(this).prev('hr:not(.subSection)').addClass('no-bottom-margin crimson encroach-horizontal', 250);
 			});
 
 			/**********************************************************************************************
 			 * Set column heights on fluid-width containters                                              *
 			 **********************************************************************************************/
-			$('.large-format-friendly > div.column.two').each(function () {
-					var $this = $(this);
-                    $this.height($this.prev('div.column.one').height());
-			});
+            // TODO: Move the code below to document.ready + replace it with a check to ensure image loading hasn't changed the heights we are working with
+            $(window).load(function () {
+                if($(window).width() >= 1051) {
+                    $('.large-format-friendly > div.column.two').each(function () {
+                            var $this = $(this);
+                            $this.height($this.prev('div.column.one').height());
+                            // $this.animate({height: $this.prev('div.column.one').height() + "px"}, 250 / 758 * $this.prev('div.column.one').height());
+                            $this.animate({opacity: 1.0}, 100);
+                    });
+                }
+            });
             $(window).resize(function () {
                 $('.large-format-friendly > div.column.two').each(function () {
 					var $this = $(this);
+                    var crrntOpacity = $this.css("opacity");
+                    if (crrntOpacity == 0 && $(window).width() >= 1051) {
+                        $this.animate({opacity: 1.0}, 100);
+                    }
                     var $thisPrev = $this.prev('div.column.one');
                     if($this.height() != $thisPrev.height() ) {
                         $this.height($thisPrev.height());
@@ -270,12 +289,14 @@ e===O?(h=c===H?L:K,j[h]="50%",j[ib+"-"+h]=-Math.round(b[c===H?0:1]/2)+i):(h=f._p
 (function ($) {
     $(document).ready(function () {
         var qTipContentSource;
+        var qTipStyle;
         var $this;
         $('.has-tool-tip').each(function () {
             $this = $(this);
+            $this.hasClass('blue') ? qTipStyle = 'qtip-blue' : qTipStyle = 'qtip-dark';
             if ($this.hasClass('parental-neighbor-is-source')) {
                 $this.qtip({
-                    style: 'qtip-dark',
+                    style: qTipStyle,
                     content: { text: $this.parent().next('div')},
                     position: {
                         target: 'mouse', // Track the mouse as the positioning target
@@ -295,7 +316,7 @@ e===O?(h=c===H?L:K,j[h]="50%",j[ib+"-"+h]=-Math.round(b[c===H?0:1]/2)+i):(h=f._p
             } else {
                 $this.hasClass('span-is-source') ? qTipContentSource = 'span' : qTipContentSource = 'div';
                 $this.qtip({
-                    style: 'qtip-dark',
+                    style: qTipStyle,
                     content: { text: $this.next(qTipContentSource)},
                     position: {
                         target: 'mouse', // Track the mouse as the positioning target
