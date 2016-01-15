@@ -350,6 +350,22 @@ span.accentuated-text.gray {
 span.accentuated-text.gray.brighter {
   color: #6a7880;
 }
+span.has-tool-tip {
+  margin-bottom: -3px;
+  border-bottom: 1px dotted rgba(0, 165, 189, 0.25);
+  color: #00a5bd;
+  transition-property: color, background, border-color;
+  -webkit-transition-property: color, background, border-color;
+  transition-duration: .3s, .3s, .3s;
+  -webkit-transition-duration: .3s, .3s, .3s;
+  transition-timing-function: ease, ease, ease;
+  -webkit-transition-timing-function: ease, ease, ease;
+}
+span.has-tool-tip:hover {
+  background-color: rgba(0, 165, 189, 0.2);
+  border-color: rgba(0, 165, 189, 0.67);
+  color: #2f5055;
+}
 /*  ╔══════════════════════════════════════════════════════════════════════════════════════════════╗ 
  *  ║ #### CITES ################################################################################# ║
  *  ╠==============================================================================================╣
