@@ -3821,7 +3821,8 @@ div.column aside.article-sidebar p {
 .ugrf-phone,
 .ugrf-major,
 .ugrf-mentor-name,
-.ugrf-mentor-email {
+.ugrf-mentor-email,
+.ugrf-general {
   transition: background 0.5s ease;
   -webkit-transition: background 0.5s ease;
   -moz-transition: background 0.5s ease;
@@ -3834,7 +3835,8 @@ div.column aside.article-sidebar p {
 .ugrf-phone.gfield_contains_required input,
 .ugrf-major.gfield_contains_required input,
 .ugrf-mentor-name.gfield_contains_required input,
-.ugrf-mentor-email.gfield_contains_required input {
+.ugrf-mentor-email.gfield_contains_required input,
+.ugrf-general.gfield_contains_required input {
   transition: background 0.3s ease;
   -webkit-transition: background 0.3s ease;
   -moz-transition: background 0.3s ease;
@@ -3847,7 +3849,8 @@ div.column aside.article-sidebar p {
 .ugrf-phone.gfield_contains_required input:not(.value-entered),
 .ugrf-major.gfield_contains_required input:not(.value-entered),
 .ugrf-mentor-name.gfield_contains_required input:not(.value-entered),
-.ugrf-mentor-email.gfield_contains_required input:not(.value-entered) {
+.ugrf-mentor-email.gfield_contains_required input:not(.value-entered),
+.ugrf-general.gfield_contains_required input:not(.value-entered) {
   background-color: rgba(255, 0, 0, 0.1);
 }
 .ugrf-name.gfield_contains_required input:focus,
@@ -3857,7 +3860,8 @@ div.column aside.article-sidebar p {
 .ugrf-phone.gfield_contains_required input:focus,
 .ugrf-major.gfield_contains_required input:focus,
 .ugrf-mentor-name.gfield_contains_required input:focus,
-.ugrf-mentor-email.gfield_contains_required input:focus {
+.ugrf-mentor-email.gfield_contains_required input:focus,
+.ugrf-general.gfield_contains_required input:focus {
   background-color: #ffffff;
 }
 .ugrf-mailing-address,
