@@ -2525,6 +2525,11 @@ div.column .gform_wrapper .ginput_complex label {
   margin-top: 0;
   margin-bottom: 0;
 }
+div.column .gform_wrapper .ginput_complex span.ginput_full:not(:first-of-type).label,
+div.column .gform_wrapper .ginput_complex span.ginput_left:not(:first-of-type).label,
+div.column .gform_wrapper .ginput_complex span.ginput_right:not(:first-of-type).label {
+  margin-top: 0.4em;
+}
 div.column .gform_wrapper label.gfield_label {
   margin-top: 0;
   margin-bottom: 0;
