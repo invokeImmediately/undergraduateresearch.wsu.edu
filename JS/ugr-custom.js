@@ -29,6 +29,7 @@
         traverseInputs('.ugrf-phone');
         traverseInputs('.ugrf-mentor-name');
         traverseInputs('.ugrf-mentor-email');
+        traverseInputs('.ugrf-general');        
 	});
     
     function traverseInputs (selector) {
