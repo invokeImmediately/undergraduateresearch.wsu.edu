@@ -3222,12 +3222,12 @@ div.column div.builder-banner-overlay {
   background-position: -42px 0;
 }
 .qtip-blue {
-  background-color: #E5F6FE;
-  border-color: #ADD9ED;
-  color: #5E99BD;
+  background-color: #00a5bd;
+  border-color: #203639;
+  color: #2f5055;
 }
 .qtip-blue .qtip-titlebar {
-  background-color: #D0E9F5;
+  background-color: #aec7cb;
 }
 .qtip-blue .qtip-close .qtip-icon {
   background-position: -2px 0;
