@@ -32,6 +32,9 @@ the page, it's all good.
 .soft-gray-border {
   border: 1px solid rgba(42, 48, 51, 0.5);
 }
+.has-smllr-txt {
+  font-size: 0.9em;
+}
 /*  ╔══════════════════════════════════════════════════════════════════════════════════════════════╗
  *  ║ #### GENERIC CLASSES & SELECTORS ########################################################### ║
  *  ╠==============================================================================================╣
@@ -338,8 +341,14 @@ span.accentuated-text {
   line-height: normal;
   color: #3f6b72;
 }
+span.accentuated-text.brighter {
+  color: #4f868e;
+}
 span.accentuated-text.gray {
   color: #5e6a71;
+}
+span.accentuated-text.gray.brighter {
+  color: #6a7880;
 }
 /*  ╔══════════════════════════════════════════════════════════════════════════════════════════════╗ 
  *  ║ #### CITES ################################################################################# ║
@@ -482,138 +491,6 @@ div.column dl.faq dt.activated:hover:after {
 div.column dl.toggled dd {
   display: none;
 }
-div.column h1 {
-  padding-bottom: 0;
-  margin-top: 1.5rem;
-  margin-bottom: .75rem;
-  font-family: 'Open Sans', 'Lucida Sans Unicode', 'Lucida Sans', 'Lucida Grande', sans-serif;
-  font-size: 3rem;
-  font-weight: 900;
-  text-transform: uppercase;
-  color: #464e54;
-}
-@media all and (min-width: 481px) and (max-width: 890px) {
-  div.column h1 {
-    font-size: 2.625rem;
-  }
-}
-@media all and (max-width: 480px) {
-  div.column h1 {
-    font-size: 2.296875rem;
-  }
-}
-div.column h1:first-child {
-  margin-top: 0;
-}
-div.column h1 + h2 {
-  font-style: italic;
-}
-div.column h1.centered {
-  text-align: center;
-}
-div.column header:first-child + h1 {
-  margin-top: 0;
-}
-div.column h2 {
-  padding: 0 0 0 .1em;
-  margin-top: 1.5rem;
-  margin-bottom: .75rem;
-  margin-left: -0.1em;
-  font-family: 'Open Sans', 'Lucida Sans Unicode', 'Lucida Sans', 'Lucida Grande', sans-serif;
-  font-size: 2.2rem;
-  line-height: 1.375em;
-  font-weight: 800;
-  color: #464e54;
-  text-transform: uppercase;
-}
-@media all and (min-width: 481px) and (max-width: 890px) {
-  div.column h2 {
-    font-size: 1.925rem;
-  }
-}
-@media all and (max-width: 480px) {
-  div.column h2 {
-    font-size: 1.684375rem;
-  }
-}
-div.column h2:first-child {
-  margin-top: 0;
-}
-div.column h2.centered {
-  text-align: center;
-}
-div.column h2.narrower-top-margin {
-  margin-top: 1.25rem;
-}
-@media all and (max-width: 480px) {
-  div.column h2.article-title {
-    font-size: 1.3125rem;
-  }
-}
-@media all and (max-width: 1208px) and (min-width: 481px) {
-  div.column h2.article-title {
-    font-size: 1.5rem;
-  }
-}
-div.column hr:not(.subSection) + h2 {
-  margin-top: 0;
-}
-div.column h3 {
-  padding: 0 0 0 .1em;
-  margin-top: 1.5rem;
-  margin-bottom: .75rem;
-  margin-left: -0.1em;
-  font-family: 'Open Sans', 'Lucida Sans Unicode', 'Lucida Sans', 'Lucida Grande', sans-serif;
-  font-size: 1.7rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  color: #981e32;
-}
-@media all and (min-width: 481px) and (max-width: 890px) {
-  div.column h3 {
-    font-size: 1.4875rem;
-  }
-}
-@media all and (max-width: 480px) {
-  div.column h3 {
-    font-size: 1.3015625rem;
-  }
-}
-div.column h3:first-child {
-  margin-top: 0;
-}
-div.column h3.centered {
-  text-align: center;
-}
-div.column hr:not(.subSection) + h3 {
-  margin-top: 0;
-}
-div.column h4 {
-  padding: 0;
-  margin-top: 1rem;
-  margin-bottom: .5rem;
-  font-family: 'Open Sans', 'Lucida Sans Unicode', 'Lucida Sans', 'Lucida Grande', sans-serif;
-  font-size: 1.4rem;
-  line-height: 1.2em;
-  font-weight: 600;
-  color: #981e32;
-}
-@media all and (min-width: 481px) and (max-width: 890px) {
-  div.column h4 {
-    font-size: 1.225rem;
-  }
-}
-@media all and (max-width: 480px) {
-  div.column h4 {
-    font-size: 1.071875rem;
-  }
-}
-div.column h4:first-child {
-  margin-top: 0;
-}
-div.column h4.centered {
-  text-align: center;
-}
 div.column hr {
   height: 0;
   margin-top: 2rem;
@@ -663,6 +540,10 @@ div.column hr.narrow-bottom-margin {
 }
 div.column hr.half-bottom-margin {
   margin-top: 1rem;
+}
+div.column hr.encroach-horizontal {
+  margin-left: -0.5rem;
+  margin-right: -0.5rem;
 }
 div.column hr.does-not-clear {
   clear: none;
@@ -908,6 +789,9 @@ div.column ul li.no-bottom-pad {
 div.column p + ul {
   margin-top: 1rem;
 }
+div.column section:not(:last-child) ul:last-child {
+  padding-bottom: 0;
+}
 @media all {
   div.column ol {
     line-height: 1.375em;
@@ -964,6 +848,211 @@ div.column .larger-text {
 }
 /*  └──────────────────────────────────────────────────────────────────────────────────────────────┘
  */
+/*  ┌──────────────────────────────────────────────────────────────────────────────────────────────┐
+ *  │ ++++++++ div.column ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ │
+ *  │ ++++++++ HEADERS +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ │
+ *  ├----------------------------------------------------------------------------------------------┤
+ *  │ Styling for header elements intended as children of div.column elements as defined in the    │
+ *  │ WSU Spine theme for WordPress.                                                               │
+ *  │  ╘═» This file assumes [//github.com/invokeImmediately/WSU-UE---CSS/color-palette.less] has  │
+ *  │       already been imported.                                                                 │
+ *  ├----------------------------------------------------------------------------------------------┤
+ */
+div.column h1 {
+  padding-bottom: 0;
+  margin-top: 1.5rem;
+  margin-bottom: .75rem;
+  font-family: 'Open Sans', 'Lucida Sans Unicode', 'Lucida Sans', 'Lucida Grande', sans-serif;
+  font-size: 3rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  color: #464e54;
+}
+@media all and (min-width: 481px) and (max-width: 890px) {
+  div.column h1 {
+    font-size: 2.625rem;
+  }
+}
+@media all and (max-width: 480px) {
+  div.column h1 {
+    font-size: 2.296875rem;
+  }
+}
+div.column h1:first-child {
+  margin-top: 0;
+}
+div.column h1 + h2 {
+  font-style: italic;
+}
+div.column h1.centered {
+  text-align: center;
+}
+div.column header:first-child + h1 {
+  margin-top: 0;
+}
+div.column h2 {
+  padding: 0 0 0 .1em;
+  margin-top: 1.5rem;
+  margin-bottom: .75rem;
+  margin-left: -0.1em;
+  font-family: 'Open Sans', 'Lucida Sans Unicode', 'Lucida Sans', 'Lucida Grande', sans-serif;
+  font-size: 2.2rem;
+  line-height: 1.375em;
+  font-weight: 800;
+  color: #464e54;
+  text-transform: uppercase;
+}
+@media all and (min-width: 481px) and (max-width: 890px) {
+  div.column h2 {
+    font-size: 1.925rem;
+  }
+}
+@media all and (max-width: 480px) {
+  div.column h2 {
+    font-size: 1.684375rem;
+  }
+}
+div.column h2.fancy {
+  position: relative;
+  padding: 0.3333rem 0.5rem;
+  margin-left: -0.5rem;
+  margin-bottom: 1rem;
+  margin-right: -0.5rem;
+  background-color: rgba(94, 106, 113, 0.2);
+}
+div.column h2.fancy.with-top-border {
+  padding-top: 0.5rem;
+}
+div.column h2.fancy.with-top-border:not(:first-child) {
+  margin-top: 2rem;
+}
+div.column h2.fancy.with-top-border::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 0;
+  border-top: 1px solid rgba(70, 78, 84, 0.6667);
+  border-bottom: 1px solid rgba(70, 78, 84, 0.3333);
+  border-top-width: 2px;
+}
+div.column h2.centered {
+  text-align: center;
+}
+div.column h2.narrower-top-margin {
+  margin-top: 1.25rem;
+}
+div.column h2.no-top-margin {
+  margin-top: 0;
+}
+@media all and (max-width: 480px) {
+  div.column h2.article-title {
+    font-size: 1.3125rem;
+  }
+}
+@media all and (max-width: 1208px) and (min-width: 481px) {
+  div.column h2.article-title {
+    font-size: 1.5rem;
+  }
+}
+div.column h2:first-child {
+  margin-top: 0;
+}
+div.column hr:not(.subSection) + h2 {
+  margin-top: 0;
+}
+div.column h3 {
+  padding: 0 0 0 .1em;
+  margin-top: 1.5rem;
+  margin-bottom: .75rem;
+  margin-left: -0.1em;
+  font-family: 'Open Sans', 'Lucida Sans Unicode', 'Lucida Sans', 'Lucida Grande', sans-serif;
+  font-size: 1.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #981e32;
+}
+@media all and (min-width: 481px) and (max-width: 890px) {
+  div.column h3 {
+    font-size: 1.4875rem;
+  }
+}
+@media all and (max-width: 480px) {
+  div.column h3 {
+    font-size: 1.3015625rem;
+  }
+}
+div.column h3.no-top-margin {
+  margin-top: 0;
+}
+div.column h3.fancy {
+  position: relative;
+  padding: 0.3333rem 0.5rem;
+  margin-left: -0.5rem;
+  margin-bottom: 1rem;
+  margin-right: -0.5rem;
+  background-color: rgba(198, 12, 48, 0.075);
+}
+div.column h3.fancy.with-top-border {
+  padding-top: 0.4375rem;
+}
+div.column h3.fancy.with-top-border:not(:first-child) {
+  margin-top: 2rem;
+}
+div.column h3.fancy.with-top-border::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 0;
+  border-top: 1px solid rgba(152, 30, 50, 0.67);
+  border-bottom: 1px solid rgba(152, 30, 50, 0.375);
+}
+div.column h3.centered {
+  text-align: center;
+}
+div.column h3:first-child {
+  margin-top: 0;
+}
+div.column hr:not(.subSection) + h3 {
+  margin-top: 0;
+}
+div.column h4 {
+  padding: 0;
+  margin-top: 1rem;
+  margin-bottom: .5rem;
+  font-family: 'Open Sans', 'Lucida Sans Unicode', 'Lucida Sans', 'Lucida Grande', sans-serif;
+  font-size: 1.4rem;
+  line-height: 1.2em;
+  font-weight: 600;
+  color: #981e32;
+}
+@media all and (min-width: 481px) and (max-width: 890px) {
+  div.column h4 {
+    font-size: 1.225rem;
+  }
+}
+@media all and (max-width: 480px) {
+  div.column h4 {
+    font-size: 1.071875rem;
+  }
+}
+div.column h4:first-child {
+  margin-top: 0;
+}
+div.column h4.centered {
+  text-align: center;
+}
+div.column h3.gray,
+div.column h4.gray {
+  color: #464e54;
+}
+div.column h1.crimson,
+div.column h2.crimson {
+  color: #981e32;
+}
 /*  ┌──────────────────────────────────────────────────────────────────────────────────────────────┐
  *  │ ++++++++ div.column ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ │
  *  │ ++++++++ PARAGRAPHS ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ │
@@ -1078,6 +1167,9 @@ div.column p.article-media-contacts {
   font-size: .8em;
   line-height: 1.375em;
 }
+div.column p.fine-print {
+  font-size: 0.9em;
+}
 div.column p.award-quote {
   margin-left: 2rem;
   margin-bottom: 0.5rem;
@@ -1148,14 +1240,14 @@ div.column p.banner-text.green {
   border: 1px solid #393215;
 }
 div.column p.banner-text-orange-with-towers {
+  margin-bottom: 15px;
+  padding: 7px;
   color: #492e14;
   background-color: rgba(182, 114, 51, 0.5);
   border: 32px solid transparent;
   -webkit-border-image: url(/wp-content/uploads/sites/50/2015/09/Orange-Clock-Tower-Border-Template-v3.png) 32 32 round;
   -o-border-image: url(/wp-content/uploads/sites/50/2015/09/Orange-Clock-Tower-Border-Template-v3.png) 32 32 round;
   border-image: url(/wp-content/uploads/sites/50/2015/09/Orange-Clock-Tower-Border-Template-v3.png) 32 32 round;
-  margin-bottom: 15px;
-  padding: 7px;
 }
 @media all and (min-width: 1050px) {
   div.column p.banner-text-orange-with-towers {
@@ -1166,6 +1258,9 @@ div.column p.banner-text-orange-with-towers {
   div.column p.banner-text-orange-with-towers {
     font-size: 1.09375rem;
   }
+}
+div.column section:not(:last-child) p:last-child {
+  padding-bottom: 0;
 }
 /*  └──────────────────────────────────────────────────────────────────────────────────────────────┘
  */
@@ -2441,9 +2536,9 @@ div.column .gform_wrapper .gform_body > ul > li:not(.gsection):not(.gfield_html)
   display: block;
   width: 95%;
   height: 0;
-  margin: 1.5em auto;
-  border-top: 1px dashed rgba(94, 106, 113, 0.3333);
-  border-bottom: 1px dashed rgba(160, 160, 160, 0.25);
+  margin: 2rem auto 0;
+  /*.rgb-dark-gray(); border-top: 1px dashed rgba(@rval,@gval,@bval,0.3333);
+                 border-bottom: 1px dashed rgba(160,160,160,0.25);*/
   content: "";
 }
 /*, li + li:not(.gsection)::before*/
@@ -2545,6 +2640,10 @@ section.halves div.column p {
                  rgba(@rval, @gval, @bval, 0.0) 0px, rgba(@rval, @gval, @bval, 0.0) 676px,
                  rgba(@rval, @gval, @bval, 1.0) 676px); */
   }
+  section.side-right.large-format-friendly:first-child,
+  section.row.side-right.large-format-friendly:first-child {
+    padding-top: 1rem;
+  }
   section.side-right.large-format-friendly div.column.one,
   section.row.side-right.large-format-friendly div.column.one {
     width: 660px;
@@ -2554,6 +2653,7 @@ section.halves div.column p {
     width: calc(100% -  660px );
     height: 0;
     position: relative;
+    opacity: 0;
   }
   section.side-right.large-format-friendly div.column.two:before,
   section.row.side-right.large-format-friendly div.column.two:before {
@@ -2563,8 +2663,6 @@ section.halves div.column p {
     left: 1rem;
     right: 0;
     bottom: 0;
-    /* padding-bottom: 1000em;
-                        margin-bottom: -1000em; */
     background: #eff0f1;
   }
 }
@@ -2575,21 +2673,7 @@ section.halves div.column p {
   }
   section.side-right.large-format-friendly div.column.two,
   section.row.side-right.large-format-friendly div.column.two {
-    width: calc(100% -  660px );
-    height: 0;
-    position: relative;
-  }
-  section.side-right.large-format-friendly div.column.two:before,
-  section.row.side-right.large-format-friendly div.column.two:before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 1rem;
-    right: 0;
-    bottom: 0;
-    /* padding-bottom: 1000em;
-                        margin-bottom: -1000em; */
-    background: none;
+    display: none;
   }
 }
 @media all and (max-width: 890px) {
@@ -2893,7 +2977,7 @@ div.column div.builder-banner-inner-content a {
 }
 div.column div.builder-banner-inner-content a:hover {
   color: #949b9d;
-  border-color: rgba(141, 149, 154, 0.4);
+  border-color: rgba(106, 120, 128, 0.4);
 }
 div.column div.builder-banner-overlay {
   height: calc(2.7rem + 20px);
@@ -3507,7 +3591,7 @@ x:-o-prefocus {
 }
 .cycle2-overlay strong:hover {
   color: #949b9d;
-  border-color: rgba(141, 149, 154, 0.4);
+  border-color: rgba(106, 120, 128, 0.4);
 }
 /* prev / next links */
 .cycle2-prev,
@@ -3797,75 +3881,75 @@ div.column aside.article-sidebar p {
 .ugrf-scholarship-selections.gfield_contains_required input:focus {
   background-color: #ffffff;
 }
-.ugrf-name {
-  background: url(/wp-content/uploads/sites/51/2015/12/form-icon_name.png) right top no-repeat;
-}
-.ugrf-name.inputs-ready {
-  background: url(/wp-content/uploads/sites/51/2015/12/form-icon_name_filled.png) right top no-repeat;
+/*.ugrf-name {
+    background: url(/wp-content/uploads/sites/51/2015/12/form-icon_name.png) right top no-repeat;
+    &.inputs-ready {
+        background: url(/wp-content/uploads/sites/51/2015/12/form-icon_name_filled.png) right top no-repeat;
+    }
 }
 .ugrf-wsu-id {
-  background: url(/wp-content/uploads/sites/51/2015/12/form-icon_id-card.png) right 1.5em no-repeat;
-}
-.ugrf-wsu-id.inputs-ready {
-  background: url(/wp-content/uploads/sites/51/2015/12/form-icon_id-card_filled.png) right 1.5em no-repeat;
+    background: url(/wp-content/uploads/sites/51/2015/12/form-icon_id-card.png) right 1.5em no-repeat;
+    &.inputs-ready {
+        background: url(/wp-content/uploads/sites/51/2015/12/form-icon_id-card_filled.png) right 1.5em no-repeat;
+    }
 }
 .ugrf-scholarship-selections {
-  background: url(/wp-content/uploads/sites/51/2016/01/form-icon_scholarship-selections.png) right 1.5em no-repeat;
-}
-.ugrf-scholarship-selections.inputs-ready {
-  background: url(/wp-content/uploads/sites/51/2016/01/form-icon_scholarship-selections_filled.png) right 1.5em no-repeat;
+    background: url(/wp-content/uploads/sites/51/2016/01/form-icon_scholarship-selections.png) right 1.5em no-repeat;
+    &.inputs-ready {
+        background: url(/wp-content/uploads/sites/51/2016/01/form-icon_scholarship-selections_filled.png) right 1.5em no-repeat;
+    }
 }
 .ugrf-institution {
-  background: url(/wp-content/uploads/sites/51/2015/12/form-icon_institution.png) right 1.5em no-repeat;
-}
-.ugrf-institution.inputs-ready {
-  background: url(/wp-content/uploads/sites/51/2015/12/form-icon_institution_filled.png) right 1.5em no-repeat;
+    background: url(/wp-content/uploads/sites/51/2015/12/form-icon_institution.png) right 1.5em no-repeat;
+    &.inputs-ready {
+        background: url(/wp-content/uploads/sites/51/2015/12/form-icon_institution_filled.png) right 1.5em no-repeat;
+    }
 }
 .ugrf-mailing-address {
-  background: url(/wp-content/uploads/sites/51/2015/12/form-icon_institutional-address.png) right 1.5em no-repeat;
-}
-.ugrf-mailing-address.inputs-ready {
-  background: url(/wp-content/uploads/sites/51/2015/12/form-icon_institutional-address_filled.png) right 1.5em no-repeat;
+    background: url(/wp-content/uploads/sites/51/2015/12/form-icon_institutional-address.png) right 1.5em no-repeat;
+    &.inputs-ready {
+        background: url(/wp-content/uploads/sites/51/2015/12/form-icon_institutional-address_filled.png) right 1.5em no-repeat;
+    }
 }
 .ugrf-permanent-address {
-  background: url(/wp-content/uploads/sites/51/2015/12/form-icon_permanent-address.png) right 1.5em no-repeat;
-}
-.ugrf-permanent-address.inputs-ready {
-  background: url(/wp-content/uploads/sites/51/2015/12/form-icon_permanent-address_filled.png) right 1.5em no-repeat;
+    background: url(/wp-content/uploads/sites/51/2015/12/form-icon_permanent-address.png) right 1.5em no-repeat;
+    &.inputs-ready {
+        background: url(/wp-content/uploads/sites/51/2015/12/form-icon_permanent-address_filled.png) right 1.5em no-repeat;
+    }
 }
 .ugrf-class-standing {
-  background: url(/wp-content/uploads/sites/51/2016/01/form-icon_class-standing_filled.png) right 1.5em no-repeat;
+    background: url(/wp-content/uploads/sites/51/2016/01/form-icon_class-standing_filled.png) right 1.5em no-repeat;
 }
 .ugrf-major {
-  background: url(/wp-content/uploads/sites/51/2016/01/form-icon_major.png) right 1.5em no-repeat;
-}
-.ugrf-major.inputs-ready {
-  background: url(/wp-content/uploads/sites/51/2016/01/form-icon_major_filled.png) right 1.5em no-repeat;
+    background: url(/wp-content/uploads/sites/51/2016/01/form-icon_major.png) right 1.5em no-repeat;
+    &.inputs-ready {
+        background: url(/wp-content/uploads/sites/51/2016/01/form-icon_major_filled.png) right 1.5em no-repeat;
+    }
 }
 .ugrf-phone {
-  background: url(/wp-content/uploads/sites/51/2015/12/form-icon_phone.png) right 1.5em no-repeat;
-}
-.ugrf-phone.inputs-ready {
-  background: url(/wp-content/uploads/sites/51/2015/12/form-icon_phone_filled.png) right 1.5em no-repeat;
+    background: url(/wp-content/uploads/sites/51/2015/12/form-icon_phone.png) right 1.5em no-repeat;
+    &.inputs-ready {
+        background: url(/wp-content/uploads/sites/51/2015/12/form-icon_phone_filled.png) right 1.5em no-repeat;
+    }
 }
 .ugrf-email {
-  background: url(/wp-content/uploads/sites/51/2015/12/form-icon_email-address.png) right 1.5em no-repeat;
-}
-.ugrf-email.inputs-ready {
-  background: url(/wp-content/uploads/sites/51/2015/12/form-icon_email-address_filled.png) right 1.5em no-repeat;
+    background: url(/wp-content/uploads/sites/51/2015/12/form-icon_email-address.png) right 1.5em no-repeat;
+    &.inputs-ready {
+        background: url(/wp-content/uploads/sites/51/2015/12/form-icon_email-address_filled.png) right 1.5em no-repeat;
+    }
 }
 .ugrf-mentor-name {
-  background: url(/wp-content/uploads/sites/51/2015/12/form-icon_mentor-name.png) right top no-repeat;
-}
-.ugrf-mentor-name.inputs-ready {
-  background: url(/wp-content/uploads/sites/51/2015/12/form-icon_mentor-name_filled.png) right top no-repeat;
+    background: url(/wp-content/uploads/sites/51/2015/12/form-icon_mentor-name.png) right top no-repeat;
+    &.inputs-ready {
+        background: url(/wp-content/uploads/sites/51/2015/12/form-icon_mentor-name_filled.png) right top no-repeat;
+    }
 }
 .ugrf-mentor-email {
-  background: url(/wp-content/uploads/sites/51/2015/12/form-icon_mentor-email.png) right 1.5em no-repeat;
-}
-.ugrf-mentor-email.inputs-ready {
-  background: url(/wp-content/uploads/sites/51/2015/12/form-icon_mentor-email_filled.png) right 1.5em no-repeat;
-}
+    background: url(/wp-content/uploads/sites/51/2015/12/form-icon_mentor-email.png) right 1.5em no-repeat;
+    &.inputs-ready {
+        background: url(/wp-content/uploads/sites/51/2015/12/form-icon_mentor-email_filled.png) right 1.5em no-repeat;
+    }
+}*/
 /*.ugrf-wsu-id {
     position: relative;
     div input {
