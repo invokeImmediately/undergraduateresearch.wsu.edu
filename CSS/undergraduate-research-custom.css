@@ -132,10 +132,10 @@ the page, it's all good.
 :target:before {
   content: "";
   position: absolute;
-  top: -1px;
-  right: -1px;
-  bottom: -1px;
-  left: -1px;
+  top: -1rem;
+  right: -1rem;
+  bottom: -1rem;
+  left: -1rem;
   background-color: rgba(198, 12, 48, 0);
   border: 1px solid rgba(198, 12, 48, 0);
   z-index: -1;
@@ -2563,7 +2563,42 @@ div.column .gform_wrapper .gform_body > ul > li:not(.gsection):not(.gfield_html)
                  border-bottom: 1px dashed rgba(160,160,160,0.25);*/
   content: "";
 }
-/*, li + li:not(.gsection)::before*/
+div.column .gform_wrapper #extensions_message {
+  padding-left: 1rem;
+}
+.oue-gf-rqrd-input.gfield_contains_required input {
+  transition: background 0.3s ease;
+  -webkit-transition: background 0.3s ease;
+  -moz-transition: background 0.3s ease;
+  -o-transition: background 0.3s ease;
+}
+.oue-gf-rqrd-input.gfield_contains_required input:not(.gf-value-entered) {
+  background-color: rgba(255, 0, 0, 0.1);
+}
+.oue-gf-rqrd-input.gfield_contains_required input:focus {
+  background-color: #edf3f4;
+}
+.oue-gf-rqrd-checkbox.gfield_contains_required ul.gfield_checkboxes {
+  transition: background 0.3s ease;
+  -webkit-transition: background 0.3s ease;
+  -moz-transition: background 0.3s ease;
+  -o-transition: background 0.3s ease;
+}
+.oue-gf-rqrd-checkbox.gfield_contains_required ul.gfield_checkboxes:not(.gf-value-entered) {
+  background-color: rgba(255, 0, 0, 0.1);
+}
+.oue-gf-rqrd-txtarea.gfield_contains_required textarea {
+  transition: background 0.3s ease;
+  -webkit-transition: background 0.3s ease;
+  -moz-transition: background 0.3s ease;
+  -o-transition: background 0.3s ease;
+}
+.oue-gf-rqrd-txtarea.gfield_contains_required textarea:not(.gf-value-entered) {
+  background-color: rgba(255, 0, 0, 0.1);
+}
+.oue-gf-rqrd-txtarea.gfield_contains_required input:focus {
+  background-color: #edf3f4;
+}
 /*  ╔══════════════════════════════════════════════════════════════════════════════════════════════╗ 
  *  ║ #### LISTS ################################################################################# ║
  *  ╠==============================================================================================╣
