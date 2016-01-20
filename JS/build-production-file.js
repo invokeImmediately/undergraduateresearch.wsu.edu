@@ -4,6 +4,7 @@ concat([
  './ugr-custom.js',
  '../WSU-UE---JS/jQuery.oue-custom.js',
  '../WSU-UE---JS/jQuery.textResize.js',
+ '../WSU-UE---JS/jQuery.forms.js',
  '../WSU-UE---JS/jQuery.qTip.js',
  '../WSU-UE---JS/jQuery.cookieObjs.js',
  ], './wp-custom-js-source.js', function() {
