@@ -2596,7 +2596,7 @@ div.column .gform_wrapper #extensions_message {
 .oue-gf-rqrd-txtarea.gfield_contains_required textarea:not(.gf-value-entered) {
   background-color: rgba(255, 0, 0, 0.1);
 }
-.oue-gf-rqrd-txtarea.gfield_contains_required input:focus {
+.oue-gf-rqrd-txtarea.gfield_contains_required textarea:focus {
   background-color: #edf3f4;
 }
 /*  ╔══════════════════════════════════════════════════════════════════════════════════════════════╗ 
