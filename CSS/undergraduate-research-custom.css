@@ -2599,6 +2599,15 @@ div.column .gform_wrapper #extensions_message {
 .oue-gf-rqrd-txtarea.gfield_contains_required textarea:focus {
   background-color: #edf3f4;
 }
+.oue-gf-actvtr-checkbox {
+  transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+}
+.oue-gf-actvtr-checkbox.gf-activated {
+  display: none;
+}
 /*  ╔══════════════════════════════════════════════════════════════════════════════════════════════╗ 
  *  ║ #### LISTS ################################################################################# ║
  *  ╠==============================================================================================╣
