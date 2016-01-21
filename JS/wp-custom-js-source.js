@@ -308,6 +308,12 @@
                 var $inputs = $this.find('input');
                 $inputs.each(function () {
                     var $thisChild = $(this);
+                    if ($thisChild.val() == "") {
+                        $thisChild.removeClass('gf-value-entered');
+                    }
+                    else {
+                        $thisChild.addClass('gf-value-entered');
+                    }
                     $thisChild.blur(function () {
                         if ($thisChild.val() == "") {
                             $thisChild.removeClass('gf-value-entered');
@@ -355,7 +361,7 @@
     }
 
     /******************************************************************************************\
-    | Via CSS, highlight required inputs until a value has been properly entered               |
+    | Via CSS, highlight required text are inputs until a value has been properly entered      |
     \******************************************************************************************/
     function hghlghtRqrdTxtAreas (selector) {
         if ($.type(selector) === "string") {
@@ -364,6 +370,12 @@
                 var $inputs = $this.find('textarea');
                 $inputs.each(function () {
                     var $thisChild = $(this);
+                    if ($thisChild.val() == "") {
+                        $thisChild.removeClass('gf-value-entered');
+                    }
+                    else {
+                        $thisChild.addClass('gf-value-entered');
+                    }
                     $thisChild.change(function () {
                         if ($thisChild.val() == "") {
                             $thisChild.removeClass('gf-value-entered');
