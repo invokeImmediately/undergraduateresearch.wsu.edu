@@ -2575,7 +2575,7 @@ div.column .gform_wrapper #extensions_message {
 .oue-gf-rqrd-input input:focus {
   background-color: #edf3f4;
 }
-.oue-gf-rqrd-input.gfield_contains_required input:not(.gf-value-entered) {
+.oue-gf-rqrd-input.gfield_contains_required input:not(.gf-value-entered):not(:focus) {
   background-color: rgba(255, 0, 0, 0.1);
 }
 .oue-gf-rqrd-checkbox.gfield_contains_required ul.gfield_checkbox {
@@ -2596,7 +2596,7 @@ div.column .gform_wrapper #extensions_message {
 .oue-gf-rqrd-txtarea textarea:focus {
   background-color: #edf3f4;
 }
-.oue-gf-rqrd-txtarea.gfield_contains_required textarea:not(.gf-value-entered) {
+.oue-gf-rqrd-txtarea.gfield_contains_required textarea:not(.gf-value-entered):not(:focus) {
   background-color: rgba(255, 0, 0, 0.1);
 }
 .oue-gf-actvtr-checkbox {
