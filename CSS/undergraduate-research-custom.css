@@ -2566,13 +2566,15 @@ div.column .gform_wrapper .gform_body > ul > li:not(.gsection):not(.gfield_html)
 div.column .gform_wrapper #extensions_message {
   padding-left: 1rem;
 }
-.oue-gf-rqrd-input input {
+.oue-gf-rqrd-input input,
+.oue-gf-rqrd-input select {
   transition: background 0.3s ease;
   -webkit-transition: background 0.3s ease;
   -moz-transition: background 0.3s ease;
   -o-transition: background 0.3s ease;
 }
-.oue-gf-rqrd-input input:focus {
+.oue-gf-rqrd-input input:focus,
+.oue-gf-rqrd-input select:focus {
   background-color: #edf3f4;
 }
 .oue-gf-rqrd-input.gfield_contains_required input:not(.gf-value-entered):not(:focus) {
