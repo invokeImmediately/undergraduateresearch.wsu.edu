@@ -2282,6 +2282,20 @@ header.main-header span.sup-header-default {
     line-height: 1em;
   }
 }
+@media (min-width: 1050px) {
+  header.main-header.centered {
+    text-align: center;
+  }
+}
+@media (min-width: 1050px) {
+  header.main-header div.header-group.centered {
+    width: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+  }
+}
 /*  ╔══════════════════════════════════════════════════════════════════════════════════════════════╗ 
  *  ║ #### IMAGES ################################################################################ ║
  *  ╠==============================================================================================╣
@@ -2608,7 +2622,7 @@ div.column .gform_wrapper #extensions_message {
   -o-transition: all 0.3s ease;
 }
 .oue-gf-actvtr-checkbox.gf-activated {
-  display: none;
+  display: none !important;
 }
 /*  ╔══════════════════════════════════════════════════════════════════════════════════════════════╗ 
  *  ║ #### LISTS ################################################################################# ║
