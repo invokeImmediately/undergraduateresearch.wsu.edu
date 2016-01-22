@@ -18,20 +18,10 @@
         /**********************************************************************************************
          * Set up advanced interactive behaviors of gravity forms                                     *
          **********************************************************************************************/
-        traverseInputs('.ugrf-name');
-        traverseInputs('.ugrf-wsu-id');
-        traverseCheckboxInputs('.ugrf-scholarship-selections');
-        traverseInputs('.ugrf-institution');
         traverseAddressInputs('.ugrf-mailing-address');
-        traverseAddressInputs('.ugrf-permanent-address');
-        traverseInputs('.ugrf-major');
-        traverseInputs('.ugrf-email');
-        traverseInputs('.ugrf-phone');
-        traverseInputs('.ugrf-mentor-name');
-        traverseInputs('.ugrf-mentor-email');
-        traverseInputs('.ugrf-general');        
 	});
     
+    // TODO: remove actions already being done by jQuery.forms.js
     function traverseInputs (selector) {
         if ($.type(selector) === "string") {
             $(selector).each(function () {
@@ -151,6 +141,13 @@
 			/**********************************************************************************************
 			 * As desired, tweak the CSS of the previous sibling of certain selected elements in the DOM  *
 			 **********************************************************************************************/
+            var $lrgFrmtSnglSctns = $('.single.large-format-friendly');
+            if ($lrgFrmtSnglSctns.length > 0) {
+                var $mainHeader = $('header.main-header');
+                $mainHeader.addClass('centered');
+                var $mnHdrChldDiv = $mainHeader.find('div.header-group');
+                $mnHdrChldDiv.addClass('centered');
+            }
 			$('.column > h2:not(.fancy), .column > section > h2:not(.fancy)').each(function () {
 					var $this = $(this);
                     $this.addClass('no-top-margin');
@@ -175,7 +172,6 @@
                     $('.large-format-friendly > div.column.two').each(function () {
                             var $this = $(this);
                             $this.height($this.prev('div.column.one').height());
-                            // $this.animate({height: $this.prev('div.column.one').height() + "px"}, 250 / 758 * $this.prev('div.column.one').height());
                             $this.animate({opacity: 1.0}, 100);
                     });
                 }
@@ -394,7 +390,7 @@
     \******************************************************************************************/
     function setupActvtrChckbxs (selector) {
         if ($.type(selector) === "string") {
-            $('gform_body').on('change', selector + ' input', function () {
+            $('.gform_body').on('change', selector + ' input', function () {
                 var $thisChild = $(this);
                 var $thisParent = $thisChild.parents(selector);
                 $thisParent.addClass('gf-activated');
@@ -402,7 +398,8 @@
         }
     }
     
-})(jQuery);/**********************************************************************************************************************
+})(jQuery);
+/**********************************************************************************************************************
  JQUERY QTIP TOOL TIPS PLUGIN
  *********************************************************************************************************************/
 /* qTip2 v2.2.1 | Plugins: tips modal viewport svg imagemap ie6 | Styles: core basic css3 | qtip2.com | Licensed MIT | Sat Sep 06 2014 23:12:07 */
