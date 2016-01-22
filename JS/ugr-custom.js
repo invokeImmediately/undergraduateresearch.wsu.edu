@@ -18,20 +18,10 @@
         /**********************************************************************************************
          * Set up advanced interactive behaviors of gravity forms                                     *
          **********************************************************************************************/
-        traverseInputs('.ugrf-name');
-        traverseInputs('.ugrf-wsu-id');
-        traverseCheckboxInputs('.ugrf-scholarship-selections');
-        traverseInputs('.ugrf-institution');
         traverseAddressInputs('.ugrf-mailing-address');
-        traverseAddressInputs('.ugrf-permanent-address');
-        traverseInputs('.ugrf-major');
-        traverseInputs('.ugrf-email');
-        traverseInputs('.ugrf-phone');
-        traverseInputs('.ugrf-mentor-name');
-        traverseInputs('.ugrf-mentor-email');
-        traverseInputs('.ugrf-general');        
 	});
     
+    // TODO: remove actions already being done by jQuery.forms.js
     function traverseInputs (selector) {
         if ($.type(selector) === "string") {
             $(selector).each(function () {
@@ -127,9 +117,15 @@
                         });
                         if (inputReady) {
                             $thisParent.addClass('inputs-ready');
+                            $parentsInputs.each(function () {
+                                $(this).addClass('value-entered');
+                            });
                         }
                         else {
                             $thisParent.removeClass('inputs-ready');
+                            $parentsInputs.each(function () {
+                                $(this).removeClass('value-entered');
+                            });
                         }
                     });
                 });
