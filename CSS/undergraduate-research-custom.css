@@ -2724,6 +2724,7 @@ ul.content-boxes li div.content {
   position: relative;
   left: 121px;
   width: calc(100% - 136px);
+  min-width: 189px;
   padding: 10px 10px 10px 5px;
 }
 ul.content-boxes li + li {
