@@ -126,6 +126,76 @@ the page, it's all good.
     -o-transform: none;
   }
 }
+.fade-in-from-right {
+  animation: anim-fade-in-from-right 1s;
+  -webkit-animation: anim-fade-in-from-right 1s;
+  -moz-animation: anim-fade-in-from-right 1s;
+  -o-animation: anim-fade-in-from-right 1s;
+}
+@keyframes anim-fade-in-from-right {
+  0% {
+    opacity: 0;
+    transform: translate3d(100%, 0, 0);
+    -webkit-transform: translate3d(100%, 0, 0);
+    -moz-transform: translate3d(100%, 0, 0);
+    -o-transform: translate3d(100%, 0, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: none;
+    -webkit-transform: none;
+    -moz-transform: none;
+    -o-transform: none;
+  }
+}
+@-webkit-keyframes anim-fade-in-from-right {
+  0% {
+    opacity: 0;
+    transform: translate3d(100%, 0, 0);
+    -webkit-transform: translate3d(100%, 0, 0);
+    -moz-transform: translate3d(100%, 0, 0);
+    -o-transform: translate3d(100%, 0, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: none;
+    -webkit-transform: none;
+    -moz-transform: none;
+    -o-transform: none;
+  }
+}
+@-moz-keyframes anim-fade-in-from-right {
+  0% {
+    opacity: 0;
+    transform: translate3d(100%, 0, 0);
+    -webkit-transform: translate3d(100%, 0, 0);
+    -moz-transform: translate3d(100%, 0, 0);
+    -o-transform: translate3d(100%, 0, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: none;
+    -webkit-transform: none;
+    -moz-transform: none;
+    -o-transform: none;
+  }
+}
+@-o-keyframes anim-fade-in-from-right {
+  0% {
+    opacity: 0;
+    transform: translate3d(100%, 0, 0);
+    -webkit-transform: translate3d(100%, 0, 0);
+    -moz-transform: translate3d(100%, 0, 0);
+    -o-transform: translate3d(100%, 0, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: none;
+    -webkit-transform: none;
+    -moz-transform: none;
+    -o-transform: none;
+  }
+}
 :target {
   position: relative;
 }
@@ -859,7 +929,7 @@ div.column .larger-text {
 }
 @media (min-width: 891px) and (max-width: 1049px) {
   div.column .large-format-friendly {
-    max-width: 700px;
+    max-width: 792px;
   }
 }
 /*  └──────────────────────────────────────────────────────────────────────────────────────────────┘
@@ -2241,7 +2311,7 @@ header.main-header span.sup-header-default {
   margin-bottom: .5rem;
   font-size: .9rem;
 }
-@media all and (max-width: 561px) {
+@media all and (max-width: 480px) {
   header.main-header span.sup-header-default {
     font-size: .75rem;
   }
@@ -2252,15 +2322,9 @@ header.main-header span.sup-header-default {
     line-height: 0.8em;
   }
 }
-@media all and (max-width: 493px) {
+@media all and (max-width: 480px) {
   header.main-header span.sub-header-default {
     font-size: 2.08333rem;
-    line-height: 1em;
-  }
-}
-@media all and (min-width: 494px) and (max-width: 561px) {
-  header.main-header span.sub-header-default {
-    font-size: 1.3rem;
     line-height: 1em;
   }
 }
@@ -2270,15 +2334,9 @@ header.main-header span.sup-header-default {
     line-height: 0.8em;
   }
 }
-@media all and (max-width: 493px) {
+@media all and (max-width: 480px) {
   header.main-header sub.sub-header {
     font-size: 2.08333rem;
-    line-height: 1em;
-  }
-}
-@media all and (min-width: 494px) and (max-width: 561px) {
-  header.main-header sub.sub-header {
-    font-size: 1.3rem;
     line-height: 1em;
   }
 }
@@ -2632,6 +2690,28 @@ div.column .gform_wrapper #extensions_message {
  */
 ul.external-links li {
   list-style-image: url(/wp-content/uploads/sites/906/2015/08/external-link-bullet.png);
+}
+ul.content-boxes li {
+  position: relative;
+  min-height: 320px;
+  border-radius: 4px;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.22);
+  -webkit-box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.22);
+  background-color: #ffffff;
+  list-style-image: none;
+}
+ul.content-boxes li img {
+  position: absolute;
+  left: 0;
+  width: 106px;
+  height: 320px;
+}
+ul.content-boxes li div.content {
+  position: relative;
+  left: 111px;
+}
+ul.content-boxes li + li {
+  margin-top: 1rem;
 }
 /*  ╔══════════════════════════════════════════════════════════════════════════════════════════════╗ 
  *  ║ #### SECTIONS ############################################################################## ║
