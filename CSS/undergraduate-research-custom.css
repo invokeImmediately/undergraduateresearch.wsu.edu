@@ -2691,6 +2691,10 @@ div.column .gform_wrapper #extensions_message {
 ul.external-links li {
   list-style-image: url(/wp-content/uploads/sites/906/2015/08/external-link-bullet.png);
 }
+ul.content-boxes {
+  padding-right: 0;
+  padding-left: 0;
+}
 ul.content-boxes li {
   position: relative;
   min-height: 320px;
@@ -2701,17 +2705,20 @@ ul.content-boxes li {
   background-color: #ffffff;
   list-style-type: none;
 }
+ul.content-boxes li p.email {
+  font-size: 0.9em;
+}
 ul.content-boxes li img {
   position: absolute;
-  top: 5px;
-  left: 5px;
+  top: 10px;
+  left: 10px;
   width: 106px;
 }
 ul.content-boxes li div.content {
   position: relative;
-  left: 116px;
-  width: calc(100% - 116px);
-  padding: 5px;
+  left: 121px;
+  width: calc(100% - 121px);
+  padding: 10px 10px 10px 5px;
 }
 ul.content-boxes li + li {
   margin-top: 1rem;
