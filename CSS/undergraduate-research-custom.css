@@ -2697,6 +2697,7 @@ ul.content-boxes li {
   border-radius: 4px;
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.22);
   -webkit-box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.22);
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
   background-color: #ffffff;
   list-style-image: none;
 }
@@ -2704,11 +2705,11 @@ ul.content-boxes li img {
   position: absolute;
   left: 0;
   width: 106px;
-  height: 320px;
 }
 ul.content-boxes li div.content {
   position: relative;
-  left: 111px;
+  left: calc(100% - 111px);
+  padding: 5px;
 }
 ul.content-boxes li + li {
   margin-top: 1rem;
