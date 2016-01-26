@@ -2705,8 +2705,14 @@ ul.content-boxes li {
   background-color: #ffffff;
   list-style-type: none;
 }
+@media all and (max-width: 1205px) {
+  ul.content-boxes li {
+    overflow-x: scroll;
+  }
+}
 ul.content-boxes li p.email {
   font-size: 0.9em;
+  font-weight: bold;
 }
 ul.content-boxes li img {
   position: absolute;
@@ -2716,8 +2722,8 @@ ul.content-boxes li img {
 }
 ul.content-boxes li div.content {
   position: relative;
-  left: 121px;
-  width: calc(100% - 121px);
+  left: 136px;
+  width: calc(100% - 136px);
   padding: 10px 10px 10px 5px;
 }
 ul.content-boxes li + li {
