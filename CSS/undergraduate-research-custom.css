@@ -625,7 +625,7 @@ div.column hr.narrow-bottom-margin {
   margin-bottom: 0.5rem;
 }
 div.column hr.half-bottom-margin {
-  margin-top: 1rem;
+  margin-bottom: 1rem;
 }
 div.column hr.encroach-horizontal {
   margin-left: -0.5rem;
