@@ -3869,6 +3869,12 @@ header.main-header {
 .main-header sup:not(.unset) {
   color: #fff !important;
 }
+div.column ul li {
+  list-style-image: url(/wp-content/uploads/sites/51/2015/04/ico-cougar-bullet-point.png);
+}
+div.column ul.gray-bullets li {
+  list-style-image: url(/wp-content/uploads/sites/51/2016/01/ico-cougar-bullet-point_gray.png);
+}
 /*  ╔══════════════════════════════════════════════════════════════════════════════════════════════╗ 
  *  ║ #### DIV.SIDEBAR ########################################################################### ║
  *  ╠==============================================================================================╣
