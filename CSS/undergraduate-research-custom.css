@@ -969,6 +969,9 @@ div.column .larger-text {
  *  │       already been imported.                                                                 │
  *  ├----------------------------------------------------------------------------------------------┤
  */
+div.column > header:first-child {
+  display: none;
+}
 div.column h1 {
   padding-bottom: 0;
   margin-top: 1.5rem;
@@ -2662,38 +2665,48 @@ div.column .gform_wrapper #extensions_message {
   padding-left: 1rem;
 }
 .oue-gf-rqrd-input input,
-.oue-gf-rqrd-input select {
+.oue-gf-hghlghts-rqrd input,
+.oue-gf-rqrd-input select,
+.oue-gf-hghlghts-rqrd select {
   transition: background 0.3s ease;
   -webkit-transition: background 0.3s ease;
   -moz-transition: background 0.3s ease;
   -o-transition: background 0.3s ease;
 }
 .oue-gf-rqrd-input input:focus,
-.oue-gf-rqrd-input select:focus {
+.oue-gf-hghlghts-rqrd input:focus,
+.oue-gf-rqrd-input select:focus,
+.oue-gf-hghlghts-rqrd select:focus {
   background-color: #edf3f4;
 }
-.oue-gf-rqrd-input.gfield_contains_required input:not(.gf-value-entered):not(:focus) {
+.oue-gf-rqrd-input.gfield_contains_required input:not(.gf-value-entered):not(:focus),
+.oue-gf-hghlghts-rqrd.gfield_contains_required input:not(.gf-value-entered):not(:focus) {
   background-color: rgba(255, 0, 0, 0.1);
 }
-.oue-gf-rqrd-checkbox.gfield_contains_required ul.gfield_checkbox {
+.oue-gf-rqrd-checkbox.gfield_contains_required ul.gfield_checkbox,
+.oue-gf-hghlghts-rqrd-checkbox.gfield_contains_required ul.gfield_checkbox {
   transition: background 0.3s ease;
   -webkit-transition: background 0.3s ease;
   -moz-transition: background 0.3s ease;
   -o-transition: background 0.3s ease;
 }
-.oue-gf-rqrd-checkbox.gfield_contains_required ul.gfield_checkbox:not(.gf-value-entered) {
+.oue-gf-rqrd-checkbox.gfield_contains_required ul.gfield_checkbox:not(.gf-value-entered),
+.oue-gf-hghlghts-rqrd-checkbox.gfield_contains_required ul.gfield_checkbox:not(.gf-value-entered) {
   background-color: rgba(255, 0, 0, 0.1);
 }
-.oue-gf-rqrd-txtarea textarea {
+.oue-gf-rqrd-txtarea textarea,
+.oue-gf-hghlghts-rqrd-txtarea textarea {
   transition: background 0.3s ease;
   -webkit-transition: background 0.3s ease;
   -moz-transition: background 0.3s ease;
   -o-transition: background 0.3s ease;
 }
-.oue-gf-rqrd-txtarea textarea:focus {
+.oue-gf-rqrd-txtarea textarea:focus,
+.oue-gf-hghlghts-rqrd-txtarea textarea:focus {
   background-color: #edf3f4;
 }
-.oue-gf-rqrd-txtarea.gfield_contains_required textarea:not(.gf-value-entered):not(:focus) {
+.oue-gf-rqrd-txtarea.gfield_contains_required textarea:not(.gf-value-entered):not(:focus),
+.oue-gf-hghlghts-rqrd-txtarea.gfield_contains_required textarea:not(.gf-value-entered):not(:focus) {
   background-color: rgba(255, 0, 0, 0.1);
 }
 .oue-gf-actvtr-checkbox {
@@ -2713,6 +2726,59 @@ div.column .gform_wrapper #extensions_message {
 }
 .oue-gf-actvtr-chain.gf-hidden {
   display: none !important;
+}
+.oue-gf-upload-chain input {
+  -webkit-transition: background 0.3s ease;
+  -moz-transition: background 0.3s ease;
+  -o-transition: background 0.3s ease;
+  transition: background 0.3s ease;
+}
+.oue-gf-upload-chain input:focus {
+  background-color: #edf3f4;
+}
+.oue-gf-upload-chain.gfield_contains_required input:not(.gf-value-entered):not(:focus) {
+  background-color: rgba(255, 0, 0, 0.1);
+}
+.oue-gf-upload-chain.gf-hidden {
+  display: none !important;
+}
+.oue-gf-revealed {
+  -webkit-animation: gf-fades-in 0.5s linear 1;
+  -moz-animation: gf-fades-in 0.5s linear 1;
+  -o-animation: gf-fades-in 0.5s linear 1;
+  animation: gf-fades-in 0.5s linear 1;
+}
+@-webkit-keyframes gf-fades-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@-moz-keyframes gf-fades-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@-o-keyframes gf-fades-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes gf-fades-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 /*  ╔══════════════════════════════════════════════════════════════════════════════════════════════╗ 
  *  ║ #### LISTS ################################################################################# ║
