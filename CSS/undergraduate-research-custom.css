@@ -765,7 +765,8 @@ div.column:hover a.loud-link {
 div.column h1 > a,
 div.column h2 > a,
 div.column h3 > a,
-div.column h4 > a {
+div.column h4 > a,
+.gform_heading h3.gform_title > a {
   line-height: 1.35em;
 }
 div.column aside.article-sidebar {
@@ -1076,7 +1077,8 @@ div.column h2:first-child {
 div.column hr:not(.subSection) + h2 {
   margin-top: 0;
 }
-div.column h3 {
+div.column h3,
+.gform_heading h3.gform_title {
   padding: 0 0 0 .1em;
   margin-top: 1.5rem;
   margin-bottom: .75rem;
@@ -1088,19 +1090,23 @@ div.column h3 {
   color: #981e32;
 }
 @media all and (min-width: 481px) and (max-width: 890px) {
-  div.column h3 {
+  div.column h3,
+  .gform_heading h3.gform_title {
     font-size: 1.4875rem;
   }
 }
 @media all and (max-width: 480px) {
-  div.column h3 {
+  div.column h3,
+  .gform_heading h3.gform_title {
     font-size: 1.3015625rem;
   }
 }
-div.column h3.no-top-margin {
+div.column h3.no-top-margin,
+.gform_heading h3.gform_title.no-top-margin {
   margin-top: 0;
 }
-div.column h3.fancy {
+div.column h3.fancy,
+.gform_heading h3.gform_title.fancy {
   position: relative;
   padding: 0.3333rem 0.5rem;
   margin-left: -0.5rem;
@@ -1108,13 +1114,16 @@ div.column h3.fancy {
   margin-right: -0.5rem;
   background-color: rgba(198, 12, 48, 0.075);
 }
-div.column h3.fancy.with-top-border {
+div.column h3.fancy.with-top-border,
+.gform_heading h3.gform_title.fancy.with-top-border {
   padding-top: 0.4375rem;
 }
-div.column h3.fancy.with-top-border:not(:first-child) {
+div.column h3.fancy.with-top-border:not(:first-child),
+.gform_heading h3.gform_title.fancy.with-top-border:not(:first-child) {
   margin-top: 2rem;
 }
-div.column h3.fancy.with-top-border::before {
+div.column h3.fancy.with-top-border::before,
+.gform_heading h3.gform_title.fancy.with-top-border::before {
   content: "";
   position: absolute;
   top: 0;
@@ -1124,10 +1133,12 @@ div.column h3.fancy.with-top-border::before {
   border-top: 1px solid rgba(152, 30, 50, 0.67);
   border-bottom: 1px solid rgba(152, 30, 50, 0.375);
 }
-div.column h3.centered {
+div.column h3.centered,
+.gform_heading h3.gform_title.centered {
   text-align: center;
 }
-div.column h3:first-child {
+div.column h3:first-child,
+.gform_heading h3.gform_title:first-child {
   margin-top: 0;
 }
 div.column hr:not(.subSection) + h3 {
@@ -1160,7 +1171,8 @@ div.column h4.centered {
   text-align: center;
 }
 div.column h3.gray,
-div.column h4.gray {
+div.column h4.gray,
+.gform_heading h3.gform_title.gray {
   color: #464e54;
 }
 div.column h1.crimson,
