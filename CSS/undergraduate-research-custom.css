@@ -1259,7 +1259,7 @@ div.column p.article-deck strong {
 div.column p.article-tagline {
   font-family: "Palatino";
   font-size: 1.45rem;
-  line-height: 1.275rem;
+  line-height: 1.275em;
   font-weight: 500;
 }
 @media all and (min-width: 481px) and (max-width: 1049px) {
