@@ -3888,6 +3888,19 @@ div.gray-acrylic-sidebar h4 {
   font-size: 1.05rem;
 }
 /*  ╔══════════════════════════════════════════════════════════════════════════════════════════════╗ 
+ *  ║ #### ARTICLE HEADERS ####################################################################### ║
+ *  ╠==============================================================================================╣
+ *  ║ Containers designed to be used as custom article headers.                                    ║
+ *  ║  ╘═» Customized here for use on the Undergraduate Research website.                          ║
+ *  ╚══════════════════════════════════════════════════════════════════════════════════════════════╝
+ */
+div.column {
+  font-family: 'Open Sans', 'Lucida Sans Unicode', 'Lucida Sans', 'Lucida Grande';
+}
+div.column section.header-newsEvents {
+  background: url(/wp-content/uploads/sites/51/2016/03/wpbg-news-events-v2.png) no-repeat left top, url(/wp-content/uploads/sites/51/2016/03/section-bar.png) no-repeat right top, url(/wp-content/uploads/sites/51/2016/03/section-bar.png) no-repeat center;
+}
+/*  ╔══════════════════════════════════════════════════════════════════════════════════════════════╗ 
  *  ║ #### ASIDE.ARTICLE-SIDEBAR ################################################################# ║
  *  ╠==============================================================================================╣
  *  ║ Containers designed to be used as custom sidebars within a div.column element.               ║
