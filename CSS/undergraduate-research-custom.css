@@ -681,9 +681,9 @@ div.column h3.fancy,
 .gform_heading h3.gform_title.fancy {
   position: relative;
   padding: 0.3333rem 0.5rem;
-  margin-left: -0.5rem;
+  margin-left: 0;
   margin-bottom: 1rem;
-  margin-right: -0.5rem;
+  margin-right: 0;
   background-color: rgba(198, 12, 48, 0.075);
 }
 div.column h3.fancy.with-top-border,
@@ -1599,7 +1599,7 @@ div.column ol ol ol {
 div.column section {
   position: relative;
 }
-div.column section + section {
+div.column section + section:not(.no-top-margin) {
   margin-top: 2rem;
 }
 div.column .crimson-text {
@@ -2266,7 +2266,7 @@ ul.content-boxes {
   padding-right: 0;
   padding-left: 0;
 }
-ul.content-boxes li {
+ul.content-boxes > li {
   position: relative;
   min-height: 320px;
   border-radius: 4px;
@@ -2277,28 +2277,28 @@ ul.content-boxes li {
   list-style-type: none;
 }
 @media all and (max-width: 1205px) {
-  ul.content-boxes li {
+  ul.content-boxes > li {
     overflow-x: scroll;
   }
 }
-ul.content-boxes li p.email {
+ul.content-boxes > li p.email {
   font-size: 0.9em;
   font-weight: bold;
 }
-ul.content-boxes li img {
+ul.content-boxes > li > img {
   position: absolute;
   top: 10px;
   left: 10px;
   width: 106px;
 }
-ul.content-boxes li div.content {
+ul.content-boxes > li > div.content {
   position: relative;
   left: 121px;
   width: calc(100% - 136px);
   min-width: 189px;
   padding: 10px 10px 10px 5px;
 }
-ul.content-boxes li + li {
+ul.content-boxes > li + li {
   margin-top: 2rem;
 }
 a.vpue-tooltip {
