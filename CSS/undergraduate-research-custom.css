@@ -1614,8 +1614,12 @@ div.column .dark-blue-text {
 div.column .centered-text {
   text-align: center;
 }
-div.column .larger-text {
+div.column .larger-text,
+div.column .has-larger-text {
   font-size: larger;
+}
+div.column .has-smaller-text {
+  font-size: smaller;
 }
 @media (min-width: 1050px) {
   div.column .large-format-friendly {
