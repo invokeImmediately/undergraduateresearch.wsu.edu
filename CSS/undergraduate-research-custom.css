@@ -1783,7 +1783,7 @@ div.interactively-flipped-panels div.container div.panel-wrapper div.panel div.f
   width: 100%;
   height: 100%;
   z-index: 10;
-  opacity: 1.0;
+  opacity: 1;
   text-transform: uppercase;
 }
 div.interactively-flipped-panels div.container div.panel-wrapper div.panel div.front p {
@@ -1903,33 +1903,22 @@ div.interactively-flipped-panels div.container div.panel-wrapper:hover {
 }
 @media all and (max-width: 480px) {
   div.interactively-flipped-panels div.container div.panel-wrapper:hover {
-    width: 96.9762%;
     width: 100%;
-    padding-bottom: 313.3477%;
-    padding-bottom: calc(100% * 0.8 * 4);
+    padding-bottom: 76.9762%;
+    padding-bottom: calc(100% * 0.8);
   }
 }
 div.interactively-flipped-panels div.container div.panel-wrapper:hover div.panel div.front {
   opacity: 0;
-  transition-property: opacity;
-  -webkit-transition-property: opacity;
-  transition-delay: 0.5s;
-  -webkit-transition-delay: 0.5s;
-  transition-duration: .25s;
-  -webkit-transition-duration: .25s;
-  transition-timing-function: linear;
-  -webkit-transition-timing-function: linear;
+  -webkit-transition: opacity 0.25s linear 0.5s;
+  -moz-transition: opacity 0.25s linear 0.5s;
+  transition: opacity 0.25s linear 0.5s;
 }
 div.interactively-flipped-panels div.container div.panel-wrapper:hover div.panel div.rear {
   opacity: 1;
-  transition-property: opacity;
-  -webkit-transition-property: opacity;
-  transition-delay: 0.5s;
-  -webkit-transition-delay: 0.5s;
-  transition-duration: 0s;
-  -webkit-transition-duration: 0s;
-  transition-timing-function: linear;
-  -webkit-transition-timing-function: linear;
+  -webkit-transition: opacity 0 linear 0.5s;
+  -moz-transition: opacity 0 linear 0.5s;
+  transition: opacity 0 linear 0.5s;
 }
 div.interactively-flipped-panels div.container div.panel-wrapper.top-left:hover,
 div.interactively-flipped-panels div.container div.panel-wrapper.top-right:hover,
@@ -1937,12 +1926,9 @@ div.interactively-flipped-panels div.container div.panel-wrapper.bottom-left:hov
 div.interactively-flipped-panels div.container div.panel-wrapper.bottom-right:hover {
   width: calc(100% - 2em);
   padding-bottom: calc((50% * 0.8 - 2em) * 2 + 2em);
-  transition-property: width, padding;
-  -webkit-transition-property: width, padding;
-  transition-duration: 0.25s, 0.25s;
-  -webkit-transition-duration: 0.25s, 0.25s;
-  transition-timing-function: linear, linear;
-  -webkit-transition-timing-function: linear, linear;
+  -webkit-transition: width 0.25s linear 0.25s, padding 0.25s linear 0.25s;
+  -moz-transition: width 0.25s linear 0.25s, padding 0.25s linear 0.25s;
+  transition: width 0.25s linear 0.25s, padding 0.25s linear 0.25s;
 }
 @media all and (max-width: 480px) {
   div.interactively-flipped-panels div.container div.panel-wrapper.top-left:hover,
@@ -1951,18 +1937,13 @@ div.interactively-flipped-panels div.container div.panel-wrapper.bottom-right:ho
   div.interactively-flipped-panels div.container div.panel-wrapper.bottom-right:hover {
     position: relative;
     width: 100%;
-    padding-bottom: calc(100% * 0.8 * 4);
+    padding-bottom: calc(100% * 0.8);
   }
 }
 @media all and (max-width: 480px) {
   div.interactively-flipped-panels div.container:hover {
-    padding-bottom: calc((100% * 0.8) * 3 + (100% * 0.8) * 4);
-    transition-property: padding;
-    -webkit-transition-property: padding;
-    transition-duration: 0.25s;
-    -webkit-transition-duration: 0.25s;
-    transition-timing-function: linear;
-    -webkit-transition-timing-function: linear;
+    padding-bottom: 320%;
+    padding-bottom: calc((100% * 0.8) * 4);
   }
 }
 /*  ┌──────────────────────────────────────────────────────────────────────────────────────────────┐
@@ -2406,10 +2387,10 @@ span.accentuated-text {
   font-weight: 700;
   font-size: 1.3em;
   line-height: normal;
-  color: #3f6b72;
+  color: #0099b1;
 }
 span.accentuated-text.brighter {
-  color: #4f868e;
+  color: #00c1dd;
 }
 span.accentuated-text.gray {
   color: #5e6a71;
