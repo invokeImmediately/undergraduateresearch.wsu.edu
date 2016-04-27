@@ -960,6 +960,9 @@ div.column p:last-child:not(.no-bottom-pad) {
 div.column p:not(:last-child):not(.no-btm-margin) {
   margin-bottom: 1em;
 }
+div.column p.btm-margin-override:not(:last-child) {
+  margin-bottom: 0;
+}
 div.column p.double-margins:not(:last-child) {
   margin-bottom: 2em;
 }
