@@ -1910,25 +1910,53 @@ div.interactively-flipped-panels div.container div.panel-wrapper:hover {
 }
 div.interactively-flipped-panels div.container div.panel-wrapper:hover div.panel div.front {
   opacity: 0;
-  transition-property: opacity;
-  -webkit-transition-property: opacity;
-  transition-delay: 0.5s;
-  -webkit-transition-delay: 0.5s;
-  transition-duration: .25s;
-  -webkit-transition-duration: .25s;
-  transition-timing-function: linear;
-  -webkit-transition-timing-function: linear;
+}
+@media all and (min-width: 481px) {
+  div.interactively-flipped-panels div.container div.panel-wrapper:hover div.panel div.front {
+    transition-property: opacity;
+    -webkit-transition-property: opacity;
+    transition-delay: 0.5s;
+    -webkit-transition-delay: 0.5s;
+    transition-duration: 0.25s;
+    -webkit-transition-duration: 0.25s;
+    transition-timing-function: linear;
+    -webkit-transition-timing-function: linear;
+  }
+}
+@media all and (max-width: 480px) {
+  div.interactively-flipped-panels div.container div.panel-wrapper:hover div.panel div.front {
+    transition-property: opacity;
+    -webkit-transition-property: opacity;
+    transition-duration: 0.25s;
+    -webkit-transition-duration: 0.25s;
+    transition-timing-function: linear;
+    -webkit-transition-timing-function: linear;
+  }
 }
 div.interactively-flipped-panels div.container div.panel-wrapper:hover div.panel div.rear {
   opacity: 1;
-  transition-property: opacity;
-  -webkit-transition-property: opacity;
-  transition-delay: 0.5s;
-  -webkit-transition-delay: 0.5s;
-  transition-duration: 0s;
-  -webkit-transition-duration: 0s;
-  transition-timing-function: linear;
-  -webkit-transition-timing-function: linear;
+}
+@media all and (min-width: 481px) {
+  div.interactively-flipped-panels div.container div.panel-wrapper:hover div.panel div.rear {
+    transition-property: opacity;
+    -webkit-transition-property: opacity;
+    transition-delay: 0.5s;
+    -webkit-transition-delay: 0.5s;
+    transition-duration: 0s;
+    -webkit-transition-duration: 0s;
+    transition-timing-function: linear;
+    -webkit-transition-timing-function: linear;
+  }
+}
+@media all and (max-width: 480px) {
+  div.interactively-flipped-panels div.container div.panel-wrapper:hover div.panel div.rear {
+    transition-property: opacity;
+    -webkit-transition-property: opacity;
+    transition-duration: 0s;
+    -webkit-transition-duration: 0s;
+    transition-timing-function: linear;
+    -webkit-transition-timing-function: linear;
+  }
 }
 div.interactively-flipped-panels div.container div.panel-wrapper.top-left:hover,
 div.interactively-flipped-panels div.container div.panel-wrapper.top-right:hover,
