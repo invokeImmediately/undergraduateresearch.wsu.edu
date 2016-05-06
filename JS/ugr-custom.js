@@ -11,7 +11,7 @@
         var ugrSiteURL = window.location.pathname;
         switch(ugrSiteURL) {
             case '/news/':
-                $('div.column.one').first().parent('section').before('<section class="row single gutter pad-top"><div class="column one"><section class="article-header header-newsEvents"><div class="header-content"><h2>WSU Undergraduate Research News</h2><h3>What\'s going on with our students and programs</h3></div></section></div></section>');
+                $('div.column.one').first().parent('section').before('<section class="row single gutter pad-top"><div class="column one"><section class="article-header header-newsEvents"><div class="header-content"><h2>Undergraduate Research News</h2><h3>What\'s going on with our students and programs</h3></div></section></div></section>');
                 break;
         }
         
