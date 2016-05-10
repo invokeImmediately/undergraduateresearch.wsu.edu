@@ -504,6 +504,16 @@ section.halves div.column p {
     width: 100%;
   }
 }
+@media all and (min-width: 694px) {
+  section.thirds div.column p {
+    text-align: left;
+  }
+}
+@media all and (max-width: 480px) {
+  section.thirds div.column p {
+    text-align: left;
+  }
+}
 /*     ┌─────────────────────────────────────────────────────────────────────────────────────────────────┐
  *     │ ++++ ASIDE selectors ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ │
  *     └─────────────────────────────────────────────────────────────────────────────────────────────────┘
