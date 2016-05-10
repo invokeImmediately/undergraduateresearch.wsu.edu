@@ -12,11 +12,17 @@ img.shiftToCenter {
 .spaces-top-half {
   margin-top: 1rem;
 }
+.spaces-top-qrtr {
+  margin-top: 0.5rem;
+}
 .spaces-rgt-nrml {
   margin-right: 2rem;
 }
 .spaces-rgt-half {
   margin-right: 1rem;
+}
+.spaces-rgt-qrtr {
+  margin-right: 0.5rem;
 }
 .spaces-btm-nrml {
   margin-bottom: 2rem;
@@ -24,11 +30,17 @@ img.shiftToCenter {
 .spaces-btm-half {
   margin-bottom: 1rem;
 }
+.spaces-btm-qrtr {
+  margin-bottom: 0.5rem;
+}
 .spaces-lft-nrml {
-  margin-right: 2rem;
+  margin-left: 2rem;
 }
 .spaces-lft-half {
-  margin-right: 1rem;
+  margin-left: 1rem;
+}
+.spaces-lft-qrtr {
+  margin-left: 0.5rem;
 }
 .pads-top-nrml {
   padding-top: 2rem;
@@ -364,33 +376,18 @@ section.article-header div.header-content {
   section.article-header div.header-content h1,
   section.article-header div.header-content h2 {
     color: #ffffff;
-    text-shadow: 0 1px 0 #cccccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbbbbb, 0 4px 0 #b9b9b9, 0 5px 0 #aaaaaa, 0 6px 1px rgba(0, 0, 0, 0.1), 0 0 5px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.3), 0 3px 5px rgba(0, 0, 0, 0.2), 0 5px 10px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.2), 0 20px 20px rgba(0, 0, 0, 0.15);
-    /*.rgb-black(); text-shadow: 0 1px 0 #bbb,
-                     0 2px 0 #999, 0 3px 0 #777,
-                     0 4px 1px rgba(@rval,@gval,@bval,.1),
-                     0 0 5px rgba(@rval,@gval,@bval,.1),
-                     0 1px 3px rgba(@rval,@gval,@bval,.3),
-                     0 3px 5px rgba(@rval,@gval,@bval,.2),
-                     0 5px 10px rgba(@rval,@gval,@bval,.25),
-                     0 0 2px #000, 0 4px 2px #000;*/
   }
   section.article-header div.header-content h1 {
     font-size: 70px;
     line-height: 1.071428571428571em;
+    text-shadow: 0 1px 0 #afafaf, 0 2px 0 #989898, 0 3px 0 #7f7f7f, 0 4px 0 #686868, 0 5px 0 #4f4f4f, 0 6px 1px rgba(0, 0, 0, 0.1), 0 0 5px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.3), 0 3px 5px rgba(0, 0, 0, 0.2), 0 5px 10px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.2), 0 20px 20px rgba(0, 0, 0, 0.15);
   }
   section.article-header div.header-content h2 {
     margin-bottom: .75rem;
     font-size: 3.0238rem;
     line-height: 0.8em;
     text-transform: uppercase;
-    /*.rgb-black(); text-shadow: 0 1px 0 #bbb,
-                     0 2px 0 #999, 0 3px 0 #777,
-                     0 4px 1px rgba(@rval,@gval,@bval,.1),
-                     0 0 5px rgba(@rval,@gval,@bval,.1),
-                     0 1px 3px rgba(@rval,@gval,@bval,.3),
-                     0 3px 5px rgba(@rval,@gval,@bval,.2),
-                     0 5px 10px rgba(@rval,@gval,@bval,.25),
-                     0 0 2px #000, 0 4px 2px #000;*/
+    text-shadow: 0 0.6667px 0 #afafaf, 0 1.3333px 0 #989898, 0 2px 0 #7f7f7f, 0 2.6667px 0 #686868, 0 3.3333px 0 #4f4f4f, 0 4px 0.6667px rgba(0, 0, 0, 0.1), 0 0 3.3333px rgba(0, 0, 0, 0.1), 0 0.6667px 2px rgba(0, 0, 0, 0.3), 0 2px 3.3333px rgba(0, 0, 0, 0.2), 0 3.3333px 6.6667px rgba(0, 0, 0, 0.25), 0 6.6667px 6.6667px rgba(0, 0, 0, 0.2), 0 13.3333px 13.3333px rgba(0, 0, 0, 0.15);
   }
   section.article-header div.header-content h3 {
     padding: .1rem .2rem .2rem;
@@ -401,7 +398,16 @@ section.article-header div.header-content {
     font-size: 1.35rem;
     text-transform: uppercase;
     color: #ffffff;
-    text-shadow: 0 0.5px 0 #aaaaaa, 0 1px 0 #888888, 0 1.5px 0.5px rgba(152, 30, 50, 0.1), 0 0 2.5px rgba(152, 30, 50, 0.1), 0 0.5px 1.5px rgba(152, 30, 50, 0.3), 0 1px 2.5px rgba(152, 30, 50, 0.2), 0 0 0.5px #000000, 0 1.5px 1px #000000;
+    text-shadow: 0 0.3333px 0 #afafaf, 0 0.6667px 0 #989898, 0 1px 0 #7f7f7f, 0 1.3333px 0 #686868, 0 1.6667px 0 #4f4f4f, 0 2px 0.3333px rgba(0, 0, 0, 0.1), 0 0 1.6667px rgba(0, 0, 0, 0.1), 0 0.3333px 1px rgba(0, 0, 0, 0.3), 0 1px 1.6667px rgba(0, 0, 0, 0.2), 0 1.6667px 3.3333px rgba(0, 0, 0, 0.25), 0 3.3333px 3.3333px rgba(0, 0, 0, 0.2), 0 6.6667px 6.6667px rgba(0, 0, 0, 0.15);
+    /*.rgb-black(); text-shadow: 0 .5px 0 #aaa, 0 1px 0 #888,
+                     0 1.5px .5px rgba(@rval,@gval,@bval,.1),
+                     0 0 2.5px rgba(@rval,@gval,@bval,.1),
+                     0 .5px 1.5px rgba(@rval,@gval,@bval,.3),
+                     0 1px 2.5px rgba(@rval,@gval,@bval,.2),
+                     0 0 .5px #000, 0 1.5px 1px #000;*/
+  }
+  section.article-header div.header-content h3 > mark.highlight {
+    text-shadow: 0 0.3333px 0 #77898b, 0 0.6667px 0 #687779, 0 1px 0 #576365, 0 1.3333px 0 #475153, 0 1.6667px 0 #363e3f, 0 2px 0.3333px rgba(0, 0, 0, 0.1), 0 0 1.6667px rgba(0, 0, 0, 0.1), 0 0.3333px 1px rgba(0, 0, 0, 0.3), 0 1px 1.6667px rgba(0, 0, 0, 0.2), 0 1.6667px 3.3333px rgba(0, 0, 0, 0.25), 0 3.3333px 3.3333px rgba(0, 0, 0, 0.2), 0 6.6667px 6.6667px rgba(0, 0, 0, 0.15);
   }
 }
 section.halves div.column p {
@@ -1850,7 +1856,7 @@ div.interactively-flipped-panels div.container div.panel-wrapper div.panel.green
 }
 div.interactively-flipped-panels div.container div.panel-wrapper div.panel.green div.front {
   background-color: #ada400;
-  color: #000;
+  color: #000000;
 }
 div.interactively-flipped-panels div.container div.panel-wrapper div.panel.yellow div.rear {
   background-color: #77580c;
@@ -1858,7 +1864,7 @@ div.interactively-flipped-panels div.container div.panel-wrapper div.panel.yello
 }
 div.interactively-flipped-panels div.container div.panel-wrapper div.panel.yellow div.front {
   background-color: #ffb81c;
-  color: #000;
+  color: #000000;
 }
 div.interactively-flipped-panels div.container div.panel-wrapper div.panel.orange div.rear {
   background-color: #6d441f;
@@ -1866,7 +1872,7 @@ div.interactively-flipped-panels div.container div.panel-wrapper div.panel.orang
 }
 div.interactively-flipped-panels div.container div.panel-wrapper div.panel.orange div.front {
   background-color: #f6861f;
-  color: #000;
+  color: #000000;
 }
 div.interactively-flipped-panels div.container div.panel-wrapper div.panel.blue div.rear {
   background-color: #2f5055;
@@ -1874,7 +1880,7 @@ div.interactively-flipped-panels div.container div.panel-wrapper div.panel.blue 
 }
 div.interactively-flipped-panels div.container div.panel-wrapper div.panel.blue div.front {
   background-color: #00a5bd;
-  color: #000;
+  color: #000000;
 }
 div.interactively-flipped-panels div.container div.panel-wrapper div.panel.gray div.rear {
   background-color: #2a3033;
@@ -1882,7 +1888,7 @@ div.interactively-flipped-panels div.container div.panel-wrapper div.panel.gray 
 }
 div.interactively-flipped-panels div.container div.panel-wrapper div.panel.gray div.front {
   background-color: #eff0f1;
-  color: #000;
+  color: #000000;
 }
 div.interactively-flipped-panels div.container div.panel-wrapper div.panel.crimson div.rear {
   background-color: #981e32;
@@ -1890,7 +1896,7 @@ div.interactively-flipped-panels div.container div.panel-wrapper div.panel.crims
 }
 div.interactively-flipped-panels div.container div.panel-wrapper div.panel.crimson div.front {
   background-color: #c60c30;
-  color: #000;
+  color: #000000;
 }
 div.interactively-flipped-panels div.container div.panel-wrapper:hover {
   float: none;
@@ -2535,12 +2541,6 @@ img.shiftToLeft {
 }
 img.shiftToRight {
   float: right;
-  margin-bottom: 1rem;
-  margin-left: 2rem;
-}
-img.shiftToRight.no-margins {
-  margin-bottom: 0;
-  margin-left: 0;
 }
 img.fancy {
   border: 1px solid rgba(94, 106, 113, 0.5);
@@ -3814,6 +3814,26 @@ div.auto-scroller ul li {
  *  ║ the WordPress WSU Spine Theme.                                                               ║
  *  ╚══════════════════════════════════════════════════════════════════════════════════════════════╝
  */
+@media all and (max-width: 1440px) {
+  body {
+    background: #b5babe;
+  }
+}
+@media all and (min-width: 1441px) and (max-width: 1920px) {
+  body {
+    background: #b5babe url(/wp-content/uploads/sites/51/2016/05/tileable-eroded-scratch-metal-texture_wuxga.jpg) repeat-y fixed right top;
+  }
+}
+@media all and (min-width: 1921px) and (max-width: 2560px) {
+  body {
+    background: #b5babe url(/wp-content/uploads/sites/51/2016/05/tileable-eroded-scratch-metal-texture_wqxga.jpg) repeat-y fixed right top;
+  }
+}
+@media all and (min-width: 2561px) {
+  body {
+    background: #000000;
+  }
+}
 body {
   background: #2a3033 url(/wp-content/uploads/sites/51/2015/04/tileable-eroded-scratch-metal-texture_512x512.png) left top fixed repeat;
   font-family: 'Open Sans', 'Lucida Sans Unicode', 'Lucida Sans', 'Lucida Grande';
