@@ -3834,10 +3834,6 @@ div.auto-scroller ul li {
     background: #000000;
   }
 }
-body {
-  background: #2a3033 url(/wp-content/uploads/sites/51/2015/04/tileable-eroded-scratch-metal-texture_512x512.png) left top fixed repeat;
-  font-family: 'Open Sans', 'Lucida Sans Unicode', 'Lucida Sans', 'Lucida Grande';
-}
 main {
   background: #ffffff url(/wp-content/uploads/sites/51/2015/04/tileable-lab-papar-texture_500x500_opacity-0.10.png) left top repeat;
 }
