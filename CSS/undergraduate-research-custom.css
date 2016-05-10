@@ -487,8 +487,6 @@ section.halves div.column p {
 @media all and (min-width: 694px) {
   section.thirds img.show-when-adjacent {
     width: 100%;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
   }
 }
 @media all and (max-width: 693px) {
@@ -504,8 +502,6 @@ section.halves div.column p {
 @media all and (max-width: 693px) {
   section.thirds img.show-when-stacked {
     width: 100%;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
   }
 }
 /*     ┌─────────────────────────────────────────────────────────────────────────────────────────────────┐
