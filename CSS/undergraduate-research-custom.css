@@ -484,6 +484,30 @@ section.halves div.column p {
     top: 1rem;
   }
 }
+@media all and (min-width: 694px) {
+  section.thirds img.show-when-adjacent {
+    width: 100%;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+}
+@media all and (max-width: 693px) {
+  section.thirds img.show-when-adjacent {
+    display: none;
+  }
+}
+@media all and (min-width: 694px) {
+  section.thirds img.show-when-stacked {
+    display: none;
+  }
+}
+@media all and (max-width: 693px) {
+  section.thirds img.show-when-stacked {
+    width: 100%;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+}
 /*     ┌─────────────────────────────────────────────────────────────────────────────────────────────────┐
  *     │ ++++ ASIDE selectors ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ │
  *     └─────────────────────────────────────────────────────────────────────────────────────────────────┘
@@ -2481,6 +2505,10 @@ span.has-tool-tip:hover {
 cite.article-author {
   display: none;
 }
+/*     ┌─────────────────────────────────────────────────────────────────────────────────────────────────┐
+ *     │ ++++ IMG selectors ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ │
+ *     └─────────────────────────────────────────────────────────────────────────────────────────────────┘
+ */
 img.autoScaled {
   height: auto;
   width: 100%;
@@ -3950,7 +3978,13 @@ div.gray-acrylic-sidebar h4 {
 div.column {
   font-family: 'Open Sans', 'Lucida Sans Unicode', 'Lucida Sans', 'Lucida Grande';
 }
-div.column section.header-newsEvents {
+div.column section.header-student-funding {
+  background: url(/wp-content/uploads/sites/51/2016/05/wpbg_student-funding.png) no-repeat left top, url(/wp-content/uploads/sites/51/2016/03/section-bar.png) no-repeat right top, url(/wp-content/uploads/sites/51/2016/03/section-bar.png) no-repeat center;
+}
+div.column section.header-newsEvents,
+div.column section.header-news-events,
+div.column section.header-news,
+div.column section.header-events {
   background: url(/wp-content/uploads/sites/51/2016/03/wpbg-news-events-v2.png) no-repeat left top, url(/wp-content/uploads/sites/51/2016/03/section-bar.png) no-repeat right top, url(/wp-content/uploads/sites/51/2016/03/section-bar.png) no-repeat center;
 }
 /*  ╔══════════════════════════════════════════════════════════════════════════════════════════════╗ 
