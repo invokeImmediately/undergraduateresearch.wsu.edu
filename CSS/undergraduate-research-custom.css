@@ -2602,7 +2602,45 @@ ul.content-boxes > li {
 }
 @media all and (max-width: 1205px) {
   ul.content-boxes > li {
-    overflow-x: scroll;
+    overflow-x: auto;
+  }
+}
+@media all {
+  ul.content-boxes > li p {
+    line-height: 1.25em;
+    font-size: 0.92195445em;
+  }
+}
+@media all and (min-width: 1073px) {
+  ul.content-boxes > li p {
+    font-size: 1em;
+  }
+}
+@media all and (min-width: 990px) and (max-width: 1072px) {
+  ul.content-boxes > li p {
+    font-size: 0.92195445em;
+  }
+}
+@media all and (min-width: 792px) and (max-width: 989px) {
+  ul.content-boxes > li p {
+    font-size: 1em;
+  }
+}
+@media all and (min-width: 481px) and (max-width: 791px) {
+  ul.content-boxes > li p {
+    font-size: 0.92195445em;
+  }
+}
+@media all and (min-width: 361px) and (max-width: 480px) {
+  ul.content-boxes > li p {
+    font-size: 0.85000001em;
+    text-align: left;
+  }
+}
+@media all and (max-width: 360px) {
+  ul.content-boxes > li p {
+    font-size: 0.78366129em;
+    text-align: left;
   }
 }
 ul.content-boxes > li p.email {
@@ -4511,9 +4549,9 @@ div.column ul:not(.content-boxes).gray-bullets li {
   list-style-image: url(/wp-content/uploads/sites/51/2016/01/ico-cougar-bullet-point_gray.png);
 }
 /*  ╔══════════════════════════════════════════════════════════════════════════════════════════════╗ 
- *  ║ #### DIV.SIDEBAR ########################################################################### ║
+ *  ║ #### DIV layouts ########################################################################### ║
  *  ╠==============================================================================================╣
- *  ║ Containers designed to be used as custom sidebars within a div.column element.               ║
+ *  ║ Containers designed to be used for various purposes within a div.column element.             ║
  *  ║  ╘═» Customized here for use on the Undergraduate Research website.                          ║
  *  ╚══════════════════════════════════════════════════════════════════════════════════════════════╝
  */
