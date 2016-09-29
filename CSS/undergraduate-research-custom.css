@@ -3440,46 +3440,143 @@ div.recent-updates p.recent-update-3 {
  *         │ ···· UNORDERED list elements ·························································· │
  *         └-----------------------------------------------------------------------------------------┘
  */
-div.column ul {
-  padding-bottom: 0;
-}
 @media all {
-  div.column ul {
+  section.row.single div.column ul {
     line-height: 1.275em;
     font-size: 1em;
   }
 }
 @media all and (min-width: 1073px) {
-  div.column ul {
+  section.row.single div.column ul {
     font-size: 1.06609808em;
   }
 }
 @media all and (min-width: 990px) and (max-width: 1072px) {
-  div.column ul {
+  section.row.single div.column ul {
     font-size: 1em;
   }
 }
 @media all and (min-width: 792px) and (max-width: 989px) {
-  div.column ul {
+  section.row.single div.column ul {
     font-size: 1.06609808em;
   }
 }
 @media all and (min-width: 481px) and (max-width: 791px) {
-  div.column ul {
+  section.row.single div.column ul {
     font-size: 1em;
   }
 }
 @media all and (min-width: 361px) and (max-width: 480px) {
-  div.column ul {
+  section.row.single div.column ul {
     font-size: 0.938em;
     text-align: left;
   }
 }
 @media all and (max-width: 360px) {
-  div.column ul {
+  section.row.single div.column ul {
     font-size: 0.879844em;
     text-align: left;
   }
+}
+@media all {
+  section.row.side-right div.column ul,
+  section.row.side-left div.column ul,
+  section.row.halves div.column ul {
+    line-height: 1.275em;
+    font-size: 1em;
+  }
+}
+@media all and (min-width: 1073px) {
+  section.row.side-right div.column ul,
+  section.row.side-left div.column ul,
+  section.row.halves div.column ul {
+    font-size: 1em;
+  }
+}
+@media all and (min-width: 990px) and (max-width: 1072px) {
+  section.row.side-right div.column ul,
+  section.row.side-left div.column ul,
+  section.row.halves div.column ul {
+    font-size: 1em;
+  }
+}
+@media all and (min-width: 792px) and (max-width: 989px) {
+  section.row.side-right div.column ul,
+  section.row.side-left div.column ul,
+  section.row.halves div.column ul {
+    font-size: 1em;
+  }
+}
+@media all and (min-width: 481px) and (max-width: 791px) {
+  section.row.side-right div.column ul,
+  section.row.side-left div.column ul,
+  section.row.halves div.column ul {
+    font-size: 1em;
+  }
+}
+@media all and (min-width: 361px) and (max-width: 480px) {
+  section.row.side-right div.column ul,
+  section.row.side-left div.column ul,
+  section.row.halves div.column ul {
+    font-size: 0.938em;
+    text-align: left;
+  }
+}
+@media all and (max-width: 360px) {
+  section.row.side-right div.column ul,
+  section.row.side-left div.column ul,
+  section.row.halves div.column ul {
+    font-size: 0.879844em;
+    text-align: left;
+  }
+}
+@media all {
+  section.row.thirds div.column ul,
+  section.row.quarters div.column ul {
+    line-height: 1.275em;
+    font-size: 1em;
+  }
+}
+@media all and (min-width: 1073px) {
+  section.row.thirds div.column ul,
+  section.row.quarters div.column ul {
+    font-size: 1em;
+  }
+}
+@media all and (min-width: 990px) and (max-width: 1072px) {
+  section.row.thirds div.column ul,
+  section.row.quarters div.column ul {
+    font-size: 0.938em;
+  }
+}
+@media all and (min-width: 792px) and (max-width: 989px) {
+  section.row.thirds div.column ul,
+  section.row.quarters div.column ul {
+    font-size: 1em;
+  }
+}
+@media all and (min-width: 481px) and (max-width: 791px) {
+  section.row.thirds div.column ul,
+  section.row.quarters div.column ul {
+    font-size: 0.938em;
+  }
+}
+@media all and (min-width: 361px) and (max-width: 480px) {
+  section.row.thirds div.column ul,
+  section.row.quarters div.column ul {
+    font-size: 0.879844em;
+    text-align: left;
+  }
+}
+@media all and (max-width: 360px) {
+  section.row.thirds div.column ul,
+  section.row.quarters div.column ul {
+    font-size: 0.879844em;
+    text-align: left;
+  }
+}
+div.column ul {
+  padding-bottom: 0;
 }
 div.column ul ol,
 div.column ul ul {
@@ -3497,11 +3594,8 @@ div.column ul li {
 div.column ul li.no-bottom-pad {
   padding-bottom: 0;
 }
-div.column p + ul {
+@prnt p + & {
   margin-top: 1rem;
-}
-ul.external-links li {
-  list-style-image: url(/wp-content/uploads/sites/906/2015/08/external-link-bullet.png);
 }
 ul.content-boxes {
   padding-right: 0;
@@ -3579,6 +3673,9 @@ ul.content-boxes > li > div.content {
 }
 ul.content-boxes > li + li {
   margin-top: 2rem;
+}
+ul.external-links li {
+  list-style-image: url(/wp-content/uploads/sites/906/2015/08/external-link-bullet.png);
 }
 ul.cascaded-layout > li.cascade-sizer,
 ul.cascaded-layout > li.gutter-sizer {
@@ -3781,6 +3878,9 @@ div.column a:hover {
 div.column a.subtle-link {
   border-bottom: 0.0625em solid rgba(152, 30, 50, 0);
   box-shadow: inset 0 -0.3125em 0 rgba(152, 30, 50, 0);
+}
+div.column a.subtle-link.no-highlight:hover {
+  background-color: rgba(239, 120, 121, 0);
 }
 div.column a.pop-out-link {
   -webkit-transition: color .4s linear, background .4s ease-in, font-size .25s linear;
