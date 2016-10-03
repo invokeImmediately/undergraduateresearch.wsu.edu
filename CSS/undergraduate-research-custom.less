@@ -55,7 +55,7 @@ header.main-header {
 	color: #fff !important;
 }
 
-div.column ul {
+div.column ul:not(.content-boxes) {
     li { list-style-image: url(/wp-content/uploads/sites/51/2015/04/ico-cougar-bullet-point.png); }
     &.gray-bullets {
         li { list-style-image: url(/wp-content/uploads/sites/51/2016/01/ico-cougar-bullet-point_gray.png); }
@@ -63,9 +63,9 @@ div.column ul {
 }
 
 /*  ╔══════════════════════════════════════════════════════════════════════════════════════════════╗ 
- *  ║ #### DIV.SIDEBAR ########################################################################### ║
+ *  ║ #### DIV layouts ########################################################################### ║
  *  ╠==============================================================================================╣
- *  ║ Containers designed to be used as custom sidebars within a div.column element.               ║
+ *  ║ Containers designed to be used for various purposes within a div.column element.             ║
  *  ║  ╘═» Customized here for use on the Undergraduate Research website.                          ║
  *  ╚══════════════════════════════════════════════════════════════════════════════════════════════╝
  */
@@ -340,3 +340,11 @@ div.column {
         }
     }
 }*/
+
+/*  ╔════════════════════════════════════════════════════════════════════════════════════════════════════════╗ 
+ *  ║ #### CUSTOM layouts ################################################################################## ║
+ *  ╠========================================================================================================╣
+ *  ║ Mixins are used here to pull in optional layouts that can be used as desired on OUE sites.             ║
+ *  ╚════════════════════════════════════════════════════════════════════════════════════════════════════════╝
+ */
+.include-glass-button-layout(true);
