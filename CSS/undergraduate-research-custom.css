@@ -720,7 +720,7 @@ main section.row > div.column > article > div.article-body > section > p + ol,
 main section.row > div.column > article > div.article-summary > section > p + ol,
 main section.row > div.column > section > section > p + ol,
 main section.row > div.column table > tbody > tr > td > section > p + ol {
-  margin-top: -0.75rem;
+  margin-top: -0.66666667rem;
 }
 main section.row:last-child > div.column > p:last-child,
 main section.row:last-child > div.column > article > div.article-body > p:last-child,
@@ -1078,13 +1078,11 @@ div.column h1 {
 @media all and (min-width: 361px) and (max-width: 480px) {
   div.column h1 {
     font-size: 2.64847059em;
-    text-align: left;
   }
 }
 @media all and (max-width: 360px) {
   div.column h1 {
     font-size: 2.48426541em;
-    text-align: left;
   }
 }
 div.column h1.centered {
@@ -1134,13 +1132,11 @@ div.column h2 {
 @media all and (min-width: 361px) and (max-width: 480px) {
   div.column h2 {
     font-size: 1.94221176em;
-    text-align: left;
   }
 }
 @media all and (max-width: 360px) {
   div.column h2 {
     font-size: 1.82179464em;
-    text-align: left;
   }
 }
 @media all {
@@ -1172,13 +1168,11 @@ div.column h2 {
 @media all and (min-width: 361px) and (max-width: 480px) {
   div.column h2.article-title {
     font-size: 0.77688471em;
-    text-align: left;
   }
 }
 @media all and (max-width: 360px) {
   div.column h2.article-title {
     font-size: 0.72871785em;
-    text-align: left;
   }
 }
 div.column h2.centered {
@@ -1268,13 +1262,11 @@ div.column h3 {
 @media all and (min-width: 361px) and (max-width: 480px) {
   div.column h3 {
     font-size: 1.5008em;
-    text-align: left;
   }
 }
 @media all and (max-width: 360px) {
   div.column h3 {
     font-size: 1.4077504em;
-    text-align: left;
   }
 }
 div.column h3.centered {
@@ -1361,13 +1353,11 @@ div.column h4 {
 @media all and (min-width: 361px) and (max-width: 480px) {
   div.column h4 {
     font-size: 1.23595294em;
-    text-align: left;
   }
 }
 @media all and (max-width: 360px) {
   div.column h4 {
     font-size: 1.15932386em;
-    text-align: left;
   }
 }
 div.column h4.centered {
@@ -1432,47 +1422,93 @@ body.blog div.column header.article-header + * {
   div.column header.article-header h1.article-title,
   div.column header.article-header h2.article-title {
     font-size: 1.407em;
-    text-align: left;
   }
 }
 @media all and (max-width: 360px) {
   div.column header.article-header h1.article-title,
   div.column header.article-header h2.article-title {
     font-size: 1.319766em;
-    text-align: left;
   }
 }
 header.main-header span.sup-header-default {
   margin-bottom: .5rem;
-  font-size: .9rem;
+}
+@media all {
+  header.main-header span.sup-header-default {
+    font-size: 0.9rem;
+  }
+}
+@media all and (min-width: 1073px) {
+  header.main-header span.sup-header-default {
+    font-size: 0.9rem;
+  }
+}
+@media all and (min-width: 990px) and (max-width: 1072px) {
+  header.main-header span.sup-header-default {
+    font-size: 0.8442rem;
+  }
+}
+@media all and (min-width: 792px) and (max-width: 989px) {
+  header.main-header span.sup-header-default {
+    font-size: 0.9rem;
+  }
+}
+@media all and (min-width: 481px) and (max-width: 791px) {
+  header.main-header span.sup-header-default {
+    font-size: 0.8442rem;
+  }
+}
+@media all and (min-width: 361px) and (max-width: 480px) {
+  header.main-header span.sup-header-default {
+    font-size: 0.7918596rem;
+  }
 }
 @media all and (max-width: 360px) {
   header.main-header span.sup-header-default {
-    font-size: .75rem;
+    font-size: 0.7918596rem;
   }
 }
 @media all {
-  header.main-header span.sub-header-default {
-    font-size: 2.5rem;
-    line-height: 0.8em;
+  header.main-header span.sub-header-default,
+  header.main-header sub.sub-header {
+    line-height: 0.9em;
+    font-size: 2.35294118rem;
+  }
+}
+@media all and (min-width: 1073px) {
+  header.main-header span.sub-header-default,
+  header.main-header sub.sub-header {
+    font-size: 2.35294118rem;
+  }
+}
+@media all and (min-width: 990px) and (max-width: 1072px) {
+  header.main-header span.sub-header-default,
+  header.main-header sub.sub-header {
+    font-size: 2.20705882rem;
+  }
+}
+@media all and (min-width: 792px) and (max-width: 989px) {
+  header.main-header span.sub-header-default,
+  header.main-header sub.sub-header {
+    font-size: 2.35294118rem;
+  }
+}
+@media all and (min-width: 481px) and (max-width: 791px) {
+  header.main-header span.sub-header-default,
+  header.main-header sub.sub-header {
+    font-size: 2.20705882rem;
+  }
+}
+@media all and (min-width: 361px) and (max-width: 480px) {
+  header.main-header span.sub-header-default,
+  header.main-header sub.sub-header {
+    font-size: 2.07022118rem;
   }
 }
 @media all and (max-width: 360px) {
-  header.main-header span.sub-header-default {
-    font-size: 2.08333rem;
-    line-height: 1em;
-  }
-}
-@media all {
+  header.main-header span.sub-header-default,
   header.main-header sub.sub-header {
-    font-size: 2.5rem;
-    line-height: 0.8em;
-  }
-}
-@media all and (max-width: 360px) {
-  header.main-header sub.sub-header {
-    font-size: 2.08333rem;
-    line-height: 1em;
+    font-size: 2.07022118rem;
   }
 }
 @media (min-width: 1050px) {
@@ -1566,13 +1602,11 @@ footer.article-footer div.author-info {
 @media all and (min-width: 361px) and (max-width: 480px) {
   section.row.single div.column p {
     font-size: 0.938em;
-    text-align: left;
   }
 }
 @media all and (max-width: 360px) {
   section.row.single div.column p {
     font-size: 0.879844em;
-    text-align: left;
   }
 }
 @media all {
@@ -1616,7 +1650,6 @@ footer.article-footer div.author-info {
   section.row.side-left div.column p,
   section.row.halves div.column p {
     font-size: 0.938em;
-    text-align: left;
   }
 }
 @media all and (max-width: 360px) {
@@ -1624,7 +1657,6 @@ footer.article-footer div.author-info {
   section.row.side-left div.column p,
   section.row.halves div.column p {
     font-size: 0.879844em;
-    text-align: left;
   }
 }
 @media all {
@@ -1662,14 +1694,12 @@ footer.article-footer div.author-info {
   section.row.thirds div.column p,
   section.row.quarters div.column p {
     font-size: 0.879844em;
-    text-align: left;
   }
 }
 @media all and (max-width: 360px) {
   section.row.thirds div.column p,
   section.row.quarters div.column p {
     font-size: 0.879844em;
-    text-align: left;
   }
 }
 div.column p {
@@ -1720,13 +1750,11 @@ div.column p.half-margins:not(:last-child) {
 @media all and (min-width: 361px) and (max-width: 480px) {
   section.row.single div.column p.article-deck {
     font-size: 1.1256em;
-    text-align: left;
   }
 }
 @media all and (max-width: 360px) {
   section.row.single div.column p.article-deck {
     font-size: 1.0558128em;
-    text-align: left;
   }
 }
 @media all {
@@ -1770,7 +1798,6 @@ div.column p.half-margins:not(:last-child) {
   section.row.side-left div.column p.article-deck,
   section.row.halves div.column p.article-deck {
     font-size: 1.1256em;
-    text-align: left;
   }
 }
 @media all and (max-width: 360px) {
@@ -1778,7 +1805,6 @@ div.column p.half-margins:not(:last-child) {
   section.row.side-left div.column p.article-deck,
   section.row.halves div.column p.article-deck {
     font-size: 1.0558128em;
-    text-align: left;
   }
 }
 @media all {
@@ -1816,14 +1842,12 @@ div.column p.half-margins:not(:last-child) {
   section.row.thirds div.column p.article-deck,
   section.row.quarters div.column p.article-deck {
     font-size: 1.0558128em;
-    text-align: left;
   }
 }
 @media all and (max-width: 360px) {
   section.row.thirds div.column p.article-deck,
   section.row.quarters div.column p.article-deck {
     font-size: 1.0558128em;
-    text-align: left;
   }
 }
 div.column p.article-deck {
@@ -1861,13 +1885,11 @@ div.column p.article-deck strong {
 @media all and (min-width: 361px) and (max-width: 480px) {
   section.row.single div.column p.article-tagline {
     font-size: 1.22409em;
-    text-align: left;
   }
 }
 @media all and (max-width: 360px) {
   section.row.single div.column p.article-tagline {
     font-size: 1.14819642em;
-    text-align: left;
   }
 }
 @media all {
@@ -1911,7 +1933,6 @@ div.column p.article-deck strong {
   section.row.side-left div.column p.article-tagline,
   section.row.halves div.column p.article-tagline {
     font-size: 1.22409em;
-    text-align: left;
   }
 }
 @media all and (max-width: 360px) {
@@ -1919,7 +1940,6 @@ div.column p.article-deck strong {
   section.row.side-left div.column p.article-tagline,
   section.row.halves div.column p.article-tagline {
     font-size: 1.14819642em;
-    text-align: left;
   }
 }
 @media all {
@@ -1957,14 +1977,12 @@ div.column p.article-deck strong {
   section.row.thirds div.column p.article-tagline,
   section.row.quarters div.column p.article-tagline {
     font-size: 1.14819642em;
-    text-align: left;
   }
 }
 @media all and (max-width: 360px) {
   section.row.thirds div.column p.article-tagline,
   section.row.quarters div.column p.article-tagline {
     font-size: 1.14819642em;
-    text-align: left;
   }
 }
 @media all {
@@ -1996,13 +2014,11 @@ div.column p.article-deck strong {
 @media all and (min-width: 361px) and (max-width: 480px) {
   section.row.single div.column p.article-tagline.home {
     font-size: 1.60398021em;
-    text-align: left;
   }
 }
 @media all and (max-width: 360px) {
   section.row.single div.column p.article-tagline.home {
     font-size: 1.50453344em;
-    text-align: left;
   }
 }
 @media all {
@@ -2046,7 +2062,6 @@ div.column p.article-deck strong {
   section.row.side-left div.column p.article-tagline.home,
   section.row.halves div.column p.article-tagline.home {
     font-size: 1.60398021em;
-    text-align: left;
   }
 }
 @media all and (max-width: 360px) {
@@ -2054,7 +2069,6 @@ div.column p.article-deck strong {
   section.row.side-left div.column p.article-tagline.home,
   section.row.halves div.column p.article-tagline.home {
     font-size: 1.50453344em;
-    text-align: left;
   }
 }
 @media all {
@@ -2092,14 +2106,12 @@ div.column p.article-deck strong {
   section.row.thirds div.column p.article-tagline.home,
   section.row.quarters div.column p.article-tagline.home {
     font-size: 1.50453344em;
-    text-align: left;
   }
 }
 @media all and (max-width: 360px) {
   section.row.thirds div.column p.article-tagline.home,
   section.row.quarters div.column p.article-tagline.home {
     font-size: 1.50453344em;
-    text-align: left;
   }
 }
 div.column p.article-tagline {
@@ -2198,13 +2210,11 @@ div.column p.vpue-jump-bar span.title {
 @media all and (min-width: 361px) and (max-width: 480px) {
   section.row.single div.column p.vpue-jump-back {
     font-size: 0.644875em;
-    text-align: left;
   }
 }
 @media all and (max-width: 360px) {
   section.row.single div.column p.vpue-jump-back {
     font-size: 0.60489275em;
-    text-align: left;
   }
 }
 @media all {
@@ -2248,7 +2258,6 @@ div.column p.vpue-jump-bar span.title {
   section.row.side-left div.column p.vpue-jump-back,
   section.row.halves div.column p.vpue-jump-back {
     font-size: 0.644875em;
-    text-align: left;
   }
 }
 @media all and (max-width: 360px) {
@@ -2256,7 +2265,6 @@ div.column p.vpue-jump-bar span.title {
   section.row.side-left div.column p.vpue-jump-back,
   section.row.halves div.column p.vpue-jump-back {
     font-size: 0.60489275em;
-    text-align: left;
   }
 }
 @media all {
@@ -2294,14 +2302,12 @@ div.column p.vpue-jump-bar span.title {
   section.row.thirds div.column p.vpue-jump-back,
   section.row.quarters div.column p.vpue-jump-back {
     font-size: 0.60489275em;
-    text-align: left;
   }
 }
 @media all and (max-width: 360px) {
   section.row.thirds div.column p.vpue-jump-back,
   section.row.quarters div.column p.vpue-jump-back {
     font-size: 0.60489275em;
-    text-align: left;
   }
 }
 div.column p.vpue-jump-back {
@@ -2379,13 +2385,11 @@ div.column p.banner-text {
 @media all and (min-width: 361px) and (max-width: 480px) {
   div.column p.banner-text {
     font-size: 1.1725em;
-    text-align: left;
   }
 }
 @media all and (max-width: 360px) {
   div.column p.banner-text {
     font-size: 1.099805em;
-    text-align: left;
   }
 }
 div.column p.banner-text.orange {
@@ -2443,13 +2447,11 @@ div.column p.banner-text-orange-with-towers {
 @media all and (min-width: 361px) and (max-width: 480px) {
   div.column p.banner-text-orange-with-towers {
     font-size: 1.1725em;
-    text-align: left;
   }
 }
 @media all and (max-width: 360px) {
   div.column p.banner-text-orange-with-towers {
     font-size: 1.099805em;
-    text-align: left;
   }
 }
 /*  └──────────────────────────────────────────────────────────────────────────────────────────────┘
@@ -2461,7 +2463,8 @@ div.article-summary aside.article-sidebar,
 div.article-summary img,
 div.article-summary object,
 div.article-summary p.article-media-contacts,
-div.article-summary > h3 {
+div.article-summary > h3,
+div.article-summary p.photo-caption {
   display: none;
 }
 div.article-summary img.attachment-spine-thumbnail_size {
@@ -3478,13 +3481,11 @@ div.recent-updates p.recent-update-3 {
 @media all and (min-width: 361px) and (max-width: 480px) {
   section.row.single div.column ul {
     font-size: 0.938em;
-    text-align: left;
   }
 }
 @media all and (max-width: 360px) {
   section.row.single div.column ul {
     font-size: 0.879844em;
-    text-align: left;
   }
 }
 @media all {
@@ -3528,7 +3529,6 @@ div.recent-updates p.recent-update-3 {
   section.row.side-left div.column ul,
   section.row.halves div.column ul {
     font-size: 0.938em;
-    text-align: left;
   }
 }
 @media all and (max-width: 360px) {
@@ -3536,7 +3536,6 @@ div.recent-updates p.recent-update-3 {
   section.row.side-left div.column ul,
   section.row.halves div.column ul {
     font-size: 0.879844em;
-    text-align: left;
   }
 }
 @media all {
@@ -3574,14 +3573,12 @@ div.recent-updates p.recent-update-3 {
   section.row.thirds div.column ul,
   section.row.quarters div.column ul {
     font-size: 0.879844em;
-    text-align: left;
   }
 }
 @media all and (max-width: 360px) {
   section.row.thirds div.column ul,
   section.row.quarters div.column ul {
     font-size: 0.879844em;
-    text-align: left;
   }
 }
 div.column ul {
@@ -3654,13 +3651,11 @@ ul.content-boxes > li {
 @media all and (min-width: 361px) and (max-width: 480px) {
   ul.content-boxes > li p {
     font-size: 0.879844em;
-    text-align: left;
   }
 }
 @media all and (max-width: 360px) {
   ul.content-boxes > li p {
     font-size: 0.82529367em;
-    text-align: left;
   }
 }
 ul.content-boxes > li p.email {
@@ -3731,13 +3726,11 @@ ul.cascaded-layout > li.gutter-sizer {
 @media all and (min-width: 361px) and (max-width: 480px) {
   section.row.single div.column ol {
     font-size: 0.938em;
-    text-align: left;
   }
 }
 @media all and (max-width: 360px) {
   section.row.single div.column ol {
     font-size: 0.879844em;
-    text-align: left;
   }
 }
 @media all {
@@ -3781,7 +3774,6 @@ ul.cascaded-layout > li.gutter-sizer {
   section.row.side-left div.column ol,
   section.row.halves div.column ol {
     font-size: 0.938em;
-    text-align: left;
   }
 }
 @media all and (max-width: 360px) {
@@ -3789,7 +3781,6 @@ ul.cascaded-layout > li.gutter-sizer {
   section.row.side-left div.column ol,
   section.row.halves div.column ol {
     font-size: 0.879844em;
-    text-align: left;
   }
 }
 @media all {
@@ -3827,14 +3818,12 @@ ul.cascaded-layout > li.gutter-sizer {
   section.row.thirds div.column ol,
   section.row.quarters div.column ol {
     font-size: 0.879844em;
-    text-align: left;
   }
 }
 @media all and (max-width: 360px) {
   section.row.thirds div.column ol,
   section.row.quarters div.column ol {
     font-size: 0.879844em;
-    text-align: left;
   }
 }
 div.column ol {
@@ -3897,13 +3886,11 @@ div.column dl.faq dt {
 @media all and (min-width: 361px) and (max-width: 480px) {
   div.column dl.faq dt {
     font-size: 0.938em;
-    text-align: left;
   }
 }
 @media all and (max-width: 360px) {
   div.column dl.faq dt {
     font-size: 0.879844em;
-    text-align: left;
   }
 }
 div.column dl.faq dt:after {
@@ -4588,6 +4575,12 @@ div.column table.wsu-gray-theme > tbody > tr:nth-child(2n + 1) > td {
 }
 /*  └──────────────────────────────────────────────────────────────────────────────────────────────┘
  */
+/*  ╔══════════════════════════════════════════════════════════════════════════════════════════════╗ 
+ *  ║ #### INPUT FORMS ########################################################################### ║
+ *  ╠==============================================================================================╣
+ *  ║ Styling applied to input elements to which the gravity form classes have been applied.       ║
+ *  ╚══════════════════════════════════════════════════════════════════════════════════════════════╝
+ */
 input.read-more-state {
   display: none;
 }
@@ -4697,52 +4690,8 @@ div.read-more-target {
 .read-more-state:checked ~ p label.read-more-trigger:before {
   content: 'Show less';
 }
-/*  ╔══════════════════════════════════════════════════════════════════════════════════════════════╗ 
- *  ║ #### INPUT FORMS ########################################################################### ║
- *  ╠==============================================================================================╣
- *  ║ Styling applied to input elements to which the gravity form classes have been applied.       ║
- *  ╚══════════════════════════════════════════════════════════════════════════════════════════════╝
- */
 div.column .gform_wrapper {
   max-width: 990px;
-}
-@media all {
-  div.column .gform_wrapper {
-    line-height: 1.275em;
-    font-size: 16px;
-  }
-}
-@media all and (min-width: 1073px) {
-  div.column .gform_wrapper {
-    font-size: 16px;
-  }
-}
-@media all and (min-width: 990px) and (max-width: 1072px) {
-  div.column .gform_wrapper {
-    font-size: 16px;
-  }
-}
-@media all and (min-width: 792px) and (max-width: 989px) {
-  div.column .gform_wrapper {
-    font-size: 16px;
-  }
-}
-@media all and (min-width: 481px) and (max-width: 791px) {
-  div.column .gform_wrapper {
-    font-size: 16px;
-  }
-}
-@media all and (min-width: 361px) and (max-width: 480px) {
-  div.column .gform_wrapper {
-    font-size: 15.008px;
-    text-align: left;
-  }
-}
-@media all and (max-width: 360px) {
-  div.column .gform_wrapper {
-    font-size: 14.077504px;
-    text-align: left;
-  }
 }
 div.column .gform_wrapper .field_sublabel_above .ginput_complex.ginput_container label {
   margin: 0;
