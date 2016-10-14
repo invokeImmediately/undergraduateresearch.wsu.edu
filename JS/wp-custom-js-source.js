@@ -635,7 +635,8 @@ function isJQuery($obj) {
 		$wsuIdInputs.keydown(function(e) {
             var $this = $(this);
             var inputText = $this.val();
-			if(e.keyCode < 48 || (e.keyCode > 57 && e.keyCode < 96) || e.keyCode > 105) {
+			if(e.keyCode < 48 || (e.keyCode > 57 && e.keyCode < 96) || e.keyCode > 105 ||
+			 !~[8, 9, 37, 39, 46, 110].indexof(e.keyCode)) {
 				e.preventDefault();
 			}
 			else if (inputText.length > 9) {
