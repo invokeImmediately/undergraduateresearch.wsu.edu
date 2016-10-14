@@ -646,7 +646,6 @@ function isJQuery($obj) {
 			}
 		});
         $wsuIdInputs.on("paste", function (e) {
-			alert("Pasting");
             var $this = $(this);
 			var clipboardData = e.originalEvent.clipboardData || window.clipboardData;
 			var inputText = clipboardData.getData('Text');
