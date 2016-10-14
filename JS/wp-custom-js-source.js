@@ -646,8 +646,9 @@ function isJQuery($obj) {
 			}
 		});
         $wsuIdInputs.on("paste", function (e) {
+			alert("Pasting");
             var $this = $(this);
-			var clipboardData = e.clipboardData || window.clipboardData;
+			var clipboardData = e.originalEvent.clipboardData || window.clipboardData;
 			var inputText = clipboardData.getData('Text');
             var regExMask = /[^0-9]+/g;
             if (regExMask.exec(inputText) != null) {
