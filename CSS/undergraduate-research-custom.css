@@ -4741,6 +4741,16 @@ div.column .gform_wrapper h2.fancy {
   margin-right: 0;
   margin-left: 0;
 }
+@media only screen and (min-width: 641px) {
+  div.column .gform_wrapper.gf_browser_chrome .gform_body {
+    width: calc(100% + 15px);
+  }
+}
+@media only screen and (max-width: 640px) {
+  div.column .gform_wrapper.gf_browser_chrome .gform_body {
+    width: 100%;
+  }
+}
 div.column li.gfield > div.ginput_complex > span > label {
   color: #8e7f88;
 }
