@@ -633,6 +633,8 @@ function isJQuery($obj) {
     function initWsuIdInputs(slctrInputs) {
         var $wsuIdInputs = $(slctrInputs).find("input[type='text']");
 		$wsuIdInputs.keyup(function(e) {
+            var $this = $(this);
+            var inputText = $this.val();
 			if(e.keyCode < 48 || (e.keyCode > 57 && e.keyCode < 96) || e.keyCode > 105) {
 				e.preventDefault();
 			}
