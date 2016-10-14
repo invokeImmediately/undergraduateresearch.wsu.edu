@@ -647,14 +647,23 @@ function isJQuery($obj) {
 		});
         $wsuIdInputs.on("paste", function (e) {
             var $this = $(this);
+			var clipboardData = e.clipboardData || window.clipboardData;
+			var inputText = clipboardData.getData('Text');
             var regExMask = /[^0-9]+/g;
-            var inputText = $this.val();
             if (regExMask.exec(inputText) != null) {
+				e.stopPropagation();
+				e.preventDefault();
                 $this.val(inputText.replace(regExMask, ""));
                 inputText = $this.val();
 				alert("WSU ID numbers can only contain digits.");
+				if (inputText.length > 9) {
+					$this.val(inputText.slice(0,9));
+					alert("WSU ID numbers are no greater than nine (9) digits in length.");
+				}
             }
-            if (inputText.length > 9) {
+            else if (inputText.length > 9) {
+				e.stopPropagation();
+				e.preventDefault();
                 $this.val(inputText.slice(0,9));
 				alert("WSU ID numbers are no greater than nine (9) digits in length.");
             }
