@@ -4702,7 +4702,7 @@ div.column .gform_wrapper .field_sublabel_above .ginput_complex.ginput_container
   margin: 0;
 }
 div.column .gform_wrapper .gsection {
-  margin-top: 2rem !important;
+  margin-top: 2rem;
   margin-bottom: 0;
 }
 div.column .gform_wrapper .gfield_checkbox li label,
@@ -4823,7 +4823,7 @@ div.column ul.gform_fields.top_label > li.gfield > div.gfield_description {
 div.column ul.gform_fields.top_label > li.gfield > div.ginput_complex {
   margin-top: 0;
 }
-div.column ul.gform_fields.top_label > li.gfield + li.gfield,
+div.column ul.gform_fields.top_label > li.gfield + li.gfield:not(.gsection),
 div.column ul.gform_fields.top_label li.gfield:first-child {
   margin-top: 0.5rem;
 }
