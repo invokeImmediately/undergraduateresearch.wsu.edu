@@ -4702,6 +4702,7 @@ div.column .gform_wrapper .field_sublabel_above .ginput_complex.ginput_container
   margin: 0;
 }
 div.column .gform_wrapper .gsection {
+  margin-top: 2rem;
   margin-bottom: 0;
 }
 div.column .gform_wrapper .gfield_checkbox li label,
