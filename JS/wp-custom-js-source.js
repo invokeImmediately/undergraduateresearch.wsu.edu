@@ -632,14 +632,23 @@ function isJQuery($obj) {
     \****************************************************************************************************/
     function initWsuIdInputs(slctrInputs) {
         var $wsuIdInputs = $(slctrInputs).find("input[type='text']");
-        $wsuIdInputs.on("keyup paste", function () {
+		$wsuIdInputs.keyup(function(e) {
+			if(e.keyCode < 48 || (e.keyCode > 57 && e.keyCode < 96) || e.keyCode > 105) {
+				e.preventDefault();
+			}
+			else if (inputText.length > 9) {
+				e.preventDefault();
+				alert("WSU ID numbers are no greater than nine (9) digits in length.");
+			}
+		});
+        $wsuIdInputs.on("paste", function () {
             var $this = $(this);
             var regExMask = /[^0-9]+/g;
             var inputText = $this.val();
             if (regExMask.exec(inputText) != null) {
                 $this.val(inputText.replace(regExMask, ""));
                 inputText = $this.val();
-				alert("WSU ID numbers can only contain digts.");
+				alert("WSU ID numbers can only contain digits.");
             }
             if (inputText.length > 9) {
                 $this.val(inputText.slice(0,9));
