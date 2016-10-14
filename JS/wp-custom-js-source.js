@@ -651,21 +651,23 @@ function isJQuery($obj) {
 			var inputText = clipboardData.getData('Text');
             var regExMask = /[^0-9]+/g;
             if (regExMask.exec(inputText) != null) {
+				var errorMsg = "WSU ID numbers can only contain digits.";
 				e.stopPropagation();
 				e.preventDefault();
                 $this.val(inputText.replace(regExMask, ""));
                 inputText = $this.val();
-				alert("WSU ID numbers can only contain digits.");
 				if (inputText.length > 9) {
 					$this.val(inputText.slice(0,9));
-					alert("WSU ID numbers are no greater than nine (9) digits in length.");
+					errorMsg += " Also, they must be no greater than nine (9) digits in length.");
 				}
+				errorMsg += " What you pasted will automatically be corrected."
+				alert(errorMsg);
             }
             else if (inputText.length > 9) {
 				e.stopPropagation();
 				e.preventDefault();
                 $this.val(inputText.slice(0,9));
-				alert("WSU ID numbers are no greater than nine (9) digits in length.");
+				alert("WSU ID numbers are no greater than nine (9) digits in length. What you pasted will automatically be corrected.");
             }
         });
         $wsuIdInputs.blur(function () {
