@@ -67,127 +67,260 @@
 })(jQuery);/**********************************************************************************************************************
  CUSTOM JQUERY-BASED DYNAMIC CONTENT
  *********************************************************************************************************************/
-(function ($) {
-    "use strict";
-    
-	$(document).ready(function () {
-			/**********************************************************************************************
-			 * As desired, tweak the CSS of the previous sibling of certain selected elements in the DOM  *
-			 **********************************************************************************************/
-            var $lrgFrmtSnglSctns = $('.single.large-format-friendly');
-            if ($lrgFrmtSnglSctns.length > 0) {
-                var $mainHeader = $('header.main-header');
-                $mainHeader.addClass('centered');
-                var $mnHdrChldDiv = $mainHeader.find('div.header-group');
-                $mnHdrChldDiv.addClass('centered');
-            }
-			$('.column > h2:not(.fancy), .column > section > h2:not(.fancy)').each(function () {
-					var $this = $(this);
-                    $this.addClass('no-top-margin');
-                    $this.prev('hr:not(.subSection)').addClass('narrow-bottom-margin dark-gray thicker', 250);
-			});
-			$('.column > h2.fancy, .column > section > h2.fancy').each(function () {
-					$(this).prev('hr:not(.subSection)').addClass('no-bottom-margin dark-gray thicker encroach-horizontal', 250);
-			});
-			$('.column > h3:not(.fancy), .column > section > h3:not(.fancy)').each(function () {
-					$(this).prev('hr:not(.subSection)').addClass('narrow-bottom-margin crimson', 250);
-			});
-			$('.column > h3.fancy, .column > section > h3.fancy').each(function () {
-					$(this).prev('hr:not(.subSection)').addClass('no-bottom-margin crimson encroach-horizontal', 250);
-			});
+"use strict";
 
-            /**********************************************************************************************
-             * Fix bug wherein the wrong items in the spine become dogeared                               *
-             **********************************************************************************************/
-            var $dogearedItems = $("#spine-sitenav").find("li.current.active.dogeared");
-            if ($dogearedItems.length > 1) {
-                var currentURL = window.location.href;
-                var currentPage = currentURL.substring(currentURL.substring(0, currentURL.length - 1).lastIndexOf("/") + 1, currentURL.length - 1);
-                $dogearedItems.each(function () {
-                    var $this = $(this);
-                    var $navLink = $this.children("a");
-                    if ($navLink.length == 1) {
-                        var navLinkURL = $navLink.attr("href");
-                        var navLinkPage = navLinkURL.substring(navLinkURL.substring(0, navLinkURL.length - 1).lastIndexOf("/") + 1, navLinkURL.length - 1);
-                        if (navLinkPage != currentPage) {
-                            $this.removeClass("current active dogeared");
-                        }
-                    }
-                });
-            }
-            
-			/**********************************************************************************************
-			 * Set column heights on fluid-width containters                                              *
-			 **********************************************************************************************/
-            // TODO: Move the code below to document.ready + replace it with a check to ensure image loading hasn't changed the heights we are working with
-            $(window).load(function () {
-                if($(window).width() >= 1051) {
-                    $('.large-format-friendly > div.column.two').each(function () {
-                            var $this = $(this);
-                            $this.height($this.prev('div.column.one').height());
-                            $this.animate({opacity: 1.0}, 100);
-                    });
+function isJQuery($obj) {
+	return ($obj && ($obj instanceof jQuery || $obj.constructor.prototype.jquery));
+}
+
+(function ($) {
+	"use strict";
+    $(document).ready(function () {
+        fixDogears("#spine-sitenav", "li.current.active.dogeared", "current active dogeared");
+        checkForLrgFrmtSingle(".single.large-format-friendly", "header.main-header", "div.header-group",
+         "centered");
+        initHrH2Motif(".column > h2:not(.fancy), .column > section > h2:not(.fancy)",
+         "hr:not(.subSection)", "no-top-margin", "narrow-bottom-margin dark-gray thicker", 250);
+        initFancyHrH2Motif(".column > h2.fancy, .column > section > h2.fancy", "hr:not(.subSection)",
+         "no-bottom-margin dark-gray thicker encroach-horizontal", 250);
+        initHrH3Motif(".column > h3:not(.fancy), .column > section > h3:not(.fancy)", "hr:not(.subSection)",
+         "narrow-bottom-margin crimson", 250);
+        initFancyHrH3Motif(".column > h3.fancy, .column > section > h3.fancy", "hr:not(.subSection)",
+         "no-bottom-margin crimson encroach-horizontal", 250);
+        initDropDownToggles(".drop-down-toggle", ".toggled-panel", "activated", 500);
+        initReadMoreToggles(".read-more-toggle-in-ctrl", '.read-more-toggle-out-ctrl',
+         ".read-more-panel", 500);
+        initContentFlippers(".content-flipper", ".flipped-content-front", ".flipped-content-back", 500);
+        initDefinitionLists("dl.toggled", ".large-format-friendly", "div.column.one", "div.column.two",
+         "activated", 400, 100);
+		initQuickTabs("section.row.single.quick-tabs");
+        initTriggeredByHover(".triggered-on-hover", ".content-revealed", ".content-hidden", 200);
+		// initScrollingSidebars("...");
+        initWelcomeMessage("#welcome-message", "post-welcome-message", 1000, 500, 500);
+    });
+    
+    $(window).load(function () {
+        finalizeLrgFrmtSideRight(".side-right.large-format-friendly", "div.column.one", "div.column.two",
+         1051, 100);
+    });
+    
+    $(window).resize(function () {
+        resizeLrgFrmtSideRight(".side-right.large-format-friendly", "div.column.one", "div.column.two",
+         1051, 100);
+    });
+    
+    function checkForLrgFrmtSingle(slctrSingle, slctrMainHdr, slctrHdrGroup, centeringClass) {
+        var $lrgFrmtSnglSctns = $(slctrSingle);
+        if ($lrgFrmtSnglSctns.length > 0) {
+            var $mainHeader = $(slctrMainHdr);
+            $mainHeader.addClass(centeringClass);
+            var $mnHdrChldDiv = $mainHeader.find(slctrHdrGroup);
+            $mnHdrChldDiv.addClass(centeringClass);
+        }
+    }
+    
+    function finalizeLrgFrmtSideRight(slctrSideRight, slctrColOne, slctrColTwo, trggrWidth, animDuration) {
+        if($(window).width() >= trggrWidth) {
+            $(slctrSideRight + ">" + slctrColTwo).each(function () {
+                var $this = $(this);
+                var $thisPrev = $this.prev(slctrColOne);
+                if($this.height() != $thisPrev.height() ) {
+                    $this.height($thisPrev.height());
+                }
+                var crrntOpacity = $this.css("opacity");
+                if (crrntOpacity == 0) {
+                    $this.animate({opacity: 1.0}, animDuration);
                 }
             });
-            $(window).resize(function () {
-                $('.large-format-friendly > div.column.two').each(function () {
-					var $this = $(this);
-                    var crrntOpacity = $this.css("opacity");
-                    if (crrntOpacity == 0 && $(window).width() >= 1051) {
-                        $this.animate({opacity: 1.0}, 100);
+        }
+    }
+    
+    function fixDogears(slctrSiteNav, slctrDogeared, removedClasses) {
+        /**********************************************************************************************
+         * Fix bug wherein the wrong items in the spine become dogeared                               *
+         **********************************************************************************************/
+        var $dogearedItems = $(slctrSiteNav).find(slctrDogeared);
+        if ($dogearedItems.length > 1) {
+            var currentURL = window.location.href;
+            var currentPage = currentURL.substring(currentURL.substring(0, currentURL.length - 1).lastIndexOf("/") + 1, currentURL.length - 1);
+            $dogearedItems.each(function () {
+                var $this = $(this);
+                var $navLink = $this.children("a");
+                if ($navLink.length == 1) {
+                    var navLinkURL = $navLink.attr("href");
+                    var navLinkPage = navLinkURL.substring(navLinkURL.substring(0, navLinkURL.length - 1).lastIndexOf("/") + 1, navLinkURL.length - 1);
+                    if (navLinkPage != currentPage) {
+                        $this.removeClass(removedClasses);
                     }
-                    var $thisPrev = $this.prev('div.column.one');
-                    if($this.height() != $thisPrev.height() ) {
-                        $this.height($thisPrev.height());
-                    }
-                });
+                }
             });
-            
-			/**********************************************************************************************
-			 * Implement dynamic behaviors of interactive elements                                        *
-			 **********************************************************************************************/
-			$('.drop-down-toggle').click(function () {
-                var $this = $(this);
-                $this.toggleClass('activated');
-                $this.next('.toggled-panel').toggle(500)
-			});
-			$('.read-more-toggle-in-ctrl').click(function () {
-                var $this = $(this);
-                $this.toggle(500);
-                $this.next('.read-more-panel').toggle(500);
-                $this.next('.read-more-panel').next('.read-more-toggle-out-ctrl').toggle(500);
-			});
-			$('.read-more-toggle-out-ctrl').click(function () {
-                var $this = $(this);
-                $this.toggle(500);
-                $this.next('.read-more-panel').toggle(500);
-                $this.next('.read-more-panel').next('.read-more-toggle-in-ctrl').toggle(500);
-			});
-			$('.content-flipper').click(function () {
-                var $this = $(this);
-                $this.next('.flipped-content-front').toggle(500);
-                $this.next('.flipped-content-front').next('.flipped-content-back').fadeToggle(500);
-			});
-			$('.flipped-content-front').click(function () {
-                var $this = $(this);
-                $this.toggle(500);
-                $this.next('.flipped-content-back').fadeToggle(500);
-			});
-            $('#welcome-message').delay(1000).fadeOut(500, function () {
-                $('#post-welcome-message').fadeIn(500);
+        }
+    }
+
+    function initContentFlippers(slctrCntntFlppr, slctrFlppdFront, slctrFlppdBack, animDuration) {
+        $(slctrCntntFlppr).click(function () {
+            var $this = $(this);
+            $this.next(slctrFlppdFront).toggle(animDuration);
+            $this.next(slctrFlppdFront).next(slctrFlppdBack).fadeToggle(animDuration);
+        });
+        $(slctrFlppdFront).click(function () {
+            var $this = $(this);
+            $this.toggle(animDuration);
+            $this.next(slctrFlppdBack).fadeToggle(animDuration);
+        });
+    }
+    
+    function initTriggeredByHover(slctrTrggrdOnHvr, slctrCntntRvld, slctrCntntHddn, animDuration) {
+        $(slctrTrggrdOnHvr).mouseenter(function () {
+            var $this = $(this);
+            var $rvldCntnt = $this.find(slctrCntntRvld);
+            var $hddnCntnt = $this.find(slctrCntntHddn);
+            $rvldCntnt.stop().show(animDuration);
+            $hddnCntnt.stop().hide(animDuration);
+        }).mouseleave(function () {
+            var $this = $(this);
+            var $rvldCntnt = $this.find(slctrCntntRvld);
+            var $hddnCntnt = $this.find(slctrCntntHddn);
+            $rvldCntnt.stop().hide(animDuration);
+            $hddnCntnt.stop().show(animDuration);
+        });
+    }
+    
+    function initDefinitionLists(slctrDefList, slctrLrgFrmtSection, slctrColOne, slctrColTwo, activatingClass,
+     animSlideDrtn, animHghtDrtn) {
+        $(slctrDefList + " dt").click(function() {
+            var $this = $(this);
+            $this.toggleClass(activatingClass);
+            $this.next("dd").slideToggle(animSlideDrtn, function () {
+                var $parent = $this.parents(slctrLrgFrmtSection + ">" + slctrColOne);
+                var $prntNxt = $parent.next(slctrColTwo);
+                $prntNxt.animate({height: $parent.css('height')}, animHghtDrtn);
             });
-            $("dl.toggled dt").click(function() {
+        });
+        $(slctrDefList + " dd").hide(); // Definitions should be hidden by default.
+    }
+    
+    function initDropDownToggles(slctrToggle, slctrWhatsToggled, activatingClass, animDuration) {
+        $(slctrToggle).click(function () {
+            var $this = $(this);
+            $this.toggleClass(activatingClass);
+            $this.next(slctrWhatsToggled).toggle(animDuration)
+        });
+    }
+    
+    function initHrH2Motif(slctrStandardH2, slctrPrevHr, h2ClassesAdded, hrClassesAdded, animAddDrtn) {
+        $(slctrStandardH2).each(function () {
                 var $this = $(this);
-                $this.toggleClass('activated');
-                $this.next("dd").slideToggle(400, function () {
-                    var $parent = $this.parents('.large-format-friendly > div.column.one');
-                    var $prntNxt = $parent.next('div.column.two');
-                    $prntNxt.animate({height: $parent.css('height')}, 100);
-                });
-            });
-            $("dl.toggled dd").hide();           
-            
-	});
+                $this.addClass(h2ClassesAdded);
+                $this.prev(slctrPrevHr).addClass(hrClassesAdded, animAddDrtn);
+        });
+    }
+    
+    function initFancyHrH2Motif(slctrFancyH2, slctrPrevHr, hrClassesAdded, animAddDrtn) {
+        $(slctrFancyH2).each(function () {
+                $(this).prev(slctrPrevHr).addClass(hrClassesAdded, animAddDrtn);
+        });
+    }
+    
+    function initHrH3Motif(slctrStandardH3, slctrPrevHr, hrClassesAdded, animAddDrtn) {
+        $(slctrStandardH3).each(function () {
+            $(this).prev(slctrPrevHr).addClass(hrClassesAdded, animAddDrtn);
+        });
+    }
+    
+    function initFancyHrH3Motif(slctrFancyH3, slctrPrevHr, hrClassesAdded, animAddDrtn) {
+        $(slctrFancyH3).each(function () {
+                $(this).prev(slctrPrevHr).addClass(hrClassesAdded, animAddDrtn);
+        });
+    }
+    
+	function initQuickTabs(slctrQtSctn) {
+		var $qtSctn = $(slctrQtSctn);
+		$qtSctn.each(function () {
+			var $thisSctn = $(this);
+			var $tabCntnr = $thisSctn.find("div.column > ul");
+			var $tabs = $tabCntnr.find("li");
+			var $panelCntnr = $thisSctn.find("table");
+			var $panels = $panelCntnr.find("tbody:first-child > tr");
+			if($tabs.length == $panels.length) {
+				var idx;
+				var jdx;
+				for (idx = 0; idx < $tabs.length; idx++) {
+					$tabs.eq(idx).click(function() {
+						var $thisTab = $(this);
+						var kdx = $tabs.index($thisTab);
+						if (kdx == 0) {
+							if ($thisTab.hasClass("deactivated")) {
+								$thisTab.removeClass("deactivated");
+								$panels.eq(kdx).removeClass("deactivated");
+								for (jdx = 1; jdx < $tabs.length; jdx++) {
+									if ($tabs.eq(jdx).hasClass("activated")) {
+										$tabs.eq(jdx).removeClass("activated");
+										$panels.eq(jdx).removeClass("activated");
+									}
+								}
+								$("html, body").animate({
+									scrollTop: $thisTab.offset().top
+								}, 500);								
+							}
+						} else {
+							if (!$thisTab.hasClass("activated")) {
+								if (!$tabs.eq(0).hasClass("deactivated")) {
+									$tabs.eq(0).addClass("deactivated");
+									$panels.eq(0).addClass("deactivated");
+								}
+								for (jdx = 1; jdx < kdx; jdx++) {
+									if ($tabs.eq(jdx).hasClass("activated")) {
+										$tabs.eq(jdx).removeClass("activated");
+										$panels.eq(jdx).removeClass("activated");
+									}
+								}
+								$thisTab.addClass("activated");
+								$panels.eq(kdx).addClass("activated");
+								for (jdx = kdx + 1; jdx < $tabs.length; jdx++) {
+									if ($tabs.eq(jdx).hasClass("activated")) {
+										$tabs.eq(jdx).removeClass("activated");
+										$panels.eq(jdx).removeClass("activated");
+									}
+								}
+								$("html, body").animate({
+									scrollTop: $thisTab.offset().top
+								}, 500);								
+							}
+						}
+					});
+				}
+			}
+		});
+	}
+
+    function initReadMoreToggles(slctrToggleIn, slctrToggleOut, slctrPanel, animDuration) {
+        $(slctrToggleIn).click(function () {
+            var $this = $(this);
+            var $next = $this.next(slctrPanel);
+            $this.toggle(animDuration);
+            $this.$next.toggle(animDuration);
+            $this.$next.next(slctrToggleOut).toggle(animDuration);
+        });
+        $(slctrToggleOut).click(function () {
+            var $this = $(this);
+            var $next = $this.next(slctrPanel);
+            $this.toggle(animDuration);
+            $this.$next.toggle(animDuration);
+            $this.$next.next(slctrToggleIn).toggle(animDuration);
+        });
+    }
+    
+    function initWelcomeMessage(slctrWlcmMsg, slctrPostWlcmMsg, msgDelay, fadeOutDuration,
+     fadeInDuration) {
+        $(slctrWlcmMsg).delay(msgDelay).fadeOut(fadeOutDuration, function () {
+            $(slctrPostWlcmMsg).fadeIn(fadeInDuration);
+        });
+    }
+
+    function resizeLrgFrmtSideRight(slctrSideRight, slctrColOne, slctrColTwo, trggrWidth, animDuration) {
+        finalizeLrgFrmtSideRight(slctrSideRight, slctrColOne, slctrColTwo, trggrWidth, animDuration);
+    }
 })(jQuery);
 /**
  * jQuery.textResize.js
@@ -197,43 +330,120 @@
  *  (http://daverupert.com).
  */
 (function($){
+	var clmnWidth = 926; // px
+	
     $.fn.textResize = function( scalingFactor, options ) {
         // Set up default options in case the caller passed no attributes
         var scalingAmount = scalingFactor || 1,
             settings = $.extend({
-                'minFontSize' : Number.NEGATIVE_INFINITY,
-                'maxFontSize' : Number.POSITIVE_INFINITY
+                "minFontSize" : Number.NEGATIVE_INFINITY,
+                "maxFontSize" : Number.POSITIVE_INFINITY,
+				"againstSelf" : true
             }, options);
         return this.each(function () {
             var $this = $(this);
+			var $parent = undefined;
+			if(settings.measuredBy = "parent") {
+				$parent = $this.parents("div.column").first();
+			}
           
             // Resizer() keeps font-size proportional to object width as constrainted by the user
             var resizer = function () {
-                $this.css('font-size', Math.max(Math.min($this.width() / (scalingAmount*10),
-                    parseFloat(settings.maxFontSize)), parseFloat(settings.minFontSize)));
+				if(!settings.againstSelf) {
+					$this.css("font-size", Math.max(Math.min($parent.innerWidth() / (scalingAmount*10),
+						parseFloat(settings.maxFontSize)), parseFloat(settings.minFontSize)));
+				}
+				else {
+					$this.css("font-size", Math.max(Math.min($this.width() / (scalingAmount*10),
+						parseFloat(settings.maxFontSize)), parseFloat(settings.minFontSize)));
+				}
             };
           
             // Call once to set the object's font size based on current window size, then call as
             // resize or orientation-change events are triggered.
             resizer();
-            $(window).on('resize.textresize orientationchange.textresize', resizer);
+            $(window).on("resize.textresize orientationchange.textresize", resizer);
         });
     };
-    
+	
+// TODO: write function for fitting text.
+//	$.fn.fitText = function(  )
+
+// TODO: Come up with a line-based solution
+//  Ideas: invisible absolutely positioned duplicate of element that is scaled until desired effect is
+//   achieved, then settings are applied to original; etc.
+/*	function FontShrinker($fromElem) {
+		this.maxLines = undefined;
+		this.leadingRatio = undefined;
+		this.fontSizeStart = undefined;
+		this.fontSizeThreshold = undefined;
+		
+		var validArg = isJQuery($fromElem);
+		if(validArg) {
+			this.maxLines = $this.data("max-lines");
+			var styleProps = $this.css([
+				"fontSize", "lineHeight"
+			]);
+			styleProps = $.extend({
+				"height" : $this.height()
+			}, styleProps);
+			var height = parseFloat(styleProps.height);
+			var fontSize = parseFloat(styleProps.fontSize);
+			var lineHeight = parseFloat(styleProps.lineHeight);
+			this.leadingRatio = parseFloat(styleProps.lineHeight) / parseFloat(styleProps.fontSize);
+			var curLines = height / lineHeight;
+			if(this.maxLines != undefined && curLines > maxLines) {
+				var newFontSz = 
+			} else {
+				
+			}
+		}
+	}*/
+
     // Now use the plugin on the WSU Undergraduate education website (i.e. delete or modify the
     // following statement if you are going to utilize this plugin on your own site).
     $(document).ready(function () {
-        $('section.article-header div.header-content h1').each(function () {
-            $(this).textResize(1.277142857142857, {'minFontSize' : '34.8'});
+        $("section.article-header div.header-content h1").each(function () {
+            $(this).textResize(1.277142857142857, {"minFontSize" : "34.8"});
         });
-        $('section.article-header div.header-content h2').each(function () {
-            $(this).textResize(1.847840465639262, {'minFontSize' : '24.0'});
+        $("section.article-header div.header-content h2").each(function () {
+            $(this).textResize(1.847840465639262, {"minFontSize" : "24.0"});
         });
-        $('section.article-header div.header-content h3').each(function () {
-            $(this).textResize(4.110097222222222, {'minFontSize' : '10.7'});
+        $("section.article-header div.header-content h3").each(function () {
+            $(this).textResize(4.110097222222222, {"minFontSize" : "10.7"});
         });
+		
+		var $fittedElems = $(".auto-fits-text");
+		$fittedElems.each(function() {
+			var $this = $(this);
+			var $parent = $this.parents("div.column").first();
+			var fontSz = $this.css("font-size");
+			var maxWidth = $parent.css("max-width");
+			var scalingAmt;
+			if (maxWidth == "none") {
+				var $binder = $("#binder");
+				if ($binder.length == 1) {
+					maxWidth = $binder.css("max-width");
+					if (maxWidth != "none") {
+						clmnWidth = parseFloat(maxWidth) - 198;
+					}
+				}
+				scalingAmt = clmnWidth / (parseFloat(fontSz) * 10);
+			}
+			else {
+				scalingAmt = parseFloat(maxWidth) / (parseFloat(fontSz) * 10);
+			}
+			$this.textResize(scalingAmt, {"minFontSize" : "10.7px", "againstSelf" : 0})
+		});
+		
+/*		var $shrinkingElems = $(".shrinks-with-parent");
+		$shrinkingElems.each(function() {
+			var $this = $(this);
+			
+		});*/
     });
 })(jQuery);
+// 14.4px;
 /************************************************************************************************************\
 | JQUERY-MEDIATED ENHANCED INTERACTIVITY OF GRAVITY FORM FIELDS                                              |
 \************************************************************************************************************/
@@ -422,23 +632,14 @@
     \****************************************************************************************************/
     function initWsuIdInputs(slctrInputs) {
         var $wsuIdInputs = $(slctrInputs).find("input[type='text']");
-        $wsuIdInputs.keyup(function (e) {
-			if(e.keyCode  < 48 || (e.keyCode > 57 && e.keyCode < 96) || e.keyCode > 105) {
-				e.preventDefault();
-            } else if (inputText.length > 9) {
-				e.preventDefault();
-                // $this.val(inputText.slice(0,9));
-				alert("WSU ID numbers are no greater than nine (9) digits in length.");
-            }
-        });
-        $wsuIdInputs.on("paste", function (e) {
+        $wsuIdInputs.on("keyup paste", function () {
             var $this = $(this);
             var regExMask = /[^0-9]+/g;
             var inputText = $this.val();
             if (regExMask.exec(inputText) != null) {
                 $this.val(inputText.replace(regExMask, ""));
                 inputText = $this.val();
-				alert("WSU ID numbers can only contain digits.");
+				alert("WSU ID numbers can only contain digts.");
             }
             if (inputText.length > 9) {
                 $this.val(inputText.slice(0,9));
@@ -573,54 +774,128 @@ e===O?(h=c===H?L:K,j[h]="50%",j[ib+"-"+h]=-Math.round(b[c===H?0:1]/2)+i):(h=f._p
 
 (function ($) {
     $(document).ready(function () {
-        var qTipContentSource;
-        var qTipStyle;
         var $this;
+        var qTipContentSource; // Currently, either a span or a div tag will be accepted.
+        var qTipStyle; // Currently, blue and dark qTips are implemented.
+        var qTipCntnt; // Object needed for enabling the optional use of titles within qTips.
         $('.has-tool-tip').each(function () {
             $this = $(this);
             $this.hasClass('blue') ? qTipStyle = 'qtip-blue' : qTipStyle = 'qtip-dark';
             if ($this.hasClass('parental-neighbor-is-source')) {
-                $this.qtip({
-                    style: qTipStyle,
-                    content: { text: $this.parent().next('div')},
-                    position: {
-                        target: 'mouse', // Track the mouse as the positioning target
-                        adjust: { x: 5, y: 15 } // Offset it slightly from under the mouse
-                    },
-                    show: {
-                        effect: function () {
-                            $(this).slideDown(200);
+                qTipCntnt = new QTipContent($this.parent().next('div'));
+                if (qTipCntnt.qTipTitle == null) {
+                    $this.qtip({
+                        style: qTipStyle,
+                        content: {
+                            text: qTipCntnt.qTipInnerHTML
+                        },
+                        position: {
+                            target: 'mouse', // Track the mouse as the positioning target
+                            adjust: { x: 5, y: 15 } // Offset it slightly from under the mouse
+                        },
+                        show: {
+                            effect: function () {
+                                $(this).slideDown(200);
+                            }
+                        },
+                        hide: {
+                            effect: function () {
+                                $(this).slideUp(200);
+                            }
                         }
-                    },
-                    hide: {
-                        effect: function () {
-                            $(this).slideUp(200);
+                    });
+                }
+                else {
+                    $this.qtip({
+                        style: qTipStyle,
+                        content: {
+                            title: qTipCntnt.qTipTitle,
+                            text: qTipCntnt.qTipInnerHTML
+                        },
+                        position: {
+                            target: 'mouse', // Track the mouse as the positioning target
+                            adjust: { x: 5, y: 15 } // Offset it slightly from under the mouse
+                        },
+                        show: {
+                            effect: function () {
+                                $(this).slideDown(200);
+                            }
+                        },
+                        hide: {
+                            effect: function () {
+                                $(this).slideUp(200);
+                            }
                         }
-                    }
-                });                
+                    });
+                }
             } else {
                 $this.hasClass('span-is-source') ? qTipContentSource = 'span' : qTipContentSource = 'div';
-                $this.qtip({
-                    style: qTipStyle,
-                    content: { text: $this.next(qTipContentSource)},
-                    position: {
-                        target: 'mouse', // Track the mouse as the positioning target
-                        adjust: { x: 5, y: 15 } // Offset it slightly from under the mouse
-                    },
-                    show: {
-                        effect: function () {
-                            $(this).slideDown(200);
+                qTipCntnt = new QTipContent($this.next(qTipContentSource));
+                if (qTipCntnt.qTipTitle == null) {
+                    $this.qtip({
+                        style: qTipStyle,
+                        content: {
+                            text: qTipCntnt.qTipInnerHTML
+                        },
+                        position: {
+                            target: 'mouse', // Track the mouse as the positioning target
+                            adjust: { x: 5, y: 15 } // Offset it slightly from under the mouse
+                        },
+                        show: {
+                            effect: function () {
+                                $(this).slideDown(200);
+                            }
+                        },
+                        hide: {
+                            effect: function () {
+                                $(this).slideUp(200);
+                            }
                         }
-                    },
-                    hide: {
-                        effect: function () {
-                            $(this).slideUp(200);
+                    });
+                }
+                else {
+                    $this.qtip({
+                        style: qTipStyle,
+                        content: {
+                            title: qTipCntnt.qTipTitle,
+                            text: qTipCntnt.qTipInnerHTML
+                        },
+                        position: {
+                            target: 'mouse', // Track the mouse as the positioning target
+                            adjust: { x: 5, y: 15 } // Offset it slightly from under the mouse
+                        },
+                        show: {
+                            effect: function () {
+                                $(this).slideDown(200);
+                            }
+                        },
+                        hide: {
+                            effect: function () {
+                                $(this).slideUp(200);
+                            }
                         }
-                    }
-                });
+                    });
+                }
             }
         });       
     });
+    
+    function QTipContent($qTipSlctr) {
+        this.qTipTitle = null;
+        this.qTipText = null;
+        this.qTipInnerHTML = null;
+        var regExPttrn = /^(.+)\|(.+)$/;
+        var regExResult = regExPttrn.exec($qTipSlctr.text());
+        if (regExResult != null && regExResult.length == 3) {
+            this.qTipTitle = regExResult[1];
+            this.qTipText = regExResult[2];
+            regExPttrn = /^(.+)\|/;
+            this.qTipInnerHTML = $qTipSlctr.html().replace(regExPttrn, "");
+        } else {
+            this.qTipText = $qTipSlctr.text();
+            this.qTipInnerHTML = $qTipSlctr.html();
+        }
+    }
 })(jQuery);/* jQuery Cookie Plugin v1.4.1
  * --> https://github.com/carhartl/jquery-cookie
  * Copyright 2013 Klaus Hartl, released under the MIT license
