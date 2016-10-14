@@ -639,7 +639,7 @@ function isJQuery($obj) {
 			 !~[8, 9, 37, 39, 46, 110].indexOf(e.keyCode)) {
 				e.preventDefault();
 			}
-			else if (inputText.length > 9) {
+			else if (inputText.length >= 9) {
 				e.preventDefault();
 				alert("WSU ID numbers are no greater than nine (9) digits in length.");
 			}
