@@ -636,7 +636,7 @@ function isJQuery($obj) {
             var $this = $(this);
             var inputText = $this.val();
 			if(e.keyCode < 48 || (e.keyCode > 57 && e.keyCode < 96) || e.keyCode > 105 ||
-			 !~[8, 9, 37, 39, 46, 110].indexof(e.keyCode)) {
+			 !~[8, 9, 37, 39, 46, 110].indexOf(e.keyCode)) {
 				e.preventDefault();
 			}
 			else if (inputText.length > 9) {
