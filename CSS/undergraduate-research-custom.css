@@ -697,7 +697,12 @@ main section.row > div.column > section > ol:not(.no-btm-margin),
 main section.row > div.column > article > div.article-body > section > ol:not(.no-btm-margin),
 main section.row > div.column > article > div.article-summary > section > ol:not(.no-btm-margin),
 main section.row > div.column > section > section > ol:not(.no-btm-margin),
-main section.row > div.column table > tbody > tr > td > section > ol:not(.no-btm-margin) {
+main section.row > div.column table > tbody > tr > td > section > ol:not(.no-btm-margin),
+main section.row > div.column > div.gform_wrapper li.gfield_html > p:not(:last-child),
+main section.row > div.column > article > div.article-body > div.gform_wrapper li.gfield_html > p:not(:last-child),
+main section.row > div.column > article > div.article-summary > div.gform_wrapper li.gfield_html > p:not(:last-child),
+main section.row > div.column > section > div.gform_wrapper li.gfield_html > p:not(:last-child),
+main section.row > div.column table > tbody > tr > td > div.gform_wrapper li.gfield_html > p:not(:last-child) {
   margin-bottom: 1rem;
 }
 main section.row > div.column > p + ul:not(.spaces-top-full),
