@@ -3915,9 +3915,9 @@ div.column ol ol ol {
  */
 div.column dl.faq dt {
   position: relative;
-  width: 100%;
-  padding: 5px 20px 5px 10px;
-  margin: 5px -10px;
+  width: calc(100% - 50px);
+  padding: 5px 40px 5px 10px;
+  margin: 5px 0;
   background-color: #d7dadb;
   font-weight: bold;
   -webkit-transition: all 0.25s linear;
@@ -4008,7 +4008,10 @@ div.column dl.faq dt.activated:hover:after {
   border-bottom: 8px solid #fff;
   border-left: 8px solid transparent;
 }
-div.column dl.toggled dd {
+div.column dl.faq dd:not(:last-child) > p:last-child {
+  margin-bottom: 1rem;
+}
+div.column dl.faq.toggled dd {
   display: none;
 }
 /*         ├---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---  --- ┤
@@ -4604,7 +4607,6 @@ div.column table.wsu-gray-theme {
   border-top: 1px solid #464e54;
   border-bottom: 1px solid #464e54;
   vertical-align: top;
-  font-variant: small-caps;
 }
 @media all and (min-width: 891px) {
   div.column table.wsu-gray-theme {
@@ -4627,7 +4629,6 @@ div.column table.wsu-gray-theme > thead > tr.sub-heading-row > th {
   background-color: #000;
   vertical-align: bottom;
   text-indent: -1em;
-  font-variant: small-caps;
   font-weight: bold;
   color: #fff;
 }
@@ -5052,8 +5053,11 @@ div.column ul.gform_fields > li.gfield.gfield_contains_required ul.gfield_radio:
  */
 .drop-down-toggle {
   position: relative;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  transition: all 0.3s ease;
 }
-.transition(~"all 0.3s ease") .drop-down-toggle:after {
+.drop-down-toggle:after {
   content: "";
   position: absolute;
   right: 10px;
@@ -6127,20 +6131,18 @@ div.column aside.article-sidebar p {
  *  ╚════════════════════════════════════════════════════════════════════════════════════════════════════════╝
  */
 div.column a.recommend-button,
-div.column a.glass-button.crimson {
+div.column a.glass-button {
   display: block;
   position: relative;
   padding: 1em;
   border-radius: 7px;
-  background-color: #981e32;
-  color: white;
   box-shadow: 0 2px 2px rgba(0, 0, 0, 0.5);
   -webkit-transition: all 0.3s ease;
   -moz-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
 div.column a.recommend-button:before,
-div.column a.glass-button.crimson:before {
+div.column a.glass-button:before {
   content: "";
   position: absolute;
   top: 2px;
@@ -6152,7 +6154,7 @@ div.column a.glass-button.crimson:before {
   background: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.1));
 }
 div.column a.recommend-button:after,
-div.column a.glass-button.crimson:after {
+div.column a.glass-button:after {
   content: "";
   position: absolute;
   bottom: 0;
@@ -6163,8 +6165,23 @@ div.column a.glass-button.crimson:after {
   border-bottom-right-radius: 7px;
   background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.1));
 }
-div.column a.recommend-button:hover,
+div.column a.recommend-button.crimson,
+div.column a.glass-button.crimson {
+  background-color: #981e32;
+  color: white;
+}
+div.column a.recommend-button.crimson:hover,
 div.column a.glass-button.crimson:hover {
   background-color: #c60c30;
-  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.5), 0 0 18px rgba(198, 12, 48, 0.3333);
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.25), 0 0 18px rgba(198, 12, 48, 0.3333);
+}
+div.column a.recommend-button.yellow,
+div.column a.glass-button.yellow {
+  background-color: #ffb81c;
+  color: #000;
+}
+div.column a.recommend-button.yellow:hover,
+div.column a.glass-button.yellow:hover {
+  background-color: #ffde1c;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.25), 0 0 18px rgba(255, 222, 28, 0.8);
 }
