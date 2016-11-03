@@ -202,6 +202,7 @@ div.column .soft-gray-border {
   border-top: 1px solid rgba(70, 78, 84, 0.25);
 }
 .has-pull-quote-bordering.alt {
+  position: relative;
   padding-left: 0.75rem !important;
   padding-right: 0.75rem !important;
   border-right: 2px solid rgba(70, 78, 84, 0.25);
@@ -2201,6 +2202,7 @@ div.column p.article-tagline:not(.has-no-bordering):not(.alt):after {
   border-top: 1px solid rgba(70, 78, 84, 0.25);
 }
 div.column p.article-tagline:not(.has-no-bordering).alt {
+  position: relative;
   padding-left: 0.75rem !important;
   padding-right: 0.75rem !important;
   border-right: 2px solid rgba(70, 78, 84, 0.25);
