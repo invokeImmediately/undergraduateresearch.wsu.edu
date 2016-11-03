@@ -217,11 +217,11 @@ div.column .soft-gray-border {
   height: 100%;
 }
 .has-pull-quote-bordering.alt:before {
-  right: 4px;
+  right: 2px;
   background-color: rgba(70, 78, 84, 0.125);
 }
 .has-pull-quote-bordering.alt:after {
-  right: 6px;
+  right: 4px;
   background-color: rgba(70, 78, 84, 0.0675);
 }
 .fade-in-from-top {
@@ -2217,11 +2217,11 @@ div.column p.article-tagline:not(.has-no-bordering).alt:after {
   height: 100%;
 }
 div.column p.article-tagline:not(.has-no-bordering).alt:before {
-  right: 4px;
+  right: 2px;
   background-color: rgba(70, 78, 84, 0.125);
 }
 div.column p.article-tagline:not(.has-no-bordering).alt:after {
-  right: 6px;
+  right: 4px;
   background-color: rgba(70, 78, 84, 0.0675);
 }
 div.column h1 + p.article-tagline,
