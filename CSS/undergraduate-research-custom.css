@@ -205,7 +205,7 @@ div.column .soft-gray-border {
   position: relative;
   padding-left: 0.75rem !important;
   padding-right: 0.75rem !important;
-  border-right: 2px solid rgba(70, 78, 84, 0.25);
+  border-right: 1px solid rgba(70, 78, 84, 0.25);
   border-left: 5px solid rgba(70, 78, 84, 0.33);
 }
 .has-pull-quote-bordering.alt:before,
@@ -217,11 +217,11 @@ div.column .soft-gray-border {
   height: 100%;
 }
 .has-pull-quote-bordering.alt:before {
-  right: 2px;
+  right: 1px;
   background-color: rgba(70, 78, 84, 0.125);
 }
 .has-pull-quote-bordering.alt:after {
-  right: 4px;
+  right: 1px;
   background-color: rgba(70, 78, 84, 0.0675);
 }
 .fade-in-from-top {
@@ -2205,7 +2205,7 @@ div.column p.article-tagline:not(.has-no-bordering).alt {
   position: relative;
   padding-left: 0.75rem !important;
   padding-right: 0.75rem !important;
-  border-right: 2px solid rgba(70, 78, 84, 0.25);
+  border-right: 1px solid rgba(70, 78, 84, 0.25);
   border-left: 5px solid rgba(70, 78, 84, 0.33);
 }
 div.column p.article-tagline:not(.has-no-bordering).alt:before,
@@ -2217,11 +2217,11 @@ div.column p.article-tagline:not(.has-no-bordering).alt:after {
   height: 100%;
 }
 div.column p.article-tagline:not(.has-no-bordering).alt:before {
-  right: 2px;
+  right: 1px;
   background-color: rgba(70, 78, 84, 0.125);
 }
 div.column p.article-tagline:not(.has-no-bordering).alt:after {
-  right: 4px;
+  right: 1px;
   background-color: rgba(70, 78, 84, 0.0675);
 }
 div.column h1 + p.article-tagline,
