@@ -5955,7 +5955,6 @@ div.iframe-container {
   padding-bottom: 50.58%;
   margin-right: auto;
   margin-left: auto;
-  margin-bottom: 0.5rem;
   overflow: hidden;
 }
 div.iframe-container > iframe {
@@ -5964,6 +5963,13 @@ div.iframe-container > iframe {
   left: 0;
   width: 100%;
   height: 100%;
+}
+div.iframe-container + p {
+  width: 80%;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 0.5rem;
+  font-size: 0.9em;
 }
 /*  ╔══════════════════════════════════════════════════════════════════════════════════════════════╗ 
  *  ║ #### ARTICLE HEADERS ####################################################################### ║
