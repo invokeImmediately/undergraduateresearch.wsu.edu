@@ -5953,9 +5953,10 @@ div.iframe-container {
   width: 90%;
   height: 0;
   padding-bottom: 50.58%;
-  overflow: hidden;
   margin-right: auto;
   margin-left: auto;
+  margin-bottom: 0.5rem;
+  overflow: hidden;
 }
 div.iframe-container > iframe {
   position: absolute;
