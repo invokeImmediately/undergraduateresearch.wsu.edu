@@ -51,6 +51,10 @@ div.column .spaces-top-half {
 div.column .spaces-top-qrtr {
   margin-top: 0.5rem;
 }
+.spaces-top-none,
+div.column .spaces-top-none {
+  margin-top: 0rem;
+}
 .spaces-rgt-nrml,
 div.column .spaces-rgt-nrml {
   margin-right: 4rem;
@@ -66,6 +70,10 @@ div.column .spaces-rgt-half {
 .spaces-rgt-qrtr,
 div.column .spaces-rgt-qrtr {
   margin-right: 0.5rem;
+}
+.spaces-rgt-none,
+div.column .spaces-rgt-none {
+  margin-right: 0rem;
 }
 .spaces-btm-full,
 div.column .spaces-btm-full {
@@ -83,6 +91,10 @@ div.column .spaces-btm-half {
 div.column .spaces-btm-qrtr {
   margin-bottom: 0.5rem;
 }
+.spaces-btm-none,
+div.column .spaces-btm-none {
+  margin-bottom: 0rem;
+}
 .spaces-lft-nrml,
 div.column .spaces-lft-nrml {
   margin-left: 4rem;
@@ -98,6 +110,10 @@ div.column .spaces-lft-half {
 .spaces-lft-qrtr,
 div.column .spaces-lft-qrtr {
   margin-left: 0.5rem;
+}
+.spaces-lft-none,
+div.column .spaces-lft-none {
+  margin-left: 0rem;
 }
 .pads-top-nrml,
 div.column .pads-top-nrml {
