@@ -5969,7 +5969,7 @@ div.iframe-container + p {
   margin-right: auto;
   margin-left: auto;
   margin-top: 0.5rem;
-  font-size: 0.9em;
+  font-size: 0.9em !important;
 }
 /*  ╔══════════════════════════════════════════════════════════════════════════════════════════════╗ 
  *  ║ #### ARTICLE HEADERS ####################################################################### ║
