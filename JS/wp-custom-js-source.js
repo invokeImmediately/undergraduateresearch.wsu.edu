@@ -397,13 +397,21 @@ function isJQuery($obj) {
 			var $tocClone = $toc.clone().addClass("floating").removeAttr("id").insertAfter($toc);
 			$tocClone.find("span.title + br").remove();
 			$tocClone.find("span.title").remove();
+			var counter = 1;
+			$tocClone.find("br").each(function () {
+				if (counter % 2 != 0) {
+					$(this).before(" //");
+				}
+				$(this).remove();
+				counter++;
+			});
 			if($linkToTop.length === 1) {
 				var linkText = $linkToTop.text();
 				var idxMatched = linkText.search(/\u2014Back to ([^\u2014]+)\u2014/);
 				if(idxMatched != -1) {
 					var $linkToTopClone = $linkToTop.clone();
 					$linkToTopClone.text(linkText.replace(/\u2014Back to ([^\u2014]+)\u2014/, "$1"));
-					$tocClone.prepend(" &bull; ");
+					$tocClone.prepend(" //&nbsp;");
 					$linkToTopClone.prependTo($tocClone);
 					$backToToc.remove();
 				}
@@ -778,7 +786,7 @@ function isJQuery($obj) {
 			}
 			else if (!~[8, 9, 20, 35, 36, 37, 39, 46, 110, 144].indexOf(e.keyCode) && inputText.length >= 9) {
 				e.preventDefault();
-				alert("WSU ID numbers are no greater than nine (9) digits in length.");
+				alert("Note: WSU ID numbers are no greater than nine (9) digits in length.");
 			}
 		});
         $wsuIdInputs.on("paste", function (e) {
@@ -787,7 +795,7 @@ function isJQuery($obj) {
 			var inputText = clipboardData.getData('Text');
             var regExMask = /[^0-9]+/g;
             if (regExMask.exec(inputText) != null) {
-				var errorMsg = "WSU ID numbers can only contain digits.";
+				var errorMsg = "Note: WSU ID numbers can only contain digits.";
 				e.stopPropagation();
 				e.preventDefault();
                 $this.val(inputText.replace(regExMask, ""));
@@ -796,14 +804,14 @@ function isJQuery($obj) {
 					$this.val(inputText.slice(0,9));
 					errorMsg += " Also, they must be no greater than nine (9) digits in length.";
 				}
-				errorMsg += " What you pasted will automatically be corrected."
+				errorMsg += " What you pasted will automatically be corrected; please check the result to see if further corrections are needed."
 				alert(errorMsg);
             }
             else if (inputText.length > 9) {
 				e.stopPropagation();
 				e.preventDefault();
                 $this.val(inputText.slice(0,9));
-				alert("WSU ID numbers are no greater than nine (9) digits in length. What you pasted will automatically be corrected.");
+				alert("WSU ID numbers are no greater than nine (9) digits in length. What you pasted will automatically be corrected; please check the result to see if further corrections are needed.");
             }
         });
         $wsuIdInputs.blur(function () {
@@ -813,7 +821,7 @@ function isJQuery($obj) {
 			if (inputText != "") {
 				if (regExFinalPttrn.exec(inputText) == null) {					
 					$this.val("");
-					alert("Please try again: when the leading zero is included, WSU ID numbers are nine (9) digits long. (You can also drop the leading zero and enter in eight (8) digits.");
+					alert("Please try again: when the leading zero is included, WSU ID numbers are nine (9) digits long. (You can also drop the leading zero and enter in eight (8) digits.)");
 				}
 			}
         });
@@ -1361,8 +1369,23 @@ e===O?(h=c===H?L:K,j[h]="50%",j[ib+"-"+h]=-Math.round(b[c===H?0:1]/2)+i):(h=f._p
  */
 (function ($) {
     $(document).ready(function () {
-        if ($('.page-covering-notice-js').length !== 0) {
-            if ($.cookie('wsuVpuePageNoticeViewed03') === undefined) {
+		var $pageNotice = $('.page-covering-notice-js')
+        if ($pageNotice.length === 1) {
+			// Check for a cookie name specified by the page designer
+			var defaultCookieName = "wsuVpuePageNoticeViewed";
+			var cookieName = $pageNotice.data("noticeName");
+			if (!cookieName) {
+				cookieName = defaultCookieName;
+			} else {
+				// Restrict our cookie name to only contain letters and digits
+				var regExMask = /[^0-9a-zA-Z]+/g;
+				if (regExMask.exec(cookieName) != null) {
+					cookieName = cookieName.replace(regExMask, "");
+				}
+			}
+			
+			// If cookie is not present, this is the first time today the page was loaded; so show the notice
+            if ($.cookie(cookieName) === undefined) {
                 // Determine the expiration time of the cookie (i.e. time until midnight)
                 var rightNow = new Date();
                 var tomorrowMidnight = new Date(rightNow.getTime());
@@ -1372,14 +1395,16 @@ e===O?(h=c===H?L:K,j[h]="50%",j[ib+"-"+h]=-Math.round(b[c===H?0:1]/2)+i):(h=f._p
                 tomorrowMidnight.setSeconds(0);
                 tomorrowMidnight.setMilliseconds(0);
                 // Set the cookie to prevent further notice invokations 
-                $.cookie('wsuVpuePageNoticeViewed03', 1, {
+                $.cookie(cookieName, 1, {
                     expires: (tomorrowMidnight.getTime() - rightNow.getTime()) / 86400000
                 });
-                $('.page-covering-notice-js').fadeIn(1000);
-                $('.page-covering-notice-js').click(function () {
+                $pageNotice.fadeIn(1000);
+                $pageNotice.click(function () {
                     $(this).fadeOut(333);
                 });
             }
-        }
+        } else if ($pageNotice.length > 1) {
+			console.log('Error in jQuery.cookieObjs.js: more than one page covering notice was encountered in the DOM.');
+		}
     });
 })(jQuery);
