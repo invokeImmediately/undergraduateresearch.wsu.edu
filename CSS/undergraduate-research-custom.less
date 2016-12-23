@@ -131,6 +131,28 @@ div.bluish-gray-acrylic-sidebar, div.green-marble-sidebar, div.gray-acrylic-side
 	}
 }
 
+div.iframe-container {
+	position: relative;
+	width: 90%;
+	height: 0;
+	padding-bottom: 50.58%;
+	.margin-centered;
+	overflow: hidden;
+	& > iframe {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+	}
+	& + p {
+		width: 85%; 
+		.margin-centered;
+		.spaces-top-qrtr;
+		font-size: 0.9em !important;
+	}
+}
+
 /*  ╔══════════════════════════════════════════════════════════════════════════════════════════════╗ 
  *  ║ #### ARTICLE HEADERS ####################################################################### ║
  *  ╠==============================================================================================╣
@@ -253,93 +275,6 @@ div.column {
         }
     }
 }
- 
-/*.ugrf-name {
-    background: url(/wp-content/uploads/sites/51/2015/12/form-icon_name.png) right top no-repeat;
-    &.inputs-ready {
-        background: url(/wp-content/uploads/sites/51/2015/12/form-icon_name_filled.png) right top no-repeat;
-    }
-}
-.ugrf-wsu-id {
-    background: url(/wp-content/uploads/sites/51/2015/12/form-icon_id-card.png) right 1.5em no-repeat;
-    &.inputs-ready {
-        background: url(/wp-content/uploads/sites/51/2015/12/form-icon_id-card_filled.png) right 1.5em no-repeat;
-    }
-}
-.ugrf-scholarship-selections {
-    background: url(/wp-content/uploads/sites/51/2016/01/form-icon_scholarship-selections.png) right 1.5em no-repeat;
-    &.inputs-ready {
-        background: url(/wp-content/uploads/sites/51/2016/01/form-icon_scholarship-selections_filled.png) right 1.5em no-repeat;
-    }
-}
-.ugrf-institution {
-    background: url(/wp-content/uploads/sites/51/2015/12/form-icon_institution.png) right 1.5em no-repeat;
-    &.inputs-ready {
-        background: url(/wp-content/uploads/sites/51/2015/12/form-icon_institution_filled.png) right 1.5em no-repeat;
-    }
-}
-.ugrf-mailing-address {
-    background: url(/wp-content/uploads/sites/51/2015/12/form-icon_institutional-address.png) right 1.5em no-repeat;
-    &.inputs-ready {
-        background: url(/wp-content/uploads/sites/51/2015/12/form-icon_institutional-address_filled.png) right 1.5em no-repeat;
-    }
-}
-.ugrf-permanent-address {
-    background: url(/wp-content/uploads/sites/51/2015/12/form-icon_permanent-address.png) right 1.5em no-repeat;
-    &.inputs-ready {
-        background: url(/wp-content/uploads/sites/51/2015/12/form-icon_permanent-address_filled.png) right 1.5em no-repeat;
-    }
-}
-.ugrf-class-standing {
-    background: url(/wp-content/uploads/sites/51/2016/01/form-icon_class-standing_filled.png) right 1.5em no-repeat;
-}
-.ugrf-major {
-    background: url(/wp-content/uploads/sites/51/2016/01/form-icon_major.png) right 1.5em no-repeat;
-    &.inputs-ready {
-        background: url(/wp-content/uploads/sites/51/2016/01/form-icon_major_filled.png) right 1.5em no-repeat;
-    }
-}
-.ugrf-phone {
-    background: url(/wp-content/uploads/sites/51/2015/12/form-icon_phone.png) right 1.5em no-repeat;
-    &.inputs-ready {
-        background: url(/wp-content/uploads/sites/51/2015/12/form-icon_phone_filled.png) right 1.5em no-repeat;
-    }
-}
-.ugrf-email {
-    background: url(/wp-content/uploads/sites/51/2015/12/form-icon_email-address.png) right 1.5em no-repeat;
-    &.inputs-ready {
-        background: url(/wp-content/uploads/sites/51/2015/12/form-icon_email-address_filled.png) right 1.5em no-repeat;
-    }
-}
-.ugrf-mentor-name {
-    background: url(/wp-content/uploads/sites/51/2015/12/form-icon_mentor-name.png) right top no-repeat;
-    &.inputs-ready {
-        background: url(/wp-content/uploads/sites/51/2015/12/form-icon_mentor-name_filled.png) right top no-repeat;
-    }
-}
-.ugrf-mentor-email {
-    background: url(/wp-content/uploads/sites/51/2015/12/form-icon_mentor-email.png) right 1.5em no-repeat;
-    &.inputs-ready {
-        background: url(/wp-content/uploads/sites/51/2015/12/form-icon_mentor-email_filled.png) right 1.5em no-repeat;
-    }
-}*/
-
-
-/*.ugrf-wsu-id {
-    position: relative;
-    div input {
-        &:before {
-            content: "";
-            position: absolute;
-             top: 50%;
-             right: 50%;
-            width: 32px;
-            height: 32px;
-            border: 1px solid @hex-black;
-            background: url(/wp-content/uploads/sites/51/2015/12/form-icon_id-card.png) center center no-repeat;
-        }
-    }
-}*/
 
 /*  ╔════════════════════════════════════════════════════════════════════════════════════════════════════════╗ 
  *  ║ #### CUSTOM layouts ################################################################################## ║
