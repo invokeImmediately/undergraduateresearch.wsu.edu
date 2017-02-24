@@ -952,12 +952,65 @@
 				}
             };
           
-            // Call once to set the object's font size based on current window size, then call as
-            // resize or orientation-change events are triggered.
+            // Call once to set the object's font size based on current window size, then call as resize or orientation-change events are triggered.
             resizer();
             $(window).on("resize.textresize orientationchange.textresize", resizer);
         });
     };
+	
+    // Now use the plugin on the WSU Undergraduate education website (i.e. delete or modify the following statement if you are going to utilize this plugin on your own site).
+    $(document).ready(function () {
+		initArticleHeaderText();
+		initAutoFittedElems();
+    });
+
+	function initArticleHeaderText() {
+		var $columns = $(".column");
+        $columns.find(".article-header .header-content h1").each(function () {
+            $(this).textResize(1.277142857142857, {"minFontSize" : "34.8"});
+        });
+        $columns.find(".article-header .header-content h2").each(function () {
+            $(this).textResize(1.847840465639262, {"minFontSize" : "24.0"});
+        });
+        $columns.find(".article-header .header-content h3").each(function () {
+            $(this).textResize(4.110097222222222, {"minFontSize" : "10.7"});
+        });
+	}
+	
+	function initAutoFittedElems() {
+		var $fittedElems = $(".auto-fits-text");
+		$fittedElems.each(function() {
+			var $this = $(this);
+			var $parent = $this.parents(".column").first();
+			var $parentSection = $parent.parent(".row");
+			var fontSz = $this.css("font-size");
+			var maxWidth = $parent.css("max-width");
+			var scalingAmt;
+			if (maxWidth == "none") {
+				var $binder = $("#binder");
+				if ($binder.length == 1) {
+					maxWidth = $binder.css("max-width");
+					if (maxWidth != "none") {
+						clmnWidth = parseFloat(maxWidth) - spineWidth;
+						if ($.isJQueryObj($parentSection)) {
+							if ($parentSection.hasClass("halves")) {
+								clmnWidth /= 2;
+							} else if ($parentSection.hasClass("thirds")) {
+								clmnWidth /= 3;
+							} else if ($parentSection.hasClass("quarters")) {
+								clmnWidth /= 4;
+							}
+						}
+					}
+				}
+				scalingAmt = clmnWidth / (parseFloat(fontSz) * 10);
+			}
+			else {
+				scalingAmt = parseFloat(maxWidth) / (parseFloat(fontSz) * 10);
+			}
+			$this.textResize(scalingAmt, {"minFontSize" : "10.7px", "againstSelf" : 0})
+		});
+	}
 	
 // TODO: write function for fitting text.
 //	$.fn.fitText = function(  )
@@ -993,55 +1046,6 @@
 		}
 	}*/
 
-    // Now use the plugin on the WSU Undergraduate education website (i.e. delete or modify the
-    // following statement if you are going to utilize this plugin on your own site).
-    $(document).ready(function () {
-        $("section.article-header div.header-content h1").each(function () {
-            $(this).textResize(1.277142857142857, {"minFontSize" : "34.8"});
-        });
-        $("section.article-header div.header-content h2").each(function () {
-            $(this).textResize(1.847840465639262, {"minFontSize" : "24.0"});
-        });
-        $("section.article-header div.header-content h3").each(function () {
-            $(this).textResize(4.110097222222222, {"minFontSize" : "10.7"});
-        });
-		
-		var $fittedElems = $(".auto-fits-text");
-		$fittedElems.each(function() {
-			var $this = $(this);
-			var $parent = $this.parents(".column").first();
-			var $parentSection = $parent.parent(".row");
-			var fontSz = $this.css("font-size");
-			var maxWidth = $parent.css("max-width");
-			var scalingAmt;
-			if (maxWidth == "none") {
-				var $binder = $("#binder");
-				if ($binder.length == 1) {
-					maxWidth = $binder.css("max-width");
-					if (maxWidth != "none") {
-						clmnWidth = parseFloat(maxWidth) - spineWidth;
-						if ($.isJQueryObj($parentSection)) {
-							if ($parentSection.hasClass("halves")) {
-								clmnWidth /= 2;
-								console.log("Verified.");
-							}
-						}
-					}
-				}
-				scalingAmt = clmnWidth / (parseFloat(fontSz) * 10);
-			}
-			else {
-				scalingAmt = parseFloat(maxWidth) / (parseFloat(fontSz) * 10);
-			}
-			$this.textResize(scalingAmt, {"minFontSize" : "10.7px", "againstSelf" : 0})
-		});
-		
-/*		var $shrinkingElems = $(".shrinks-with-parent");
-		$shrinkingElems.each(function() {
-			var $this = $(this);
-			
-		});*/
-    });
 })(jQuery);
 // 14.4px;
 /************************************************************************************************************\
