@@ -7371,12 +7371,12 @@ div.iframe-container + p {
   text-transform: none;
 }
 @media all and (min-width: 694px) {
-  .row.has-linked-columns:not(.gutter).has-title .column:first-child.halves > header:first-child {
+  .row.has-linked-columns:not(.gutter).has-title.halves .column:first-child > header:first-child {
     width: 200%;
   }
 }
 @media all and (max-width: 693px) {
-  .row.has-linked-columns:not(.gutter).has-title .column:first-child.halves > header:first-child {
+  .row.has-linked-columns:not(.gutter).has-title.halves .column:first-child > header:first-child {
     width: 100%;
   }
 }
