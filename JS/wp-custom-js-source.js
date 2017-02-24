@@ -922,7 +922,8 @@
  *  (http://daverupert.com).
  */
 (function($){
-	var clmnWidth = 926; // px
+	var clmnWidth = 926; // px - default column width
+	var spineWidth = 198; // px - default width of spine
 	
     $.fn.textResize = function( scalingFactor, options ) {
         // Set up default options in case the caller passed no attributes
@@ -1008,7 +1009,8 @@
 		var $fittedElems = $(".auto-fits-text");
 		$fittedElems.each(function() {
 			var $this = $(this);
-			var $parent = $this.parents("div.column").first();
+			var $parent = $this.parents(".column").first();
+			var $parentSection = $parent.parent(".row");
 			var fontSz = $this.css("font-size");
 			var maxWidth = $parent.css("max-width");
 			var scalingAmt;
@@ -1017,7 +1019,12 @@
 				if ($binder.length == 1) {
 					maxWidth = $binder.css("max-width");
 					if (maxWidth != "none") {
-						clmnWidth = parseFloat(maxWidth) - 198;
+						clmnWidth = parseFloat(maxWidth) - spineWidth;
+						if ($.isJQueryObk($parentSection)) {
+							if ($parentSection.hasClass("halves")) {
+								clmnWidth /= 2;
+							}
+						}
 					}
 				}
 				scalingAmt = clmnWidth / (parseFloat(fontSz) * 10);
