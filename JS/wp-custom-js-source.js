@@ -1020,7 +1020,7 @@
 					maxWidth = $binder.css("max-width");
 					if (maxWidth != "none") {
 						clmnWidth = parseFloat(maxWidth) - spineWidth;
-						if ($.isJQueryObk($parentSection)) {
+						if ($.isJQueryObj($parentSection)) {
 							if ($parentSection.hasClass("halves")) {
 								clmnWidth /= 2;
 							}
