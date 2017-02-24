@@ -549,8 +549,16 @@ div.column article.post + article.post {
   margin-top: 1.5em;
 }
 /*     ┌─────────────────────────────────────────────────────────────────────────────────────────────────┐
- *     │ ++++ SECTION selectors ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ │
- *     └─────────────────────────────────────────────────────────────────────────────────────────────────┘
+ *     │ ++++++++ SECTIONS +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ │
+ *     ├-------------------------------------------------------------------------------------------------┤
+ *     │ Rule-sets for styling section elements within OUE pages built using the WSU Spine theme for     │
+ *     │ WordPress.                                                                                      │
+ *     │  ╘═» This file assumes the following LESS files have been imported upstream:                    │
+ *     │        • //github.com/invokeImmediately/WSU-UE---CSS/animations.less                            │
+ *     │        • //github.com/invokeImmediately/WSU-UE---CSS/color-palette.less                         │
+ *     │        • //github.com/invokeImmediately/WSU-UE---CSS/fonts.less                                 │
+ *     │        • //github.com/invokeImmediately/WSU-UE---CSS/mixins.less                                │
+ *     ├-------------------------------------------------------------------------------------------------┤
  */
 section.column-one-with-bottom-margin > .column.one {
   margin-bottom: 2rem;
@@ -743,6 +751,10 @@ section.side-right .column.two p {
 .column section:not(:last-child) > *:last-child:not(.vpue-jump-bar) {
   padding-bottom: 0;
 }
+/*         ┌-----------------------------------------------------------------------------------------┐
+ *         │ ···· SPACING OVERWRITES to improve responsive design ·································· │
+ *         └-----------------------------------------------------------------------------------------┘
+ */
 main section.row > .column > p:not(.no-btm-margin),
 main section.row > .column > article > .article-body > p:not(.no-btm-margin),
 main section.row > .column > article > .article-summary > p:not(.no-btm-margin),
@@ -1012,6 +1024,12 @@ main section.row > .column table > tbody > tr > td > section > ol:last-child {
     padding-left: 0.25rem;
   }
 }
+/*         ┌-----------------------------------------------------------------------------------------┐
+ *         │ ···· LINKED COLUMNS content group ····················································· │
+ *         └-----------------------------------------------------------------------------------------┘
+ */
+/*     └─────────────────────────────────────────────────────────────────────────────────────────────────┘
+ */
 /*     ┌─────────────────────────────────────────────────────────────────────────────────────────────────┐
  *     │ ++++ ASIDE selectors ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ │
  *     └─────────────────────────────────────────────────────────────────────────────────────────────────┘
@@ -7328,6 +7346,25 @@ div.iframe-container + p {
 .row.has-linked-columns:not(.gutter).thirds .column.has-cyan-bg:before,
 .row.has-linked-columns:not(.gutter).quarters .column.has-cyan-bg:before {
   background: linear-gradient(to top, rgba(0, 173, 164, 0), rgba(0, 173, 164, 0.2) 50%, #00ada4 80%);
+}
+.row.has-linked-columns:not(.gutter).has-title .column:first-child header:first-child {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 2rem;
+  margin-top: 3rem;
+  -webkit-transform: translateY(-100%;
+  -moz-transform: translateY(-100%;
+  transform: translateY(-100%;
+}
+.row.has-linked-columns:not(.gutter).has-title .column:first-child header:first-child > :first-child {
+  background-color: #5e6a71;
+  color: #fff;
+  font-size: 1rem;
+  line-height: 2rem;
+  text-align: center;
+  text-transform: none;
 }
 @media all and (min-width: 694px) {
   .row.has-linked-columns:not(.gutter).for-faculty .column:not(:first-child) {
