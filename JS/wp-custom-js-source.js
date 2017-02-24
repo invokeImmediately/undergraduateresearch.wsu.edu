@@ -936,8 +936,8 @@
         return this.each(function () {
             var $this = $(this);
 			var $parent = undefined;
-			if(settings.measuredBy = "parent") {
-				$parent = $this.parents("div.column").first();
+			if (!settings.againstSelf) {
+				$parent = $this.parents(".column").first();
 			}
           
             // Resizer() keeps font-size proportional to object width as constrainted by the user
@@ -1023,6 +1023,7 @@
 						if ($.isJQueryObj($parentSection)) {
 							if ($parentSection.hasClass("halves")) {
 								clmnWidth /= 2;
+								console.log("Verified.");
 							}
 						}
 					}
