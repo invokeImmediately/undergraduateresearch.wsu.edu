@@ -7347,24 +7347,38 @@ div.iframe-container + p {
 .row.has-linked-columns:not(.gutter).quarters .column.has-cyan-bg:before {
   background: linear-gradient(to top, rgba(0, 173, 164, 0), rgba(0, 173, 164, 0.2) 50%, #00ada4 80%);
 }
-.row.has-linked-columns:not(.gutter).has-title .column:first-child header:first-child {
+.row.has-linked-columns:not(.gutter).has-title {
+  margin-top: 3rem;
+}
+.row.has-linked-columns:not(.gutter).has-title .column:first-child > header:first-child {
   display: block;
   position: absolute;
   top: 0;
   left: 0;
   height: 2rem;
-  margin-top: 3rem;
-  -webkit-transform: translateY(-100%;
-  -moz-transform: translateY(-100%;
-  transform: translateY(-100%;
-}
-.row.has-linked-columns:not(.gutter).has-title .column:first-child header:first-child > :first-child {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.7);
   background-color: #5e6a71;
+  -webkit-transform: translateY(-100%);
+  -moz-transform: translateY(-100%);
+  transform: translateY(-100%);
+}
+.row.has-linked-columns:not(.gutter).has-title .column:first-child > header:first-child > :first-child {
+  margin: 0 !important;
   color: #fff;
   font-size: 1rem;
   line-height: 2rem;
   text-align: center;
   text-transform: none;
+}
+@media all and (min-width: 694px) {
+  .row.has-linked-columns:not(.gutter).has-title .column:first-child.halves > header:first-child {
+    width: 200%;
+  }
+}
+@media all and (max-width: 693px) {
+  .row.has-linked-columns:not(.gutter).has-title .column:first-child.halves > header:first-child {
+    width: 100%;
+  }
 }
 @media all and (min-width: 694px) {
   .row.has-linked-columns:not(.gutter).for-faculty .column:not(:first-child) {
