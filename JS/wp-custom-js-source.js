@@ -1002,7 +1002,7 @@
 		
 		// Set up organized list of arguments to be passed to functions called after the window has loaded
 		argsList.doFadeInFromTopAnimations = {
-			slctrAnimatedElems: "js-fade-in-from-top",
+			slctrAnimatedElems: ".js-fade-in-from-top",
 			dfltSpeed: 1000,
 			fastClass: "fast",
 			fastModifier: 0.5,
