@@ -7719,7 +7719,8 @@ div.iframe-container + p {
 }
 .column p.notice {
   position: relative;
-  width: 90%;
+  width: 80%;
+  width: calc(90% - 2 * 1rem - 32px);
   padding: 1rem;
   padding-right: calc(1rem + 32px);
   margin-left: auto;
