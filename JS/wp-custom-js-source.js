@@ -1027,8 +1027,8 @@
 		var $objs = $(slctrAnimatedElems);
 		$objs.each(function(){
 			var $this = $(this);
-			var height = $this.height;
-			$this.css("top", -height);
+			var objHeight = $this.height();
+			$this.css("top", -objHeight);
 			var speed = dfltSpeed;
 			var delayTime = 0;
 			if ($this.hasClass(fastClass)) {
