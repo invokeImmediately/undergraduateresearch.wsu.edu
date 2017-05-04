@@ -1005,8 +1005,8 @@
 			slctrAnimatedElems: "js-fade-in-from-top",
 			dfltSpeed: 1000,
 			fastClass: "fast",
-			fastModifier: 0.5
-			delayedClass: "delayed",
+			fastModifier: 0.5,
+			delayedClass: "delayed"
 		};
 		
 		// Call post window loading functions
