@@ -366,6 +366,14 @@ header:first-child + .has-pull-quote-bordering:not(.alt) {
     transform: none;
   }
 }
+.fade-in-from-top.delayed.fast {
+  -webkit-animation: anim-fade-in-from-top 0.5s linear 1;
+  -moz-animation: anim-fade-in-from-top 0.5s linear 1;
+  animation: anim-fade-in-from-top 0.5s linear 1;
+  -webkit-animation-delay: 0.5s;
+  -moz-animation-delay: 0.5s;
+  animation-delay: 0.5s;
+}
 .fade-in-from-left {
   -webkit-animation: anim-fade-in-from-left 1s linear 1;
   -moz-animation: anim-fade-in-from-left 1s linear 1;
