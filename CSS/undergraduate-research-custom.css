@@ -320,6 +320,7 @@ header:first-child + .has-pull-quote-bordering:not(.alt) {
   background-color: rgba(70, 78, 84, 0.75757576);
 }
 .fade-in-from-top {
+  opacity: 0;
   -webkit-animation: anim-fade-in-from-top 1s linear 1;
   -moz-animation: anim-fade-in-from-top 1s linear 1;
   animation: anim-fade-in-from-top 1s linear 1;
@@ -373,6 +374,10 @@ header:first-child + .has-pull-quote-bordering:not(.alt) {
   -webkit-animation-delay: 0.5s;
   -moz-animation-delay: 0.5s;
   animation-delay: 0.5s;
+}
+.js-fade-in-from-top {
+  position: relative;
+  opacity: 0;
 }
 .fade-in-from-left {
   -webkit-animation: anim-fade-in-from-left 1s linear 1;
