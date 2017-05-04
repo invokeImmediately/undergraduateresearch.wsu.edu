@@ -414,9 +414,9 @@ header:first-child + .has-pull-quote-bordering:not(.alt) {
   }
 }
 .fade-in-from-left.fast {
-  -webkit-animation: anim-fade-in-from-left 0.3333s linear 1;
-  -moz-animation: anim-fade-in-from-left 0.3333s linear 1;
-  animation: anim-fade-in-from-left 0.3333s linear 1;
+  -webkit-animation: anim-fade-in-from-left 0.5s linear 1;
+  -moz-animation: anim-fade-in-from-left 0.5s linear 1;
+  animation: anim-fade-in-from-left 0.5s linear 1;
 }
 @-webkit-keyframes anim-fade-in-from-left {
   0% {
