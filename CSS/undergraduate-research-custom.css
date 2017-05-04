@@ -413,6 +413,53 @@ header:first-child + .has-pull-quote-bordering:not(.alt) {
     transform: none;
   }
 }
+.fade-in-from-left.fast {
+  -webkit-animation: anim-fade-in-from-left 0.3333s linear 1;
+  -moz-animation: anim-fade-in-from-left 0.3333s linear 1;
+  animation: anim-fade-in-from-left 0.3333s linear 1;
+}
+@-webkit-keyframes anim-fade-in-from-left {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(-100%, 0, 0);
+    -moz-transform: translate3d(-100%, 0, 0);
+    transform: translate3d(-100%, 0, 0);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: none;
+    -moz-transform: none;
+    transform: none;
+  }
+}
+@-moz-keyframes anim-fade-in-from-left {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(-100%, 0, 0);
+    -moz-transform: translate3d(-100%, 0, 0);
+    transform: translate3d(-100%, 0, 0);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: none;
+    -moz-transform: none;
+    transform: none;
+  }
+}
+@keyframes anim-fade-in-from-left {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(-100%, 0, 0);
+    -moz-transform: translate3d(-100%, 0, 0);
+    transform: translate3d(-100%, 0, 0);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: none;
+    -moz-transform: none;
+    transform: none;
+  }
+}
 .fade-in-from-right {
   -webkit-animation: anim-fade-in-from-right 1s linear 1;
   -moz-animation: anim-fade-in-from-right 1s linear 1;
