@@ -1028,9 +1028,17 @@
 	 * POST WINDOW LOADING FUNCTIONS                                                                                   * 
 	 *******************************************************************************************************************/
 	function doFadeInFromTopAnimations(slctrAnimatedElems, dfltSpeed, fastClass, fastModifier, delayedClass) {
+		// TODO: What if JS isn't running? Solution: need a JS Notice.
 		var thisFuncName = "doFadeInFromTopAnimations";
 		var thisFuncDesc = "Upon page load, sets the expansion state of a drop down toggle element based on previous user interactions during the session.";
-		// TODO: What if JS isn't running? Solution: need a JS Notice.
+		var specialAction = undefined;
+		var storageQueried = false;
+		try {
+			specialAction = sessionStorage.getItem($this[0].id + "doFadeInFromTopAnimations");
+			storageQueried = true;
+		} catch(e) {
+			$.logError(thisFileName, thisFuncName, thisFuncDesc, e.message);
+		}
 		var $objs = $(slctrAnimatedElems);
 		$objs.each(function(){
 			var $this = $(this);
@@ -1041,16 +1049,6 @@
 			}
 			if ($this.hasClass(delayedClass)) {
 				delayTime = speed;
-			}
-			var storageQueried = false;
-			var specialAction = undefined;
-			if ($this[0].id) {
-				try {
-					specialAction = sessionStorage.getItem($this[0].id + "-doFadeInFromTopAnimations");
-					storageQueried = true;
-				} catch(e) {
-					$.logError(thisFileName, thisFuncName, thisFuncDesc, e.message);
-				}
 			}
 			if (storageQueried && specialAction == "fade-in-only") {
 				$this.stop().delay(delayTime).animate({
@@ -1063,15 +1061,15 @@
 					opacity: 1,
 					top: 0
 				}, speed);
-				if (storageQueried) {
-					try {
-						sessionStorage.setItem($this[0].id + "-doFadeInFromTopAnimations", "fade-in-only");
-					} catch(e) {
-						$.logError(thisFileName, thisFuncName, thisFuncDesc, e.message);
-					}
-				}
 			}
 		});
+		if (storageQueried && !specialAction) {
+			try {
+				sessionStorage.setItem("doFadeInFromTopAnimations", "fade-in-only");
+			} catch(e) {
+				$.logError(thisFileName, thisFuncName, thisFuncDesc, e.message);
+			}
+		}
 	}
 })(jQuery);/**
  * jQuery.textResize.js
