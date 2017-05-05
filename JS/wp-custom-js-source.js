@@ -1057,6 +1057,8 @@
 					opacity: 1
 				}, speed / 2);
 			} else {
+				var height = $this.height();
+				$this.css("top", -height);
 				$this.stop().delay(delayTime).animate({
 					opacity: 1,
 					top: 0
