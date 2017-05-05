@@ -1034,7 +1034,7 @@
 		var specialAction = undefined;
 		var storageQueried = false;
 		try {
-			specialAction = sessionStorage.getItem($this[0].id + "doFadeInFromTopAnimations");
+			specialAction = sessionStorage.getItem("doFadeInFromTopAnimations");
 			storageQueried = true;
 		} catch(e) {
 			$.logError(thisFileName, thisFuncName, thisFuncDesc, e.message);
