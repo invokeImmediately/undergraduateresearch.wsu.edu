@@ -7565,10 +7565,10 @@ div.auto-scroller ul li {
 }
 @media only screen and (min-width: 990px) {
   body.use-max-width-1386 #binder.max-1188 {
-    max-width: 1188px;
+    max-width: 1386px;
   }
   body.use-max-width-1386 #binder.max-1188 .row {
-    max-width: 1188px;
+    max-width: 1386px;
   }
 }
 main {
