@@ -7563,6 +7563,14 @@ div.auto-scroller ul li {
     background: #b5babe url(/wp-content/uploads/sites/51/2016/05/tileable-eroded-scratch-metal-texture_wqxga.jpg) repeat-y fixed 1080px top;
   }
 }
+@media only screen and (min-width: 990px) {
+  body.use-max-width-1386 #binder.max-1188 {
+    max-width: 1188px;
+  }
+  body.use-max-width-1386 #binder.max-1188 .row {
+    max-width: 1188px;
+  }
+}
 main {
   background: #fff url(/wp-content/uploads/sites/51/2015/04/tileable-lab-papar-texture_500x500_opacity-0.10.png) left top repeat;
 }
