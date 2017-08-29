@@ -3213,7 +3213,8 @@ p.article-tagline:not(.has-no-bordering).crimson.alt:after {
 p.article-tagline:not(.has-no-bordering).crimson .has-gray-text {
   color: #464e54;
 }
-p.article-tagline.bold {
+p.article-tagline.bold,
+p.article-tagline .has-bold-text {
   font-weight: bold;
 }
 @media all {
