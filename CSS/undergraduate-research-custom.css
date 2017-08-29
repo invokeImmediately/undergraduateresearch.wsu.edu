@@ -1474,6 +1474,15 @@ main section.row > .column table > tbody > tr > td > div > ol:last-child {
     padding-left: 0.25rem;
   }
 }
+@media all and (max-width: 693px) {
+  .row:not(.pad-top).halves .one ~ .column,
+  .row:not(.pad-top).thirds .one ~ .column,
+  .row:not(.pad-top).quarters .one ~ .column,
+  .row:not(.pad-top).side-right .one ~ .column,
+  .row:not(.pad-top).side-left .one ~ .column {
+    margin-top: 2rem;
+  }
+}
 /*!  ┌──────────────────────────────────────────────────────────────────────────────────────────────────────────────────┐
 *    │ ASIDE layouts ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ │
 *    └──────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
