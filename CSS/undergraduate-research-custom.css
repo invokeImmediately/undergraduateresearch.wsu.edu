@@ -1507,6 +1507,9 @@ aside.shield-themed p + * {
 aside.shield-themed p + .has-learn-more-link {
   margin-top: 0.33333333em;
 }
+aside.shield-themed:not(:last-child) {
+  margin-bottom: 2rem;
+}
 aside.widget {
   box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.9), 0 0 0 2px rgba(0, 0, 0, 0.2), 3px 4px 4px rgba(0, 0, 0, 0.25) !important;
 }
