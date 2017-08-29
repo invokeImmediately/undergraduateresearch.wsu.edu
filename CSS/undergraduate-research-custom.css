@@ -1482,7 +1482,8 @@ aside.shield-themed {
   padding: 0.5rem;
   border-left: 4px solid #8d959a;
   background: #eff0f1;
-  color: #646464;
+  color: #464e54;
+  font-size: 0.925rem;
 }
 aside.shield-themed > h1:first-child,
 aside.shield-themed > h2:first-child,
@@ -1499,6 +1500,12 @@ aside.shield-themed > header:first-child > * {
   margin-bottom: 0.5rem;
   background-color: #981e32;
   color: #fff;
+}
+aside.shield-themed p + * {
+  margin-top: 1em;
+}
+aside.shield-themed p + .has-learn-more-link {
+  margin-top: 0.33333333em;
 }
 aside.widget {
   box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.9), 0 0 0 2px rgba(0, 0, 0, 0.2), 3px 4px 4px rgba(0, 0, 0, 0.25) !important;
