@@ -1,4 +1,4 @@
-@import  'https://fonts.googleapis.com/css?family=Roboto+Mono:300|Roboto+Condensed:400,700|Roboto+Slab|PT+Serif';
+﻿@import  'https://fonts.googleapis.com/css?family=Roboto+Mono:300|Roboto+Condensed:400,700|Roboto+Slab|PT+Serif';
 
 /* Built with the LESS CSS preprocessor [http://lesscss.org/]. Please see [https://github.com/invokeImmediately/undergraduateresearch.wsu.edu] for a repository of source code. */
 .has-mono-font {
@@ -735,17 +735,17 @@ div.column article.post+article.post {
 	margin-top: 1.5em;
 }
 
-/*!  +------------------------------------------------------------------------------------------------------------------+
-*    � ++++++++ SECTIONS ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ �
-*    +------------------------------------------------------------------------------------------------------------------�
-*    � Rule-sets for styling section elements within OUE pages built using the Builder template within the Spine theme  �
-*    � for WordPress.                                                                                                   �
-*    �  +-� This file assumes the following LESS files have been imported upstream:                                     �
-*    �        � //github.com/invokeImmediately/WSU-UE---CSS/animations.less                                             �
-*    �        � //github.com/invokeImmediately/WSU-UE---CSS/color-palette.less                                          �
-*    �        � //github.com/invokeImmediately/WSU-UE---CSS/fonts.less                                                  �
-*    �        � //github.com/invokeImmediately/WSU-UE---CSS/mixins.less                                                 �
-*    +------------------------------------------------------------------------------------------------------------------�
+/*!  ┌──────────────────────────────────────────────────────────────────────────────────────────────────────────────────┐
+*    │ ++++++++ SECTIONS ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ │
+*    ├------------------------------------------------------------------------------------------------------------------┤
+*    │ Rule-sets for styling section elements within OUE pages built using the Builder template within the Spine theme  │
+*    │ for WordPress.                                                                                                   │
+*    │  ╘═» This file assumes the following LESS files have been imported upstream:                                     │
+*    │        • //github.com/invokeImmediately/WSU-UE---CSS/animations.less                                             │
+*    │        • //github.com/invokeImmediately/WSU-UE---CSS/color-palette.less                                          │
+*    │        • //github.com/invokeImmediately/WSU-UE---CSS/fonts.less                                                  │
+*    │        • //github.com/invokeImmediately/WSU-UE---CSS/mixins.less                                                 │
+*    ├------------------------------------------------------------------------------------------------------------------┤
 */
 section.column-one-with-bottom-margin>.column.one {
 	margin-bottom: 2rem;
@@ -1126,7 +1126,7 @@ main section.row>.column table>tbody>tr>td>div>ol:last-child,main section.row>.c
 	}
 }
 
-/*!  +------------------------------------------------------------------------------------------------------------------+
+/*!  └──────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
 */
 aside.widget {
 	box-shadow: 0 0 0 1px rgba(255,255,255,.9), 0 0 0 2px rgba(0,0,0,.2), 3px 4px 4px rgba(0,0,0,.25) !important;
@@ -7404,9 +7404,9 @@ div.iframe-container+p {
 	background-color: #fff;
 }
 
-/*! +-----------------------------------------------------------------------------------------------------------------------+ 
-*   � #### MIXIN-TOGGLED layouts ########################################################################################## �
-*   +-----------------------------------------------------------------------------------------------------------------------+
+/*! ╔═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╗ 
+*   ║ #### MIXIN-TOGGLED layouts ########################################################################################## ║
+*   ╚═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝
 */
 .column a.glass-button,.column a.recommend-button {
 	display: block;
