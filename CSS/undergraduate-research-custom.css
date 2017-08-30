@@ -774,6 +774,21 @@ html {
 .column article.post + article.post {
   margin-top: 1.5em;
 }
+.row.new-article-section {
+  padding: 1rem;
+  margin-top: 2rem;
+}
+.row.new-article-section h1,
+.row.new-article-section h2,
+.row.new-article-section h3,
+.row.new-article-section h4,
+.row.new-article-section h5,
+.row.new-article-section h6 {
+  padding: 0;
+  margin: 0;
+  color: inherit;
+  text-align: center;
+}
 /*!     ┌───────────────────────────────────────────────────────────────────────────────────────────────────────────────┐
 *       │ SECTIONS ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ │
 *       └───────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
@@ -987,29 +1002,6 @@ section.side-right .column.two p {
 .row.has-blue-background .column {
   color: #fff;
 }
-/*.row {
-		&.has-charcoal-background {
-			background-color: @hex-charcoal-gray;
-			.column {
-				color: @hex-white;
-			}
-		}
-		&.has-gray-background {
-			background-color: @hex-bright-gray;
-		}
-		&.has-crimson-background {
-			background-color: @hex-crimson;
-			.column {
-				color: @hex-white;
-			}
-		}
-		&.has-blue-background {
-			background-color: @hex-accent-blue;
-			.column {
-				color: @hex-white;
-			}
-		}
-	}*/
 main section.row > .column > p:not(.no-btm-margin),
 main section.row > .column > article > .article-body > p:not(.no-btm-margin),
 main section.row > .column > article > .article-summary > p:not(.no-btm-margin),
@@ -7622,7 +7614,6 @@ div.auto-scroller ul li {
 *   ╠═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╣
 */
 #binder {
-  border-right: 1px solid rgba(239, 240, 241, 0.5);
   box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
 }
 #jacket {
