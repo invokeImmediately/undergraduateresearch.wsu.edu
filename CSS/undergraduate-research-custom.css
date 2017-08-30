@@ -1809,23 +1809,29 @@ body.blog .article-summary aside {
   margin-top: 0;
 }
 .column h2.fancy,
+.column h2.solid,
 .column.show-header.has-fancy-header > header:first-child > h2 {
   position: relative;
-  padding: 0.3333rem 0.5rem;
+  padding: 0.33333333rem 0.5rem 0.55rem;
   margin-left: -0.5rem;
   margin-bottom: 1rem;
   margin-right: -0.5rem;
   background-color: rgba(94, 106, 113, 0.2);
+  background: linear-gradient(to right, transparent, rgba(94, 106, 113, 0.075) 5%, rgba(94, 106, 113, 0.075) 50%, rgba(94, 106, 113, 0.225));
+  border-bottom: 2px solid rgba(94, 106, 113, 0.075);
 }
 .column h2.fancy.with-top-border,
+.column h2.solid,
 .column.show-header.has-fancy-header > header:first-child > h2 {
   padding-top: 0.5rem;
 }
 .column h2.fancy.with-top-border:not(:first-child),
+.column h2.solid:not(:first-child),
 .column.show-header.has-fancy-header > header:first-child > h2:not(:first-child) {
   margin-top: 2rem;
 }
 .column h2.fancy.with-top-border::before,
+.column h2.solid::before,
 .column.show-header.has-fancy-header > header:first-child > h2::before {
   content: "";
   position: absolute;
@@ -1922,37 +1928,47 @@ h2.article-title a {
   text-transform: none;
 }
 .column h3.fancy,
+.column h3.solid,
 .column.show-header.has-fancy-header > header:first-child > h3,
 .column h4.fancy,
 .gform_heading h3.gform_title.fancy,
+.gform_heading h3.gform_title.solid,
 .gform_heading h3.gform_title {
   position: relative;
-  padding: 0.3333rem 0.5rem;
+  padding: 0.33333333rem 0.5rem 0.45rem 0;
   margin-left: 0;
   margin-bottom: 1rem;
   margin-right: 0;
-  background-color: rgba(219, 120, 121, 0.075);
+  background-color: rgba(198, 12, 48, 0.075);
+  background: linear-gradient(to right, transparent, rgba(219, 120, 121, 0.075) 5%, rgba(219, 120, 121, 0.075) 50%, rgba(219, 120, 121, 0.225));
+  border-bottom: 2px solid rgba(198, 12, 48, 0.075);
 }
 .column h3.fancy.with-top-border,
+.column h3.solid,
 .column.show-header.has-fancy-header > header:first-child > h3,
 .column h4.fancy.with-top-border,
 .gform_heading h3.gform_title.fancy.with-top-border,
+.gform_heading h3.gform_title.solid,
 .gform_heading h3.gform_title.with-top-border,
 .gform_heading h3.gform_title {
   padding-top: 0.4375rem;
 }
 .column h3.fancy.with-top-border:not(:first-child),
+.column h3.solid:not(:first-child),
 .column.show-header.has-fancy-header > header:first-child > h3:not(:first-child),
 .column h4.fancy.with-top-border:not(:first-child),
 .gform_heading h3.gform_title.fancy.with-top-border:not(:first-child),
+.gform_heading h3.gform_title.solid:not(:first-child),
 .gform_heading h3.gform_title.with-top-border:not(:first-child),
 .gform_heading h3.gform_title:not(:first-child) {
   margin-top: 2rem;
 }
 .column h3.fancy.with-top-border::before,
+.column h3.solid::before,
 .column.show-header.has-fancy-header > header:first-child > h3::before,
 .column h4.fancy.with-top-border::before,
 .gform_heading h3.gform_title.fancy.with-top-border::before,
+.gform_heading h3.gform_title.solid::before,
 .gform_heading h3.gform_title.with-top-border::before,
 .gform_heading h3.gform_title::before {
   content: "";
