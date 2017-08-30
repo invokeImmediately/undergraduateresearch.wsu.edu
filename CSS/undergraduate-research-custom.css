@@ -966,11 +966,17 @@ section.side-right .column.two p {
 .column section:not(:last-child) > *:last-child:not(.vpue-jump-bar) {
   padding-bottom: 0;
 }
+.row.has-charcoal-background {
+  background-color: #2f3438;
+}
+.row.has-charcoal-background .column {
+  color: #fff;
+}
 .row.has-gray-background {
   background-color: #eff0f1;
 }
 .row.has-crimson-background {
-  background-color: #eff0f1;
+  background-color: #981e32;
 }
 .row.has-crimson-background .column {
   color: #fff;
@@ -981,6 +987,29 @@ section.side-right .column.two p {
 .row.has-blue-background .column {
   color: #fff;
 }
+/*.row {
+		&.has-charcoal-background {
+			background-color: @hex-charcoal-gray;
+			.column {
+				color: @hex-white;
+			}
+		}
+		&.has-gray-background {
+			background-color: @hex-bright-gray;
+		}
+		&.has-crimson-background {
+			background-color: @hex-crimson;
+			.column {
+				color: @hex-white;
+			}
+		}
+		&.has-blue-background {
+			background-color: @hex-accent-blue;
+			.column {
+				color: @hex-white;
+			}
+		}
+	}*/
 main section.row > .column > p:not(.no-btm-margin),
 main section.row > .column > article > .article-body > p:not(.no-btm-margin),
 main section.row > .column > article > .article-summary > p:not(.no-btm-margin),
