@@ -40,6 +40,16 @@ body {
     @media all and (min-width: (@v-wqxga-width+1)) {
         background: @hex-light-gray url(/wp-content/uploads/sites/51/2016/05/tileable-eroded-scratch-metal-texture_wqxga.jpg) repeat-y fixed 1080px top;
     }
+	&.use-max-width-1386 {
+		#binder.max-1188 {
+			@media only screen and (min-width: 990px) {
+				max-width: 1386px;
+				.row {
+					max-width: 1386px;
+				}
+			}
+		}
+	}
 }
 
 main {
