@@ -776,7 +776,6 @@ html {
 }
 .row.new-article-section {
   padding: 1rem;
-  margin-top: 2rem;
 }
 .row.new-article-section h1,
 .row.new-article-section h2,
@@ -1323,6 +1322,15 @@ main section.row > .column table > tbody > tr > td > ol:last-child,
 main section.row > .column table > tbody > tr > td > section > ol:last-child,
 main section.row > .column table > tbody > tr > td > div > ol:last-child {
   margin-bottom: 0;
+}
+.h1-header + section.pad-top .column {
+  padding-top: 2rem;
+}
+.h1-header + section.pad-top.short .column {
+  padding-top: 1rem;
+}
+.h1-header + section.pad-top.tall .column {
+  padding-top: 4rem;
 }
 @media only screen and (min-width: 481px) and (max-width: 693px) {
   .gutter .column:not(.gutterless),
