@@ -21,7 +21,7 @@
         traverseAddressInputs('.ugrf-mailing-address');
 
         /**********************************************************************************************
-         * Handle                                      *
+         * Handle use of max-1188 class override                                                      *
          **********************************************************************************************/
         checkForMax1386Page();
 	});
@@ -76,7 +76,7 @@
 		
 		if ( $body.hasClass( 'use-max-width-1386' ) ) {
 			$binder = $( '#binder' );
-			if ( $binder.hasClass( 'max-1188' ) {
+			if ( $binder.hasClass( 'max-1188' ) ) {
 				$binder.removeClass( 'max-1188' );
 				$binder.addClass( 'max-1386' );
 			}
