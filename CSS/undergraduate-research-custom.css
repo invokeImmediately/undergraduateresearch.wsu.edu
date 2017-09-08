@@ -7734,8 +7734,9 @@ header.main-header {
 */
 .explore-more.auto-fits-text {
   height: 0;
-  padding-top: 2.6%;
-  padding-bottom: 25.6%;
+  padding-top: 2.6% !important;
+  padding-bottom: 25.6% !important;
+  margin-bottom: 0 !important;
 }
 /*! ╠═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╣
 *   ║ #### 1.4) Sections: Asides ########################################################################################## ║
