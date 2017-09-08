@@ -774,20 +774,6 @@ html {
 .column article.post + article.post {
   margin-top: 1.5em;
 }
-.row.new-article-section {
-  padding: 1rem;
-}
-.row.new-article-section h1,
-.row.new-article-section h2,
-.row.new-article-section h3,
-.row.new-article-section h4,
-.row.new-article-section h5,
-.row.new-article-section h6 {
-  padding: 0;
-  margin: 0;
-  color: inherit;
-  text-align: center;
-}
 /*!     ┌───────────────────────────────────────────────────────────────────────────────────────────────────────────────┐
 *       │ SECTIONS ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ │
 *       └───────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
@@ -980,17 +966,11 @@ section.side-right .column.two p {
 .column section:not(:last-child) > *:last-child:not(.vpue-jump-bar) {
   padding-bottom: 0;
 }
-.row.has-charcoal-background {
-  background-color: #2f3438;
-}
-.row.has-charcoal-background .column {
-  color: #fff;
-}
 .row.has-gray-background {
   background-color: #eff0f1;
 }
 .row.has-crimson-background {
-  background-color: #981e32;
+  background-color: #eff0f1;
 }
 .row.has-crimson-background .column {
   color: #fff;
@@ -1322,15 +1302,6 @@ main section.row > .column table > tbody > tr > td > ol:last-child,
 main section.row > .column table > tbody > tr > td > section > ol:last-child,
 main section.row > .column table > tbody > tr > td > div > ol:last-child {
   margin-bottom: 0;
-}
-.h1-header + section.pad-top .column {
-  padding-top: 2rem;
-}
-.h1-header + section.pad-top.short .column {
-  padding-top: 1rem;
-}
-.h1-header + section.pad-top.tall .column {
-  padding-top: 4rem;
 }
 @media only screen and (min-width: 481px) and (max-width: 693px) {
   .gutter .column:not(.gutterless),
@@ -1838,29 +1809,23 @@ body.blog .article-summary aside {
   margin-top: 0;
 }
 .column h2.fancy,
-.column h2.solid,
 .column.show-header.has-fancy-header > header:first-child > h2 {
   position: relative;
-  padding: 0.33333333rem 0.5rem 0.55rem;
+  padding: 0.3333rem 0.5rem;
   margin-left: -0.5rem;
   margin-bottom: 1rem;
   margin-right: -0.5rem;
   background-color: rgba(94, 106, 113, 0.2);
-  background: linear-gradient(to right, transparent, rgba(94, 106, 113, 0.075) 5%, rgba(94, 106, 113, 0.075) 50%, rgba(94, 106, 113, 0.225));
-  border-bottom: 2px solid rgba(94, 106, 113, 0.075);
 }
 .column h2.fancy.with-top-border,
-.column h2.solid,
 .column.show-header.has-fancy-header > header:first-child > h2 {
   padding-top: 0.5rem;
 }
 .column h2.fancy.with-top-border:not(:first-child),
-.column h2.solid:not(:first-child),
 .column.show-header.has-fancy-header > header:first-child > h2:not(:first-child) {
   margin-top: 2rem;
 }
 .column h2.fancy.with-top-border::before,
-.column h2.solid::before,
 .column.show-header.has-fancy-header > header:first-child > h2::before {
   content: "";
   position: absolute;
@@ -1957,47 +1922,37 @@ h2.article-title a {
   text-transform: none;
 }
 .column h3.fancy,
-.column h3.solid,
 .column.show-header.has-fancy-header > header:first-child > h3,
 .column h4.fancy,
 .gform_heading h3.gform_title.fancy,
-.gform_heading h3.gform_title.solid,
 .gform_heading h3.gform_title {
   position: relative;
-  padding: 0.33333333rem 0.5rem 0.45rem 0;
+  padding: 0.3333rem 0.5rem;
   margin-left: 0;
   margin-bottom: 1rem;
   margin-right: 0;
-  background-color: rgba(198, 12, 48, 0.075);
-  background: linear-gradient(to right, transparent, rgba(219, 120, 121, 0.075) 5%, rgba(219, 120, 121, 0.075) 50%, rgba(219, 120, 121, 0.225));
-  border-bottom: 2px solid rgba(198, 12, 48, 0.075);
+  background-color: rgba(219, 120, 121, 0.075);
 }
 .column h3.fancy.with-top-border,
-.column h3.solid,
 .column.show-header.has-fancy-header > header:first-child > h3,
 .column h4.fancy.with-top-border,
 .gform_heading h3.gform_title.fancy.with-top-border,
-.gform_heading h3.gform_title.solid,
 .gform_heading h3.gform_title.with-top-border,
 .gform_heading h3.gform_title {
   padding-top: 0.4375rem;
 }
 .column h3.fancy.with-top-border:not(:first-child),
-.column h3.solid:not(:first-child),
 .column.show-header.has-fancy-header > header:first-child > h3:not(:first-child),
 .column h4.fancy.with-top-border:not(:first-child),
 .gform_heading h3.gform_title.fancy.with-top-border:not(:first-child),
-.gform_heading h3.gform_title.solid:not(:first-child),
 .gform_heading h3.gform_title.with-top-border:not(:first-child),
 .gform_heading h3.gform_title:not(:first-child) {
   margin-top: 2rem;
 }
 .column h3.fancy.with-top-border::before,
-.column h3.solid::before,
 .column.show-header.has-fancy-header > header:first-child > h3::before,
 .column h4.fancy.with-top-border::before,
 .gform_heading h3.gform_title.fancy.with-top-border::before,
-.gform_heading h3.gform_title.solid::before,
 .gform_heading h3.gform_title.with-top-border::before,
 .gform_heading h3.gform_title::before {
   content: "";
@@ -7721,7 +7676,16 @@ header.main-header {
   background: url(/wp-content/uploads/sites/51/2016/03/wpbg-news-events-v2.png) no-repeat left top, url(/wp-content/uploads/sites/51/2016/03/section-bar.png) no-repeat right top, url(/wp-content/uploads/sites/51/2016/03/section-bar.png) no-repeat center;
 }
 /*! ╠═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╣
-*   ║ #### 1.3) Sections: Asides ########################################################################################## ║
+*   ║ #### 1.3) Sections: Headings ######################################################################################## ║
+*   ╠═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╣
+*/
+.explore-more.auto-fits-text {
+  height: 0;
+  padding-top: 2.6%;
+  padding-bottom: 25.6%;
+}
+/*! ╠═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╣
+*   ║ #### 1.4) Sections: Asides ########################################################################################## ║
 *   ╠═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╣
 */
 .column aside.article-sidebar {
