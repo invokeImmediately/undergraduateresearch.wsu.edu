@@ -69,7 +69,7 @@
             });
         }
     }
-	
+
 	function checkForMax1386Page() {
 		var $body = $( 'body' );
 		var $binder;
@@ -81,6 +81,8 @@
 				$binder.addClass( 'max-1386' );
 			}
 		}
+	}
+
 })(jQuery);
 /***************************************************************************************************************************
  * jQuery.oue-custom.js: custom JavaScript code common to all WSU Undergraduate Education websites                         *
