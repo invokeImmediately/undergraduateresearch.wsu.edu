@@ -5517,6 +5517,10 @@ div.recent-updates p.recent-update-3 {
   line-height: calc(1.05em * 1.05);
   color: #f6861f;
 }
+.column a.learn-more {
+  font-weight: bold;
+  font-size: 0.925em;
+}
 .column a.dark-red-button {
   display: block;
   padding: .5em 1em;
@@ -8335,6 +8339,12 @@ div.iframe-container + p.forces-spacing {
 .row.has-linked-columns:not(.gutter).single .column > .shift-to-bottom:first-of-type {
   max-width: none;
 }
+@media all and (min-width: 1205px) {
+  #binder.max-1386 .row.has-linked-columns:not(.gutter).halves {
+    padding-bottom: 0 !important;
+    height: 327px;
+  }
+}
 .row.has-linked-columns:not(.gutter).thirds + .row.has-linked-columns:not(.gutter).thirds.thirds,
 .row.has-linked-columns:not(.gutter).thirds + .row.has-linked-columns:not(.gutter).quarters.thirds,
 .row.has-linked-columns:not(.gutter).quarters + .row.has-linked-columns:not(.gutter).thirds.thirds,
@@ -8484,6 +8494,18 @@ div.iframe-container + p.forces-spacing {
 @media all and (max-width: 480px) {
   .row.has-linked-columns:not(.gutter).thirds .column {
     padding-bottom: calc(40% - 2rem) !important;
+  }
+}
+@media all and (min-width: 1205px) {
+  #binder.max-1386 .row.has-linked-columns:not(.gutter).thirds .column {
+    padding-bottom: 0 !important;
+    height: 330px;
+  }
+}
+@media all and (min-width: 1205px) {
+  #binder.max-1386 .row.has-linked-columns:not(.gutter).quarters .column {
+    padding-bottom: 0 !important;
+    height: 293px;
   }
 }
 .row.has-linked-columns:not(.gutter).has-title {
