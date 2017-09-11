@@ -3,8 +3,8 @@
  *********************************************************************************************************************/
 (function ($) {
     "use strict";
-    
-	$(document).ready(function () {            
+
+	$(function () {
         /**********************************************************************************************
          * Tweak HTML source to work around some quirks of WordPress setup                            *
          **********************************************************************************************/
@@ -19,8 +19,13 @@
          * Set up advanced interactive behaviors of gravity forms                                     *
          **********************************************************************************************/
         traverseAddressInputs('.ugrf-mailing-address');
+
+        /**********************************************************************************************
+         * Handle use of max-1188 class override                                                      *
+         **********************************************************************************************/
+        checkForMax1386Page();
 	});
-    
+
     function traverseAddressInputs (selector) {
         if ($.type(selector) === "string") {
             $(selector).each(function () {
@@ -64,4 +69,18 @@
             });
         }
     }
+
+	function checkForMax1386Page() {
+		var $body = $( 'body' );
+		var $binder;
+		
+		if ( $body.hasClass( 'use-max-width-1386' ) ) {
+			$binder = $( '#binder' );
+			if ( $binder.hasClass( 'max-1188' ) ) {
+				$binder.removeClass( 'max-1188' );
+				$binder.addClass( 'max-1386' );
+			}
+		}
+	}
+
 })(jQuery);
