@@ -333,10 +333,26 @@ div.iframe-container {
 *   ║ #### 5.1) Layouts included via LESS mixins ########################################################################## ║
 *   ╠═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╣
 */
+
 .use-glass-button-layout();
+
 .use-linked-columns();
+
 .use-paragraph-notices(url(/wp-content/uploads/sites/51/2017/05/icon_genericons-neue_notice_v5.png));
+
 .use-sectional-article-headers();
+
+.use-events-calendar("Office of Undergraduate Research");
+body.tribe-theme-spine {
+	.sub-header {
+		text-shadow: .5px .5px 1px transparent;
+	}
+	.sub-header:before {
+		text-shadow: .5px .5px 1px #000;
+	}
+}
+
+.use-upcoming-events-on-home();
 
 /*! ╚═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝
 */
