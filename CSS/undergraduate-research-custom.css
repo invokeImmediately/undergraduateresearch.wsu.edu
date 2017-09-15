@@ -4361,25 +4361,43 @@ ul.cascaded-layout.blank > li.gutter-sizer {
 }
 /*!   └───────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
 */
-div.article-body {
+/*!     ┌───────────────────────────────────────────────────────────────────────────────────────────────────────────────┐
+*       │ NEWS POSTS ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ │
+*       └───────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+*/
+.article-body {
   position: relative;
   line-height: 1.375em;
 }
-div.article-summary {
+.article-summary {
   line-height: 1.375em;
 }
-div.article-summary aside.article-sidebar,
-div.article-summary img,
-div.article-summary object,
-div.article-summary p.article-media-contacts,
-div.article-summary > h3,
-div.article-summary p.photo-caption {
+.article-summary aside.article-sidebar,
+.article-summary img,
+.article-summary object,
+.article-summary p.article-media-contacts,
+.article-summary > h3,
+.article-summary p.photo-caption {
   display: none;
 }
-div.article-summary img.attachment-spine-thumbnail_size {
+.article-summary img.attachment-spine-thumbnail_size {
   display: block;
 }
-div.award-banner {
+.wsuwp-content-syndicate-item {
+  line-height: 1.375em;
+}
+.wsuwp-content-syndicate-item .content-item-byline-author {
+  display: none;
+}
+.wsuwp-content-syndicate-item .content-item-excerpt .article-sidebar,
+.wsuwp-content-syndicate-item .content-item-excerpt img,
+.wsuwp-content-syndicate-item .content-item-excerpt object,
+.wsuwp-content-syndicate-item .content-item-excerpt .article-media-contacts,
+.wsuwp-content-syndicate-item .content-item-excerpt > h3,
+.wsuwp-content-syndicate-item .content-item-excerpt .photo-caption {
+  display: none;
+}
+.award-banner {
   margin-top: 1rem;
   margin-bottom: 1rem;
 }
@@ -7590,7 +7608,7 @@ x:-o-prefocus {
 *         └-----------------------------------------------------------------------------------------------------------┘
 */
 /*!     ┌───────────────────────────────────────────────────────────────────────────────────────────────────────────────┐
-*       │ ARTICLES ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ │
+*       │ EVENTS CALENDAR PLUGIN ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ │
 *       └───────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
 */
 /*!     ┌───────────────────────────────────────────────────────────────────────────────────────────────────────────────┐
