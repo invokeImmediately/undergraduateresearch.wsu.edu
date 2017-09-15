@@ -8840,17 +8840,17 @@ div.iframe-container + p.forces-spacing {
   text-transform: none;
   background-color: rgba(0, 0, 0, 0.75);
 }
-body.tribe-theme-spine .main-header .header-group {
+body.tribe-theme-spine:not(.tribe_venue-template-default) .main-header .header-group {
   width: calc(90%);
   width: calc(100% - 2rem);
 }
-body.tribe-theme-spine .main-header .header-group .sub-header {
+body.tribe-theme-spine:not(.tribe_venue-template-default) .main-header .header-group .sub-header {
   color: transparent !important;
 }
-body.tribe-theme-spine .main-header .header-group .sub-header a {
+body.tribe-theme-spine:not(.tribe_venue-template-default) .main-header .header-group .sub-header a {
   display: none;
 }
-body.tribe-theme-spine .main-header .header-group .sub-header:before {
+body.tribe-theme-spine:not(.tribe_venue-template-default) .main-header .header-group .sub-header:before {
   content: "Office of Undergraduate Research";
   position: absolute;
   color: #fff;
