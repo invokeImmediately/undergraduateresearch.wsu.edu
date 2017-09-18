@@ -791,6 +791,7 @@ html {
 .row.side-right .column.one.new-article-section header {
   padding: 1rem 2rem;
   margin-right: -2rem;
+  margin-bottom: 1rem;
   margin-left: -2rem;
   background-color: #2f3438;
   color: #fff;
@@ -812,7 +813,10 @@ html {
   }
 }
 .row.side-right .column.one.new-article-section header > * {
-  color: inherit !important;
+  padding: 0;
+  margin: 0;
+  color: inherit;
+  text-align: center;
 }
 /*!     ┌───────────────────────────────────────────────────────────────────────────────────────────────────────────────┐
 *       │ SECTIONS ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ │
