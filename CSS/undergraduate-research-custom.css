@@ -4465,6 +4465,9 @@ body.single-post .main-header + .featured-image {
   color: #737373;
   text-transform: uppercase;
 }
+.column .wsuwp-content-syndicate-item .content-item-byline-date:before {
+  content: "Posted on ";
+}
 .column .wsuwp-content-syndicate-item .content-item-excerpt .article-sidebar,
 .column .wsuwp-content-syndicate-item .content-item-excerpt img,
 .column .wsuwp-content-syndicate-item .content-item-excerpt object,
