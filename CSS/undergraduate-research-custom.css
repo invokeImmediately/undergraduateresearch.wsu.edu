@@ -7946,7 +7946,7 @@ body.home .builder-section-banner.column-one-with-bottom-margin > .column.one {
 body.home .builder-section-banner .cycle-prev,
 body.home .builder-section-banner .cycle-next {
   top: auto;
-  bottom: 0;
+  bottom: 3rem;
   height: auto;
 }
 /*! ╠═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╣
