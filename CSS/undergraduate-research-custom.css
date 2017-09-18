@@ -790,14 +790,22 @@ html {
 }
 .row.side-right .column.one.new-article-section header {
   padding: 1rem 2rem;
-  margin-right: -2rem;
   margin-bottom: 1rem;
   margin-left: -2rem;
+}
+.row.side-right .column.two.new-article-section header {
+  padding: 1rem 2rem;
+  margin-right: -2rem;
+  margin-bottom: 1rem;
+}
+.row.side-right .column.one.new-article-section,
+.row.side-right .column.two.new-article-section {
   background-color: #2f3438;
   color: #fff;
 }
 @media only screen and (min-width: 361px) and (max-width: 480px) {
-  .row.side-right .column.one.new-article-section header {
+  .row.side-right .column.one.new-article-section,
+  .row.side-right .column.two.new-article-section {
     padding-right: 1rem;
     padding-left: 1rem;
     margin-right: -1rem;
@@ -805,14 +813,16 @@ html {
   }
 }
 @media only screen and (max-width: 360px) {
-  .row.side-right .column.one.new-article-section header {
+  .row.side-right .column.one.new-article-section,
+  .row.side-right .column.two.new-article-section {
     padding-right: 0.5rem;
     padding-left: 0.5rem;
     margin-right: -0.5rem;
     margin-left: -0.5rem;
   }
 }
-.row.side-right .column.one.new-article-section header > * {
+.row.side-right .column.one.new-article-section > *,
+.row.side-right .column.two.new-article-section > * {
   padding: 0;
   margin: 0;
   color: inherit;
