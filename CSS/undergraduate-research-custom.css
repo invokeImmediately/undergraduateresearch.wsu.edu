@@ -4426,10 +4426,12 @@ ul.cascaded-layout.blank > li.gutter-sizer {
 body.single-post .main-header + .featured-image {
   display: none;
 }
+.wsuwp-content-syndicate-wrapper {
+  font-size: 0.9rem;
+}
 .column .wsuwp-content-syndicate-list {
   list-style-type: none;
   padding: 0;
-  font-size: 0.9rem;
 }
 .column .wsuwp-content-syndicate-item {
   float: left;
