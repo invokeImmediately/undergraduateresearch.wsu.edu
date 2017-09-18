@@ -4481,6 +4481,9 @@ body.single-post .main-header + .featured-image {
 .column .wsuwp-content-syndicate-item .content-item-excerpt .content-item-read-story {
   margin-top: 1em;
 }
+.column .wsuwp-content-syndicate-item .content-item-excerpt .content-item-read-story {
+  display: inline-block;
+}
 .award-banner {
   margin-top: 1rem;
   margin-bottom: 1rem;
