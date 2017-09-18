@@ -5678,11 +5678,11 @@ div.recent-updates p.recent-update-3 {
   border-bottom: 0.0625em solid rgba(198, 12, 48, 0.2);
   box-shadow: inset 0 -0.3125em 0 rgba(198, 12, 48, 0.2);
 }
-.column h1 > a,
-.column h2 > a,
-.column h3 > a,
-.column h4 > a,
-.gform_heading h3.gform_title > a {
+.column h1 > a.stays-underlined,
+.column h2 > a.stays-underlined,
+.column h3 > a.stays-underlined,
+.column h4 > a.stays-underlined,
+.gform_heading h3.gform_title > a.stays-underlined {
   line-height: 1.35em;
 }
 .column h1 > a:not(.stays-underlined),
