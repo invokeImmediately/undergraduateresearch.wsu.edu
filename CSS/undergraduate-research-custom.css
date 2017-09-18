@@ -4437,7 +4437,7 @@ body.single-post .main-header + .featured-image {
   width: 50%;
   padding: 0 2rem 2rem 0;
   line-height: 1.375em;
-  list-style-image: none;
+  list-style-image: none !important;
 }
 .column .wsuwp-content-syndicate-item .content-item-title {
   font-size: 1.33333333em;
@@ -4459,7 +4459,7 @@ body.single-post .main-header + .featured-image {
   padding-bottom: 0.25em;
   margin-top: 0.5em;
   margin-bottom: 0.75em;
-  border: 1px solid rgba(127, 127, 127, 0.2);
+  border-bottom: 1px solid rgba(127, 127, 127, 0.2);
   color: #737373;
   text-transform: uppercase;
 }
