@@ -8852,12 +8852,12 @@ div.iframe-container + p.forces-spacing {
     font-size: 6.5vw;
   }
 }
-.page.has-short-main-header .row.halves.article-header .column.one p.parent-page {
+.page.has-short-main-header .row.halves.article-header .column.one .parent-page {
   margin-bottom: 0.125em;
   color: #eff0f1;
 }
 @media all and (max-width: 693px) {
-  .page.has-short-main-header .row.halves.article-header .column.one p.parent-page {
+  .page.has-short-main-header .row.halves.article-header .column.one .parent-page {
     font-size: 3.25vw;
   }
 }
@@ -8873,6 +8873,7 @@ div.iframe-container + p.forces-spacing {
   left: 60%;
   width: auto;
   height: 100%;
+  margin-top: 0 !important;
   background-color: #8d959a;
   background-position: center center;
   background-size: cover;
