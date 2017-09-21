@@ -1563,6 +1563,18 @@ aside.shield-themed {
   color: #464e54;
   font-size: 0.925rem;
 }
+aside.shield-themed.floats-left {
+  float: left;
+}
+aside.shield-themed.floats-right {
+  float: right;
+}
+@media all and (min-width: 694px) {
+  aside.shield-themed.floats-left,
+  aside.shield-themed.floats-right {
+    width: 33.3333%;
+  }
+}
 aside.shield-themed > h1:first-child,
 aside.shield-themed > h2:first-child,
 aside.shield-themed > h3:first-child,
