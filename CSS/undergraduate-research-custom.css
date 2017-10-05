@@ -8114,7 +8114,7 @@ div.iframe-container + p.forces-spacing {
   background-color: #fff;
 }
 /*! ╠═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╣
-*   ║ #### 5.1) Styles & layouts included via LESS mixins ################################################################# ║
+*   ║ #### 5.1) layouts & styles included via LESS mixins ################################################################# ║
 *   ╠═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╣
 */
 .column a.recommend-button,
@@ -9496,7 +9496,7 @@ body.home #upcoming-events .content-item-event-meta {
   display: none;
 }
 /*! ╠═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╣
-*   ║ #### 6.1) Page-specific styles & layouts ############################################################################ ║
+*   ║ #### 6.1) Page-specific layouts & styles ############################################################################ ║
 *   ╠═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╣
 */
 @media all and (max-width: 693px) {
@@ -9509,6 +9509,17 @@ body.home #upcoming-events .content-item-event-meta {
   .page.about-us #meet-our-staff .column p:first-child.forces-spacing {
     margin-top: 2rem !important;
   }
+}
+.page.peer-mentors #mentoring-hours .left-panel {
+  display: inline-block;
+  width: 67%;
+  vertical-align: middle;
+}
+.page.peer-mentors #mentoring-hours .right-panel {
+  display: inline-block;
+  width: 27%;
+  margin-left: 4%;
+  vertical-align: middle;
 }
 /*! ╚═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝
 */
