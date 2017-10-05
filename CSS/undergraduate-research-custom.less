@@ -222,6 +222,32 @@ header.main-header {
 }
 
 /*! ╠═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╣
+*   ║ #### 1.5) Sections: Homepage banner slideshow ####################################################################### ║
+*   ╠═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╣
+*/
+.builder-section-banner {
+	body.home & {
+		@pager-sz: (@v-dflt-spcng / 2 * 3);
+
+		.cycle-pager {
+			font-size: @pager-sz;
+			line-height: 1em;
+		}
+
+		&.column-one-with-bottom-margin > .column.one {
+			margin-bottom: (@v-dflt-spcng / 4);
+		}
+
+		.cycle-prev,
+		.cycle-next {
+			top: auto;
+			bottom: @pager-sz;
+			height: auto;
+		}
+	}
+}
+
+/*! ╠═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╣
 *   ║ #### 2.1) Content Grouping: Lists ################################################################################### ║
 *   ╠═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╣
 */
@@ -330,7 +356,7 @@ div.iframe-container {
 }
 
 /*! ╠═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╣
-*   ║ #### 5.1) Layouts included via LESS mixins ########################################################################## ║
+*   ║ #### 5.1) Styles & layouts included via LESS mixins ################################################################# ║
 *   ╠═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╣
 */
 
@@ -341,6 +367,51 @@ div.iframe-container {
 .use-paragraph-notices(url(/wp-content/uploads/sites/51/2017/05/icon_genericons-neue_notice_v5.png));
 
 .use-sectional-article-headers();
+.page.has-short-main-header {
+	.main-header {
+		height: 85px;
+		& > .header-group {
+			@media all {
+				@media (max-width: (@v-lg-mbl-thrshld)) {
+					padding-bottom: .75em !important;
+				}
+			}
+		}
+		.sup-header-default {
+			margin-bottom: 3px !important;
+		}
+		.sub-header {
+			@media all {
+				@media (max-width: (@v-rghtclmn-thrshld)) {
+					line-height: 5vw !important;
+				}
+			}
+		}
+		.sub-header-default {
+			@media all {
+				@media (max-width: (@v-rghtclmn-thrshld)) {
+					font-size: 5.1vw !important;
+				}
+				@media (max-width: (@v-lg-mbl-thrshld)) {
+					font-size: 1.42rem !important;
+				}
+			}
+		}
+	}
+}
+.page.has-short-main-header {
+	.row.halves.article-header.ugr-awards {
+		.column.one {
+			h1 {
+				@v-ugr-awards-h1-scaling: 1.0, .85, .85, .75, .67, .67;
+				.has-responsive-font(@v-h1-sz, .95em, @v-ugr-awards-h1-scaling);
+				@media all and (max-width: @v-rghtclmn-thrshld) {
+					font-size: 5.5vw;
+				}
+			}
+		}
+	}
+}
 
 .use-events-calendar("Office of Undergraduate Research");
 body.tribe-theme-spine {
@@ -353,6 +424,26 @@ body.tribe-theme-spine {
 }
 
 .use-upcoming-events-on-home();
+
+/*! ╠═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╣
+*   ║ #### 6.1) Page-specific styles & layouts ############################################################################ ║
+*   ╠═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╣
+*/
+.page.about-us {
+	#meet-our-staff {
+		.column p {
+			@media all {
+				@media (max-width: @v-rghtclmn-thrshld) {
+					text-align: center;
+					&:first-child {
+						.spaces-top-nrml;
+					}
+				}
+			}
+		}
+	}
+}
+
 
 /*! ╚═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝
 */
