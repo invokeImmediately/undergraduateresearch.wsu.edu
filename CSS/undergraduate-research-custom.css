@@ -9522,7 +9522,31 @@ body.home #upcoming-events .content-item-event-meta {
   vertical-align: middle;
 }
 .page.support-us.has-short-main-header .row.article-header {
-  height: 569px;
+  height: 0;
+  padding-bottom: 40.40404040%;
+}
+@media all and (max-width: 480px) {
+  .page.support-us.has-short-main-header .row.article-header {
+    padding-bottom: 80.80808080%;
+  }
+}
+.page.support-us.has-short-main-header .row.article-header .column.show-header {
+  background-position: left top;
+}
+@media all and (max-width: 1404px) {
+  .page.support-us.has-short-main-header .row.article-header .column.show-header header > * {
+    font-size: 4vw;
+  }
+}
+@media all and (max-width: 989px) {
+  .page.support-us.has-short-main-header .row.article-header .column.show-header header > * {
+    font-size: 5.672vw;
+  }
+}
+@media all and (max-width: 480px) {
+  .page.support-us.has-short-main-header .row.article-header .column.show-header header > * {
+    font-size: 8vw;
+  }
 }
 /*! ╚═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝
 */
