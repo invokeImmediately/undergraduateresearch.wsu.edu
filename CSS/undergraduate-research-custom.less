@@ -463,7 +463,30 @@ body.tribe-theme-spine {
 
 	&.support-us {
 		&.has-short-main-header .row.article-header {
-			height: 569px;
+			@v-bckgrnd-thrshld: (@v-spn-thrshld + 415px);
+			height: 0;
+			padding-bottom: 40.40404040%;
+			@media all {
+				@media (max-width: @v-lg-mbl-thrshld) {
+					padding-bottom: 80.80808080%;
+				}
+			}
+			.column.show-header {
+				background-position: left top;
+				header > * {
+					@media all {
+						@media (max-width: @v-bckgrnd-thrshld) {
+							font-size: 4vw;
+						}
+						@media (max-width: @v-spn-thrshld) {
+							font-size: 5.672vw;
+						}
+						@media (max-width: @v-lg-mbl-thrshld) {
+							font-size: 8vw;
+						}
+					}
+				}
+			}
 		}
 	}
 }
