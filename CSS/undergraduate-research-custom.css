@@ -9422,6 +9422,7 @@ body.home #upcoming-events .wsuwp-content-syndicate-event {
   flex: 1 0 33%;
   list-style: none;
   padding: .5em 1em 0 0;
+  margin-top: .5em;
   -webkit-transition: background .4s;
   transition: background .4s;
   width: 33%;
