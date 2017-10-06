@@ -429,33 +429,41 @@ body.tribe-theme-spine {
 *   ║ #### 6.1) Page-specific layouts & styles ############################################################################ ║
 *   ╠═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╣
 */
-.page.about-us {
-	#meet-our-staff {
-		.column p {
-			@media all {
-				@media (max-width: @v-rghtclmn-thrshld) {
-					text-align: center;
-					&:first-child {
-						.spaces-top-nrml;
+.page {
+	&.about-us {
+		#meet-our-staff {
+			.column p {
+				@media all {
+					@media (max-width: @v-rghtclmn-thrshld) {
+						text-align: center;
+						&:first-child {
+							.spaces-top-nrml;
+						}
 					}
 				}
 			}
 		}
 	}
-}
 
-.page.peer-mentors {
-	#mentoring-hours {
-		.left-panel {
-			display: inline-block;
-			width: 67%;
-			vertical-align: middle;
+	&.peer-mentors {
+		#mentoring-hours {
+			.left-panel {
+				display: inline-block;
+				width: 67%;
+				vertical-align: middle;
+			}
+			.right-panel {
+				display: inline-block;
+				width: 27%;
+				margin-left: 4%;
+				vertical-align: middle;
+			}
 		}
-		.right-panel {
-			display: inline-block;
-			width: 27%;
-			margin-left: 4%;
-			vertical-align: middle;
+	}
+
+	&.support-us {
+		.row.article-header {
+			height: 569px;
 		}
 	}
 }
