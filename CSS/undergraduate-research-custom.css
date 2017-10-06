@@ -9355,10 +9355,11 @@ body.tribe-theme-spine:not(.tribe_venue-template-default) .main-header .header-g
 #tribe-events-content.tribe-events-list .tribe-events-venue-details {
   font-size: 1.3rem;
   margin-top: 0;
-}
-#tribe-events-content.tribe-events-list .tribe-events-venue-details:before {
-  content: "Location: ";
-  font-weight: bold;
+  /*! TODO: Replace with a JavaScript-based solution b/c some events lack a venue, but the plugin loads empty HTML tags regardless.
+					&:before {
+						content: "Location: ";
+						font-weight: bold;
+					}*/
 }
 .single-tribe_events .tribe-events-before-html .calendar-intro-message {
   display: none;
