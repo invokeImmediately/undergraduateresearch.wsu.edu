@@ -9521,5 +9521,8 @@ body.home #upcoming-events .content-item-event-meta {
   margin-left: 4%;
   vertical-align: middle;
 }
+.page.support-us .row.article-header {
+  height: 569px;
+}
 /*! ╚═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝
 */
