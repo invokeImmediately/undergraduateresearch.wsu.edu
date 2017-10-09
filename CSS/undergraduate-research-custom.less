@@ -496,7 +496,8 @@ body.tribe-theme-spine {
 			margin-top: 0.3333em;
 		}
 		
-		.gform_wrapper {
+		.gform_wrapper,
+		.gform_confirmation_wrapper {
 			margin-top: @v-btm-mrgns !important;
 			padding: 2%;
 			border-top: 1px solid @hex-gray;
@@ -504,7 +505,8 @@ body.tribe-theme-spine {
 			border-radius: 4px;
 			background-color: #e5e6e8;
 			& { box-shadow: inset 2px 2px 8px @rgba; .getRgbaStr(@hex-black, 0.5); }
-			form {
+			form,
+			.gform_confirmation_message {
 				max-width: 800px;
 				padding: @v-dflt-spcng;
 				margin-right: 0;
