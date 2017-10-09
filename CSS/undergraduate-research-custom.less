@@ -495,6 +495,21 @@ body.tribe-theme-spine {
 			display: inline-block;
 			margin-top: 0.3333em;
 		}
+		
+		.gform-wrapper {
+			margin-top: @v-btm-mrgns !important;
+			padding: 2%;
+			border-top: 1px solid @hex-gray;
+			border-left: 1px solid @hex-gray;
+			border-radius: 4px;
+			background-color: #e5e6e8;
+			& { box-shadow: inset 2px 2px 8px @rgba; .getRgbaStr(@hex-black, 0.5); }
+			form {
+				& { border-top: 1px solid @rgba; .getRgbaStr(@hex-black, 0.1); }
+				border-radius: 4px;
+				& { box-shadow: 2px 3px 8px @rgba; .getRgbaStr(@hex-black, 0.5); }
+			}
+		}
 	}
 }
 
