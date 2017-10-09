@@ -9549,10 +9549,21 @@ body.home #upcoming-events .content-item-event-meta {
 }
 .page.research-based-courses .rb-course-description {
   display: inline-block;
-  margin-top: 0.6666rem;
+  margin-top: 0.3333em;
 }
-.page.research-based-courses .rb-course-description.forces-spacing {
-  margin-top: 0.6666rem !important;
+.page.research-based-courses .gform-wrapper {
+  margin-top: 1rem !important;
+  padding: 2%;
+  border-top: 1px solid #8d959a;
+  border-left: 1px solid #8d959a;
+  border-radius: 4px;
+  background-color: #e5e6e8;
+  box-shadow: inset 2px 2px 8px rgba(0, 0, 0, 0.5);
+}
+.page.research-based-courses .gform-wrapper form {
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  box-shadow: 2px 3px 8px rgba(0, 0, 0, 0.5);
 }
 /*! ╚═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝
 */
