@@ -9547,5 +9547,12 @@ body.home #upcoming-events .content-item-event-meta {
     font-size: 8vw;
   }
 }
+.page.research-based-courses .rb-course-description {
+  display: inline-block;
+  margin-top: 0.6666rem;
+}
+.page.research-based-courses .rb-course-description.forces-spacing {
+  margin-top: 0.6666rem !important;
+}
 /*! ╚═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝
 */
