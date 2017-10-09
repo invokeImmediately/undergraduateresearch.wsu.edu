@@ -505,9 +505,21 @@ body.tribe-theme-spine {
 			background-color: #e5e6e8;
 			& { box-shadow: inset 2px 2px 8px @rgba; .getRgbaStr(@hex-black, 0.5); }
 			form {
+				max-width: 800px;
+				padding: @v-dflt-spcng;
+				margin-right: 0;
+				margin-left: 0;
 				& { border-top: 1px solid @rgba; .getRgbaStr(@hex-black, 0.1); }
 				border-radius: 4px;
+				background-color: @hex-white;
 				& { box-shadow: 2px 3px 8px @rgba; .getRgbaStr(@hex-black, 0.5); }
+				@lg-mbl-padding: {
+					padding: (@v-dflt-spcng / 2);
+				};
+				@mbl-padding: {
+					padding: (@v-dflt-spcng / 4);
+				};
+				.declare-mobile-layout(@lg-mbl-padding, @mbl-padding);
 			}
 		}
 	}
