@@ -9896,5 +9896,43 @@ body.home #upcoming-events .content-item-event-meta {
 	}
 }
 
+.page.research-based-courses .rb-course-description {
+	display: inline-block;
+	margin-top: .3333em;
+}
+
+.page.research-based-courses .gform_confirmation_wrapper,.page.research-based-courses .gform_wrapper {
+	margin-top: 1rem !important;
+	padding: 2%;
+	border-top: 1px solid #8d959a;
+	border-left: 1px solid #8d959a;
+	border-radius: 4px;
+	background-color: #e5e6e8;
+	box-shadow: inset 2px 2px 8px rgba(0,0,0,.5);
+}
+
+.page.research-based-courses .gform_confirmation_wrapper .gform_confirmation_message,.page.research-based-courses .gform_confirmation_wrapper form,.page.research-based-courses .gform_wrapper .gform_confirmation_message,.page.research-based-courses .gform_wrapper form {
+	max-width: 800px;
+	padding: 2rem;
+	margin-right: 0;
+	margin-left: 0;
+	border-top: 1px solid rgba(0,0,0,.1);
+	border-radius: 4px;
+	background-color: #fff;
+	box-shadow: 2px 3px 8px rgba(0,0,0,.5);
+}
+
+@media only screen and (min-width:361px) and (max-width:480px) {
+	.page.research-based-courses .gform_confirmation_wrapper .gform_confirmation_message,.page.research-based-courses .gform_confirmation_wrapper form,.page.research-based-courses .gform_wrapper .gform_confirmation_message,.page.research-based-courses .gform_wrapper form {
+		padding: 1rem;
+	}
+}
+
+@media only screen and (max-width:360px) {
+	.page.research-based-courses .gform_confirmation_wrapper .gform_confirmation_message,.page.research-based-courses .gform_confirmation_wrapper form,.page.research-based-courses .gform_wrapper .gform_confirmation_message,.page.research-based-courses .gform_wrapper form {
+		padding: .5rem;
+	}
+}
+
 /*! ╚═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝
 */
