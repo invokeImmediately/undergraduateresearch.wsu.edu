@@ -8852,6 +8852,11 @@ div.iframe-container + p.forces-spacing {
     height: 340px;
   }
 }
+@media print {
+  .page.has-short-main-header .row.halves.article-header {
+    height: auto;
+  }
+}
 .page.has-short-main-header .row.halves.article-header .column.one {
   position: absolute;
   right: 40%;
