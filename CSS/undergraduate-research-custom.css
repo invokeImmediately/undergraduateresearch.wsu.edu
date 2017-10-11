@@ -8853,7 +8853,7 @@ span.has-tooltip:hover:after {
   right: 2px;
   width: 16px;
   height: 16px;
-  background: url(/wp-content/uploads/sites/51/2017/10/icon_indicator_tool-tip-info_24x24.png);
+  background: url(/wp-content/uploads/sites/51/2017/10/icon_indicator_tool-tip-info_24x24.png) center / auto 16px no-repeat;
 }
 .page.has-short-main-header .main-header {
   height: 85px;
