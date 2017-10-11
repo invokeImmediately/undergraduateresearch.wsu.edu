@@ -8825,6 +8825,36 @@ div.iframe-container + p.forces-spacing {
   box-shadow: inset 0 -0.3125em 0 rgba(152, 30, 50, 0.15);
   color: #981e32;
 }
+span.has-tool-tip:after,
+span.has-tooltip:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 10px;
+  height: 10px;
+  background: url(/uploads/sites/51/2017/10/icon_indicator_tool-tip-info_24x24.png) no-repeat center center / 100% 100%;
+  opacity: 1.0;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  -webkit-transform: translate(100%, -25%);
+  -moz-transform: translate(100%, -25%);
+  transform: translate(100%, -25%);
+}
+span.has-tool-tip:hover:after,
+span.has-tooltip:hover:after {
+  opacity: 0;
+}
+.qtip-titlebar:after {
+  content: "";
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  width: 16px;
+  height: 16px;
+  background: url(/uploads/sites/51/2017/10/icon_indicator_tool-tip-info_24x24.png);
+}
 .page.has-short-main-header .main-header {
   height: 85px;
 }
@@ -8880,6 +8910,7 @@ div.iframe-container + p.forces-spacing {
   .page.has-short-main-header .row.halves.article-header .column.one {
     position: static;
     height: auto;
+    padding: 2rem;
   }
 }
 .page.has-short-main-header .row.halves.article-header .column.one > :first-child,
@@ -8914,7 +8945,6 @@ div.iframe-container + p.forces-spacing {
   .page.has-short-main-header .row.halves.article-header .column.one > :first-child,
   .page.has-short-main-header .row.halves.article-header .column.one header:first-child + * {
     position: static;
-    padding: 2rem;
     -webkit-transform: none;
     -moz-transform: none;
     transform: none;
