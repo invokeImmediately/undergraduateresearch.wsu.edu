@@ -8833,7 +8833,7 @@ span.has-tooltip:after {
   right: 0;
   width: 10px;
   height: 10px;
-  background: url(/uploads/sites/51/2017/10/icon_indicator_tool-tip-info_24x24.png) no-repeat center center / 100% 100%;
+  background: url(/wp-content/uploads/sites/51/2017/10/icon_indicator_tool-tip-info_24x24.png) no-repeat center center / 100% 100%;
   opacity: 1.0;
   -webkit-transition: all 0.3s ease;
   -moz-transition: all 0.3s ease;
@@ -8853,7 +8853,7 @@ span.has-tooltip:hover:after {
   right: 2px;
   width: 16px;
   height: 16px;
-  background: url(/uploads/sites/51/2017/10/icon_indicator_tool-tip-info_24x24.png);
+  background: url(/wp-content/uploads/sites/51/2017/10/icon_indicator_tool-tip-info_24x24.png);
 }
 .page.has-short-main-header .main-header {
   height: 85px;
