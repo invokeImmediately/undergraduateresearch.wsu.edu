@@ -1941,20 +1941,29 @@ $(function () {
  *  QTip content class
  */
 function QTipContent($qTipSlctr) {
-	var regExPttrn = /^(.+)\|(.+)$/;
+	var regExPttrn1 = /^\(tooltip: ?(.+)\|(.+)(?=\))\)$/;
+	var regExPttrn2 = /^(.+)\|(.+)$/;
 	var regExResult;
 	this.qTipTitle = null;
 	this.qTipText = null;
 	this.qTipInnerHTML = null;
-	regExResult = regExPttrn.exec($qTipSlctr.text());
+	regExResult = regExPttrn1.exec($qTipSlctr.text());
 	if (regExResult != null && regExResult.length == 3) {
 		this.qTipTitle = regExResult[1];
 		this.qTipText = regExResult[2];
 		regExPttrn = /^(.+)\|/;
-		this.qTipInnerHTML = $qTipSlctr.html().replace(regExPttrn, "");
+		this.qTipInnerHTML = (regExResult[1] + "|" + regExResult[2]).replace(regExPttrn, "");
 	} else {
-		this.qTipText = $qTipSlctr.text();
-		this.qTipInnerHTML = $qTipSlctr.html();
+		regExResult = regExPttrn2.exec($qTipSlctr.text());
+		if (regExResult != null && regExResult.length == 3) {
+			this.qTipTitle = regExResult[1];
+			this.qTipText = regExResult[2];
+			regExPttrn = /^(.+)\|/;
+			this.qTipInnerHTML = $qTipSlctr.html().replace(regExPttrn, "");
+		} else {
+			this.qTipText = $qTipSlctr.text();
+			this.qTipInnerHTML = $qTipSlctr.html();
+		}
 	}
 }
 })(jQuery);/* jQuery Cookie Plugin v1.4.1
