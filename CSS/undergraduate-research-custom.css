@@ -9622,5 +9622,9 @@ body.home #upcoming-events .content-item-event-meta {
     padding: 0.5rem;
   }
 }
+.page.for-students-parents .wsuwp-content-syndicate-wrapper {
+  padding-left: 1em;
+  margin-top: -0.7em;
+}
 /*! ╚═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝
 */
