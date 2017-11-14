@@ -4463,11 +4463,11 @@ body.single-post .main-header + .featured-image {
 .wsuwp-content-syndicate-wrapper {
   font-size: 0.9rem;
 }
-.column .wsuwp-content-syndicate-list {
+body.page:not(.uses-default-syndicate-plugin-layout) .column .wsuwp-content-syndicate-list {
   list-style-type: none;
   padding: 0;
 }
-.page.home .column .wsuwp-content-syndicate-item {
+.page.home:not(.uses-default-syndicate-plugin-layout) .column .wsuwp-content-syndicate-item {
   float: left;
   box-sizing: border-box;
   width: 50%;
@@ -4475,22 +4475,22 @@ body.single-post .main-header + .featured-image {
   line-height: 1.375em;
   list-style-image: none !important;
 }
-.page.home .column .wsuwp-content-syndicate-item .content-item-title {
+.page.home:not(.uses-default-syndicate-plugin-layout) .column .wsuwp-content-syndicate-item .content-item-title {
   font-size: 1.33333333em;
   font-weight: bold;
   text-transform: uppercase;
 }
-.page.home .column .wsuwp-content-syndicate-item .content-item-title a {
+.page.home:not(.uses-default-syndicate-plugin-layout) .column .wsuwp-content-syndicate-item .content-item-title a {
   border-bottom-color: transparent;
   box-shadow: none;
 }
-.page.home .column .wsuwp-content-syndicate-item .content-item-title a:hover {
+.page.home:not(.uses-default-syndicate-plugin-layout) .column .wsuwp-content-syndicate-item .content-item-title a:hover {
   background-color: transparent;
 }
-.page.home .column .wsuwp-content-syndicate-item .content-item-byline-author {
+.page.home:not(.uses-default-syndicate-plugin-layout) .column .wsuwp-content-syndicate-item .content-item-byline-author {
   display: none;
 }
-.page.home .column .wsuwp-content-syndicate-item .content-item-byline-date {
+.page.home:not(.uses-default-syndicate-plugin-layout) .column .wsuwp-content-syndicate-item .content-item-byline-date {
   display: block;
   padding-bottom: 0.25em;
   margin-top: 0.5em;
@@ -4499,23 +4499,23 @@ body.single-post .main-header + .featured-image {
   color: #737373;
   text-transform: uppercase;
 }
-.page.home .column .wsuwp-content-syndicate-item .content-item-byline-date:before {
+.page.home:not(.uses-default-syndicate-plugin-layout) .column .wsuwp-content-syndicate-item .content-item-byline-date:before {
   content: "Posted on ";
 }
-.page.home .column .wsuwp-content-syndicate-item .content-item-excerpt .article-sidebar,
-.page.home .column .wsuwp-content-syndicate-item .content-item-excerpt img,
-.page.home .column .wsuwp-content-syndicate-item .content-item-excerpt object,
-.page.home .column .wsuwp-content-syndicate-item .content-item-excerpt .article-media-contacts,
-.page.home .column .wsuwp-content-syndicate-item .content-item-excerpt > h3,
-.page.home .column .wsuwp-content-syndicate-item .content-item-excerpt .photo-caption,
-.page.home .column .wsuwp-content-syndicate-item .content-item-excerpt .more-link {
+.page.home:not(.uses-default-syndicate-plugin-layout) .column .wsuwp-content-syndicate-item .content-item-excerpt .article-sidebar,
+.page.home:not(.uses-default-syndicate-plugin-layout) .column .wsuwp-content-syndicate-item .content-item-excerpt img,
+.page.home:not(.uses-default-syndicate-plugin-layout) .column .wsuwp-content-syndicate-item .content-item-excerpt object,
+.page.home:not(.uses-default-syndicate-plugin-layout) .column .wsuwp-content-syndicate-item .content-item-excerpt .article-media-contacts,
+.page.home:not(.uses-default-syndicate-plugin-layout) .column .wsuwp-content-syndicate-item .content-item-excerpt > h3,
+.page.home:not(.uses-default-syndicate-plugin-layout) .column .wsuwp-content-syndicate-item .content-item-excerpt .photo-caption,
+.page.home:not(.uses-default-syndicate-plugin-layout) .column .wsuwp-content-syndicate-item .content-item-excerpt .more-link {
   display: none;
 }
-.page.home .column .wsuwp-content-syndicate-item .content-item-excerpt > * + *,
-.page.home .column .wsuwp-content-syndicate-item .content-item-excerpt .content-item-read-story {
+.page.home:not(.uses-default-syndicate-plugin-layout) .column .wsuwp-content-syndicate-item .content-item-excerpt > * + *,
+.page.home:not(.uses-default-syndicate-plugin-layout) .column .wsuwp-content-syndicate-item .content-item-excerpt .content-item-read-story {
   margin-top: 1em;
 }
-.page.home .column .wsuwp-content-syndicate-item .content-item-excerpt .content-item-read-story {
+.page.home:not(.uses-default-syndicate-plugin-layout) .column .wsuwp-content-syndicate-item .content-item-excerpt .content-item-read-story {
   display: inline-block;
 }
 .award-banner {
@@ -5678,7 +5678,7 @@ div.recent-updates p.recent-update-3 {
   background-color: #c60c30;
 }
 .column a img:not(.no-border) {
-  border: 0.0625em solid rgba(94, 106, 113, 0.5);
+  border: 1px solid rgba(94, 106, 113, 0.5);
   box-shadow: 2px 2px 2px rgba(94, 106, 113, 0.25);
   text-decoration: none;
   -webkit-transition: border .4s linear, box-shadow .4s ease-in;
@@ -5686,7 +5686,7 @@ div.recent-updates p.recent-update-3 {
   transition: border .4s linear, box-shadow .4s ease-in;
 }
 .column a img:not(.no-border):hover {
-  border: 0.0625em solid #981e32;
+  border: 1px solid #981e32;
   box-shadow: 2px 2px 2px rgba(152, 30, 50, 0.3333);
 }
 .column a[data-title] {
