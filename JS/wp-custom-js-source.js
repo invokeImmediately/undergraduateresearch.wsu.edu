@@ -41,8 +41,8 @@ function OueTermYearInputs( slctrWhichFields ) {
 			if( !~_allValidKeyCodes.indexOf( e.keyCode ) ) {
 				e.preventDefault();
 			} else if ( !~_validOtherKeyCodes.indexOf( e.keyCode ) ) {
-				if ( inputText.match( _regExStartWithAlphas ) && !~_validNumberKeyCodes.indexOf( 
-						e.keyCode ) ) {
+				if ( inputText.match( _regExStartWithAlphas ) && ( !~_validNumberKeyCodes.indexOf( 
+						e.keyCode ) || !~_validAlphaKeyCodes.indexOf( e.keyCode ) ) ) {
 					e.preventDefault();
 				} else if ( inputText.match( _regExStartEndWithNumbers ) && 
 						!~_validNumberKeyCodes.indexOf( e.keyCode ) ) {
