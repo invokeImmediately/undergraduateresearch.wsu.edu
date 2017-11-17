@@ -1771,7 +1771,7 @@ function assertQTipPluginLoaded() {
 	}
 }
 
-function processQTips(qTipSlctr)
+function processQTips(qTipSlctr) {
 	// TODO: Refactor for improved maintainability
 	var $this;
 	var qTipContentSource; // Either a span or a div tag will be accepted.
@@ -1878,7 +1878,7 @@ function processQTips(qTipSlctr)
 			}
 		}
 	} );       
-
+}
 
 /*!
  *  QTip content class
