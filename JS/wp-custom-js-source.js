@@ -43,12 +43,12 @@ function OueTermYearInputs( slctrWhichFields ) {
 			} else if ( !~_validOtherKeyCodes.indexOf( e.keyCode ) ) {
 				if ( inputText.match( _regExStartWithAlphas ) && !~_validNumberKeyCodes.indexOf( 
 						e.keyCode ) ) {
-					e.PreventDefault();
+					e.preventDefault();
 				} else if ( inputText.match( _regExStartEndWithNumbers ) && 
 						!~_validNumberKeyCodes.indexOf( e.keyCode ) ) {
-					e.PreventDefault();
+					e.preventDefault();
 				} else if ( inputText.match( _regExPreventExtraChars ) ) {
-					e.PreventDefault();
+					e.preventDefault();
 				}
 			}            
 		} );
