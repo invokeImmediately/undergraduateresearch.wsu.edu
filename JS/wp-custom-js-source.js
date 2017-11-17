@@ -13,6 +13,7 @@ function OueTermYearInputs( slctrWhichFields ) {
 	// DECLARE PRIVATE PROPERTIES
 	var _selector = slctrWhichFields;
 	var _$fields = $( slctrWhichFields );
+	var _$inputs = _$fields.find( 'input' );
 	var _regExFilterFinal = /^[A-Za-z]+ (?:[0-9]{2}|[0-9]{4})$/;
 	var _regExPreventExtraChars = /^[A-Za-z]+ [0-9]{4}$/;
 	var _regExStartWithAlphas = /^[A-Za-z]*$/;
@@ -33,7 +34,7 @@ function OueTermYearInputs( slctrWhichFields ) {
 	}
 
 	this.applyKeyDownHandler = function() {
-		_$fields.keydown( function( e ) {
+		_$inputs.keydown( function( e ) {
 			var $this = $(this);
 			var inputText = $this.val();
 
@@ -54,7 +55,7 @@ function OueTermYearInputs( slctrWhichFields ) {
 	};
 
 	this.applyBlurHandler = function() {
-		_$fields.blur( function( e ) {
+		_$inputs.blur( function( e ) {
 			var $this = $(this);
 			var inputText = $this.val();
 
