@@ -91,7 +91,7 @@ $( function () {
 	
 	// Set up advanced interactive behaviors of gravity forms
 	traverseAddressInputs( '.ugrf-mailing-address' );
-	termYearInputs = New OueTermYearInputs( '.oue-term-year-field' );
+	termYearInputs = new OueTermYearInputs( '.oue-term-year-field' );
 
 	// Handle use of max-1188 class override
 	checkForMax1386Page();
