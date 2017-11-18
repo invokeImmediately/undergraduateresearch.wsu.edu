@@ -20,7 +20,8 @@ function OueTermYearInputs( slctrWhichFields ) {
 	var _regExStartEndWithNumbers = /^[A-Za-z]+ [0-9]{0,3}$/;
 	var _validAlphaKeyCodes;
 	var _validNumberKeyCodes;
-	var _validOtherKeyCodes = [8, 9, 13, 16, 17, 18, 20, 32, 35, 36, 37, 39, 46, 91, 92, 93, 144];
+	var _validSpaceKeyCode = [32]
+	var _validOtherKeyCodes = [8, 9, 13, 16, 17, 18, 20, 35, 36, 37, 39, 46, 91, 92, 93, 144];
 	var _allValidKeyCodes;
 	var _msgInputIsWrong = 'Please revise what you entered into the "Expeced WSU Gradution Term" '
 		+ 'field. Input should be in Term YYYY format (e.g., Fall 2019).';
@@ -30,7 +31,8 @@ function OueTermYearInputs( slctrWhichFields ) {
 		_validNumberKeyCodes = createArrayFromNumberSequence( 48, 57 ).concat( 
 			createArrayFromNumberSequence( 94, 105 ) );
 		_validAlphaKeyCodes = createArrayFromNumberSequence( 65, 90 );
-		_allValidKeyCodes = _validAlphaKeyCodes.concat(_validNumberKeyCodes, _validOtherKeyCodes);
+		_allValidKeyCodes = _validAlphaKeyCodes.concat(_validSpaceKeyCode, _validNumberKeyCodes, 
+			_validOtherKeyCodes);
 	}
 
 	this.applyKeyDownHandler = function() {
@@ -42,7 +44,8 @@ function OueTermYearInputs( slctrWhichFields ) {
 				e.preventDefault();
 			} else if ( !~_validOtherKeyCodes.indexOf( e.keyCode ) ) {
 				if ( inputText.match( _regExStartWithAlphas ) && !( ~_validNumberKeyCodes.indexOf( 
-						e.keyCode ) || ~_validAlphaKeyCodes.indexOf( e.keyCode ) ) ) {
+						e.keyCode ) || ~_validAlphaKeyCodes.indexOf( e.keyCode ) || 
+						~_validSpaceKeyCode.indexOf( e.keyCode ) ) ) {
 					e.preventDefault();
 				} else if ( inputText.match( _regExStartEndWithNumbers ) && 
 						!~_validNumberKeyCodes.indexOf( e.keyCode ) ) {
