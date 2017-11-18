@@ -60,9 +60,9 @@ function OueTermYearInputs( slctrWhichFields ) {
 			var inputText = $this.val();
 
 			if ( inputText != "" && !inputText.match( _regExFilterFinal ) ) {
-				alert( _msgInputIsWrong );
-				e.stopImmediatePropogation();
 				$this.focus();
+				e.stopImmediatePropogation();
+				alert( _msgInputIsWrong );
 			}
 		} );
 	}
