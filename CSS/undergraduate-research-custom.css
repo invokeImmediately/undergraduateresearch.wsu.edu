@@ -9659,10 +9659,26 @@ body.home #announcement {
   padding: 0.5rem;
   background-color: #FFDF00;
   font-size: 1.3rem;
-  line-ehight: 1.375em;
+  line-height: 1.375em;
 }
 body.home #announcement + * {
   margin-top: 1rem;
+}
+.award-eligibility-criteria {
+  margin-left: 1rem;
+}
+body .gform_wrapper div.gform_body ul.gform_fields li.gfield.gfield_html .award-eligibility-criteria ul,
+body .gform_wrapper form div.gform_body ul.gform_fields li.gfield.gfield_html .award-eligibility-criteria ul {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+body .gform_wrapper div.gform_body ul.gform_fields li.gfield.gfield_html .award-eligibility-criteria li,
+body .gform_wrapper form div.gform_body ul.gform_fields li.gfield.gfield_html .award-eligibility-criteria li {
+  margin-bottom: 0 !important;
+}
+body .gform_wrapper div.gform_body ul.gform_fields li.gfield.gfield_html .award-eligibility-criteria p,
+body .gform_wrapper form div.gform_body ul.gform_fields li.gfield.gfield_html .award-eligibility-criteria p {
+  margin-bottom: 0.33333333rem !important;
 }
 /*! ╚═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝
 */
