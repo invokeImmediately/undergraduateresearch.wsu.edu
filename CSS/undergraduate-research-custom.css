@@ -8118,6 +8118,7 @@ div.iframe-container + p.forces-spacing {
   position: relative;
   padding: 1em;
   border-radius: 7px;
+  border-bottom: none;
   box-shadow: 0 2px 2px rgba(0, 0, 0, 0.5);
   -webkit-transition: all 0.3s ease;
   -moz-transition: all 0.3s ease;
@@ -8166,6 +8167,16 @@ div.iframe-container + p.forces-spacing {
 .column a.glass-button.yellow:hover {
   background-color: #ffde1c;
   box-shadow: 0 2px 2px rgba(0, 0, 0, 0.25), 0 0 18px rgba(255, 222, 28, 0.8);
+}
+.column a.recommend-button.gray,
+.column a.glass-button.gray {
+  background-color: #2a3033;
+  color: white;
+}
+.column a.recommend-button.gray:hover,
+.column a.glass-button.gray:hover {
+  background-color: #8d959a;
+  box-shadow: 0 0 18px rgba(42, 48, 51, 0.3333);
 }
 .column a.recommend-button .icon,
 .column a.glass-button .icon {
@@ -9643,6 +9654,15 @@ body.home #upcoming-events .content-item-event-meta {
 .page.for-students-parents .wsuwp-content-syndicate-wrapper {
   padding-left: 1em;
   margin-top: -0.7em;
+}
+body.home #announcement {
+  padding: 0.5rem;
+  background-color: #FFDF00;
+  font-size: 1.3rem;
+  line-ehight: 1.375em;
+}
+body.home #announcement + * {
+  margin-top: 1rem;
 }
 /*! ╚═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝
 */
