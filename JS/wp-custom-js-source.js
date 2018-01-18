@@ -801,16 +801,14 @@ function checkForMax1386Page() {
             var $this = $(this);
 			$this.blur();
             $this.toggleClass(activatingClass);
-            $this.next(slctrWhatsToggled).toggle(animDuration);
 			setupDropDownTogglePermanence($this, activatingClass);
-        }); // TODO: change implementation to height + overflow based hiding approach
+        });
 		$toggles.on("keydown", function(e) {
 			var regExMask = /Enter| /g;
 			if (regExMask.exec(e.key) != null) {
 				e.preventDefault();
 				var $this = $(this);
 				$this.toggleClass(activatingClass);
-				$this.next(slctrWhatsToggled).toggle(animDuration);
 				setupDropDownTogglePermanence($this, activatingClass);
 			}
 		});
@@ -827,7 +825,6 @@ function checkForMax1386Page() {
 						var state = sessionStorage.getItem($this[0].id);
 						if (state == "expanded") {
 							$this.toggleClass(activatingClass);
-							$this.next(slctrWhatsToggled).toggle(animDuration);							
 						}
 					} catch(e) {
 						$.logError(thisFileName, thisFuncName, thisFuncDesc, e.message);
@@ -1372,7 +1369,7 @@ function checkForMax1386Page() {
 		checkRqrdChckbxs($rqrdFlds.find("ul.gfield_checkbox, ul.gfield_radio"));
 		checkRqrdTxtAreas($rqrdFlds.find("textarea"));
 	});
-	$(document).ready(function () {
+	$(function () {
         if($("div.gform_body").length > 0) {
 			initWsuIdInputs(".gf-is-wsu-id");
             setupActvtrChckbxs(".oue-gf-actvtr-checkbox");
@@ -1380,7 +1377,8 @@ function checkForMax1386Page() {
             setupUploadChain(".oue-gf-upload-chain");
 			
             // TODO: streamline functions by querying all ul.gform_fields li.gfield, then determine 
-            //   how to handle object by finding div children with gfield_container_class.
+            //   how to handle object by finding div children with gfield_container_class. Best to
+            //   implement as a class.
 			var $rqrdFlds =  $("li.gfield_contains_required");
 			hghlghtRqrdInpts($rqrdFlds.find("input"));
 			hghlghtRqrdChckbxs($rqrdFlds.find("ul.gfield_checkbox, ul.gfield_radio"));
@@ -1392,9 +1390,9 @@ function checkForMax1386Page() {
 		hghlghtRqrdRchTxtEdtrs( $( '.gfield_contains_required.uses-rich-editor' ) );
 	});
     
-    /****************************************************************************************************\
-    | Highlight required INPUTS until a value has been properly entered                                  |
-    \****************************************************************************************************/
+    /******************************************************************************************\
+    | Highlight required INPUTS until a value has been properly entered                        |
+    \******************************************************************************************/
     function checkRqrdInpts ($fields) {
         if ($.isJQueryObj($fields)) {
             $fields.each(function () {
@@ -1425,9 +1423,9 @@ function checkForMax1386Page() {
         }
     }
 
-    /****************************************************************************************************\
-    | Highlight required CHECKBOXES until at least one has been checked                                  |
-    \****************************************************************************************************/
+    /******************************************************************************************\
+    | Highlight required CHECKBOXES until at least one has been checked                        |
+    \******************************************************************************************/
     function checkRqrdChckbxs ($fields) {
         if ($.isJQueryObj($fields)) {
             $fields.each(function () {
@@ -1479,9 +1477,9 @@ function checkForMax1386Page() {
         }
     }
 
-    /****************************************************************************************************\
-    | Highlight required TEXT AREA inputs until a value has been properly entered                        |
-    \****************************************************************************************************/
+    /******************************************************************************************\
+    | Highlight required TEXT AREA inputs until a value has been properly entered              |
+    \******************************************************************************************/
     function checkRqrdTxtAreas ($fields) {
 		checkRqrdInpts($fields);
     }
@@ -1490,9 +1488,9 @@ function checkForMax1386Page() {
 		hghlghtRqrdInpts($fields);
     }
 
-    /****************************************************************************************************\
-    | Highlight required RICH TEXT EDITOR containters until a value has been properly entered            |
-    \****************************************************************************************************/
+    /******************************************************************************************\
+    | Highlight required RICH TEXT EDITOR containters until a value has been properly entered  |
+    \******************************************************************************************/
 	function hghlghtRqrdRchTxtEdtrs($fields) {
         if ($.isJQueryObj($fields) && $fields.length > 0) {
             $fields.each(function () {
@@ -1517,9 +1515,9 @@ function checkForMax1386Page() {
 		}
 	}
 
-    /****************************************************************************************************\
-    | Highlight required SELECTS until at least one has been checked                                     |
-    \****************************************************************************************************/
+    /******************************************************************************************\
+    | Highlight required SELECTS until at least one has been checked                           |
+    \******************************************************************************************/
     function hghlghtRqrdSelects ($fields) {
         if ($.isJQueryObj($fields)) {
             $fields.each(function () {
@@ -1546,9 +1544,9 @@ function checkForMax1386Page() {
         }
     }
 
-    /****************************************************************************************************\
-    | Initialize RegEx filtration of inputs that accept WSU ID numbers                                   |
-    \****************************************************************************************************/
+    /******************************************************************************************\
+    | Initialize RegEx filtration of inputs that accept WSU ID numbers                         |
+    \******************************************************************************************/
     function initWsuIdInputs(slctrInputs) {
         var $wsuIdInputs = $(slctrInputs).find("input[type='text']");
 		$wsuIdInputs.keydown(function(e) {
@@ -1559,7 +1557,8 @@ function checkForMax1386Page() {
 			 !(e.keyCode == 86 && e.ctrlKey)) {
 				e.preventDefault();
 			}
-			else if (!~[8, 9, 20, 35, 36, 37, 39, 46, 110, 144].indexOf(e.keyCode) && inputText.length >= 9) {
+			else if (!~[8, 9, 20, 35, 36, 37, 39, 46, 110, 144].indexOf(e.keyCode) &&
+					inputText.length >= 9) {
 				e.preventDefault();
 				alert("Note: WSU ID numbers are no greater than nine (9) digits in length.");
 			}
@@ -1579,14 +1578,17 @@ function checkForMax1386Page() {
 					$this.val(inputText.slice(0,9));
 					errorMsg += " Also, they must be no greater than nine (9) digits in length.";
 				}
-				errorMsg += " What you pasted will automatically be corrected; please check the result to see if further corrections are needed."
+				errorMsg += " What you pasted will automatically be corrected; please check the "
+					+ "result to see if further corrections are needed."
 				alert(errorMsg);
             }
             else if (inputText.length > 9) {
 				e.stopPropagation();
 				e.preventDefault();
                 $this.val(inputText.slice(0,9));
-				alert("WSU ID numbers are no greater than nine (9) digits in length. What you pasted will automatically be corrected; please check the result to see if further corrections are needed.");
+				alert("WSU ID numbers are no greater than nine (9) digits in length. What you "
+					+ "pasted will automatically be corrected; please check the result to see if "
+					+ "further corrections are needed.");
             }
         });
         $wsuIdInputs.blur(function () {
@@ -1596,15 +1598,17 @@ function checkForMax1386Page() {
 			if (inputText != "") {
 				if (regExFinalPttrn.exec(inputText) == null) {					
 					$this.val("");
-					alert("Please try again: when the leading zero is included, WSU ID numbers are nine (9) digits long. (You can also drop the leading zero and enter in eight (8) digits.)");
+					alert("Please try again: when the leading zero is included, WSU ID numbers are "
+						+ "nine (9) digits long. (You can also drop the leading zero and enter in "
+						+ "eight (8) digits.)");
 				}
 			}
         });
     }
 	
-    /****************************************************************************************************\
-    | Setup activator checkboxes that disappear once one is selected                                     |
-    \****************************************************************************************************/
+    /******************************************************************************************\
+    | Setup activator checkboxes that disappear once one is selected                           |
+    \******************************************************************************************/
     function setupActvtrChckbxs (selector) {
         if ($.type(selector) === "string") {
             $(".gform_body").on("change", selector + " input", function () {
@@ -1615,10 +1619,10 @@ function checkForMax1386Page() {
         }
     }
     
-    /****************************************************************************************************\
-    | Setup a chain of activator checkboxes, wherein once a checkbox is activated/deactivated,           |
-    | only its closest previous sibling is hidden/shown.                                                 |
-    \****************************************************************************************************/
+    /******************************************************************************************\
+    | Setup a chain of activator checkboxes, wherein once a checkbox is activated/deactivated, |
+    | only its closest previous sibling is hidden/shown.                                       |
+    \******************************************************************************************/
     function setupActvtrChain (selector) {
         if ($.type(selector) === "string") {
             $(".gform_body").on("change", selector + " input", function () {
@@ -1635,18 +1639,18 @@ function checkForMax1386Page() {
         }
     }
 
-    /****************************************************************************************************\
-    | Setup a chain of file uploading inputs, wherein only the left-most input in the tree is            |
-    | visible. As the user uploads files in sequence, the next nearest neighbor is unveiled.             |
-    \****************************************************************************************************/
+    /******************************************************************************************\
+    | Setup a chain of file uploading inputs, wherein only the left-most input in the tree is  |
+    | visible. As the user uploads files in sequence, the next nearest neighbor is unveiled.   |
+    \******************************************************************************************/
     function setupUploadChain (selector) {
         if ($.type(selector) === "string") {
-            /* CHECK IF UPLOADS ALREADY EXIST:
-             *  It is possible to arrive at this point in execution after the user has submitted a
-             *  form containing errors that also already contains transcripts uploaded to input
-             *  fields that will be hidden by default. The following blocks of code resolve this
-             *  situation by showing such fields, as well as their nearest neighbors.
-             */
+
+            // CHECK IF UPLOADS ALREADY EXIST:
+            //  It is possible to arrive at this point in execution after the user has submitted a
+            //  form containing errors that also already contains transcripts uploaded to input
+            //  fields that will be hidden by default. The following blocks of code resolve this
+            //  situation by showing such fields, as well as their nearest neighbors.
             var $inputs = $(selector + " input[type='file']");
             $inputs.each(function () {
                 var $thisInput = $(this);
@@ -1672,7 +1676,8 @@ function checkForMax1386Page() {
                             if(valuePassed) {
                                 var $thisSblng = $(this);
                                 var $thisSblngInput = $thisSblng.find("input[type='file']").first();
-                                if($thisSblngInput.prop("files") != null && $thisSblngInput.prop("files").length > 0) {
+                                if($thisSblngInput.prop("files") != null && 
+                                		$thisSblngInput.prop("files").length > 0) {
                                     var thisFileName = $thisSblngInput.prop("files").item(0).name;
                                     valuePassed = originalFileName != thisFileName;
                                 }
@@ -1682,7 +1687,8 @@ function checkForMax1386Page() {
                             if(valuePassed) {
                                 var $thisSblng = $(this);
                                 var $thisSblngInput = $thisSblng.find("input[type='file']").first();
-                                if($thisSblngInput.prop("files") != null && $thisSblngInput.prop("files").length > 0) {
+                                if($thisSblngInput.prop("files") != null &&
+                                		$thisSblngInput.prop("files").length > 0) {
                                     var thisFileName = $thisSblngInput.prop("files").item(0).name;
                                     valuePassed = originalFileName != thisFileName;
                                 }
@@ -1695,7 +1701,8 @@ function checkForMax1386Page() {
                     }
                     else
                     {
-                        alert("A file with the same name has already been uploaded; please choose a different file.");
+                        alert("A file with the same name has already been uploaded; please choose "
+                        	+ "a different file.");
                         $thisInput.get(0).value = "";
                     }
                 }
