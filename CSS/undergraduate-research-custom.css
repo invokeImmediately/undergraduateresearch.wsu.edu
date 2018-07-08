@@ -4475,6 +4475,9 @@ body.page:not(.uses-default-syndicate-plugin-layout) .column .wsuwp-content-synd
   line-height: 1.375em;
   list-style-image: none !important;
 }
+.page.home:not(.uses-default-syndicate-plugin-layout) .column .wsuwp-content-syndicate-item:nth-child(odd) {
+  clear: left;
+}
 .page.home:not(.uses-default-syndicate-plugin-layout) .column .wsuwp-content-syndicate-item .content-item-title {
   font-size: 1.33333333em;
   font-weight: bold;
