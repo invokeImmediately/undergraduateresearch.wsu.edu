@@ -1,21 +1,59 @@
-/*! ╔═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╗ 
-*   ║ OUE-WIDE CUSTOM LAYOUTS ############################################################################################# ║
-*   ║ #### Authored by Daniel C. Rieck, Ph.D. | daniel.rieck@wsu.edu | https://github.com/invokeImmediately ############### ║
-*   ╠═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╣
-*/
+/** ┌──────────────────────────────────────────────────────────────────────────────────────────────┐
+*** │ FILENAME: undergraduate-research-custom.less                                                 │
+*** └──────────────────────────────────────────────────────────────────────────────────────────────┘
+**/
+
+/**   ──────────────────────────────────────────────────────────────────────────────────────────────
+***   TABLE OF CONTENTS:
+***   ───────────────────────────────────────────────────────────────────────────────────────────
+***   §1: Backgrounds..........................................................................50
+***     >>> §1.1: Spine binder.................................................................54
+***     >>> §1.2: Spine jacket.................................................................65
+***     >>> §1.3: Page body....................................................................75
+***     >>> §1.4: Main content section........................................................104
+***     >>> §1.5: Main header.................................................................112
+***     >>> §1.6: Columnar headers............................................................133
+***   §2: Styling at the document section level...............................................153
+***     >>> §2.1: Headings....................................................................157
+***     >>> §2.2: Asides......................................................................168
+***   §3: Styling at the content grouping level...............................................256
+***     >>> §3.1: Lists.......................................................................260
+***   §4: Styling at the embedded content level...............................................271
+***     >>> §4.1: Iframes.....................................................................275
+***   §5: Styling of forms....................................................................301
+***   §6: Optional styling included via Less mixins...........................................372
+***   §7: Component-based styling.............................................................443
+***     >>> §7.1: Page specific components....................................................447
+***     >>> §7.2: Banner slideshows...........................................................595
+***   ──────────────────────────────────────────────────────────────────────────────────────────────
+**/
+
 @grid-behavior: "hybrid";
+@oue-rules-wrapper: ~"";
+
 @import "..\WSU-UE---CSS\wp-master-style-sheet.less";
 
-/*! ╚═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝
-*/
+/*! ================================================================================================
+*** CUSTOM STYLE SHEET for the WSU Office of Undergraduate Research
+*** ================================================================================================
+***   AUTHOR: Daniel Rieck [daniel.rieck@wsu.edu] (https://github.com/invokeImmediately)            
+***
+***   CONTENTS: CSS compiled from Less language extension of CSS; only used on the Office of
+***      Undergraduate Research website.
+***
+***   GIT REPOSITORY: https://github.com/invokeImmediately/undergraduateresearch.wsu.edu
+***     See git repository for fully documented, precompiled source code.
+*** ================================================================================================
+**/
 
-/*! ╔═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╗ 
-*   ║ LAYOUTS SPECIFIC TO THE UNDERGRADUATE RESEARCH WEBSITE ############################################################## ║
-*   ║ #### Authored by D. Rieck ########################################################################################### ║
-*   ╠═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╣
-*   ║ #### 1.1) Sections: Body & Page Level ############################################################################### ║
-*   ╠═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╣
-*/
+/** ================================================================================================
+*** §1: Backgrounds
+**/
+
+/**   ----------------------------------------------------------------------------------------------
+***   >>> §1.1: Spine binder
+**/
+
 #binder {
 	box-shadow: 5px 5px 5px rgba(0,0,0,0.5);
 	@media print {
@@ -23,23 +61,31 @@
 	}
 }
 
+/**   ----------------------------------------------------------------------------------------------
+***   >>> §1.2: Spine jacket
+**/
+
 #jacket {
 	background-repeat: no-repeat;
 	background-position: right bottom;
 	background-attachment: fixed;
 }
 
+/**   ----------------------------------------------------------------------------------------------
+***   >>> §1.3: Page body
+**/
+
 body {
-    @media all and (max-width: @v-wdscrn-bckgrnd) {
+    @media all and (max-width: @widescreen-background-width) {
         background: @hex-light-gray;
     }
-    @media all and (min-width: (@v-wdscrn-bckgrnd+1)) and (max-width: @v-wuxga-width) {
+    @media all and (min-width: (@widescreen-background-width+1)) and (max-width: @wuxga-width) {
         background: @hex-light-gray url(/wp-content/uploads/sites/51/2016/05/tileable-eroded-scratch-metal-texture_wuxga.jpg) repeat-y fixed right top;
     }
-    @media all and (min-width: (@v-wuxga-width+1)) and (max-width: @v-wqxga-width) {
+    @media all and (min-width: (@wuxga-width+1)) and (max-width: @wqxga-width) {
         background: @hex-light-gray url(/wp-content/uploads/sites/51/2016/05/tileable-eroded-scratch-metal-texture_wqxga.jpg) repeat-y fixed right top;
     }
-    @media all and (min-width: (@v-wqxga-width+1)) {
+    @media all and (min-width: (@wqxga-width+1)) {
         background: @hex-light-gray url(/wp-content/uploads/sites/51/2016/05/tileable-eroded-scratch-metal-texture_wqxga.jpg) repeat-y fixed 1080px top;
     }
 	&.use-max-width-1386 {
@@ -54,14 +100,18 @@ body {
 	}
 }
 
+/**   ----------------------------------------------------------------------------------------------
+***   >>> §1.4: Main content section
+**/
+
 main {
 	background: @hex-white url(/wp-content/uploads/sites/51/2015/04/tileable-lab-papar-texture_500x500_opacity-0.10.png) left top repeat;
 }
 
-/*! ╠═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╣
-*   ║ #### 1.2) Sections: Headers ######################################################################################### ║
-*   ╠═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╣
-*/
+/**   ----------------------------------------------------------------------------------------------
+***   >>> §1.5: Main header
+**/
+
 header.main-header {
 	background: #981e32 url(/wp-content/uploads/sites/50/2015/04/seamless-marble-texture_528x528.png) repeat scroll left top;
 	font-family: 'Open Sans', 'Lucida Sans Unicode', 'Lucida Sans', 'Lucida Grande';
@@ -79,6 +129,10 @@ header.main-header {
 	color: #fff !important;
 }
 
+/**   ----------------------------------------------------------------------------------------------
+***   >>> §1.6: Columnar headers
+**/
+
 .column {
 	font-family: 'Open Sans', 'Lucida Sans Unicode', 'Lucida Sans', 'Lucida Grande';
 	section {
@@ -95,22 +149,25 @@ header.main-header {
 	}
 }
 
-/*! ╠═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╣
-*   ║ #### 1.3) Sections: Headings ######################################################################################## ║
-*   ╠═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╣
-*/
+/** ================================================================================================
+*** §2: Styling at the document section level
+**/
+
+/**   ----------------------------------------------------------------------------------------------
+***   >>> §2.1: Headings
+**/
 
 .explore-more.auto-fits-text {
 	height: 0;
 	padding-top: 2.6% !important;
-	padding-bottom: 25.6% !important;
+	padding-bottom: 35% !important;
 	margin-bottom: 0 !important;
 }
 
-/*! ╠═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╣
-*   ║ #### 1.4) Sections: Asides ########################################################################################## ║
-*   ╠═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╣
-*/
+/**   ----------------------------------------------------------------------------------------------
+***   >>> §2.2: Asides
+**/
+
 .column {
 	aside.article-sidebar {
 		background: #f8f1eb url(/wp-content/uploads/sites/51/2015/04/tileable-concrete-texture_128x128.png) left top repeat;
@@ -194,36 +251,15 @@ header.main-header {
 	}
 }
 
-/*! ╠═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╣
-*   ║ #### 1.5) Sections: Homepage banner slideshow ####################################################################### ║
-*   ╠═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╣
-*/
-.builder-section-banner {
-	body.home & {
-		@pager-sz: (@v-dflt-spcng / 2 * 3);
 
-		.cycle-pager {
-			font-size: @pager-sz;
-			line-height: 1em;
-		}
+/**   ----------------------------------------------------------------------------------------------
+***   §3: Styling at the content grouping level
+**/
 
-		&.column-one-with-bottom-margin > .column.one {
-			margin-bottom: (@v-dflt-spcng / 4);
-		}
+/**   ----------------------------------------------------------------------------------------------
+***   >>> §3.1: Lists
+**/
 
-		.cycle-prev,
-		.cycle-next {
-			top: auto;
-			bottom: @pager-sz;
-			height: auto;
-		}
-	}
-}
-
-/*! ╠═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╣
-*   ║ #### 2.1) Content Grouping: Lists ################################################################################### ║
-*   ╠═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╣
-*/
 div.column ul:not(.content-boxes) {
     li { list-style-image: url(/wp-content/uploads/sites/51/2015/04/ico-cougar-bullet-point.png); }
     &.gray-bullets {
@@ -231,10 +267,14 @@ div.column ul:not(.content-boxes) {
     }
 }
 
-/*! ╠═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╣
-*   ║ #### 3.1) Embedded Content: Iframes ################################################################################# ║
-*   ╠═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╣
-*/
+/**   ----------------------------------------------------------------------------------------------
+***   §4: Styling at the embedded content level
+**/
+
+/**   ----------------------------------------------------------------------------------------------
+***   >>> §4.1: Iframes
+**/
+
 div.iframe-container {
 	position: relative;
 	width: 90%;
@@ -257,10 +297,10 @@ div.iframe-container {
 	}
 }
 
-/*! ╠═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╣
-*   ║ #### 4.1) Forms ########################################################################################## ║
-*   ╠═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╣
-*/
+/**   ----------------------------------------------------------------------------------------------
+***   §5: Styling of forms
+**/
+
 .ugrf-name, .ugrf-wsu-id, .ugrf-email, .ugrf-institution, .ugrf-phone, .ugrf-major,
  .ugrf-mentor-name, .ugrf-mentor-email, .ugrf-general {
     transition: background 0.5s ease;
@@ -328,10 +368,9 @@ div.iframe-container {
     }
 }
 
-/*! ╠═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╣
-*   ║ #### 5.1) layouts & styles included via LESS mixins ################################################################# ║
-*   ╠═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╣
-*/
+/**   ----------------------------------------------------------------------------------------------
+***   §6: Optional styling included via Less mixins
+**/
 
 .use-glass-button-layout();
 
@@ -347,7 +386,7 @@ div.iframe-container {
 		height: 85px;
 		& > .header-group {
 			@media all {
-				@media (max-width: (@v-lg-mbl-thrshld)) {
+				@media (max-width: (@large-mobile-screen-width)) {
 					padding-bottom: .75em !important;
 				}
 			}
@@ -357,17 +396,17 @@ div.iframe-container {
 		}
 		.sub-header {
 			@media all {
-				@media (max-width: (@v-rghtclmn-thrshld)) {
+				@media (max-width: (@column-floating-threshold)) {
 					line-height: 5vw !important;
 				}
 			}
 		}
 		.sub-header-default {
 			@media all {
-				@media (max-width: (@v-rghtclmn-thrshld)) {
+				@media (max-width: (@column-floating-threshold)) {
 					font-size: 5.1vw !important;
 				}
-				@media (max-width: (@v-lg-mbl-thrshld)) {
+				@media (max-width: (@large-mobile-screen-width)) {
 					font-size: 1.42rem !important;
 				}
 			}
@@ -380,7 +419,7 @@ div.iframe-container {
 			h1 {
 				@v-ugr-awards-h1-scaling: 1.0, .85, .85, .75, .67, .67;
 				.has-responsive-font(@v-h1-sz, .95em, @v-ugr-awards-h1-scaling);
-				@media all and (max-width: @v-rghtclmn-thrshld) {
+				@media all and (max-width: @column-floating-threshold) {
 					font-size: 5.5vw;
 				}
 			}
@@ -400,16 +439,20 @@ body.tribe-theme-spine {
 
 .use-upcoming-events-on-home();
 
-/*! ╠═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╣
-*   ║ #### 6.1) Page-specific layouts & styles ############################################################################ ║
-*   ╠═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╣
-*/
+/**   ----------------------------------------------------------------------------------------------
+***   §7: Component-based styling
+**/
+
+/**   ----------------------------------------------------------------------------------------------
+***   >>> §7.1: Page specific components
+**/
+
 .page {
 	&.about-us {
 		#meet-our-staff {
 			.column p {
 				@media all {
-					@media (max-width: @v-rghtclmn-thrshld) {
+					@media (max-width: @column-floating-threshold) {
 						text-align: center;
 						&:first-child {
 							.spaces-top-nrml;
@@ -438,13 +481,13 @@ body.tribe-theme-spine {
 
 	&.support-us {
 		&.has-short-main-header .row.article-header {
-			@v-bckgrnd-thrshld: (@v-spn-thrshld + 415px);
+			@background-width-threshold: (@spine-threshold + 415px);
 
 			height: 0;
 			padding-bottom: 40.40404040%;
 
 			@media all {
-				@media (max-width: @v-lg-mbl-thrshld) {
+				@media (max-width: @large-mobile-screen-width) {
 					padding-bottom: 80.80808080%;
 				}
 			}
@@ -454,13 +497,13 @@ body.tribe-theme-spine {
 
 				header > * {
 					@media all {
-						@media (max-width: @v-bckgrnd-thrshld) {
+						@media (max-width: @background-width-threshold) {
 							font-size: 4vw;
 						}
-						@media (max-width: @v-spn-thrshld) {
+						@media (max-width: @spine-threshold) {
 							font-size: 5.672vw;
 						}
-						@media (max-width: @v-lg-mbl-thrshld) {
+						@media (max-width: @large-mobile-screen-width) {
 							font-size: 8vw;
 						}
 					}
@@ -548,5 +591,29 @@ body.home {
 	}
 }
 
-/*! ╚═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝
-*/
+/**   ----------------------------------------------------------------------------------------------
+***   >>> §7.2: Banner slideshows
+**/
+
+.builder-section-banner {
+	body.home & {
+		@pager-sz: (@v-dflt-spcng / 2 * 3);
+
+		.cycle-pager {
+			font-size: @pager-sz;
+			line-height: 1em;
+		}
+
+		&.column-one-with-bottom-margin > .column.one {
+			margin-bottom: (@v-dflt-spcng / 4);
+		}
+
+		.cycle-prev,
+		.cycle-next {
+			top: auto;
+			bottom: @pager-sz;
+			height: auto;
+		}
+	}
+}
+
