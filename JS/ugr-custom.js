@@ -82,17 +82,8 @@ $( function () {
 	var termYearInputs;
 
 	// Tweak HTML source to work around some quirks of WordPress setup
-	var ugrSiteURL = window.location.pathname;
-	switch( ugrSiteURL ) {
-		case '/news/':
-			$( 'div.column.one' ).first().parent( 'section' ).before( '<section class="row single g'
-				+ 'utterpad-top"><div class="column one"><section class="article-header header-news'
-				+ 'Events"><div class="header-content"><h2>Undergraduate Research News</h2><h3>What'
-				+ '\'s going on with our students and programs</h3></div></section></div></section>'
-			);
-			break;
-	}
-	
+	addPageHeaderToNews();
+
 	// Set up advanced interactive behaviors of gravity forms
 	traverseAddressInputs( '.ugrf-mailing-address' );
 	termYearInputs = new OueTermYearInputs( '.oue-term-year-field' );
@@ -103,6 +94,34 @@ $( function () {
 } );
 
 // FUNCTION DECLARATIONS
+
+/**
+ * Adds a page header containing navigational context to the news section of the website.
+ */
+function addPageHeaderToNews() {
+	// Tweak HTML source to work around some quirks of WordPress setup.
+	var $body;
+	var $firstCol;
+	var $colParent;
+	var headerHtml = '<section class="row page-header page-header--news"><div class="column one pag\
+e-header__column-1"><h1 class="page-header__text-title">News</h1></div></section>';
+	var siteURL = window.location.pathname;
+
+
+	switch (siteURL) {
+		case '/news/':
+			$firstCol = $( 'div.column.one' ).first();
+			$colParent = $firstCol.parent( 'section' );
+			$colParent.before( headerHtml );
+			break;
+		default:
+			$body = $( 'body' );
+			if ( $body.hasClass( 'single-post' ) && $body.hasClass( 'post-template-default' ) ) {
+				$colParent = $body.find( '.row' ).first();
+				$colParent.before( headerHtml );
+			}
+	}
+}
 
 function traverseAddressInputs ( selector ) {
 	if ( $.type( selector ) === "string" ) {
