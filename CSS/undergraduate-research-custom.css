@@ -8022,6 +8022,9 @@ header.main-header {
 .column ul:not(.content-boxes):not(.lsi--none).gray-bullets li {
   list-style-image: url(/wp-content/uploads/sites/51/2016/01/ico-cougar-bullet-point_gray.png);
 }
+ul.lsi--none {
+  list-style-type: none;
+}
 div.iframe-container {
   position: relative;
   width: 90%;
