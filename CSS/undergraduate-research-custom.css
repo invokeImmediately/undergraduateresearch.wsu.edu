@@ -3094,6 +3094,7 @@ hr.thicker {
 ul {
   font-size: 1em;
   line-height: 1.5em;
+  max-width: 80ch;
 }
 .column ul {
   padding-bottom: 0;
@@ -3211,6 +3212,7 @@ ul.cascaded-layout.blank > li.gutter-sizer {
 ol {
   font-size: 1em;
   line-height: 1.5em;
+  max-width: 80ch;
 }
 .column ol {
   padding-right: 0;
@@ -4889,78 +4891,6 @@ img.auto-scaled.by-height {
   height: 100%;
   width: auto;
 }
-img.autoScaledTo90,
-img.auto-scaled.to-90 {
-  width: 90%;
-}
-img.autoScaledTo85,
-img.auto-scaled.to-85 {
-  width: 85%;
-}
-img.autoScaledTo80,
-img.auto-scaled.to-80 {
-  width: 80%;
-}
-img.autoScaledTo75,
-img.auto-scaled.to-75 {
-  width: 75%;
-}
-img.autoScaledTo70,
-img.auto-scaled.to-70 {
-  width: 70%;
-}
-img.autoScaledTo65,
-img.auto-scaled.to-65 {
-  width: 65%;
-}
-img.autoScaledTo60,
-img.auto-scaled.to-60 {
-  width: 60%;
-}
-img.autoScaledTo55,
-img.auto-scaled.to-55 {
-  width: 55%;
-}
-img.autoScaledTo50,
-img.auto-scaled.to-50 {
-  width: 50%;
-}
-img.autoScaledTo45,
-img.auto-scaled.to-45 {
-  width: 45%;
-}
-img.autoScaledTo40,
-img.auto-scaled.to-40 {
-  width: 40%;
-}
-img.autoScaledTo35,
-img.auto-scaled.to-35 {
-  width: 35%;
-}
-img.autoScaledTo30,
-img.auto-scaled.to-30 {
-  width: 30%;
-}
-img.autoScaledTo25,
-img.auto-scaled.to-25 {
-  width: 25%;
-}
-img.autoScaledTo20,
-img.auto-scaled.to-20 {
-  width: 20%;
-}
-img.autoScaledTo15,
-img.auto-scaled.to-15 {
-  width: 15%;
-}
-img.autoScaledTo10,
-img.auto-scaled.to-10 {
-  width: 10%;
-}
-img.autoScaledTo5,
-img.auto-scaled.to-5 {
-  width: 5%;
-}
 img.autoScaledToHalf {
   width: 50%;
 }
@@ -4971,117 +4901,6 @@ img.auto-scaled.to-33 {
 img.autoScaledToQuarter,
 img.auto-scaled.to-25 {
   width: 25%;
-}
-img.width-fixed.to-384 {
-  width: 384px;
-}
-img.width-fixed.to-376 {
-  width: 376px;
-}
-img.width-fixed.to-368 {
-  width: 368px;
-}
-img.width-fixed.to-360 {
-  width: 360px;
-}
-img.width-fixed.to-352 {
-  width: 352px;
-}
-img.width-fixed.to-344 {
-  width: 344px;
-}
-img.width-fixed.to-336 {
-  width: 336px;
-}
-img.width-fixed.to-328 {
-  width: 328px;
-}
-img.width-fixed.to-320 {
-  width: 320px;
-}
-img.width-fixed.to-312 {
-  width: 312px;
-}
-img.width-fixed.to-304 {
-  width: 304px;
-}
-img.width-fixed.to-296 {
-  width: 296px;
-}
-img.width-fixed.to-288 {
-  width: 288px;
-}
-img.width-fixed.to-280 {
-  width: 280px;
-}
-img.width-fixed.to-272 {
-  width: 272px;
-}
-img.width-fixed.to-264 {
-  width: 264px;
-}
-img.width-fixed.to-256 {
-  width: 256px;
-}
-img.width-fixed.to-248 {
-  width: 248px;
-}
-img.width-fixed.to-240 {
-  width: 240px;
-}
-img.width-fixed.to-232 {
-  width: 232px;
-}
-img.width-fixed.to-224 {
-  width: 224px;
-}
-img.width-fixed.to-216 {
-  width: 216px;
-}
-img.width-fixed.to-208 {
-  width: 208px;
-}
-img.width-fixed.to-200 {
-  width: 200px;
-}
-img.width-fixed.to-192 {
-  width: 192px;
-}
-img.width-fixed.to-184 {
-  width: 184px;
-}
-img.width-fixed.to-176 {
-  width: 176px;
-}
-img.width-fixed.to-168 {
-  width: 168px;
-}
-img.width-fixed.to-160 {
-  width: 160px;
-}
-img.width-fixed.to-152 {
-  width: 152px;
-}
-img.width-fixed.to-144 {
-  width: 144px;
-}
-img.width-fixed.to-136 {
-  width: 136px;
-}
-img.width-fixed.to-128 {
-  width: 128px;
-}
-img.width-fixed.to-120 {
-  width: 120px;
-}
-img.width-fixed.to-112 {
-  width: 112px;
-}
-img.width-fixed.to-104 {
-  width: 104px;
-}
-img.width-fixed.to-96 {
-  width: 96px;
 }
 img.shiftToCenter,
 img.shift-to-center {
@@ -5094,82 +4913,6 @@ img.shift-to-left {
 img.shiftToRight,
 img.shift-to-right {
   float: right;
-}
-img.has-spacing.at-top {
-  margin-top: 1rem;
-}
-img.has-spacing.at-top.forces-spacing {
-  margin-top: 1rem !important;
-}
-img.has-spacing.at-top.thick {
-  margin-top: 2rem;
-}
-img.has-spacing.at-top.thick.forces-spacing {
-  margin-top: 2rem !important;
-}
-img.has-spacing.at-top.thin {
-  margin-top: 0.5rem;
-}
-img.has-spacing.at-top.thin.forces-spacing {
-  margin-top: 0.5rem !important;
-}
-img.has-spacing.at-right {
-  margin-right: 1rem;
-}
-img.has-spacing.at-right.forces-spacing {
-  margin-right: 1rem !important;
-}
-img.has-spacing.at-right.thick {
-  margin-right: 2rem;
-}
-img.has-spacing.at-right.thick.forces-spacing {
-  margin-right: 2rem !important;
-}
-img.has-spacing.at-right.thin {
-  margin-right: 0.5rem;
-}
-img.has-spacing.at-right.thin.forces-spacing {
-  margin-right: 0.5rem !important;
-}
-img.has-spacing.at-bottom {
-  margin-bottom: 1rem;
-}
-img.has-spacing.at-bottom.forces-spacing {
-  margin-bottom: 1rem !important;
-}
-img.has-spacing.at-bottom.thick {
-  margin-bottom: 2rem;
-}
-img.has-spacing.at-bottom.thick.forces-spacing {
-  margin-bottom: 2rem !important;
-}
-img.has-spacing.at-bottom.thin {
-  margin-bottom: 0.5rem;
-}
-img.has-spacing.at-bottom.thin.forces-spacing {
-  margin-bottom: 0.5rem !important;
-}
-img.has-spacing.at-left {
-  margin-left: 1rem;
-}
-img.has-spacing.at-left.forces-spacing {
-  margin-left: 1rem !important;
-}
-img.has-spacing.at-left.thick {
-  margin-left: 2rem;
-}
-img.has-spacing.at-left.thick.forces-spacing {
-  margin-left: 2rem !important;
-}
-img.has-spacing.at-left.thin {
-  margin-left: 0.5rem;
-}
-img.has-spacing.at-left.thin.forces-spacing {
-  margin-left: 0.5rem !important;
-}
-img.fancy {
-  border: 1px solid rgba(94, 106, 113, 0.5);
-  box-shadow: 2px 2px 2px rgba(94, 106, 113, 0.5);
 }
 img.symbolic-image {
   float: right;
@@ -6842,7 +6585,7 @@ div.auto-scroller ul li {
   font-size: 1.4em;
 }
 /*!     ····························································································
-***     >>> §3.2: Typograhy: Line heights
+***     >>> §2.2: Typograhy: Line heights
 ***
 ***     NOTES:
 ***     * See line 24 for explanation of "mx" units.
@@ -6934,7 +6677,7 @@ div.auto-scroller ul li {
   line-height: 1.5em;
 }
 /*!     ····························································································
-***     >>> §3.3: Typograhy: Bolding
+***     >>> §2.3: Typograhy: Bolding
 **/
 .font-weight--light,
 .fw--light {
@@ -6957,7 +6700,7 @@ div.auto-scroller ul li {
   font-weight: 800;
 }
 /*!     ····························································································
-***     >>> §3.4: Typograhy: Text transformation
+***     >>> §2.4: Typograhy: Text transformation
 **/
 .text-transform--none,
 .tt--none {
@@ -6968,7 +6711,7 @@ div.auto-scroller ul li {
   text-transform: uppercase;
 }
 /*!     ····························································································
-***     >>> §3.5: Typograhy: Text alignment
+***     >>> §2.5: Typograhy: Text alignment
 **/
 .text-align--center,
 .ta--center {
@@ -7030,13 +6773,16 @@ div.auto-scroller ul li {
 .column * + .sv--4000mx {
   margin-top: 4em;
 }
-.float--none {
+.float--none,
+.flt--none {
   float: none;
 }
-.float--right {
+.float--right,
+.flt--right {
   float: right;
 }
-.float--left {
+.float--left,
+.flt--left {
   float: left;
 }
 .display--block,
@@ -8264,10 +8010,10 @@ header.main-header {
 .gray-acrylic-sidebar h4 {
   font-size: 1.05rem;
 }
-div.column ul:not(.content-boxes) li {
+.column ul:not(.content-boxes):not(.lsi--none) li {
   list-style-image: url(/wp-content/uploads/sites/51/2015/04/ico-cougar-bullet-point.png);
 }
-div.column ul:not(.content-boxes).gray-bullets li {
+.column ul:not(.content-boxes):not(.lsi--none).gray-bullets li {
   list-style-image: url(/wp-content/uploads/sites/51/2016/01/ico-cougar-bullet-point_gray.png);
 }
 div.iframe-container {
