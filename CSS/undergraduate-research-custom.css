@@ -3096,6 +3096,9 @@ ul {
   line-height: 1.5em;
   max-width: 80ch;
 }
+#wpadminbar ul {
+  max-width: none;
+}
 .column ul {
   padding-bottom: 0;
   padding-right: 0;
@@ -3213,6 +3216,9 @@ ol {
   font-size: 1em;
   line-height: 1.5em;
   max-width: 80ch;
+}
+#wpadminbar ol {
+  max-width: none;
 }
 .column ol {
   padding-right: 0;
