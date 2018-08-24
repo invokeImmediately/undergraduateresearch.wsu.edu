@@ -3137,16 +3137,29 @@ ul.content-boxes > li p.email {
 }
 ul.content-boxes > li > img {
   left: 10px;
+  left: calc(.5rem + 10px);
   position: absolute;
-  top: 10px;
+  top: 24px;
+  top: calc(1rem + 7px);
   width: 106px;
+}
+@media all and (max-width: 480px) {
+  ul.content-boxes > li > img {
+    left: calc(.5rem + 7px);
+    width: 84px;
+  }
 }
 ul.content-boxes > li > .content {
   left: 121px;
   min-width: 189px;
-  padding: 10px 10px 10px 5px;
+  padding: 0 0 10px 0;
   position: relative;
   width: calc(100% - 136px);
+}
+@media all and (max-width: 480px) {
+  ul.content-boxes > li > .content {
+    left: 99px;
+  }
 }
 ul.content-boxes > li + li {
   margin-top: 2rem;
@@ -3756,29 +3769,23 @@ section.pad-top div.column.half-pad {
     max-width: 792px;
   }
 }
-body.home main > .page > .row:last-child > .column:last-child,
-body.page main > .page > .row:last-child > .column:last-child {
+main > .page > .row:last-child > .column:last-child {
   padding-bottom: 2rem;
 }
 @media all and (min-width: 694px) {
-  body.home main > .page > .row:last-child.halves > .column:first-child,
-  body.page main > .page > .row:last-child.halves > .column:first-child,
-  body.home main > .page > .row:last-child.side-right > .column:first-child,
-  body.page main > .page > .row:last-child.side-right > .column:first-child,
-  body.home main > .page > .row:last-child.side-left > .column:first-child,
-  body.page main > .page > .row:last-child.side-left > .column:first-child {
+  main > .page > .row:last-child.halves > .column:first-child,
+  main > .page > .row:last-child.side-right > .column:first-child,
+  main > .page > .row:last-child.side-left > .column:first-child {
     padding-bottom: 2rem;
   }
 }
 @media all and (min-width: 694px) {
-  body.home main > .page > .row:last-child.thirds > .column:first-child,
-  body.page main > .page > .row:last-child.thirds > .column:first-child {
+  main > .page > .row:last-child.thirds > .column:first-child {
     padding-bottom: 2rem;
   }
 }
 @media all and (min-width: 694px) {
-  body.home main > .page > .row:last-child.thirds > .column:nth-child(2),
-  body.page main > .page > .row:last-child.thirds > .column:nth-child(2) {
+  main > .page > .row:last-child.thirds > .column:nth-child(2) {
     padding-bottom: 2rem;
   }
 }
@@ -6790,6 +6797,21 @@ div.auto-scroller ul li {
 .float--left,
 .flt--left {
   float: left;
+}
+/*!     ····························································································
+***     >>> §4.1: Clearing
+**/
+.clear--left,
+.clr--left {
+  clear: left;
+}
+.clear--right,
+.clr--right {
+  clear: right;
+}
+.clear--both,
+.clr--both {
+  clear: both;
 }
 .display--block,
 .dy--block {
