@@ -17,11 +17,8 @@
 ***     (Please see above git repository for fully documented, precompiled source code.)
 *** ================================================================================================
 **/
-.has-mono-font {
-  font-family: 'Roboto Mono', monospace, sans-serif;
-  font-weight: 300;
-}
 .has-dflt-font,
+.ff--sans,
 body,
 .column h1,
 .column h2,
@@ -31,20 +28,28 @@ body,
 .gform_heading h3.gform_title {
   font-family: 'Open Sans', 'Lucida Sans', sans-serif;
 }
-.has-dflt-font.serif {
+.has-dflt-font.serif,
+.ff--serif {
   font-family: 'Roboto Slab', 'Palatino', serif;
 }
+.has-subst-font.serif,
+.ff--serif-2 {
+  font-family: 'PT Serif', 'Palatino', serif;
+}
 .has-alt-font,
+.ff--condensed,
 .column p.article-tagline.sans,
 .column p.article-tagline.article-tagline--sans,
 span.accentuated-text {
   font-family: 'Open Sans Condensed', 'Lucida Sans', sans-serif;
 }
-.has-subst-font {
+.has-subst-font,
+.ff--condensed-2 {
   font-family: 'Roboto Condensed', 'Lucida Sans', sans-serif;
 }
-.has-subst-font.serif {
-  font-family: 'PT Serif', 'Palatino', serif;
+.has-mono-font,
+.ff--mono {
+  font-family: 'Roboto Mono', monospace, sans-serif;
 }
 .initially-hidden,
 .column .initially-hidden {
@@ -1228,29 +1233,29 @@ main section.row > .column table > tbody > tr > td > div > ol:last-child {
 }
 .row.single .column,
 .row.halves .column,
-.row.thirds .column,
 .row.quarters .column,
 .row.side-right .column,
-.row.side-left .column {
+.row.side-left .column,
+.row.thirds .column {
   font-size: 1.125rem;
 }
 @media all and (max-width: 1073px) {
   .row.single .column,
   .row.halves .column,
-  .row.thirds .column,
   .row.quarters .column,
   .row.side-right .column,
-  .row.side-left .column {
+  .row.side-left .column,
+  .row.thirds .column {
     font-size: 1rem;
   }
 }
 @media all and (max-width: 791px) {
   .row.single .column,
   .row.halves .column,
-  .row.thirds .column,
   .row.quarters .column,
   .row.side-right .column,
-  .row.side-left .column {
+  .row.side-left .column,
+  .row.thirds .column {
     font-size: 0.9412rem;
   }
 }
@@ -3370,7 +3375,6 @@ ol {
   border: 1px solid #afb5b7;
   background-color: #d7dadb;
   font-family: 'Roboto Mono', monospace, sans-serif;
-  font-weight: 300;
   cursor: pointer;
   -webkit-transform: translateY(-100%) translateY(-5px);
   -moz-transform: translateY(-100%) translateY(-5px);
@@ -3560,6 +3564,8 @@ ol {
   padding: 0;
 }
 .wsuwp-json--headlines.layout--2-columns .wsuwp-content-syndicate-item {
+  padding-bottom: 2em;
+  padding-right: 2em;
   width: 50%;
 }
 .award-banner {
@@ -3715,7 +3721,7 @@ section.pad-top div.column.half-pad {
 }
 .column {
   font-size: 1rem;
-  color: #464e54;
+  color: #2a3033;
 }
 .column:nth-child(1) {
   margin-top: 0;
@@ -4941,16 +4947,6 @@ img.symbolic-image {
     width: 96px;
   }
 }
-@media all and (min-width: 481px) {
-  img.show-on-mobile {
-    display: none;
-  }
-}
-@media all and (max-width: 480px) {
-  img.hide-on-mobile {
-    display: none;
-  }
-}
 #binder.fluid.max-1188 .row.halves .column img.auto-scaled {
   display: block;
   max-width: 444px;
@@ -5736,7 +5732,6 @@ div.read-more-target {
   font-size: 18px;
   line-height: 16px;
   font-family: 'Roboto Mono', monospace, sans-serif;
-  font-weight: 300;
   text-align: center;
   background-color: #981e32;
   color: #fff;
@@ -6386,9 +6381,9 @@ div.auto-scroller ul li {
 }
 .page-header__column-1--tx-bottom {
   top: 100%;
-  -webkit-transform: translateY(-100%) translateY(-2rem);
-  -moz-transform: translateY(-100%) translateY(-2rem);
-  transform: translateY(-100%) translateY(-2rem);
+  -webkit-transform: translateY(-100%);
+  -moz-transform: translateY(-100%);
+  transform: translateY(-100%);
 }
 .page-header .page-header__column-1 {
   position: absolute;
@@ -6828,6 +6823,16 @@ div.auto-scroller ul li {
 .display--none,
 .dy--none {
   display: none;
+}
+@media all and (min-width: 481px) {
+  .show-on-mobile {
+    display: none;
+  }
+}
+@media all and (max-width: 480px) {
+  .hide-on-mobile {
+    display: none;
+  }
 }
 .margin--0mx,
 .ma--0mx {
