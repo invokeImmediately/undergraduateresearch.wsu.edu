@@ -32,9 +32,9 @@ Roboto+Condensed:400,700|Roboto+Slab|PT+Serif\');\r\n';
 			'stopAfterFirstMatch': true
 		};
 	var minCssFileExtension = '.min.css';
-	var minCssFileHeaderStr = '/*! Built with the Less CSS preprocessor [http://lesscss.org/]. Pleas\
-e see [https://github.com/invokeImmediately/undergraduateresearch.wsu.edu] for a repository of sourc\
-e code. */\r\n';
+	var minCssFileHeaderStr = '/*! Built with the Less CSS preprocessor [http://lesscss.org/]. Plea\
+se see [https://github.com/invokeImmediately/undergraduateresearch.wsu.edu] for a repository of sou\
+rce code. */\r\n';
  	var sourceFile = './CSS/undergraduate-research-custom.less';
 
 	return new gulpBuilder.CssBuildSettings(commentRemovalNeedle, dependenciesPath,
