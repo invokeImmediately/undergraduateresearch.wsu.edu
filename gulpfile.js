@@ -68,7 +68,7 @@ function getJsBuildSettings() {
 		compiledJsFileName: 'ugr-build.js',
 		destFolder: './JS/',
 		minJsFileExtension: '.min.js',
-		replaceCallback: fixFileHeaderComments
+		replaceCallback: gulpBuilder.fixFileHeaderComments
 	};
 }
 
