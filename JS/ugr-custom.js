@@ -1,13 +1,40 @@
-/**********************************************************************************************************************
- CUSTOM JQUERY-BASED DYNAMIC CONTENT
- *********************************************************************************************************************/
+/*!
+ * Site-specific JS for the WSU Office of Undergraduate Research website.
+ *
+ * @author - Daniel Rieck ( danielcrieck@gmail.com ) [https://github.com/invokeImmediately]
+ */
+
 ( function ( $ ) {
 
 "use strict";
 
-// DECLARE CLASSES
+////////////////////////////////////////////////////////////////////////////////////////////////////
+// §1: Main execution
 
-// NOTE: Assumes jQuery is in use.
+////////////////////////////////////////////////////////////////////////////////////////////////////
+// §1.1: DOM Ready
+
+$( function () {
+	var ugrSiteURL;
+//	var termYearInputs;
+
+	// Tweak HTML source to work around some quirks of WordPress setup
+	addPageHeaderToNews();
+
+	// Set up advanced interactive behaviors of gravity forms
+//	traverseAddressInputs( '.ugrf-mailing-address' );
+//	termYearInputs = new OueTermYearInputs( '.oue-term-year-field' );
+
+	// Handle use of max-1188 class override
+//	checkForMax1386Page();
+
+});
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+// §2: Class Declarations
+
+// TODO: Provide inline documentation
 function OueTermYearInputs( slctrWhichFields ) {
 
 	// DECLARE PRIVATE PROPERTIES
@@ -76,24 +103,8 @@ function OueTermYearInputs( slctrWhichFields ) {
 
 }
 
-// 'DOCUMENT READY' CODE EXECUTION SECTION
-$( function () {
-	var ugrSiteURL;
-	var termYearInputs;
-
-	// Tweak HTML source to work around some quirks of WordPress setup
-	addPageHeaderToNews();
-
-	// Set up advanced interactive behaviors of gravity forms
-	traverseAddressInputs( '.ugrf-mailing-address' );
-	termYearInputs = new OueTermYearInputs( '.oue-term-year-field' );
-
-	// Handle use of max-1188 class override
-	checkForMax1386Page();
-
-} );
-
-// FUNCTION DECLARATIONS
+////////////////////////////////////////////////////////////////////////////////////////////////////
+// §3: Class Declarations
 
 /**
  * Adds a page header containing navigational context to the news section of the website.
@@ -123,53 +134,16 @@ e-header__column-1"><h1 class="page-header__text-title">News</h1></div></section
 	}
 }
 
-function traverseAddressInputs ( selector ) {
-	if ( $.type( selector ) === "string" ) {
-		$( selector ).each( function () {
-			var $this = $( this );
-			var $inputs = $this.find( 'input' );
-			$inputs.each( function () {
-				var $thisChild = $( this );
-				if ( $thisChild.val() == "" ) {
-					$thisChild.removeClass( 'value-entered' );
-				}
-				else {
-					$thisChild.addClass( 'value-entered' );
-				}
-				$thisChild.blur( function () {                      
-					if ( $thisChild.val() == "" ) {
-						$thisChild.removeClass( 'value-entered' );
-					}
-					else {
-						$thisChild.addClass( 'value-entered' );
-					}
-					
-					var $thisParent = $thisChild.parents( selector );
-					var $parentsInputs = $thisParent.find( 'input' );
-					var counter = 0;
-					var inputReady = true;
-					$parentsInputs.each( function () {
-						if ( counter != 1 && $( this ).val() == "" ) {
-							inputReady = false;
-						}
-						counter++;
-					} );
-					
-					if ( inputReady ) {
-						$thisParent.addClass( 'inputs-ready' );
-					}
-					else {
-						$thisParent.removeClass( 'inputs-ready' );
-					}
-				} );
-			} );
-		} );
-	}
-}
-
-// Creates an array object containing elements as follows:
-// 	[start, start + 1, start + 2, ..., end - 1, end]
-// Returns an empty array if there is a type problem or if end is less than start.
+/**
+ * Creates an array containing the sequence of n_i = i + lower bound from a lower to an upper bound.
+ *
+ * Contents of the array follow the pattern [start, start + 1, start + 2, ..., end - 1, end].
+ *
+ * @param {number} start - The lower bound of the number sequence.
+ * @param {number} end - The upper bound of the number sequence.
+ *
+ * @return {array} Returns an empty array if there is a type problem or if end is less than start.
+ */
 function createArrayFromNumberSequence ( start, end ) {
 	var result;
 
@@ -181,19 +155,6 @@ function createArrayFromNumberSequence ( start, end ) {
 		result = [];
 	}
 	return result;
-}
-
-function checkForMax1386Page() {
-	var $body = $( 'body' );
-	var $binder;
-	
-	if ( $body.hasClass( 'use-max-width-1386' ) ) {
-		$binder = $( '#binder' );
-		if ( $binder.hasClass( 'max-1188' ) ) {
-			$binder.removeClass( 'max-1188' );
-			$binder.addClass( 'max-1386' );
-		}
-	}
 }
 
 } )( jQuery );
