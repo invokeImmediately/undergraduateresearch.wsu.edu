@@ -16,20 +16,13 @@
 
 $( function () {
 	var ugrSiteURL;
-//	var termYearInputs;
-
 	// Tweak HTML source to work around some quirks of WordPress setup
 	addPageHeaderToNews();
-
-	// Set up advanced interactive behaviors of gravity forms
-//	traverseAddressInputs( '.ugrf-mailing-address' );
-//	termYearInputs = new OueTermYearInputs( '.oue-term-year-field' );
-
-	// Handle use of max-1188 class override
-//	checkForMax1386Page();
-
+	finishHidingTravelFormValidators( {
+		eligibility: '.travel-scholarship__eligibility',
+		validators: '.travel-scholarship__validator'
+	} );
 });
-
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 // §2: Class Declarations
@@ -104,7 +97,7 @@ function OueTermYearInputs( slctrWhichFields ) {
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
-// §3: Class Declarations
+// §3: Function Declarations
 
 /**
  * Adds a page header containing navigational context to the news section of the website.
@@ -154,7 +147,27 @@ function createArrayFromNumberSequence ( start, end ) {
 	} else {
 		result = [];
 	}
+
 	return result;
+}
+
+// TODO: Document this function.
+function finishHidingTravelFormValidators( sel ) {
+	validator_DisableTabIndexing( {
+		validatedField: sel.eligibility,
+		validator: sel.validators
+	} );
+}
+
+function validator_DisableTabIndexing( sel ) {
+	var $field = $( sel.validatedField );
+	var $validator = $field.next( sel.validator );
+	var $validator_input;
+
+	if ( $field.length && $validator.length ) {
+		$validator_input = $validator.find( "input" );
+		$validator_input.attr( 'tabindex', '-1' );
+	}
 }
 
 } )( jQuery );
