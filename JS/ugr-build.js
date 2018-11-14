@@ -2269,12 +2269,10 @@ $( window ).on( 'load', function () {
 
 $( function () {
 	var ugrSiteURL;
+
 	// Tweak HTML source to work around some quirks of WordPress setup
 	addPageHeaderToNews();
-	finishHidingTravelFormValidators( {
-		eligibility: '.travel-scholarship__eligibility',
-		validators: '.travel-scholarship__validator'
-	} );
+	initTravelScholarshipForm( "#gform_wrapper_6" );
 });
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -2306,7 +2304,7 @@ function OueTermYearInputs( slctrWhichFields ) {
 		_validAlphaKeyCodes = createArrayFromNumberSequence( 65, 90 );
 		_allValidKeyCodes = _validAlphaKeyCodes.concat(_validSpaceKeyCode, _validNumberKeyCodes, 
 			_validOtherKeyCodes);
-	}
+	};
 
 	this.applyKeyDownHandler = function() {
 		_$inputs.keydown( function( e ) {
@@ -2340,7 +2338,7 @@ function OueTermYearInputs( slctrWhichFields ) {
 				$this.val("");
 			}
 		} );
-	}
+	};
 
 	// EXECUTE REMAINING CONSTRUCTION INSTRUCTIONS
 	this.setValidKeyCodes();
@@ -2400,25 +2398,81 @@ function createArrayFromNumberSequence ( start, end ) {
 	} else {
 		result = [];
 	}
+
 	return result;
 }
 
 // TODO: Document this function.
-function finishHidingTravelFormValidators( sel ) {
-	validator_DisableTabIndexing( {
-		validatedField: sel.eligibility,
-		validator: sel.validators
-	} );
-}
-
-function validator_DisableTabIndexing( sel ) {
-	var $field = $( sel.validatedField );
-	var $validator = $field.next( sel.validator );
+function DisableTsfValidatorTabIndexing( $form, sels ) {
+	var $field = $form.find( sels.validatedField );
+	var $validator = $field.next( sels.validator );
 	var $validator_input;
 
 	if ( $field.length && $validator.length ) {
 		$validator_input = $validator.find( "input" );
 		$validator_input.attr( 'tabindex', '-1' );
+	}
+}
+
+// TODO: Document this function.
+function finishHidingTravelFormValidators( $form, sels ) {
+	DisableTsfValidatorTabIndexing( $form, {
+		validatedField: sels.eligibility,
+		validator: sels.validators
+	} );
+}
+
+/**
+ * Intialize a travel scholarship form when it is present on the active web page.
+ *
+ * @param {string} selForm - The selector for isolating the travel scholarship form from the DOM.
+ */
+// TODO: Add error handling.
+function initTravelScholarshipForm( selForm ) {
+	var $form = $( selForm );
+	var selValidators = '.travel-scholarship__validator';
+
+	if ( $form.length ) {
+		finishHidingTravelFormValidators( $form, {
+			eligibility: '.travel-scholarship__eligibility',
+			validators: selValidators
+		} );
+		initTsfEligibilityValidation( $form, {
+			field: '.travel-scholarship__eligibility',
+			validator: selValidators
+		} );
+	}
+}
+
+// TODO: Document this function.
+function initTsfEligibilityValidation( $form, sels ) {
+	var $field = $form.find( sels.field );
+	var $checkBoxes;
+	var $validator = $field.next( sels.validator );
+	var $validator_input;
+
+	if ( $field.length && $validator.length ) {
+		$validator_input = $validator.find( "input" );
+		$checkBoxes = $field.find( ":checkbox" );
+		$checkBoxes.change( function () {
+			var $this = $( this );
+			var $cbs;
+			var allChecked = true;
+			var $parentField = $this.parents( sels.field );
+			console.log('Checkbox changed.');
+			$cbs = $parentField.find( ":checkbox" );
+			$cbs.each( function () {
+				var $this = $( this );
+				if ( allChecked && !this.checked) {
+					allChecked = false;
+				}
+			} );
+			if ( allChecked && $validator_input.val() != "validated" ) {
+				$validator_input.val( "validated" );
+			} else if ( $validator_input.val() != "" ) {
+				$validator_input.val( "" );
+			}
+		} );
 	}
 }
 
