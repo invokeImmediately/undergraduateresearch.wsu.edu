@@ -2405,7 +2405,6 @@ var GfCheckboxValidators = ( function() {
 	 * @throws {Error} Validated fields must contain checkbox input elements, and validator fields
 	 *     must contain a single input element.
 	 */
-	// TODO: Fix bugs that would arise if multiple validated fields are found within the form.
 	GfCheckboxValidators.prototype.initValidation = function() {
 		var $fields;
 		var $form = this.$form;
@@ -2453,8 +2452,8 @@ ator and validated fields." );
 						var allChecked = true;
 
 						// Check the state of all the checkbox inputs within the validated field.
-						$cbs = $parentField.find( ":checkbox" );
-						$cbs.each( function () {
+						//$cbs = $parentField.find( ":checkbox" );
+						$checkBoxes.each( function () {
 							if ( allChecked && !this.checked) {
 								allChecked = false;
 							}
