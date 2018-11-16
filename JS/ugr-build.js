@@ -2272,7 +2272,11 @@ $( function () {
 
 	// Tweak HTML source to work around some quirks of WordPress setup
 	addPageHeaderToNews();
-	initTravelAwardForm( "#gform_wrapper_6" );
+	initTravelAwardForm( {
+		formContainer: '#gform_wrapper_6',
+		validatedField: '.travel-award__eligibility',
+		validator: '.travel-award__validator'
+	} );
 } );
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -2461,23 +2465,27 @@ var GfCheckboxValidators = ( function() {
 				$checkBoxes = $parentField.find( " :checkbox" );
 				$validator_input = $parentField.next( sels.validator ).find( "input" );
 				stillValid = $validator_input.length === 1;
-				if ( !stillValid ) {
-					throw Error( "Found a validated field in the DOM that was not followed by a mat\
-ching, properly formed validator sibling." );
-				} else {
-					// Check the state of all the checkbox inputs within the validated field.
-					$checkBoxes.each( function () {
-						if ( allChecked && !this.checked) {
-							allChecked = false;
-						}
-					} );
+				try {
+					if ( !stillValid ) {
+						throw Error( "Found a validated field in the DOM that was not followed by a\
+ matching, properly formed validator sibling; checkbox state cannot be properly validated." );
+					} else {
+						// Check the state of all the checkbox inputs within the validated field.
+						$checkBoxes.each( function () {
+							if ( allChecked && !this.checked) {
+								allChecked = false;
+							}
+						} );
 
-					// Appropriately set the state of the validator's input element.
-					if ( allChecked && $validator_input.val() != "validated" ) {
-						$validator_input.val( "validated" );
-					} else if ( $validator_input.val() != "" ) {
-						$validator_input.val( "" );
+						// Appropriately set the state of the validator's input element.
+						if ( allChecked && $validator_input.val() != "validated" ) {
+							$validator_input.val( "validated" );
+						} else if ( $validator_input.val() != "" ) {
+							$validator_input.val( "" );
+						}
 					}
+				} catch ( err ) {
+					console.log(err.name + ": " + err.message);
 				}
 			} );
 		}
@@ -2572,15 +2580,10 @@ function createArrayFromNumberSequence ( start, end ) {
  *
  * @param {string} selForm - The selector for isolating the travel scholarship form from the DOM.
  */
-// TODO: Add error handling.
-function initTravelAwardForm( selForm ) {
+function initTravelAwardForm( sels ) {
 	var checkboxValidators;
 
-	checkboxValidators = new GfCheckboxValidators( {
-		formContainer: selForm,
-		validatedField: '.travel-award__eligibility',
-		validator: '.travel-award__validator'
-	} );
+	checkboxValidators = new GfCheckboxValidators( sels );
 	if ( checkboxValidators.get$form().length ) {
 		try {
 			checkboxValidators.finishHidingValidators();
@@ -2588,8 +2591,6 @@ function initTravelAwardForm( selForm ) {
 		} catch ( err ) {
 			console.log( err.name + ': ' + err.message );
 		}
-	} else {
-		console.log( 'No form found.' )
 	}
 }
 
