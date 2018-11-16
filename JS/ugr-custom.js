@@ -103,10 +103,40 @@ function OueTermYearInputs( slctrWhichFields ) {
  * @class
  */
 var GfCheckboxValidators = ( function() {
-	function GfCheckboxValidators( $form, sels ) {
-		this.$form = $form;
+	function GfCheckboxValidators( sels ) {
+		////////////////////////////////////////////////////////////////////////////////////////////
+		// Declare/set private properties
+
+		var _$form;
+
+		////////////////////////////////////////////////////////////////////////////////////////////
+		// Declare/set public properties
+
 		this.sels = sels;
+
+		////////////////////////////////////////////////////////////////////////////////////////////
+		// Declare privileged methods
+
+		this.get$form = function () {
+			return _$form;
+		}
+
+		this.findForm = function () {
+			if ( this.IsObjValid() ) {
+				_$form = $ ( this.sels.formContainer )
+			} else {
+				console.log( "Object wasn't valid." );
+				_$form = $( [] );
+			}
+		}
+
+		////////////////////////////////////////////////////////////////////////////////////////////
+		// Perform main constructor execution
+		this.findForm();
 	}
+
+	////////////////////////////////////////////////////////////////////////////////////////////////
+	// Declare public methods
 
 	/**
 	 * Finish the process of hiding validator fields from the user.
@@ -119,13 +149,15 @@ var GfCheckboxValidators = ( function() {
 	 * @memberof GfCheckboxValidators
 	 */
 	GfCheckboxValidators.prototype.finishHidingValidators = function () {
+		var $form;
 		var $field;
 		var $validator;
 		var $validator_input;
 
-		if ( this.IsObjValid() ) {
+		$form = this.get$form();
+		if ( this.IsObjValid() && $form.length) {
 			// Isolate validator and its target field in the DOM.
-			$field = this.$form.find( this.sels.validatedField );
+			$field = $form.find( this.sels.validatedField );
 			$validator = $field.next( this.sels.validator );
 
 			// Disable tab indexing to form validators.
@@ -153,8 +185,7 @@ var GfCheckboxValidators = ( function() {
 	 *     must contain a single input element.
 	 */
 	GfCheckboxValidators.prototype.initValidation = function() {
-		var $fields;
-		var $form = this.$form;
+		var $form;
 		var sels = this.sels;
 		var stillValid;
 
@@ -162,41 +193,26 @@ var GfCheckboxValidators = ( function() {
 		if ( !stillValid ) {
 			throw Error( "Object properties did not pass validity check." );
 		} else {
-			// Find the appropriate fields within the form.
-			$fields = $form.find( sels.validatedField );
-		}
-
-		if ( $fields.length ) {
-			$fields.each( function () {
+			// Find the form appropriate fields within the form.
+			$form = this.get$form();
+			$form.on('change', sels.validatedField + " :checkbox", function () {
 				var $checkBoxes;
-				var $thisField = $( this );
-				var $validator;
+				var $parentField;
+				var $this;
 				var $validator_input;
+				var allChecked = true;
+				var stillValid = true;
 
-				// Find the validator that matches this validated checkbox field.
-				$validator = $thisField.next( sels.validator );
-				stillValid = $validator.length === 1;
-				if ( !stillValid ) {
-					throw Error( "Found a validated field in the DOM that was not followed by a mat\
-ching validator sibling." );
-				} else {
-					// Now find the input elements within the fields.
-					$checkBoxes = $thisField.find( ":checkbox" );
-					$validator_input = $validator.find( "input" );
-				}
-
-				// If all the expected elements were found, link the checkbox's input states to the
-				// validator input's state.
-				stillValid = $checkBoxes.length && $validator_input.length === 1;
-				if ( !stillValid ) {
-					throw Error( "Couldn't find the expected input elements within the form's valid\
-ator and validated fields." );
-				} else {
-					$checkBoxes.change( function () {
-						var $this = $( this );
-						var $parentField = $this.parents( sels.validatedField );
-						var allChecked = true;
-
+				$this = $( this );
+				$parentField = $this.parents( sels.validatedField );
+				$checkBoxes = $parentField.find( " :checkbox" );
+				$validator_input = $parentField.next( sels.validator ).find( "input" );
+				stillValid = $validator_input.length === 1;
+				try {
+					if ( !stillValid ) {
+						throw Error( "Found a validated field in the DOM that was not followed by a\
+ matching, properly formed validator sibling; checkbox state cannot be properly validated." );
+					} else {
 						// Check the state of all the checkbox inputs within the validated field.
 						$checkBoxes.each( function () {
 							if ( allChecked && !this.checked) {
@@ -210,9 +226,11 @@ ator and validated fields." );
 						} else if ( $validator_input.val() != "" ) {
 							$validator_input.val( "" );
 						}
-					} );
+					}
+				} catch ( err ) {
+					console.log(err.name + ": " + err.message);
 				}
-			});
+			} );
 		}
 	}
 
@@ -226,19 +244,18 @@ ator and validated fields." );
 		var stillValid = true;
 		var selsProps;
 
-		if ( !( $.isJQueryObj( this.$form ) && this.$form.hasClass( 'gform_wrapper' ) ) ) {
-			stillValid = false;
-		}
-		if ( stillValid && !( typeof this.sels === 'object' ) ) {
+		if ( !( typeof this.sels === 'object' ) ) {
 			stillValid = false
 		} else if ( stillValid ) {
 			selsProps = Object.getOwnPropertyNames( this.sels );
 		}
-		if ( stillValid && !( selsProps.length === 2 &&
+		if ( stillValid && !( selsProps.length === 3 &&
+				selsProps.find( function( elem ) { return elem === 'formContainer'; } ) &&
 				selsProps.find( function( elem ) { return elem === 'validatedField'; } ) &&
 				selsProps.find( function( elem ) { return elem === 'validator'; } ) ) ) {
 			stillValid = false;
 		}
+		// TODO: Check for properly formed selector strings.
 
 		return stillValid;
 	};
@@ -308,20 +325,22 @@ function createArrayFromNumberSequence ( start, end ) {
  */
 // TODO: Add error handling.
 function initTravelAwardForm( selForm ) {
-	var $form = $( selForm );
 	var checkboxValidators;
 
-	if ( $form.length ) {
+	checkboxValidators = new GfCheckboxValidators( {
+		formContainer: selForm,
+		validatedField: '.travel-award__eligibility',
+		validator: '.travel-award__validator'
+	} );
+	if ( checkboxValidators.get$form().length ) {
 		try {
-			checkboxValidators = new GfCheckboxValidators( $form, {
-				validatedField: '.travel-award__eligibility',
-				validator: '.travel-award__validator'
-			} );
 			checkboxValidators.finishHidingValidators();
 			checkboxValidators.initValidation();
 		} catch ( err ) {
 			console.log( err.name + ': ' + err.message );
 		}
+	} else {
+		console.log( 'No form found.' )
 	}
 }
 
