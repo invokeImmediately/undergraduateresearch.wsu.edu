@@ -19,7 +19,7 @@ $( function () {
 
 	// Tweak HTML source to work around some quirks of WordPress setup
 	addPageHeaderToNews();
-	initTravelScholarshipForm( "#gform_wrapper_6" );
+	initTravelAwardForm( "#gform_wrapper_6" );
 } );
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -307,15 +307,15 @@ function createArrayFromNumberSequence ( start, end ) {
  * @param {string} selForm - The selector for isolating the travel scholarship form from the DOM.
  */
 // TODO: Add error handling.
-function initTravelScholarshipForm( selForm ) {
+function initTravelAwardForm( selForm ) {
 	var $form = $( selForm );
 	var checkboxValidators;
 
 	if ( $form.length ) {
 		try {
 			checkboxValidators = new GfCheckboxValidators( $form, {
-				validatedField: '.travel-scholarship__eligibility',
-				validator: '.travel-scholarship__validator'
+				validatedField: '.travel-award__eligibility',
+				validator: '.travel-award__validator'
 			} );
 			checkboxValidators.finishHidingValidators();
 			checkboxValidators.initValidation();
