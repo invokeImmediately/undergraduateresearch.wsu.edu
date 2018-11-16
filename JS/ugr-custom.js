@@ -93,12 +93,31 @@ function OueTermYearInputs( slctrWhichFields ) {
 	this.applyBlurHandler();
 }
 
+/**
+ * Gravity Form Checkbox Validators interface.
+ *
+ * An interface for linking the state of a gravity forms checkbox field to a subsequent (and ideally
+ * hidden) validator field. Currently, all of the checkboxes must be selected for the field to be
+ * validated.
+ *
+ * @class
+ */
 var GfCheckboxValidators = ( function() {
 	function GfCheckboxValidators( $form, sels ) {
 		this.$form = $form;
 		this.sels = sels;
 	}
 
+	/**
+	 * Finish the process of hiding validator fields from the user.
+	 *
+	 * Removes tab indexing from the field so that JavaScript can safely automate population of the
+	 * validator field with input based on the state of the preceding checkbox field.
+	 *
+	 * @access public
+	 *
+	 * @memberof GfCheckboxValidators
+	 */
 	GfCheckboxValidators.prototype.finishHidingValidators = function () {
 		var $field;
 		var $validator;
@@ -117,6 +136,23 @@ var GfCheckboxValidators = ( function() {
 		}
 	};
 
+	/**
+	 * Initialize validation of validated checkbox fields by their subsequent validator fields.
+	 *
+	 * The validator's input element will be set to "validated" if all checkboxes are checked,
+	 * otherwise it will be set to an empty string.
+	 *
+	 * @access public
+	 *
+	 * @memberof GfCheckboxValidators
+	 *
+	 * @throws {Error} Member function IsObjValid will automatically be called and must return true.
+	 * @throws {Error} The specified validated and validator fields must be found within the form,
+	 *     and each validated field must be followed by a validator field as a sibling.
+	 * @throws {Error} Validated fields must contain checkbox input elements, and validator fields
+	 *     must contain a single input element.
+	 */
+	// TODO: Fix bugs that would arise if multiple validated fields are found within the form.
 	GfCheckboxValidators.prototype.initValidation = function() {
 		var $checkBoxes;
 		var $field;
@@ -135,7 +171,8 @@ var GfCheckboxValidators = ( function() {
 			$validator = $field.next( sels.validator );
 		}
 
-		stillValid = $field.length && $validator.length;
+		// TODO: stillValid = $field.length && $validator.length && $field.length === $validator.length;
+		stillValid = $field.length && $validator.length && $field.length;
 		if ( !stillValid ) {
 			throw Error( "Couldn't find the validator and validated fields within the form." );
 		} else {
@@ -144,6 +181,7 @@ var GfCheckboxValidators = ( function() {
 			$validator_input = $validator.find( "input" );
 		}
 
+		// TODO: stillValid = $checkBoxes.length && $validator_input.length === 1;
 		stillValid = $checkBoxes.length && $validator_input.length;
 		if ( !stillValid ) {
 			throw Error( "Couldn't find the expected input elements within the form's validator and\
@@ -171,6 +209,12 @@ var GfCheckboxValidators = ( function() {
 		}
 	}
 
+	/**
+	 * Check the validity of the instance based on the types and values of its members.
+	 * 
+	 * @return {boolean} Returns true if members are properly typed and their values conform to
+	 *     expectations. Returns false otherwise.
+	 */
 	GfCheckboxValidators.prototype.IsObjValid = function() {
 		var stillValid = true;
 		var selsProps;
