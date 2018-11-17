@@ -5,35 +5,37 @@
 /**************************************************************************************************
  * TABLE OF CONTENTS                                                                              *
  * -----------------                                                                              *
- *   §1: ADDITION OF FUNCTIONS to jQuery......................................................46  *
- *   §2: AFTER DOM IS READY excution section.................................................127  *
- *   §3: AFTER WINDOW LOADED event bindings..................................................284  *
- *   §4: WINDOW RESIZE event bindings........................................................330  *
- *   §5: FUNCTION DECLARATIONS...............................................................338  *
- *     §5.1: addA11yTabPressListener.........................................................348  *
- *     §5.2: addBlankTargetAttributes........................................................360  *
- *     §5.3: addDefinitionListButtons........................................................415  *
- *     §5.4: checkForLrgFrmtSingle...........................................................512  *
- *     §5.5: effectDropDownTogglePermanence..................................................526  *
- *     §5.6: finalizeLrgFrmtSideRight........................................................555  *
- *     §5.7: fixDogears......................................................................572  *
- *     §5.8: handleMouseClickForA11y.........................................................594  *
- *     §5.9: handleTabPressForA11y...........................................................600  *
- *     §5.10: initContentFlippers............................................................608  *
- *     §5.11: initDefinitionLists............................................................621  *
- *     §5.12: initDropDownToggles............................................................668  *
- *     §5.13: initFancyHrH2Motif.............................................................690  *
- *     §5.14: initFancyHrH3Motif.............................................................696  *
- *     §5.15: initHrH2Motif..................................................................702  *
- *     §5.16: initHrH3Motif..................................................................714  *
- *     §5.17: initQuickTabs..................................................................720  *
- *     §5.18: initReadMoreToggles............................................................780  *
- *     §5.19: initTocFloating................................................................797  *
- *     §5.20: initTriggeredByHover...........................................................871  *
- *     §5.21: initWelcomeMessage.............................................................887  *
- *     §5.22: resizeLrgFrmtSideRight.........................................................894  *
- *     §5.23: setupDropDownTogglePermanence..................................................899  *
- *     §5.24: showDefinitionListButtons......................................................931  *
+ *   §1: ADDITION OF FUNCTIONS to jQuery......................................................48  *
+ *     §1.1: jQuery.isJQueryObj...............................................................56  *
+ *     §1.2: jQuery.isJQueryObj...............................................................69  *
+ *   §2: AFTER DOM IS READY excution section.................................................128  *
+ *   §3: AFTER WINDOW LOADED event bindings..................................................285  *
+ *   §4: WINDOW RESIZE event bindings........................................................331  *
+ *   §5: FUNCTION DECLARATIONS...............................................................339  *
+ *     §5.1: addA11yTabPressListener.........................................................349  *
+ *     §5.2: addBlankTargetAttributes........................................................361  *
+ *     §5.3: addDefinitionListButtons........................................................418  *
+ *     §5.4: checkForLrgFrmtSingle...........................................................515  *
+ *     §5.5: effectDropDownTogglePermanence..................................................529  *
+ *     §5.6: finalizeLrgFrmtSideRight........................................................558  *
+ *     §5.7: fixDogears......................................................................575  *
+ *     §5.8: handleMouseClickForA11y.........................................................597  *
+ *     §5.9: handleTabPressForA11y...........................................................603  *
+ *     §5.10: initContentFlippers............................................................611  *
+ *     §5.11: initDefinitionLists............................................................624  *
+ *     §5.12: initDropDownToggles............................................................671  *
+ *     §5.13: initFancyHrH2Motif.............................................................693  *
+ *     §5.14: initFancyHrH3Motif.............................................................699  *
+ *     §5.15: initHrH2Motif..................................................................705  *
+ *     §5.16: initHrH3Motif..................................................................717  *
+ *     §5.17: initQuickTabs..................................................................723  *
+ *     §5.18: initReadMoreToggles............................................................783  *
+ *     §5.19: initTocFloating................................................................800  *
+ *     §5.20: initTriggeredByHover...........................................................874  *
+ *     §5.21: initWelcomeMessage.............................................................890  *
+ *     §5.22: resizeLrgFrmtSideRight.........................................................897  *
+ *     §5.23: setupDropDownTogglePermanence..................................................902  *
+ *     §5.24: showDefinitionListButtons......................................................934  *
  **************************************************************************************************/
 
 ( function ( $ ) {
@@ -42,28 +44,27 @@
 
 var thisFileName = "jQuery.oue-custom.js";
 
-/**************************************************************************************************
- * §1: ADDITION OF FUNCTIONS to jQuery                                                            *
- **************************************************************************************************/
- 
+////////////////////////////////////////////////////////////////////////////////////////////////////
+// §1: ADDITION OF FUNCTIONS to jQuery
+
+// --- §1.1: jQuery.isJQueryObj
 /**
- * jQuery.isJQueryObj
- * DESCRIPTION: Checking function to verify that the passed parameter is a valid jQuery object.
- * PARAMETERS:
- *   - $obj: Possible jQuery object.
+ * Checking function to verify that the passed parameter is a valid jQuery object.
+ *
+ * @param $obj - Possible jQuery object; could be anything.
  */
 $.isJQueryObj = function ( $obj ) {
 	return ( $obj && ( $obj instanceof $ || $obj.constructor.prototype.jquery ) );
 }
 
+// --- §1.2: jQuery.logError
 /**
- * jQuery.logError
- * DESCRIPTION: Log an error using the browser console in JSON notation.
- * PARAMETERS:
- *   - fileName: Name of the JS source file wherein the error was encountered.
- *   - fnctnName: Name of the function that called $.logError.
- *   - fnctnDesc: Description of what the calling function is supposed to do.
- *   - errorMsg: Message that describes what went wrong within the calling function.
+ * Log an error using the browser console in JSON notation.
+ * 
+ * @param {string} fileName - Name of the JS source file wherein the error was encountered.
+ * @param {string} fnctnName - Name of the function that called $.logError.
+ * @param {string} fnctnDesc - Description of what the calling function is supposed to do.
+ * @param {string} errorMsg - Message that describes what went wrong within the calling function.
  */
 $.logError = function ( fileName, fnctnName, fnctnDesc, errorMsg ) {
 	var thisFuncName = "jQuery.logError";
@@ -123,9 +124,9 @@ $.logError = function ( fileName, fnctnName, fnctnDesc, errorMsg ) {
 	}
 }
 
-/**************************************************************************************************
- * §2: AFTER DOM IS READY excution section                                                        *
- **************************************************************************************************/
+////////////////////////////////////////////////////////////////////////////////////////////////////
+// §2: AFTER DOM IS READY excution section
+
 $( function () {
 	var argsList = new Object(); // List of arguments that will be passed to functions
 	var args; // List of arguments currently being utilized
@@ -280,9 +281,9 @@ $( function () {
 	// TODO: initScrollingSidebars("...");
 } );
 
-/**************************************************************************************************
- * §3: AFTER WINDOW LOADED event bindings                                                         *
- **************************************************************************************************/
+////////////////////////////////////////////////////////////////////////////////////////////////////
+// §3: AFTER WINDOW LOADED event bindings
+
 $( window ).on( "load", function () {
 	var argsList = new Object();
 	var args;
@@ -326,36 +327,36 @@ $( window ).on( "load", function () {
 	addA11yTabPressListener( args.listenerCallback );
 } );
 
-/**************************************************************************************************
- * §4: WINDOW RESIZE event bindings                                                               *
- **************************************************************************************************/
+////////////////////////////////////////////////////////////////////////////////////////////////////
+// §4: WINDOW RESIZE event bindings
+
 $( window ).resize( function () {
 	resizeLrgFrmtSideRight( ".side-right.large-format-friendly", "div.column.one",
 		"div.column.two", 1051, 100 );
 } );
 
-/**************************************************************************************************
- * §5: FUNCTION DECLARATIONS                                                                      *
- **************************************************************************************************/
+////////////////////////////////////////////////////////////////////////////////////////////////////
+// §5: FUNCTION DECLARATIONS
 
+// --- §5.1: addA11yTabPressListener
 /**
- * addA11yTabPressListener
- * DESCRIPTION: Add an event listener to handle for keyboard navigation implied by tab presses. 
- *  Intended to support accessibility design.
- * PARAMETERS:
- *   - listenerCallback: Function callback triggered on keydown event
+ * Add an event listener to handle for keyboard navigation implied by tab presses. 
+ *
+ * Intended to support accessibility design.
+ *
+ * @param {function} listenerCallback - Function callback triggered on keydown event.
  */
 function addA11yTabPressListener( listenerCallback ) {
 	window.addEventListener( "keydown", listenerCallback );
 }
 
+// --- §5.2: addBlankTargetAttributes
 /**
- * addBlankTargetAttributes
- * DESCRIPTION: Adds missing blank target attributes to links within the WSU Spine as needed.
- * PARAMETERS:
- *   - slctrSpine: Selector string for locating the spine object within the DOM.
- *   - slctrExternalLinks: Selector string for locating links within the spine that lead to 
- *      destination external to the domain.
+ * Adds missing blank target attributes to links within the WSU Spine as needed.
+ * 
+ * @param {string} slctrSpine - Selector string for locating the spine object within the DOM.
+ * @param {string} slctrExternalLinks - Selector string for locating links within the spine that
+ *     lead to destination external to the domain.
  */
 function addBlankTargetAttributes( slctrSpine, slctrExternalLinks ) {
 	var thisFnctnName = "addBlankTargetAttributes";
@@ -399,18 +400,20 @@ passed:\n\ttypeof slctrSpine = " + ( typeof slctrSpine ) + "\n\ttypeof slctrExte
 	}
 }
 
+// --- §5.3: addDefinitionListButtons
 /**
- * addDefinitionListButtons
- * DESCRIPTION: Automatically creates and binds events to expand/collapse all buttons designed for 
- *  improving UX of OUE site definition lists.
- * PARAMETERS:
- *   - slctrDefList: Selector string for locating definition list elements within the DOM that 
- *      contain collapsible definitions.
- *   - expandAllClass: CSS class for controlling the layout of expand all buttons.
- *   - collapseAllClass: CSS class for controlling the layout of collapse all buttons.
- *   - btnDisablingClass: CSS class applied to disable expand/collapse all buttons.
- *   - dtActivatingClass: CSS class used to indicate an active/expanded state for definition terms.
- *   - ddRevealingClass: CSS class used to realize a revealed, visible state on definitions.
+ * Automatically creates and binds events to expand/collapse all buttons designed for improving UX
+ * of OUE site definition lists.
+ *
+ * @param {string} slctrDefList - Selector string for locating definition list elements within the
+ *     DOM that contain collapsible definitions.
+ * @param {string} expandAllClass - CSS class for controlling the layout of expand all buttons.
+ * @param {string} collapseAllClass - CSS class for controlling the layout of collapse all buttons.
+ * @param {string} btnDisablingClass - CSS class applied to disable expand/collapse all buttons.
+ * @param {string} dtActivatingClass - CSS class used to indicate an active/expanded state for
+ *     definition terms.
+ * @param {string} ddRevealingClass - CSS class used to realize a revealed, visible state on
+ *     definitions.
  */
 function addDefinitionListButtons( slctrDefList, expandAllClass, collapseAllClass, 
 		btnDisablingClass, dtActivatingClass, ddRevealingClass, animSldDrtn ) {
@@ -1216,7 +1219,10 @@ function showDefinitionListButtons( slctrDefList, expandAllClass, collapseAllCla
 		}
 	}
 })(jQuery);
-/*!***********************************************************************************************************\
+////////////////////////////////////////////////////////////////////////////////////////////////////
+// §1: OUE-Wide Gravity Forms Enhancements
+
+/************************************************************************************************************\
 | JQUERY-MEDIATED ENHANCED INTERACTIVITY OF GRAVITY FORM FIELDS                                              |
 \************************************************************************************************************/
 (function ($) {
@@ -1573,6 +1579,180 @@ function showDefinitionListButtons( slctrDefList, expandAllClass, collapseAllCla
     }
     
  })(jQuery);
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+// §2: Optional Gravity Forms Enhancements
+
+/**
+ * Gravity Form Checkbox Validators interface.
+ *
+ * An interface for linking the state of a gravity forms checkbox field to a subsequent (and ideally
+ * hidden) validator field. Currently, all of the checkboxes must be selected for the field to be
+ * validated.
+ *
+ * @class
+ */
+var GfCheckboxValidators = ( function( $ ) {
+    function GfCheckboxValidators( sels ) {
+        ////////////////////////////////////////////////////////////////////////////////////////////
+        // Declare/set private properties
+
+        var _$form;
+
+        ////////////////////////////////////////////////////////////////////////////////////////////
+        // Declare/set public properties
+
+        this.sels = sels;
+
+        ////////////////////////////////////////////////////////////////////////////////////////////
+        // Declare privileged methods
+
+        this.get$form = function () {
+            return _$form;
+        }
+
+        this.findForm = function () {
+            if ( this.IsObjValid() ) {
+                _$form = $ ( this.sels.formContainer )
+            } else {
+                console.log( "Object wasn't valid." );
+                _$form = $( [] );
+            }
+        }
+
+        ////////////////////////////////////////////////////////////////////////////////////////////
+        // Perform main constructor execution
+        this.findForm();
+    }
+
+    ////////////////////////////////////////////////////////////////////////////////////////////////
+    // Declare public methods
+
+    /**
+     * Finish the process of hiding validator fields from the user.
+     *
+     * Removes tab indexing from the field so that JavaScript can safely automate population of the
+     * validator field with input based on the state of the preceding checkbox field.
+     *
+     * @access public
+     *
+     * @memberof GfCheckboxValidators
+     */
+    GfCheckboxValidators.prototype.finishHidingValidators = function () {
+        var $form;
+        var $field;
+        var $validator;
+        var $validator_input;
+
+        $form = this.get$form();
+        if ( this.IsObjValid() && $form.length) {
+            // Isolate validator and its target field in the DOM.
+            $field = $form.find( this.sels.validatedField );
+            $validator = $field.next( this.sels.validator );
+
+            // Disable tab indexing to form validators.
+            if ( $field.length && $validator.length ) {
+                $validator_input = $validator.find( "input" );
+                $validator_input.attr( 'tabindex', '-1' );
+            }
+        }
+    };
+
+    /**
+     * Initialize validation of validated checkbox fields by their subsequent validator fields.
+     *
+     * The validator's input element will be set to "validated" if all checkboxes are checked,
+     * otherwise it will be set to an empty string.
+     *
+     * @access public
+     *
+     * @memberof GfCheckboxValidators
+     *
+     * @throws {Error} Member function IsObjValid will automatically be called and must return true.
+     * @throws {Error} The specified validated and validator fields must be found within the form,
+     *     and each validated field must be followed by a validator field as a sibling.
+     * @throws {Error} Validated fields must contain checkbox input elements, and validator fields
+     *     must contain a single input element.
+     */
+    GfCheckboxValidators.prototype.initValidation = function() {
+        var $form;
+        var sels = this.sels;
+        var stillValid;
+
+        stillValid = this.IsObjValid();
+        if ( !stillValid ) {
+            throw Error( "Object properties did not pass validity check." );
+        } else {
+            // Find the form appropriate fields within the form.
+            $form = this.get$form();
+            $form.on('change', sels.validatedField + " :checkbox", function () {
+                var $checkBoxes;
+                var $parentField;
+                var $this;
+                var $validator_input;
+                var allChecked = true;
+                var stillValid = true;
+
+                $this = $( this );
+                $parentField = $this.parents( sels.validatedField );
+                $checkBoxes = $parentField.find( " :checkbox" );
+                $validator_input = $parentField.next( sels.validator ).find( "input" );
+                stillValid = $validator_input.length === 1;
+                try {
+                    if ( !stillValid ) {
+                        throw Error( "Found a validated field in the DOM that was not followed by a\
+ matching, properly formed validator sibling; checkbox state cannot be properly validated." );
+                    } else {
+                        // Check the state of all the checkbox inputs within the validated field.
+                        $checkBoxes.each( function () {
+                            if ( allChecked && !this.checked) {
+                                allChecked = false;
+                            }
+                        } );
+
+                        // Appropriately set the state of the validator's input element.
+                        if ( allChecked && $validator_input.val() != "validated" ) {
+                            $validator_input.val( "validated" );
+                        } else if ( $validator_input.val() != "" ) {
+                            $validator_input.val( "" );
+                        }
+                    }
+                } catch ( err ) {
+                    console.log(err.name + ": " + err.message);
+                }
+            } );
+        }
+    }
+
+    /**
+     * Check the validity of the instance based on the types and values of its members.
+     * 
+     * @return {boolean} Returns true if members are properly typed and their values conform to
+     *     expectations. Returns false otherwise.
+     */
+    GfCheckboxValidators.prototype.IsObjValid = function() {
+        var stillValid = true;
+        var selsProps;
+
+        if ( !( typeof this.sels === 'object' ) ) {
+            stillValid = false
+        } else if ( stillValid ) {
+            selsProps = Object.getOwnPropertyNames( this.sels );
+        }
+        if ( stillValid && !( selsProps.length === 3 &&
+                selsProps.find( function( elem ) { return elem === 'formContainer'; } ) &&
+                selsProps.find( function( elem ) { return elem === 'validatedField'; } ) &&
+                selsProps.find( function( elem ) { return elem === 'validator'; } ) ) ) {
+            stillValid = false;
+        }
+        // TODO: Check for properly formed selector strings.
+
+        return stillValid;
+    };
+
+    return GfCheckboxValidators;
+} )( jQuery );
 
 /*!
  * jQuery Plugin: Are-You-Sure (Dirty Form Detection)
@@ -2349,176 +2529,6 @@ function OueTermYearInputs( slctrWhichFields ) {
 	this.applyKeyDownHandler();
 	this.applyBlurHandler();
 }
-
-/**
- * Gravity Form Checkbox Validators interface.
- *
- * An interface for linking the state of a gravity forms checkbox field to a subsequent (and ideally
- * hidden) validator field. Currently, all of the checkboxes must be selected for the field to be
- * validated.
- *
- * @class
- */
-var GfCheckboxValidators = ( function() {
-	function GfCheckboxValidators( sels ) {
-		////////////////////////////////////////////////////////////////////////////////////////////
-		// Declare/set private properties
-
-		var _$form;
-
-		////////////////////////////////////////////////////////////////////////////////////////////
-		// Declare/set public properties
-
-		this.sels = sels;
-
-		////////////////////////////////////////////////////////////////////////////////////////////
-		// Declare privileged methods
-
-		this.get$form = function () {
-			return _$form;
-		}
-
-		this.findForm = function () {
-			if ( this.IsObjValid() ) {
-				_$form = $ ( this.sels.formContainer )
-			} else {
-				console.log( "Object wasn't valid." );
-				_$form = $( [] );
-			}
-		}
-
-		////////////////////////////////////////////////////////////////////////////////////////////
-		// Perform main constructor execution
-		this.findForm();
-	}
-
-	////////////////////////////////////////////////////////////////////////////////////////////////
-	// Declare public methods
-
-	/**
-	 * Finish the process of hiding validator fields from the user.
-	 *
-	 * Removes tab indexing from the field so that JavaScript can safely automate population of the
-	 * validator field with input based on the state of the preceding checkbox field.
-	 *
-	 * @access public
-	 *
-	 * @memberof GfCheckboxValidators
-	 */
-	GfCheckboxValidators.prototype.finishHidingValidators = function () {
-		var $form;
-		var $field;
-		var $validator;
-		var $validator_input;
-
-		$form = this.get$form();
-		if ( this.IsObjValid() && $form.length) {
-			// Isolate validator and its target field in the DOM.
-			$field = $form.find( this.sels.validatedField );
-			$validator = $field.next( this.sels.validator );
-
-			// Disable tab indexing to form validators.
-			if ( $field.length && $validator.length ) {
-				$validator_input = $validator.find( "input" );
-				$validator_input.attr( 'tabindex', '-1' );
-			}
-		}
-	};
-
-	/**
-	 * Initialize validation of validated checkbox fields by their subsequent validator fields.
-	 *
-	 * The validator's input element will be set to "validated" if all checkboxes are checked,
-	 * otherwise it will be set to an empty string.
-	 *
-	 * @access public
-	 *
-	 * @memberof GfCheckboxValidators
-	 *
-	 * @throws {Error} Member function IsObjValid will automatically be called and must return true.
-	 * @throws {Error} The specified validated and validator fields must be found within the form,
-	 *     and each validated field must be followed by a validator field as a sibling.
-	 * @throws {Error} Validated fields must contain checkbox input elements, and validator fields
-	 *     must contain a single input element.
-	 */
-	GfCheckboxValidators.prototype.initValidation = function() {
-		var $form;
-		var sels = this.sels;
-		var stillValid;
-
-		stillValid = this.IsObjValid();
-		if ( !stillValid ) {
-			throw Error( "Object properties did not pass validity check." );
-		} else {
-			// Find the form appropriate fields within the form.
-			$form = this.get$form();
-			$form.on('change', sels.validatedField + " :checkbox", function () {
-				var $checkBoxes;
-				var $parentField;
-				var $this;
-				var $validator_input;
-				var allChecked = true;
-				var stillValid = true;
-
-				$this = $( this );
-				$parentField = $this.parents( sels.validatedField );
-				$checkBoxes = $parentField.find( " :checkbox" );
-				$validator_input = $parentField.next( sels.validator ).find( "input" );
-				stillValid = $validator_input.length === 1;
-				try {
-					if ( !stillValid ) {
-						throw Error( "Found a validated field in the DOM that was not followed by a\
- matching, properly formed validator sibling; checkbox state cannot be properly validated." );
-					} else {
-						// Check the state of all the checkbox inputs within the validated field.
-						$checkBoxes.each( function () {
-							if ( allChecked && !this.checked) {
-								allChecked = false;
-							}
-						} );
-
-						// Appropriately set the state of the validator's input element.
-						if ( allChecked && $validator_input.val() != "validated" ) {
-							$validator_input.val( "validated" );
-						} else if ( $validator_input.val() != "" ) {
-							$validator_input.val( "" );
-						}
-					}
-				} catch ( err ) {
-					console.log(err.name + ": " + err.message);
-				}
-			} );
-		}
-	}
-
-	/**
-	 * Check the validity of the instance based on the types and values of its members.
-	 * 
-	 * @return {boolean} Returns true if members are properly typed and their values conform to
-	 *     expectations. Returns false otherwise.
-	 */
-	GfCheckboxValidators.prototype.IsObjValid = function() {
-		var stillValid = true;
-		var selsProps;
-
-		if ( !( typeof this.sels === 'object' ) ) {
-			stillValid = false
-		} else if ( stillValid ) {
-			selsProps = Object.getOwnPropertyNames( this.sels );
-		}
-		if ( stillValid && !( selsProps.length === 3 &&
-				selsProps.find( function( elem ) { return elem === 'formContainer'; } ) &&
-				selsProps.find( function( elem ) { return elem === 'validatedField'; } ) &&
-				selsProps.find( function( elem ) { return elem === 'validator'; } ) ) ) {
-			stillValid = false;
-		}
-		// TODO: Check for properly formed selector strings.
-
-		return stillValid;
-	};
-
-	return GfCheckboxValidators;
-} )();
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 // §3: Function Declarations
