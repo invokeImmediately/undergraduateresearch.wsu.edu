@@ -1,4 +1,4 @@
-﻿@import  "https://fonts.googleapis.com/css?family=Roboto+Mono:400,700|Roboto+Condensed:400,700|Roboto+Slab|PT+Serif";
+﻿@import  'https://fonts.googleapis.com/css?family=Roboto+Mono:400,700|Roboto+Condensed:400,700|Roboto+Slab|PT+Serif';
 
 /*! Built with the Less CSS preprocessor [http://lesscss.org/]. Please see [https://github.com/invokeImmediately/undergraduateresearch.wsu.edu] for a repository of source code. */
 /*! ================================================================================================
@@ -3778,6 +3778,14 @@ div.read-more-target {
 	font-weight: 400;
 }
 
+.column .gform_wrapper .gfield_checkbox li input,.column .gform_wrapper .gfield_checkbox li input[type=checkbox],.column .gform_wrapper .gfield_radio li input[type=radio] {
+	vertical-align: top;
+}
+
+.column .gform_wrapper.gf_browser_chrome .gfield_checkbox li input,.column .gform_wrapper.gf_browser_chrome .gfield_checkbox li input[type=checkbox],.column .gform_wrapper.gf_browser_chrome .gfield_radio li input[type=radio] {
+	margin-top: 8px;
+}
+
 .column .gform_wrapper .gfield_description {
 	max-width: 80ch;
 }
@@ -3806,6 +3814,10 @@ div.read-more-target {
 .column .gform_wrapper .gsection {
 	margin-bottom: 0;
 	margin-top: 2rem;
+}
+
+.column .gform_wrapper .percentbar_blue {
+	background-color: #981e32;
 }
 
 .column .gform_wrapper h2.fancy {
@@ -4877,6 +4889,7 @@ div.auto-scroller ul li {
 	-webkit-transform: translateY(-50%);
 	-moz-transform: translateY(-50%);
 	transform: translateY(-50%);
+	width: auto !important;
 }
 
 .page-header__column-1--tx-bottom {
@@ -4907,6 +4920,71 @@ div.auto-scroller ul li {
 .fluid .row.single .page-header__text-breadcrumb,.page-header__text-subtitle,.page-header__text-title {
 	color: inherit;
 	text-shadow: inherit;
+}
+
+.on-this-page {
+	background-color: #2f3438;
+}
+
+.on-this-page .column {
+	background-color: inherit;
+}
+
+.on-this-page .on-this-page__heading {
+	color: #fff;
+	padding-left: 2rem;
+	padding-bottom: .66666667rem;
+	font-size: 1.7rem;
+}
+
+.on-this-page .on-this-page__menu {
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	border-top: 1px solid #2f3438;
+	border-left: 1px solid #2f3438;
+	background-color: inherit;
+	list-style-type: none;
+}
+
+.on-this-page .on-this-page__menu-item {
+	float: left;
+	margin-top: 0 !important;
+	list-style-image: none;
+	padding: 0;
+}
+
+.on-this-page .on-this-page__menu-item a {
+	display: inline-block;
+	color: #fff;
+	text-align: center;
+	padding: 14px 16px;
+	border-right: 1px solid #2f3438;
+	border-bottom: 1px solid #2f3438;
+	border-radius: 0;
+	background-color: #464e54;
+	box-shadow: none;
+}
+
+.on-this-page .on-this-page__menu-item a:hover {
+	border-color: #2f3438;
+	background-color: #23272a;
+	text-shadow: none;
+}
+
+.on-this-page__back {
+	position: relative;
+	padding-left: 1rem;
+	font-size: .9em;
+}
+
+.on-this-page__back::before {
+	content: "";
+	position: absolute;
+	width: 1rem;
+	left: -3px;
+	height: .9rem;
+	background: url(https://s3.wp.wsu.edu/uploads/sites/50/2017/10/micon_returnKey_rotated-90-deg-cw_54x64.png) center center/auto 100% no-repeat;
 }
 
 .w--5pct,.width--5pct {
@@ -8320,6 +8398,10 @@ body.home .builder-section-banner .cycle-next,body.home .builder-section-banner 
 		font-size: .9em;
 	}
 	
+	.on-this-page .on-this-page__menu-item a {
+		padding: 8px 10px;
+	}
+	
 	body.home #upcoming-events .wsuwp-content-syndicate-event {
 		-ms-flex: 1 0 50%;
 		flex: 1 0 50%;
@@ -9709,9 +9791,4 @@ body.home .builder-section-banner .cycle-next,body.home .builder-section-banner 
 		-moz-transform: none;
 		transform: none;
 	}
-}
-
-/* MOVE TO APPROPRIATE PLACE IN CODE LATER */
-.gform_wrapper .gfield_checkbox li input, .gform_wrapper .gfield_checkbox li input[type=checkbox], .gform_wrapper .gfield_radio li input[type=radio] {
-	vertical-align: top;
 }
