@@ -6417,6 +6417,8 @@ div.auto-scroller ul li {
 .on-this-page .on-this-page__menu-item {
   float: left;
   margin-top: 0 !important;
+  margin-bottom: -1px !important;
+  margin-right: -1px !important;
   list-style-image: none;
   padding: 0;
 }
@@ -6425,10 +6427,9 @@ div.auto-scroller ul li {
   color: white;
   text-align: center;
   padding: 14px 16px;
-  border-right: 1px solid #2f3438;
-  border-bottom: 1px solid #2f3438;
+  border: 1px solid #5e6a71;
   border-radius: 0;
-  background-color: #464e54;
+  background-color: #2a3033;
   box-shadow: none;
 }
 .on-this-page .on-this-page__menu-item a:hover {
@@ -6440,6 +6441,12 @@ div.auto-scroller ul li {
   .on-this-page .on-this-page__menu-item a {
     padding: 8px 10px;
   }
+}
+.on-this-page .on-this-page__menu-item.--crimson a {
+  background-color: #54464e;
+}
+.on-this-page .on-this-page__menu-item.--crimson a:hover {
+  background-color: #58111d;
 }
 .on-this-page__back {
   position: relative;
