@@ -6417,7 +6417,7 @@ div.auto-scroller ul li {
 .on-this-page .on-this-page__menu-item {
   float: left;
   margin-top: 0 !important;
-  margin-bottom: -1px !important;
+  margin-bottom: 0.75em !important;
   margin-right: -1px !important;
   list-style-image: none;
   padding: 0;
