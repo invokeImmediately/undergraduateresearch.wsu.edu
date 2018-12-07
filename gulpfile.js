@@ -35,7 +35,7 @@ Roboto+Condensed:400,700|Roboto+Slab|PT+Serif\');\r\n';
 	var minCssFileHeaderStr = '/*! Built with the Less CSS preprocessor [http://lesscss.org/]. Plea\
 se see [https://github.com/invokeImmediately/undergraduateresearch.wsu.edu] for a repository of sou\
 rce code. */\r\n';
- 	var sourceFile = './CSS/undergraduate-research-custom.less';
+ 	var sourceFile = './CSS/ugr-custom.less';
 
 	return new gulpBuilder.CssBuildSettings(commentRemovalNeedle, dependenciesPath,
  		destFolder, fontImportStr, insertingMediaQuerySectionHeader, minCssFileExtension,
