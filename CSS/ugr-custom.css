@@ -6470,7 +6470,7 @@ div.auto-scroller ul li {
   margin-left: 14px;
 }
 .on-this-page .on-this-page__menu-item.--shifts-next {
-  margin-right: 14px;
+  margin-right: 14px !important;
 }
 .on-this-page__back {
   position: relative;
