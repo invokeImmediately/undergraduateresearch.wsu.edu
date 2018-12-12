@@ -9701,7 +9701,7 @@ body.home #upcoming-events .content-item-event-date:after {
 }
 body.home #upcoming-events .content-item-event-date:before {
   background: #717171;
-  height: 24px;
+  bottom: 0;
   top: 0;
 }
 body.home #upcoming-events .content-item-event-date:after {
