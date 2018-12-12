@@ -6469,6 +6469,9 @@ div.auto-scroller ul li {
 .on-this-page .on-this-page__menu-item.--shifted {
   margin-left: 14px;
 }
+.on-this-page .on-this-page__menu-item.--shifts-next {
+  margin-right: 14px;
+}
 .on-this-page__back {
   position: relative;
   padding-left: 1rem;
