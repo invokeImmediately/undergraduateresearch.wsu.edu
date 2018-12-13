@@ -19,6 +19,7 @@ $( function () {
 
 	// Tweak HTML source to work around some quirks of WordPress setup
 	addPageHeaderToNews();
+	checkForEventsCalendarPage();
 	initTravelAwardForm( {
 		formContainer: '#gform_wrapper_6',
 		validatedField: '.travel-award__eligibility',
@@ -128,6 +129,14 @@ e-header__column-1"><h1 class="page-header__text-title">News</h1></div></section
 	}
 }
 
+// TODO: Add inline documentation
+function checkForEventsCalendarPage() {
+	var $body = $( 'body' );
+	if ( $body.hasClass( 'tribe-theme-spine' ) ) {
+		fixEventsCalendarHeader( $body );
+	}
+}
+
 /**
  * Creates an array containing the sequence of n_i = i + lower bound from a lower to an upper bound.
  *
@@ -150,6 +159,21 @@ function createArrayFromNumberSequence ( start, end ) {
 	}
 
 	return result;
+}
+
+// TODO: Add inline documentation
+function fixEventsCalendarHeader( $body ) {
+	var $main;
+	var $mainHeader;
+	var $subHeaderDefault;
+
+	if ( $.isJQueryObj( $body ) ) {
+		console.log( 'Attempting to fix header.' )
+		$main = $body.find( '#wsuwp-main' );
+		$mainHeader = $main.find( '.main-header' );
+		$subHeaderDefault = $mainHeader.find( '.sub-header-default' );
+		$subHeaderDefault.text( 'Office of Undergraduate Research' );		
+	}
 }
 
 /**
