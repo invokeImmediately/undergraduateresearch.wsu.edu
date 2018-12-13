@@ -622,117 +622,117 @@ img.shift-to-center,
 :target:not(.no-anchor-highlighting) {
   position: relative;
 }
-:target:not(.no-anchor-highlighting):before {
-  content: "";
-  position: absolute;
-  top: -1rem;
-  right: -1rem;
-  bottom: -1rem;
-  left: -1rem;
-  background-color: rgba(219, 120, 121, 0);
-  border: 1px solid rgba(219, 120, 121, 0);
-  z-index: -1;
+:target:not(.no-anchor-highlighting)::before {
   -webkit-animation: animFlashHighlight 1.325s linear 1;
   -moz-animation: animFlashHighlight 1.325s linear 1;
   animation: animFlashHighlight 1.325s linear 1;
   -webkit-animation-delay: 0.175s;
   -moz-animation-delay: 0.175s;
   animation-delay: 0.175s;
+  background-color: rgba(219, 120, 121, 0);
+  border: 2px solid rgba(255, 0, 0, 0);
+  bottom: -1rem;
+  content: "";
+  left: -1rem;
+  position: absolute;
+  right: -1rem;
+  top: -1rem;
+  z-index: -1;
 }
 @-webkit-keyframes animFlashHighlight {
   0% {
     background-color: rgba(219, 120, 121, 0);
-    border-color: rgba(219, 120, 121, 0);
+    border-color: rgba(255, 0, 0, 0);
     z-index: 10;
   }
   10% {
     background-color: rgba(219, 120, 121, 0.1);
-    border-color: rgba(219, 120, 121, 0.5);
+    border-color: rgba(255, 0, 0, 0.5);
   }
   20% {
     background-color: rgba(219, 120, 121, 0);
-    border-color: rgba(219, 120, 121, 0);
+    border-color: rgba(255, 0, 0, 0);
   }
   31% {
     background-color: rgba(219, 120, 121, 0.1);
-    border-color: rgba(219, 120, 121, 0.5);
+    border-color: rgba(255, 0, 0, 0.5);
   }
   41% {
     background-color: rgba(219, 120, 121, 0);
-    border-color: rgba(219, 120, 121, 0);
+    border-color: rgba(255, 0, 0, 0);
   }
   51% {
     background-color: rgba(219, 120, 121, 0.1);
-    border-color: rgba(219, 120, 121, 0.5);
+    border-color: rgba(255, 0, 0, 0.5);
   }
   100% {
     background-color: rgba(219, 120, 121, 0);
-    border-color: rgba(219, 120, 121, 0);
+    border-color: rgba(255, 0, 0, 0);
   }
 }
 @-moz-keyframes animFlashHighlight {
   0% {
     background-color: rgba(219, 120, 121, 0);
-    border-color: rgba(219, 120, 121, 0);
+    border-color: rgba(255, 0, 0, 0);
     z-index: 10;
   }
   10% {
     background-color: rgba(219, 120, 121, 0.1);
-    border-color: rgba(219, 120, 121, 0.5);
+    border-color: rgba(255, 0, 0, 0.5);
   }
   20% {
     background-color: rgba(219, 120, 121, 0);
-    border-color: rgba(219, 120, 121, 0);
+    border-color: rgba(255, 0, 0, 0);
   }
   31% {
     background-color: rgba(219, 120, 121, 0.1);
-    border-color: rgba(219, 120, 121, 0.5);
+    border-color: rgba(255, 0, 0, 0.5);
   }
   41% {
     background-color: rgba(219, 120, 121, 0);
-    border-color: rgba(219, 120, 121, 0);
+    border-color: rgba(255, 0, 0, 0);
   }
   51% {
     background-color: rgba(219, 120, 121, 0.1);
-    border-color: rgba(219, 120, 121, 0.5);
+    border-color: rgba(255, 0, 0, 0.5);
   }
   100% {
     background-color: rgba(219, 120, 121, 0);
-    border-color: rgba(219, 120, 121, 0);
+    border-color: rgba(255, 0, 0, 0);
   }
 }
 @keyframes animFlashHighlight {
   0% {
     background-color: rgba(219, 120, 121, 0);
-    border-color: rgba(219, 120, 121, 0);
+    border-color: rgba(255, 0, 0, 0);
     z-index: 10;
   }
   10% {
     background-color: rgba(219, 120, 121, 0.1);
-    border-color: rgba(219, 120, 121, 0.5);
+    border-color: rgba(255, 0, 0, 0.5);
   }
   20% {
     background-color: rgba(219, 120, 121, 0);
-    border-color: rgba(219, 120, 121, 0);
+    border-color: rgba(255, 0, 0, 0);
   }
   31% {
     background-color: rgba(219, 120, 121, 0.1);
-    border-color: rgba(219, 120, 121, 0.5);
+    border-color: rgba(255, 0, 0, 0.5);
   }
   41% {
     background-color: rgba(219, 120, 121, 0);
-    border-color: rgba(219, 120, 121, 0);
+    border-color: rgba(255, 0, 0, 0);
   }
   51% {
     background-color: rgba(219, 120, 121, 0.1);
-    border-color: rgba(219, 120, 121, 0.5);
+    border-color: rgba(255, 0, 0, 0.5);
   }
   100% {
     background-color: rgba(219, 120, 121, 0);
-    border-color: rgba(219, 120, 121, 0);
+    border-color: rgba(255, 0, 0, 0);
   }
 }
-.row:not(.clear-none):target:not(.no-anchor-highlighting):before {
+.row:not(.clear-none):target:not(.no-anchor-highlighting)::before {
   content: "";
   width: auto;
   height: auto;
