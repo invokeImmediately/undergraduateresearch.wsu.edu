@@ -9548,7 +9548,7 @@ body.tribe-theme-spine:not(.tribe_venue-template-default) .main-header .header-g
 body.tribe-theme-spine:not(.tribe_venue-template-default) .main-header .header-group .sub-header a {
   display: none;
 }
-body.tribe-theme-spine:not(.tribe_venue-template-default) .main-header .header-group .sub-header:before {
+body.tribe-theme-spine:not(.tribe_venue-template-default) .main-header .header-group .sub-header::before {
   content: "Office of Undergraduate Research";
   position: absolute;
   color: #fff;
@@ -9681,14 +9681,14 @@ body.tribe-theme-spine:not(.tribe_venue-template-default) .main-header .header-g
   background-color: #981e32;
 }
 @media only screen and (max-width: 768px) {
-  #tribe-events-content.tribe-events-month #tribe-events-header:before,
-  #tribe-events-content.tribe-events-month #tribe-events-header:after {
+  #tribe-events-content.tribe-events-month #tribe-events-header::before,
+  #tribe-events-content.tribe-events-month #tribe-events-header::after {
     display: none;
   }
 }
 @media only screen and (max-width: 768px) {
-  #tribe-events-content.tribe-events-month #tribe-events-footer:before,
-  #tribe-events-content.tribe-events-month #tribe-events-footer:after {
+  #tribe-events-content.tribe-events-month #tribe-events-footer::before,
+  #tribe-events-content.tribe-events-month #tribe-events-footer::after {
     display: none;
   }
 }
@@ -9799,16 +9799,16 @@ body.tribe-theme-spine:not(.tribe_venue-template-default) .main-header .header-g
 .wsuwp-content-syndicate-event .content-item-event-date {
   font-weight: bold;
 }
-.wsuwp-content-syndicate-event .content-item-event-date:after {
+.wsuwp-content-syndicate-event .content-item-event-date::after {
   content: ":";
 }
-.wsuwp-content-syndicate-event .content-item-event-venue:before {
+.wsuwp-content-syndicate-event .content-item-event-venue::before {
   content: "in ";
 }
-.wsuwp-content-syndicate-event .content-item-event-venue:empty {
+.wsuwp-content-syndicate-event .content-item-event-venue::empty {
   display: none;
 }
-.wsuwp-content-syndicate-list:empty:after {
+.wsuwp-content-syndicate-list:empty::after {
   content: "None.";
 }
 body.tribe-theme-spine .sub-header {
@@ -9825,17 +9825,17 @@ body.home #upcoming-events .wsuwp-content-syndicate-list {
   display: -ms-flexbox;
   display: flex;
   flex-flow: row wrap;
-  position: relative;
-  padding: 0;
-  list-style-type: none;
   font-size: 0.925rem;
+  list-style-type: none;
+  padding: 0;
+  position: relative;
 }
 body.home #upcoming-events .wsuwp-content-syndicate-item a,
 body.home #upcoming-events .wsuwp-content-syndicate-event a {
-  text-decoration: none;
-  color: #393939;
-  border-bottom: none;
+  border-bottom-color: none;
   box-shadow: none;
+  color: #393939;
+  text-decoration: none;
 }
 body.home #upcoming-events .wsuwp-content-syndicate-item a .read-more,
 body.home #upcoming-events .wsuwp-content-syndicate-event a .read-more {
@@ -9847,8 +9847,8 @@ body.home #upcoming-events .wsuwp-content-syndicate-item {
   margin-bottom: 1em;
 }
 body.home #upcoming-events .wsuwp-content-syndicate-item a:hover {
+  border-bottom-color: #981e32;
   color: #981e32;
-  border-bottom: solid 1px #981e32;
 }
 body.home #upcoming-events .wsuwp-content-syndicate-event {
   box-sizing: border-box;
@@ -9856,10 +9856,11 @@ body.home #upcoming-events .wsuwp-content-syndicate-event {
   -ms-flex: 1 0 33%;
   flex: 1 0 33%;
   list-style: none;
-  padding: 0.5em 1em 0 0;
   margin: 0.5em 0;
-  -webkit-transition: background 0.4s;
-  transition: background 0.4s;
+  padding: 0.5em 1em 0 0;
+  -webkit-transition: background .4s;
+  -moz-transition: background .4s;
+  transition: background .4s;
   width: 33%;
 }
 @media all and (max-width: 791px) {
@@ -9888,8 +9889,8 @@ body.home #upcoming-events .content-item-event-date:first-line {
   font-weight: 300;
   line-height: 24px;
 }
-body.home #upcoming-events .content-item-event-date:before,
-body.home #upcoming-events .content-item-event-date:after {
+body.home #upcoming-events .content-item-event-date::before,
+body.home #upcoming-events .content-item-event-date::after {
   content: "";
   left: 0;
   position: absolute;
@@ -9898,20 +9899,20 @@ body.home #upcoming-events .content-item-event-date:after {
   width: 100%;
   z-index: -1;
 }
-body.home #upcoming-events .content-item-event-date:before {
+body.home #upcoming-events .content-item-event-date::before {
   background: #717171;
   bottom: 0;
   top: 0;
 }
-body.home #upcoming-events .content-item-event-date:after {
+body.home #upcoming-events .content-item-event-date::after {
   background: #b5babe;
   bottom: 0;
   height: 48px;
 }
-body.home #upcoming-events li:hover .content-item-event-date:before {
+body.home #upcoming-events li:hover .content-item-event-date::before {
   background: #b5babe;
 }
-body.home #upcoming-events li:hover .content-item-event-date:after {
+body.home #upcoming-events li:hover .content-item-event-date::after {
   background: #981e32;
 }
 body.home #upcoming-events .content-item-event-title {
@@ -9919,10 +9920,11 @@ body.home #upcoming-events .content-item-event-title {
   margin-left: 3.25rem;
 }
 body.home #upcoming-events .content-item-event-title a {
-  border-bottom: 0;
+  border-bottom-color: transparent;
   text-shadow: none;
 }
 body.home #upcoming-events .content-item-event-title a:hover {
+  border-bottom-color: #981e32;
   background-color: #efefef;
 }
 body.home #upcoming-events .content-item-event-meta {
