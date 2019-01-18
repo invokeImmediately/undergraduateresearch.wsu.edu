@@ -168,7 +168,6 @@ function fixEventsCalendarHeader( $body ) {
 	var $subHeaderDefault;
 
 	if ( $.isJQueryObj( $body ) ) {
-		console.log( 'Attempting to fix header.' )
 		$main = $body.find( '#wsuwp-main' );
 		$mainHeader = $main.find( '.main-header' );
 		$subHeaderDefault = $mainHeader.find( '.sub-header-default' );
