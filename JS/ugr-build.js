@@ -1,63 +1,108 @@
-/*!************************************************************************************************
- * jQuery.oue-custom.js: custom JS code common to all WSU Undergraduate Education websites        *
+/*!*************************************************************************************************
+ * jQuery.oue-custom.js
+ * -------------------------------------------------------------------------------------------------
+ * PROJECT SUMMARY: Custom JS code common to all WSU Undergraduate Education websites.
+ *
+ * AUTHOR: Daniel Rieck [daniel.rieck@wsu.edu] (https://github.com/invokeImmediately)
+ *
+ * REPOSITORY: https://github.com/invokeImmediately/WSU-UE---JS
+ *
+ * LICENSE: ISC - Copyright (c) 2019 Daniel C. Rieck.
+ *
+ *   Permission to use, copy, modify, and/or distribute this software for any purpose with or
+ *   without fee is hereby granted, provided that the above copyright notice and this permission
+ *   notice appear in all copies.
+ *
+ *   THE SOFTWARE IS PROVIDED "AS IS" AND DANIEL RIECK DISCLAIMS ALL WARRANTIES WITH REGARD TO THIS
+ *   SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL
+ *   DANIEL RIECK BE LIABLE FOR ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY
+ *   DAMAGES WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF
+ *   CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
+ *   PERFORMANCE OF THIS SOFTWARE.
  **************************************************************************************************/
 
-/**************************************************************************************************
- * TABLE OF CONTENTS                                                                              *
- * -----------------                                                                              *
- *   §1: ADDITION OF FUNCTIONS to jQuery......................................................48  *
- *     §1.1: jQuery.isJQueryObj...............................................................56  *
- *     §1.2: jQuery.isJQueryObj...............................................................69  *
- *   §2: AFTER DOM IS READY excution section.................................................128  *
- *   §3: AFTER WINDOW LOADED event bindings..................................................285  *
- *   §4: WINDOW RESIZE event bindings........................................................331  *
- *   §5: FUNCTION DECLARATIONS...............................................................339  *
- *     §5.1: addA11yTabPressListener.........................................................349  *
- *     §5.2: addBlankTargetAttributes........................................................361  *
- *     §5.3: addDefinitionListButtons........................................................418  *
- *     §5.4: checkForLrgFrmtSingle...........................................................515  *
- *     §5.5: effectDropDownTogglePermanence..................................................529  *
- *     §5.6: finalizeLrgFrmtSideRight........................................................558  *
- *     §5.7: fixDogears......................................................................575  *
- *     §5.8: handleMouseClickForA11y.........................................................597  *
- *     §5.9: handleTabPressForA11y...........................................................603  *
- *     §5.10: initContentFlippers............................................................611  *
- *     §5.11: initDefinitionLists............................................................624  *
- *     §5.12: initDropDownToggles............................................................671  *
- *     §5.13: initFancyHrH2Motif.............................................................693  *
- *     §5.14: initFancyHrH3Motif.............................................................699  *
- *     §5.15: initHrH2Motif..................................................................705  *
- *     §5.16: initHrH3Motif..................................................................717  *
- *     §5.17: initQuickTabs..................................................................723  *
- *     §5.18: initReadMoreToggles............................................................783  *
- *     §5.19: initTocFloating................................................................800  *
- *     §5.20: initTriggeredByHover...........................................................874  *
- *     §5.21: initWelcomeMessage.............................................................890  *
- *     §5.22: resizeLrgFrmtSideRight.........................................................897  *
- *     §5.23: setupDropDownTogglePermanence..................................................902  *
- *     §5.24: showDefinitionListButtons......................................................934  *
- **************************************************************************************************/
+////////////////////////////////////////////////////////////////////////////////////////////////////
+// TABLE OF CONTENTS
+// -----------------
+//   §1: Addition of functions to jQuery......................................................71
+//     §1.1: jQuery.isCssClass................................................................74
+//     §1.2: jQuery.isJQueryObj...............................................................92
+//     §1.3: jQuery.logError.................................................................104
+//   §2: OUE website initilization modules...................................................175
+//     §2.1: OueDropDownToggle class.........................................................178
+//     §2.2: OueEventCalendarFixer class.....................................................424
+//       §2.2.1: Constructor.................................................................435
+//       §2.2.2: Public members..............................................................453
+//       §2.2.3: Lexically scoped supporting functions.......................................503
+//   §3: After dom is ready excution section.................................................522
+//   §4: After window loaded event bindings..................................................683
+//   §5: Window resize event bindings........................................................729
+//   §6: Function declarations...............................................................737
+//     §6.1: addA11yTabPressListener.........................................................740
+//     §6.2: addBlankTargetAttributes........................................................754
+//     §6.3: addDefinitionListButtons........................................................806
+//     §6.4: checkForLrgFrmtSingle...........................................................920
+//     §6.5: finalizeLrgFrmtSideRight........................................................937
+//     §6.6: fixDogears......................................................................957
+//     §6.7: fixEventCalendars...............................................................982
+//     §6.8: handleMouseClickForA11y.........................................................989
+//     §6.9: handleTabPressForA11y...........................................................998
+//     §6.10: initContentFlippers...........................................................1009
+//     §6.11: initDefinitionLists...........................................................1025
+//     §6.12: initDropDownToggles...........................................................1075
+//     §6.13: initFancyHrH2Motif............................................................1098
+//     §6.14: initFancyHrH3Motif............................................................1107
+//     §6.15: initHrH2Motif.................................................................1116
+//     §6.16: initHrH3Motif.................................................................1131
+//     §6.17: initQuickTabs.................................................................1140
+//     §6.18: initReadMoreToggles...........................................................1204
+//     §6.19: initTocFloating...............................................................1224
+//     §6.20: initTriggeredByHover..........................................................1301
+//     §6.21: initWelcomeMessage............................................................1320
+//     §6.22: resizeLrgFrmtSideRight........................................................1330
+//     §6.23: showDefinitionListButtons.....................................................1338
+////////////////////////////////////////////////////////////////////////////////////////////////////
 
-( function ( $ ) {
+( function ( $, thisFileName ) {
 
 'use strict';
-
-var thisFileName = "jQuery.oue-custom.js";
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 // §1: ADDITION OF FUNCTIONS to jQuery
 
-// --- §1.1: jQuery.isJQueryObj
+////////
+// §1.1: jQuery.isCssClass
+
 /**
- * Checking function to verify that the passed parameter is a valid jQuery object.
+ * Checking function to verify that the passed argument is a valid CSS class.
  *
- * @param $obj - Possible jQuery object; could be anything.
+ * @param {*} possibleClass - Possible string consisting of a valid CSS class; could, in fact, be
+ *     anything.
+ */
+$.isCssClass = function ( possibleClass ) {
+	var cssClassNeedle = /^-?[_a-zA-Z]+[_a-zA-Z0-9-]*$/;
+	var isClass;
+	
+	isClass = typeof possibleClass === 'string' && cssClassNeedle.test( possibleClass );
+
+	return isClass;
+}
+
+////////
+// §1.2: jQuery.isJQueryObj
+
+/**
+ * Checking function to verify that the passed argument is a valid jQuery object.
+ *
+ * @param {*} $obj - Possible jQuery object; could, in fact, be anything.
  */
 $.isJQueryObj = function ( $obj ) {
 	return ( $obj && ( $obj instanceof $ || $obj.constructor.prototype.jquery ) );
 }
 
-// --- §1.2: jQuery.logError
+////////
+// §1.3: jQuery.logError
+
 /**
  * Log an error using the browser console in JSON notation.
  * 
@@ -94,11 +139,11 @@ $.logError = function ( fileName, fnctnName, fnctnDesc, errorMsg ) {
 		
 		// Construct a new error message
 		if ( incorrectTypings == 1 ) {
-			newErrorMsg = "Unfortunately, a call to jQuery.error was made with an incorrectly\
- typed argument.\n"
+			newErrorMsg = "Unfortunately, a call to jQuery.error was made with an incorrectly typed\
+ argument.\n"
 		} else {
-			newErrorMsg = "Unfortunately, a call to jQuery.error was made with incorrectly typed\
- arguments.\n"
+			newErrorMsg = "Unfortunately, a call to jQuery.error was made with incorrectly typed ar\
+guments.\n"
 		}
 		newErrorMsg += "Here are the arguments that were passed to jQuery.logError:\n";
 		newErrorMsg += "\t\tfileName = " + fileName + "\n";
@@ -124,8 +169,361 @@ $.logError = function ( fileName, fnctnName, fnctnDesc, errorMsg ) {
 	}
 }
 
+} )( jQuery, 'jQuery.oue-custom.js' );
+
 ////////////////////////////////////////////////////////////////////////////////////////////////////
-// §2: AFTER DOM IS READY excution section
+// §2: OUE WEBSITE INITIALIZATION MODULES
+
+////////
+// §2.1: OueDropDownToggle class
+
+/**
+ * Module for initializing drop down toggles on OUE websites.
+ *
+ * @class
+ */
+var OueDropDownToggles = ( function( $, thisFileName ) {
+	'use strict';
+
+	/**
+	 * Constructor for OueDropDownToggles.
+	 *
+	 * @param {object} sels - Collection of selectors to drop down toggles and their components.
+	 * @param {string} sels.toggles - Selector for isolating drop down toggle elements.
+	 * @param {string} sels.containers - Selector for isolating containers of drop down toggle
+	 *     elements.
+	 * @param {string} sels.targets - Selector for isolating the expandable targets of drop down
+	 *     toggle elements.
+	 * @param {string} activatingClass - CSS class that, when applied to a drop down toggle element,
+	 *     causes it to enter an activated state.
+	 */
+	function OueDropDownToggles( sels, activatingClass ) {
+		this.sels = sels;
+		this.activatingClass = activatingClass;
+	}
+
+	/**
+	 * Check the state of the OueDropDownToggles object's paremeters to ensure it was appropriately
+	 * constructed.
+	 *
+	 * @return {boolean} A boolean flag indicating whether the object is valid based on correctly
+	 *     typed and appropriately set arguments.
+	 */
+	OueDropDownToggles.prototype.isValid = function () {
+		var stillValid;
+		var props;
+
+		// Check the integrity of the sels member.
+		stillValid = typeof this.sels === 'object';
+		if ( stillValid ) {
+			props = Object.getOwnPropertyNames( this.sels );
+			stillValid = props.length === 3 && props.find ( function( elem ) {
+				return elem === 'toggles';
+			} ) && props.find ( function( elem ) {
+				return elem === 'containers';
+			} ) && props.find ( function( elem ) {
+				return elem === 'targets';
+			} );
+		}
+
+		// Check the integrity of the activatingClass member.
+		if ( stillValid ) {
+			stillValid = typeof this.activatingClass === 'string' &&
+				$.isCssClass( this. activatingClass);
+		}
+
+		return stillValid;
+	}
+
+	/**
+	 * Initialize drop down toggles to respond to user interaction.
+	 */
+	OueDropDownToggles.prototype.initialize = function () {
+		var $containers;
+		var $targets;
+		var $toggles;
+		var funcName = 'OueDropDownToggles.prototype.initialize';
+		var funcDesc = 'Initialize drop down toggles to respond to user interaction.'
+
+		if ( this.isValid() ) {
+			$containers = $( this.sels.containers );
+			$toggles = $containers.find( this.sels.toggles );
+			$targets = $containers.find( this.sels.targets );
+			setTabIndices( $toggles );
+			preventAnchorHighlighting( $toggles );
+			effectToggleStatePermanence( $toggles, this.activatingClass );
+			bindClickHandlers( $containers, this.sels.toggles, this.activatingClass );
+			bindKeydownHandlers( $containers, this.sels.toggles, this.activatingClass );
+			bindChildFocusHandlers( $targets, this.sels.targets, this.sels.toggles,
+				this.activatingClass );
+		} else {
+			$.logError( thisFileName, funcName, funcDesc, 'I was not constructed with valid argumen\
+ts. Here\'s what I was passed:\nthis.sels.toString() = ' +  this.sels.toString() + '\nthis.activati\
+ngClass.toString() = ' + this.activatingClass.toString() );
+		}
+	}
+
+	/**
+	 * Bind a handler to ensure that a drop down toggle has been activated if one of its child
+	 * elements receives focus.
+	 *
+	 * @param {jquery} $containers - Collection of the containers which may contain drop down
+	 *     toggles.
+	 * @param {string} selToggles - Selector string for isolating drop down toggle elements within
+	 *     the provided collection of containers.
+	 * @param {string} activatingClass - CSS class that, when applied to a drop down toggle element,
+	 *     causes it to enter an activated state.
+	 */
+	function bindChildFocusHandlers( $targets, selTargets, selToggles, activatingClass ) {
+		$targets.on( 'focusin', '*', function () {
+			var $parentTargets;
+			var $this;
+
+			$this = $( this );
+			$parentTargets = $this.parents( selTargets );
+			$parentTargets.each( function() {
+				var $thisTarget = $( this );
+				var $toggle = $thisTarget.prev( selToggles );
+
+				$toggle.addClass( activatingClass );
+				setUpToggleStatePermanence( $toggle, activatingClass );
+			} );
+		} );
+	}
+
+	/**
+	 * Bind a click handler to drop down toggles that enables the user to interact with them using
+	 * mouse input.
+	 *
+	 * @param {jquery} $containers - Collection of the containers which may contain drop down
+	 *     toggles.
+	 * @param {string} selToggles - Selector string for isolating drop down toggle elements within
+	 *     the provided collection of containers.
+	 * @param {string} activatingClass - CSS class that, when applied to a drop down toggle element,
+	 *     causes it to enter an activated state.
+	 */
+	function bindClickHandlers( $containers, selToggles, activatingClass ) {
+		var $this;
+
+		$containers.on( 'click', selToggles, function () {
+			$this = $( this );
+			$this.blur();
+			$this.toggleClass( activatingClass );
+			setUpToggleStatePermanence( $this, activatingClass );
+		} );
+	}
+
+	/**
+	 * Bind a keydown handler to drop down toggles that enables the user to interact with them using
+	 * keyboard input.
+	 *
+	 * @param {jquery} $containers - Collection of the containers which may contain drop down
+	 *     toggles.
+	 * @param {string} selToggles - Selector string for isolating drop down toggle elements within
+	 *     the provided collection of containers.
+	 * @param {string} activatingClass - CSS class that, when applied to a drop down toggle element,
+	 *     causes it to enter an activated state.
+	 */
+	function bindKeydownHandlers( $containers, selToggles, activatingClass ) {
+		$containers.on( 'keydown', selToggles, function ( e ) {
+			var $this;
+			var reActivatingKeys = /Enter| /g;
+
+			if ( reActivatingKeys.test( e.key ) ) {
+				e.preventDefault();
+				$this = $ ( this );
+				$this.toggleClass( activatingClass );
+				setUpToggleStatePermanence( $this, activatingClass );
+			}
+		} );
+	}
+
+	/**
+	 * During page load, set the expansion state of drop down toggle elements based on previous user
+	 * interactions during the session.
+	 *
+	 * @param {jquery} $toggles - Collection of the drop down toggle elements within the page.
+	 * @param {string} activatingClass - CSS class that, when applied to a drop down toggle element,
+	 *     causes it to enter an activated state.
+	 */
+	function effectToggleStatePermanence( $toggles, activatingClass ) {
+		var $this;
+		var state;
+		var thisFuncName = "effectDropDownTogglePermanence";
+		var thisFuncDesc = "Upon page load, sets the expansion state of a drop down toggle element \
+based on previous user interactions during the session.";
+
+		$toggles.each( function() {
+			$this = $( this );
+			if ( $this[0].id ) {
+				try {
+					state = sessionStorage.getItem( $this[0].id );
+					if ( state == "expanded" ) {
+						$this.toggleClass( activatingClass );
+					}
+				} catch( e ) {
+					$.logError( thisFileName, thisFuncName, thisFuncDesc, e.message );
+				}
+			} else {
+				$.logError( thisFileName, thisFuncName, thisFuncDesc,
+					"No ID was set for this drop down toggle element; thus, expansion state permane\
+nce cannot be effected." );
+			}
+		} );
+	}
+
+	/**
+	 * Apply a CSS class that keeps anchor highlighting styles from being applied to drop down
+	 * toggles.
+	 *
+	 * @param {jquery} $toggles - Collection of the drop down toggle elements within the page.
+	 */
+	function preventAnchorHighlighting( $toggles ) {
+		$toggles.addClass( 'no-anchor-highlighting' );
+	}
+
+	/**
+	 * Ensure that drop down toggles are properly included in the web page's tab order.
+	 *
+	 * @param {jquery} $toggles - Collection of the drop down toggle elements within the page.
+	 */
+	function setTabIndices( $toggles ) {
+		$toggles.attr( 'tabindex', 0 );
+	}
+
+	/**
+	 * Cause expansion state of drop down toggles to be remembered during the session.
+	 *
+	 * @param {jquery} $toggles - Collection of the drop down toggle elements within the page.
+	 * @param {string} activatingClass - CSS class that, when applied to a drop down toggle element,
+	 *     causes it to enter an activated state.
+	 */
+	function setUpToggleStatePermanence( $toggle, activatingClass ) {
+		var state;
+		var thisFuncName = 'setUpToggleStatePermanence';
+		var thisFuncDesc = 'Records the expansion state of a drop down toggle element in local stor\
+age to later effect permanence.';
+
+		if ( $toggle[0].id ) {
+			try {
+				state = $toggle.hasClass( activatingClass ) ? 'expanded' : 'collapsed';
+				sessionStorage.setItem( $toggle[0].id, state );
+			} catch( e ) {
+				$.logError( thisFileName, thisFuncName, thisFuncDesc, e.message );
+			}
+		} else {
+			$.logError( thisFileName, thisFuncName, thisFuncDesc, 'No ID was set for this drop down\
+ toggle element; thus, expansion state permanence cannot be effected.' );
+		}
+	}
+
+	return OueDropDownToggles;
+} )( jQuery, 'jQuery.oue-custom.js' );
+
+////////
+// §2.2: OueEventCalendarFixer class
+
+/**
+ * Module for fixing event calendar pages on OUE websites.
+ *
+ * @class
+ */
+var OueEventCalendarFixer = ( function( $, thisFileName ) {
+	'use strict';
+
+	////////
+	// §2.2.1: Constructor
+
+	/**
+	 * Constructor for OueEventCalendarFixer.
+	 *
+	 * @param {object} sels - Collection of selectors to event calendar pages and their elements.
+	 * @param {string} sels.singleEventPage - Selector for isolating a tribe events single event
+	 *     viewing page.
+	 * @param {string} sels.sepLocationText - Selector for isolating the text describing the
+	 *     location of an event on a single event page.
+	 * @param {string} sels.sepEventSchedule - Selector for isolating the schedule for an event on a
+	 *     SEP single event page.
+	 */
+	function OueEventCalendarFixer( sels ) {
+		this.sels = sels;
+	}
+
+	////////
+	// §2.2.2: Public members
+
+	/**
+	 * Check the state of the OueEventCalendarFixer object's paremeters to ensure it was
+	 * appropriately constructed.
+	 *
+	 * @return {boolean} A boolean flag indicating whether the object is valid based on correctly
+	 *     typed and appropriately set arguments.
+	 */
+	OueEventCalendarFixer.prototype.fixSingleEventPage = function () {
+		var $elemWithLocation;
+		var $page;
+
+		if ( this.isValid() ) {
+			$page = $( this.sels.singleEventPage );
+			if ( $page.length === 1 ) {
+				copyLocationIntoEventTitle( $page, this.sels.sepLocationText,
+					this.sels.sepEventSchedule );
+			}
+		}
+	}
+
+	/**
+	 * Check the state of the OueEventCalendarFixer object's paremeters to ensure it was
+	 * appropriately constructed.
+	 *
+	 * @return {boolean} A boolean flag indicating whether the object is valid based on correctly
+	 *     typed and appropriately set arguments.
+	 */
+	OueEventCalendarFixer.prototype.isValid = function () {
+		var stillValid;
+		var props;
+
+		// Check the integrity of the sels member.
+		stillValid = typeof this.sels === 'object';
+		if ( stillValid ) {
+			props = Object.getOwnPropertyNames( this.sels );
+			stillValid = props.length === 3 && props.find ( function( elem ) {
+				return elem === 'singleEventPage';
+			} ) && props.find ( function( elem ) {
+				return elem === 'sepLocationText';
+			} ) && props.find ( function( elem ) {
+				return elem === 'sepEventSchedule';
+			} );
+		}
+
+		return stillValid;
+	}
+
+	////////
+	// §2.2.3: Lexically scoped supporting functions
+
+	function copyLocationIntoEventTitle( $page, selLocationText, selSchedule ) {
+		var $location;
+		var $schedule;
+		var locationText;
+		var newHtml;
+
+		$location = $page.find( selLocationText );
+		locationText = $location.text();
+		$schedule = $page.find( selSchedule );
+		newHtml = '<span class="tribe-event-location"> / ' + locationText + '</span>';
+		$schedule.append( newHtml );
+	}
+
+	return OueEventCalendarFixer;
+} )( jQuery, 'jQuery.oue-custom.js' );
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+// §3: AFTER DOM IS READY excution section
+
+( function( $, thisFileName ) {
+
+'use strict';
 
 $( function () {
 	var argsList = new Object(); // List of arguments that will be passed to functions
@@ -138,6 +536,12 @@ $( function () {
 	};
 	args = argsList.fixDogears;
 	fixDogears( args.slctrSiteNav, args.slctrDogeared, args.removedClasses );
+
+	fixEventCalendars( {
+		singleEventPage: 'body.single-tribe_events',
+		sepLocationText: '.tribe-events-meta-group-venue .tribe-venue a',
+		sepEventSchedule: '.tribe-events-schedule h2'
+	} );
 
 	argsList.addBlankTargetAttributes = {
 		slctrSpine: "#spine",
@@ -197,14 +601,14 @@ $( function () {
 		args.animAddDrtn );
 
 	argsList.initDropDownToggles = {
-		slctrToggle: ".drop-down-toggle",
-		slctrWhatsToggled: ".toggled-panel",
+		selToggles: ".drop-down-toggle",
+		selContainers: ".column",
+		selTargets: ".toggled-panel",
 		activatingClass: "activated",
-		animDuration: 500
 	};
 	args = argsList.initDropDownToggles;
-	initDropDownToggles( args.slctrToggle, args.slctrWhatsToggled, args.activatingClass, 
-		args.animDuration );
+	initDropDownToggles( args.selToggles, args.selContainers, args.selTargets,
+		args.activatingClass );
 
 	argsList.initReadMoreToggles = {
 		slctrToggleIn: ".read-more-toggle-in-ctrl",
@@ -282,7 +686,7 @@ $( function () {
 } );
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
-// §3: AFTER WINDOW LOADED event bindings
+// §4: AFTER WINDOW LOADED event bindings
 
 $( window ).on( "load", function () {
 	var argsList = new Object();
@@ -328,7 +732,7 @@ $( window ).on( "load", function () {
 } );
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
-// §4: WINDOW RESIZE event bindings
+// §5: WINDOW RESIZE event bindings
 
 $( window ).resize( function () {
 	resizeLrgFrmtSideRight( ".side-right.large-format-friendly", "div.column.one",
@@ -336,9 +740,11 @@ $( window ).resize( function () {
 } );
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
-// §5: FUNCTION DECLARATIONS
+// §6: FUNCTION DECLARATIONS
 
-// --- §5.1: addA11yTabPressListener
+////////
+// §6.1: addA11yTabPressListener
+
 /**
  * Add an event listener to handle for keyboard navigation implied by tab presses. 
  *
@@ -350,7 +756,9 @@ function addA11yTabPressListener( listenerCallback ) {
 	window.addEventListener( "keydown", listenerCallback );
 }
 
-// --- §5.2: addBlankTargetAttributes
+////////
+// §6.2: addBlankTargetAttributes
+
 /**
  * Adds missing blank target attributes to links within the WSU Spine as needed.
  * 
@@ -400,7 +808,9 @@ passed:\n\ttypeof slctrSpine = " + ( typeof slctrSpine ) + "\n\ttypeof slctrExte
 	}
 }
 
-// --- §5.3: addDefinitionListButtons
+////////
+// §6.3: addDefinitionListButtons
+
 /**
  * Automatically creates and binds events to expand/collapse all buttons designed for improving UX
  * of OUE site definition lists.
@@ -512,6 +922,9 @@ parental definition list within the DOM."
 	} );
 }
 
+////////
+// §6.4: checkForLrgFrmtSingle
+
 function checkForLrgFrmtSingle( slctrSingle, slctrMainHdr, slctrHdrGroup, centeringClass ) {
 	var $lrgFrmtSnglSctns;
 	var $mainHeader;
@@ -526,34 +939,8 @@ function checkForLrgFrmtSingle( slctrSingle, slctrMainHdr, slctrHdrGroup, center
 	}
 }
 
-function effectDropDownTogglePermanence( $toggles, slctrWhatsToggled, activatingClass, 
-		animDuration ) {
-	var thisFuncName = "effectDropDownTogglePermanence";
-	var thisFuncDesc = "Upon page load, sets the expansion state of a drop down toggle element \
-based on previous user interactions during the session.";
-	if ( $.isJQueryObj( $toggles ) ) {
-		$toggles.each( function() {
-			var $this = $( this );
-			if ( $this[0].id ) {
-				try {
-					var state = sessionStorage.getItem( $this[0].id );
-					if ( state == "expanded" ) {
-						$this.toggleClass( activatingClass );
-					}
-				} catch( e ) {
-					$.logError( thisFileName, thisFuncName, thisFuncDesc, e.message );
-				}
-			} else {
-				$.logError( thisFileName, thisFuncName, thisFuncDesc,
-					"No ID was set for this drop down toggle element; thus, expansion state \
-permanence cannot be effected." );
-			}
-		} );
-	} else {
-		$.logError( thisFileName, thisFuncName, thisFuncDesc,
-			"I was not passed a valid jQuery object." );
-	}
-}
+////////
+// §6.5: finalizeLrgFrmtSideRight
 
 function finalizeLrgFrmtSideRight( slctrSideRight, slctrColOne, slctrColTwo, trggrWidth, 
 		animDuration ) {
@@ -571,6 +958,9 @@ function finalizeLrgFrmtSideRight( slctrSideRight, slctrColOne, slctrColTwo, trg
 		} );
 	}
 }
+
+////////
+// §6.6: fixDogears
 
 function fixDogears( slctrSiteNav, slctrDogeared, removedClasses ) {
 	// Fix bug wherein the wrong items in the spine become dogeared
@@ -594,19 +984,37 @@ function fixDogears( slctrSiteNav, slctrDogeared, removedClasses ) {
 	}
 }
 
-function handleMouseClickForA11y( e ) {
-	$( "body" ).removeClass( "user-is-tabbing" )
-	window.removeEventListener( "mousedown", handleMouseClickForA11y )
-	window.addEventListener( "keydown", handleTabPressForA11y )
+////////
+// §6.7: fixEventCalendars
+
+function fixEventCalendars( sels ) {
+	var fixer = new OueEventCalendarFixer( sels );
+
+	fixer.fixSingleEventPage();
 }
+
+////////
+// §6.8: handleMouseClickForA11y
+
+function handleMouseClickForA11y( e ) {
+	$( "body" ).removeClass( "user-is-tabbing" );
+	window.removeEventListener( "mousedown", handleMouseClickForA11y );
+	window.addEventListener( "keydown", handleTabPressForA11y );
+}
+
+////////
+// §6.9: handleTabPressForA11y
 
 function handleTabPressForA11y( e ) {
 	if ( e.keyCode === 9 ) {
-		$( "body" ).addClass( "user-is-tabbing" )
-		window.removeEventListener( "keydown", handleTabPressForA11y )
-		window.addEventListener( "mousedown", handleMouseClickForA11y )
+		$( "body" ).addClass( "user-is-tabbing" );
+		window.removeEventListener( "keydown", handleTabPressForA11y );
+		window.addEventListener( "mousedown", handleMouseClickForA11y );
 	}
 }
+
+////////
+// §6.10: initContentFlippers
 
 function initContentFlippers( slctrCntntFlppr, slctrFlppdFront, slctrFlppdBack, animDuration ) {
 	$( slctrCntntFlppr ).click( function () {
@@ -620,6 +1028,9 @@ function initContentFlippers( slctrCntntFlppr, slctrFlppdFront, slctrFlppdBack, 
 		$this.next( slctrFlppdBack ).fadeToggle( animDuration );
 	} );
 }
+
+////////
+// §6.11: initDefinitionLists
 
 function initDefinitionLists( slctrDefList, slctrLrgFrmtSection, slctrColOne, slctrColTwo,
  dtActivatingClass, ddRevealingClass, animHghtDrtn ) {
@@ -668,27 +1079,31 @@ function initDefinitionLists( slctrDefList, slctrLrgFrmtSection, slctrColOne, sl
 	$( slctrDefList + " dd" ).removeClass( ddRevealingClass );
 }
 
-function initDropDownToggles( slctrToggle, slctrWhatsToggled, activatingClass, animDuration ) {
-	var $toggles =  $( slctrToggle );
-	$toggles.attr( "tabindex", 0 );
-	$toggles.addClass( "no-anchor-highlighting" );
-	effectDropDownTogglePermanence( $toggles, slctrWhatsToggled, activatingClass, animDuration );
-	$toggles.click( function () {
-		var $this = $( this );
-		$this.blur();
-		$this.toggleClass( activatingClass );
-		setupDropDownTogglePermanence( $this, activatingClass );
-	} );
-	$toggles.on( "keydown", function( e ) {
-		var regExMask = /Enter| /g;
-		if ( regExMask.exec( e.key ) != null ) {
-			e.preventDefault();
-			var $this = $( this );
-			$this.toggleClass( activatingClass );
-			setupDropDownTogglePermanence( $this, activatingClass );
-		}
-	} );
+////////
+// §6.12: initDropDownToggles
+
+/**
+ * Initialize drop down toggle elements to respond to user interaction.
+ *
+ * @param {string} selToggles - Selector string for isolating drop down toggle elements.
+ * @param {string} selContainers - Selector string for isolating containers that may contain drop
+ *     down toggle elements.
+ * @param {string} activatingClass - CSS class that, when applied to a drop down toggle element,
+ *     causes it to enter an activated state.
+ */
+function initDropDownToggles( selToggles, selContainers, selTargets, activatingClass ) {
+	var dropDownToggles;
+
+	dropDownToggles =  new OueDropDownToggles( {
+		toggles: selToggles,
+		containers: selContainers,
+		targets: selTargets
+	}, activatingClass );
+	dropDownToggles.initialize();
 }
+
+////////
+// §6.13: initFancyHrH2Motif
 
 function initFancyHrH2Motif( slctrFancyH2, slctrPrevHr, hrClassesAdded, animAddDrtn ) {
 	$( slctrFancyH2 ).each( function () {
@@ -696,11 +1111,17 @@ function initFancyHrH2Motif( slctrFancyH2, slctrPrevHr, hrClassesAdded, animAddD
 	} );
 }
 
+////////
+// §6.14: initFancyHrH3Motif
+
 function initFancyHrH3Motif( slctrFancyH3, slctrPrevHr, hrClassesAdded, animAddDrtn ) {
 	$( slctrFancyH3 ).each( function () {
 		$( this ).prev( slctrPrevHr ).addClass( hrClassesAdded, animAddDrtn );
 	} );
 }
+
+////////
+// §6.15: initHrH2Motif
 
 function initHrH2Motif( slctrStandardH2, slctrPrevHr, h2ClassesAdded, hrClassesAdded,
 		animAddDrtn ) {
@@ -714,12 +1135,19 @@ function initHrH2Motif( slctrStandardH2, slctrPrevHr, h2ClassesAdded, hrClassesA
 	} );
 }
 
+////////
+// §6.16: initHrH3Motif
+
 function initHrH3Motif( slctrStandardH3, slctrPrevHr, hrClassesAdded, animAddDrtn ) {
 	$( slctrStandardH3 ).each( function () {
 		$( this ).prev( slctrPrevHr ).addClass( hrClassesAdded, animAddDrtn );
 	} );
 }
 
+////////
+// §6.17: initQuickTabs
+
+// TODO: Convert to a class-based initialization module
 function initQuickTabs( slctrQtSctn ) {
 	var $qtSctn = $( slctrQtSctn );
 	$qtSctn.each( function () {
@@ -780,6 +1208,9 @@ function initQuickTabs( slctrQtSctn ) {
 	} );
 }
 
+////////
+// §6.18: initReadMoreToggles
+
 function initReadMoreToggles( slctrToggleIn, slctrToggleOut, slctrPanel, animDuration ) {
 	$( slctrToggleIn ).click( function () {
 		var $this = $( this );
@@ -796,6 +1227,9 @@ function initReadMoreToggles( slctrToggleIn, slctrToggleOut, slctrPanel, animDur
 		$this.$next.next( slctrToggleIn ).toggle( animDuration );
 	} );
 }
+
+////////
+// §6.19: initTocFloating
 
 function initTocFloating( slctrToc, slctrBackToToc ) {
 	var thisFuncName = "initTocFloating";
@@ -871,6 +1305,9 @@ contents elements; this function only works with one table of contents.' }" );
 	}
 }
 
+////////
+// §6.20: initTriggeredByHover
+
 function initTriggeredByHover( slctrTrggrdOnHvr, slctrCntntRvld, slctrCntntHddn, animDuration ) {
 	$( slctrTrggrdOnHvr ).mouseenter( function () {
 		var $this = $( this );
@@ -887,6 +1324,9 @@ function initTriggeredByHover( slctrTrggrdOnHvr, slctrCntntRvld, slctrCntntHddn,
 	} );
 }
 
+////////
+// §6.21: initWelcomeMessage
+
 function initWelcomeMessage( slctrWlcmMsg, slctrPostWlcmMsg, msgDelay, fadeOutDuration, 
 		fadeInDuration ) {
 	$( slctrWlcmMsg ).delay( msgDelay ).fadeOut( fadeOutDuration, function () {
@@ -894,42 +1334,25 @@ function initWelcomeMessage( slctrWlcmMsg, slctrPostWlcmMsg, msgDelay, fadeOutDu
 	} );
 }
 
+////////
+// §6.22: resizeLrgFrmtSideRight
+
 function resizeLrgFrmtSideRight( slctrSideRight, slctrColOne, slctrColTwo, trggrWidth,
 		animDuration ) {
 	finalizeLrgFrmtSideRight( slctrSideRight, slctrColOne, slctrColTwo, trggrWidth, animDuration );
 }
 
-function setupDropDownTogglePermanence( $toggle, activatingClass ) {
-	var thisFuncName = "setupDropDownTogglePermanence";
-	var thisFuncDesc = "Records the expansion state of a drop down toggle element in local storage \
-to later effect permanence.";
-	if ( $.isJQueryObj( $toggle ) ) {
-		if ( $toggle[0].id ) {
-			try {
-				var state = $toggle.hasClass( activatingClass ) ? "expanded" : "collapsed";
-				sessionStorage.setItem( $toggle[0].id, state );
-			} catch( e ) {
-				$.logError( thisFileName, thisFuncName, thisFuncDesc, e.message );
-			}
-		} else {
-			$.logError( thisFileName, thisFuncName, thisFuncDesc,
-				"No ID was set for this drop down toggle element; thus, expansion state permanence \
-cannot be effected." );
-		}
-	} else {
-		$.logError( thisFileName, thisFuncName, thisFuncDesc,
-			"I was not passed a valid jQuery object." );
-	}
-}
+////////
+// §6.23: showDefinitionListButtons
 
 /**
- * showDefinitionListButtons
- * DESCRIPTION: Display expand/collapse all buttons, which were initially hidden
- * PARAMETERS:
- *   += slctrDefList: selector string for locating definition list elements within the DOM that contain collapsible definitions
- *   += expandAllClass: CSS class for controlling the layout of expand all buttons
- *   += collapseAllClass: CSS class for controlling the layout of collapse all buttons
- *   += animFadeInDrtn: the animation speed by which definitions fade into view
+ * Display expand/collapse all buttons, which were initially hidden
+ * 
+ * @param {string} slctrDefList - Selector string for locating definition list elements within the
+ *     DOM that contain collapsible definitions.
+ * @param {string} expandAllClass - CSS class for controlling the layout of expand all buttons.
+ * @param {string} collapseAllClass - CSS class for controlling the layout of collapse all buttons.
+ * @param {number} animFadeInDrtn - The animation speed in ms by which definitions fade into view.
  */
 function showDefinitionListButtons( slctrDefList, expandAllClass, collapseAllClass,
 		animFadeInDrtn ) {
@@ -948,7 +1371,7 @@ function showDefinitionListButtons( slctrDefList, expandAllClass, collapseAllCla
 	} );
 }
 	
-} )( jQuery );
+} )( jQuery, 'jQuery.oue-custom.js' );
 
 /*!**************************************************************************************************************************
  * jQuery.oue-animate.js: custom JavaScript code to be used on all WSU Undergraduate Education websites for animating      *
@@ -1219,17 +1642,18 @@ function showDefinitionListButtons( slctrDefList, expandAllClass, collapseAllCla
 		}
 	}
 })(jQuery);
-/*!*
+/*!*************************************************************************************************
  * jQuery.forms.js
  * -------------------------------------------------------------------------------------------------
- * SUMMARY: Enhancements, intended for OUE websites, mediated by jQuery to dynamic behavior of
- * Gravity Forms.
+ * PROJECT SUMMARY: Enhancements mediated by jQuery to dynamic behavior of Gravity Forms and
+ * intended for Washington State University (WSU) websites built in the WSU WordPress platform.
+ * Designed especially for the websites of the WSU Office of Undergraduate Education.
  *
  * AUTHOR: Daniel Rieck [daniel.rieck@wsu.edu] (https://github.com/invokeImmediately)
  *
  * REPOSITORY: https://github.com/invokeImmediately/WSU-UE---JS
  *
- * LICENSE: ISC - Copyright (c) 2018 Daniel C. Rieck.
+ * LICENSE: ISC - Copyright (c) 2019 Daniel C. Rieck.
  *
  *   Permission to use, copy, modify, and/or distribute this software for any purpose with or
  *   without fee is hereby granted, provided that the above copyright notice and this permission
@@ -1241,36 +1665,35 @@ function showDefinitionListButtons( slctrDefList, expandAllClass, collapseAllCla
  *   DAMAGES WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF
  *   CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
  *   PERFORMANCE OF THIS SOFTWARE.
- */
-
+ **************************************************************************************************/
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 // TABLE OF CONTENTS
 // -----------------
 // §1: Gravity Forms enhancement modules........................................................56
 //     §1.1: EmailConfirmations class...........................................................59
-//         §1.1.1: Public properties............................................................84
-//         §1.1.2: Public methods..............................................................100
-//     §1.2: GfCheckboxValidators class........................................................130
-//         §1.2.1: Private properties..........................................................148
-//         §1.2.2: Public properties...........................................................153
-//         §1.2.3: Privileged methods..........................................................158
-//         §1.2.4: Constructor's main execution section........................................174
-//         §1.2.5: Public methods..............................................................180
-//     §1.3: OueGFs class......................................................................308
+//         §1.1.1: Public properties............................................................83
+//         §1.1.2: Public methods...............................................................99
+//     §1.2: GfCheckboxValidators class........................................................131
+//         §1.2.1: Private properties..........................................................149
+//         §1.2.2: Public properties...........................................................154
+//         §1.2.3: Privileged methods..........................................................159
+//         §1.2.4: Constructor's main execution section........................................175
+//         §1.2.5: Public methods..............................................................181
+//     §1.3: OueGFs class......................................................................309
 //         §1.3.1: Public properties...........................................................326
-//         §1.3.2: Public methods..............................................................347
-//         §1.3.3: Lexically scoped supporting functions.......................................373
-//     §1.4: WsuIdInputs class.................................................................390
-//         §1.4.1: Public properties...........................................................410
-//         §1.4.2: Public methods..............................................................425
-//         §1.4.3: Lexically scoped supporting functions.......................................522
-// §2: Application of OUE-wide Gravity Forms enhancements......................................547
-//     §2.1: Document ready bindings...........................................................553
-//     §2.2: Document ready bindings...........................................................561
-//     §2.3: Binding of Handlers to Window Load................................................582
-//     §2.4: Window Load Event Bindings........................................................594
-//     §2.5: Function declarations.............................................................601
+//         §1.3.2: Public methods..............................................................355
+//         §1.3.3: Lexically scoped supporting functions.......................................382
+//     §1.4: WsuIdInputs class.................................................................409
+//         §1.4.1: Public properties...........................................................429
+//         §1.4.2: Public methods..............................................................444
+//         §1.4.3: Lexically scoped supporting functions.......................................541
+// §2: Application of OUE-wide Gravity Forms enhancements......................................566
+//     §2.1: Application of OueGFs module......................................................572
+//     §2.2: Document ready bindings...........................................................580
+//     §2.3: Binding of Handlers to Window Load................................................601
+//     §2.4: Window Load Event Bindings........................................................613
+//     §2.5: Function declarations.............................................................620
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -1288,10 +1711,9 @@ function showDefinitionListButtons( slctrDefList, expandAllClass, collapseAllCla
  *
  * @class
  */
-
 var EmailConfirmations = ( function( $ ) {
 
-	"use strict";
+	'use strict';
 
 	/**
 	 * Constructor for EmailConfirmations.
@@ -1363,7 +1785,7 @@ var EmailConfirmations = ( function( $ ) {
  */
 var GfCheckboxValidators = ( function( $ ) {
 	
-	"use strict";
+	'use strict';
 
 	function GfCheckboxValidators( sels ) {
 
@@ -1535,10 +1957,9 @@ var GfCheckboxValidators = ( function( $ ) {
  *
  * @class
  */
-
 var OueGFs = ( function( $ ) {
 	
-	"use strict";
+	'use strict';
 
 	/**
 	 * Constructor for OueGFs.
@@ -1638,7 +2059,7 @@ var OueGFs = ( function( $ ) {
  */
 var WsuIdInputs = ( function ( $ ) {
 	
-	"use strict";
+	'use strict';
 
 	/**
 	 * Constructor for WsuIdInputs class.
@@ -1789,7 +2210,7 @@ ill automatically be corrected. Please check the result to see if further correc
 // §2: Application of OUE-wide Gravity Forms enhancements
 
 ( function ( $ ) {
-	"use strict";
+	'use strict';
 
 	////////////////////////////////////////////////////////////////////////////////////////////////
 	// §2.1: Application of OueGFs module
@@ -2982,7 +3403,6 @@ function fixEventsCalendarHeader( $body ) {
 	var $subHeaderDefault;
 
 	if ( $.isJQueryObj( $body ) ) {
-		console.log( 'Attempting to fix header.' )
 		$main = $body.find( '#wsuwp-main' );
 		$mainHeader = $main.find( '.main-header' );
 		$subHeaderDefault = $mainHeader.find( '.sub-header-default' );
