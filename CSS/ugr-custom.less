@@ -3,35 +3,35 @@
 *** └──────────────────────────────────────────────────────────────────────────────────────────────┘
 **/
 
-/**   ──────────────────────────────────────────────────────────────────────────────────────────────
-***   TABLE OF CONTENTS:
-***   ───────────────────────────────────────────────────────────────────────────────────────────
-***   §1: Backgrounds..........................................................................51
-***     >>> §1.1: Spine binder.................................................................55
-***     >>> §1.2: Spine jacket.................................................................66
-***     >>> §1.3: Page body....................................................................76
-***     >>> §1.4: Main content section........................................................105
-***     >>> §1.5: Main header.................................................................113
-***     >>> §1.6: Columnar headers............................................................134
-***   §2: Styling at the document section level...............................................158
-***     >>> §2.1: Headings....................................................................162
-***     >>> §2.2: Asides......................................................................173
-***   §3: Styling at the content grouping level...............................................261
-***     >>> §3.1: Lists.......................................................................265
-***   §4: Styling at the embedded content level...............................................280
-***     >>> §4.1: Iframes.....................................................................284
-***   §5: Styling of forms....................................................................310
-***   §6: Optional styling included via Less mixins...........................................381
-***   §7: Component-based styling.............................................................462
-***     >>> §7.1: Page specific components....................................................466
-***     >>> §7.2: Banner slideshows...........................................................614
-***     >>> §7.3: Travel award forms..........................................................640
-***   ──────────────────────────────────────────────────────────────────────────────────────────────
+/**  ───────────────────────────────────────────────────────────────────────────────────────────────
+***  TABLE OF CONTENTS:
+***  ────────────────────────────────────────────────────────────────────────────────────────────
+***  §1: Backgrounds...........................................................................51
+***    >>> §1.1: Spine binder..................................................................55
+***    >>> §1.2: Spine jacket..................................................................66
+***    >>> §1.3: Page body.....................................................................76
+***    >>> §1.4: Main content section.........................................................105
+***    >>> §1.5: Main header..................................................................113
+***    >>> §1.6: Columnar headers.............................................................134
+***  §2: Styling at the document section level................................................158
+***    >>> §2.1: Headings.....................................................................162
+***  §3: Styling at the content grouping level................................................173
+***    >>> §3.1: Lists........................................................................177
+***  §4: Styling at the embedded content level................................................192
+***    >>> §4.1: Iframes......................................................................196
+***  §5: Styling of forms.....................................................................225
+***  §6: Optional styling included via Less mixins............................................296
+***  §7: Component-based styling..............................................................377
+***    >>> §7.1: Page specific components.....................................................381
+***    >>> §7.2: Banner slideshows............................................................530
+***    >>> §7.3: Travel award forms...........................................................556
+***  ───────────────────────────────────────────────────────────────────────────────────────────────
 **/
 
 @grid-behavior: "hybrid";
 @oue-rules-wrapper: ~"";
 
+@import "..\WSU-UE---CSS\variables.less";
 @import "..\WSU-UE---CSS\wp-master-style-sheet.less";
 
 /*! ================================================================================================
@@ -170,94 +170,6 @@ header.main-header {
 }
 
 /**   ----------------------------------------------------------------------------------------------
-***   >>> §2.2: Asides
-**/
-
-.column {
-	aside.article-sidebar {
-		background: #f8f1eb url(/wp-content/uploads/sites/51/2015/04/tileable-concrete-texture_128x128.png) left top repeat;
-		border: 1px solid #6d441f;
-		box-shadow: 1px 1px 2px rgba(109,68,31,0.5);
-		color: #464e54;
-		float: right;
-		font-size: .8rem;
-		margin-left: 1rem;
-		margin-bottom: 1rem;
-		padding: .8rem;
-		width: 33%;
-		
-		p {
-			font-size: inherit;
-		}
-	}
-}
-
-.green-marble-sidebar {
-	background: #e3dfcd url(/wp-content/uploads/sites/51/2015/04/seamless-marble-texture_528x528.png) left top repeat;
-	border: 1px solid #afa370;
-	box-shadow: 3px 3px 3px rgba(57,50,21,0.3333);
-	color: #2a3033;
-	font-size: .9em;
-	margin-right: 10px;
-	padding-left: 1rem;
-	padding-top: 2rem;
-	padding-right: 2rem;
-	padding-bottom: 2em;
-}
-
-.bluish-gray-acrylic-sidebar {
-	background: #edf3f4 url(/wp-content/uploads/sites/51/2015/04/vertically-tileable-gray-acrylic_opacity-0.15.png) left top repeat-y;
-	background-size: 100% auto;
-	border: 1px solid #464e54;
-	box-shadow: 3px 3px 3px rgba(42,48,51,0.3333);
-	color: #2a3033;
-	font-size: .9em;
-	margin-right: 10px;
-	margin-bottom: 10px;
-	padding-left: 1rem;
-	padding-top: 1rem;
-	padding-right: 1rem;
-	padding-bottom: 1rem;
-}
-
-.gray-acrylic-sidebar {
-	background: #fff url(/wp-content/uploads/sites/51/2015/04/vertically-tileable-gray-acrylic_opacity-0.15.png) left top repeat-y;
-	background-size: 100% auto;
-	border: 1px solid #464e54;
-	box-shadow: 3px 3px 3px rgba(42,48,51,0.3333);
-	color: #2a3033;
-	font-size: .9em;
-	margin-right: 10px;
-	margin-bottom: 10px;
-	padding-left: 1rem;
-	padding-top: 1rem;
-	padding-right: 1rem;
-	padding-bottom: 1em;
-}
-
-.bluish-gray-acrylic-sidebar,
-.green-marble-sidebar,
-.gray-acrylic-sidebar {
-	p {
-		font-size: .75rem;
-	}
-    h2 {
-        margin-bottom: 0;
-    }
-	h2 + hr {
-		margin-top: 0;
-		background-color: rgba(70,78,84,0.75);
-	}
-	h3 {
-		font-size: 1.275rem;
-	}
-	h4 {
-		font-size: 1.05rem;
-	}
-}
-
-
-/**   ----------------------------------------------------------------------------------------------
 ***   §3: Styling at the content grouping level
 **/
 
@@ -286,11 +198,12 @@ ul.lsi--none {
 
 div.iframe-container {
 	position: relative;
-	width: 90%;
 	height: 0;
-	padding-bottom: 50.58%;
-	.margin-centered;
+	.mh--auto;
 	overflow: hidden;
+	padding-bottom: 50.58%;
+	width: 90%;
+
 	& > iframe {
 		position: absolute;
 		top: 0;
@@ -298,11 +211,13 @@ div.iframe-container {
 		width: 100%;
 		height: 100%;
 	}
+
 	& + p {
-		width: 85%; 
-		.margin-centered;
-		.spaces-top-qrtr;
 		font-size: 0.9em !important;
+		.mh--auto;
+		.mt--500mx;
+
+		width: 85%;
 	}
 }
 
@@ -473,8 +388,9 @@ body.tribe-theme-spine {
 				@media all {
 					@media (max-width: @column-floating-threshold) {
 						text-align: center;
+
 						&:first-child {
-							.spaces-top-nrml;
+							.mt--1000mx;
 						}
 					}
 				}
