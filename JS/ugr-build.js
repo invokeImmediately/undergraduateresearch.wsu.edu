@@ -613,18 +613,14 @@ $( function () {
 
 	argsList.initDefinitionLists = {
 		slctrDefList: "dl.toggled",
-		slctrLrgFrmtSection: ".large-format-friendly",
-		slctrColOne: ".column.one",
-		slctrColTwo: ".column.two",
 		dtActivatingClass: "activated",
 		ddRevealingClass: "revealed",
 		animSldDrtn: 400,
 		animHghtDrtn: 100
 	};
 	args = argsList.initDefinitionLists;
-	initDefinitionLists( args.slctrDefList, args.slctrLrgFrmtSection, args.slctrColOne, 
-		args.slctrColTwo, args.dtActivatingClass, args.ddRevealingClass, args.animSldDrtn, 
-		args.animHghtDrtn );
+	initDefinitionLists( args.slctrDefList, args.dtActivatingClass, args.ddRevealingClass,
+		args.animSldDrtn, args.animHghtDrtn );
 
 	argsList.addDefinitionListButtons = {
 		slctrDefList: argsList.initDefinitionLists.slctrDefList,
@@ -913,9 +909,7 @@ function initContentFlippers( slctrCntntFlppr, slctrFlppdFront, slctrFlppdBack, 
 // §6.8: initDefinitionLists
 
 // TODO: Add inline documentation in JSDoc3 format.
-// TODO: Remove slctrLrgFrmtSection, slctrColOne, and slctrColTwo and related code.
-function initDefinitionLists( slctrDefList, slctrLrgFrmtSection, slctrColOne, slctrColTwo,
- dtActivatingClass, ddRevealingClass, animHghtDrtn ) {
+function initDefinitionLists( slctrDefList, dtActivatingClass, ddRevealingClass, animHghtDrtn ) {
 	var $listDts = $( slctrDefList + " dt" );
 	$listDts.attr( "tabindex", 0 );
 	$listDts.click( function() {
@@ -932,9 +926,6 @@ function initDefinitionLists( slctrDefList, slctrLrgFrmtSection, slctrColOne, sl
 				maxHeight: 0
 			} );
 		}
-		var $parent = $this.parents( slctrLrgFrmtSection + ">" + slctrColOne );
-		var $prntNxt = $parent.next( slctrColTwo );
-		$prntNxt.delay( 400 ).animate( {height: $parent.css( 'height' )}, animHghtDrtn );
 	} );
 	$listDts.on( "keydown", function( e ) {
 		var regExMask = /Enter| /g; // TODO: Divide and conquer
@@ -953,9 +944,6 @@ function initDefinitionLists( slctrDefList, slctrLrgFrmtSection, slctrColOne, sl
 					maxHeight: 0
 				} );
 			}
-			var $parent = $this.parents( slctrLrgFrmtSection + ">" + slctrColOne );
-			var $prntNxt = $parent.next( slctrColTwo );
-			$prntNxt.delay( 400 ).animate( {height: $parent.css( 'height' )}, animHghtDrtn );
 		}
 	} );
 	$( slctrDefList + " dd" ).removeClass( ddRevealingClass );
@@ -1247,92 +1235,6 @@ function showDefinitionListButtons( slctrDefList, expandAllClass, collapseAllCla
 	
 } )( jQuery, 'jQuery.oue-custom.js' );
 
-/*!**************************************************************************************************************************
- * jQuery.oue-animate.js: custom JavaScript code to be used on all WSU Undergraduate Education websites for animating      *
- * elements.                                                                                                               *
- ***************************************************************************************************************************/
-"use strict";
-
-(function ($) {
-	var thisFileName = "jQuery.oue-custom.js";
-	// TODO: Write a function for setting CSS property anim-filling-mode via JS
-	// TODO: Convert animation functions into objects to better organize code.
-	
-	/*******************************************************************************************************************
-	 * WINDOW LOAD event bindings                                                                                      *
-	 *******************************************************************************************************************/
-    $(window).on("load", function () {
-		var argsList = new Object(); // List of arguments that will be passed to functions
-		var args;
-		
-		// Set up organized list of arguments to be passed to functions called after the window has loaded
-		argsList.doFadeInFromTopAnimations = {
-			slctrAnimatedElems: ".js-fade-in-from-top",
-			dfltSpeed: 1000,
-			fastClass: "fast",
-			fastModifier: 0.5,
-			delayedClass: "delayed"
-		};
-		
-		// Call post window loading functions
-		args = argsList.doFadeInFromTopAnimations
-		doFadeInFromTopAnimations(
-			args.slctrAnimatedElems,
-			args.dfltSpeed,
-			args.fastClass,
-			args.fastModifier,
-			args.delayedClass
-		);
-	});
-	
-	/*******************************************************************************************************************
-	 * POST WINDOW LOADING FUNCTIONS                                                                                   * 
-	 *******************************************************************************************************************/
-	function doFadeInFromTopAnimations(slctrAnimatedElems, dfltSpeed, fastClass, fastModifier, delayedClass) {
-		// TODO: What if JS isn't running? Solution: need a JS Notice.
-		var thisFuncName = "doFadeInFromTopAnimations";
-		var thisFuncDesc = "Upon page load, sets the expansion state of a drop down toggle element based on previous user interactions during the session.";
-		var specialAction = undefined;
-		var storageQueried = false;
-		try {
-			specialAction = sessionStorage.getItem("doFadeInFromTopAnimations");
-			storageQueried = true;
-		} catch(e) {
-			$.logError(thisFileName, thisFuncName, thisFuncDesc, e.message);
-		}
-		var $objs = $(slctrAnimatedElems);
-		$objs.each(function(){
-			var $this = $(this);
-			var speed = dfltSpeed;
-			var delayTime = 0;
-			if ($this.hasClass(fastClass)) {
-				speed *= fastModifier;
-			}
-			if ($this.hasClass(delayedClass)) {
-				delayTime = speed;
-			}
-			if (storageQueried && specialAction == "fade-in-only") {
-				$this.stop().delay(delayTime).animate({
-					opacity: 1
-				}, speed / 2);
-			} else {
-				var height = $this.height();
-				$this.css("top", -height);
-				$this.stop().delay(delayTime).animate({
-					opacity: 1,
-					top: 0
-				}, speed);
-			}
-		});
-		if (storageQueried && !specialAction) {
-			try {
-				sessionStorage.setItem("doFadeInFromTopAnimations", "fade-in-only");
-			} catch(e) {
-				$.logError(thisFileName, thisFuncName, thisFuncDesc, e.message);
-			}
-		}
-	}
-})(jQuery);
 /*! jQuery Cookie Plugin v1.4.1
  * --> https://github.com/carhartl/jquery-cookie
  * Copyright 2013 Klaus Hartl, released under the MIT license
@@ -3112,7 +3014,7 @@ ing jQuery object against its own width.' );
 // Now use the plugin on the WSU Undergraduate education website (i.e. delete or modify the
 // following statement if you are going to utilize this plugin on your own site).
 // TODO: Pass in default maximum column, spine widths
-( function( $, themeMinColumnWidth, themeSpineWidth, resizersClass, dfltBasisSlctr, filename ) {
+( function( $, themeMinColumnWidth, themeSpineWidth, resizersClass, dfltBasisSlctr, fileName ) {
 
 try {
 	var clmnWidth; 
@@ -3130,7 +3032,7 @@ eed.';
 	// Set the default width of the Spine in pixels (passed in based on the theme)
 	dfltSpineWidth = themeSpineWidth;
 
-	$( document ).ready( function () {
+	$( function () {
 		initArticleHeaderText( resizersClass );
 		initTextAutoResizers( '.' + resizersClass );
 	} );
@@ -3138,7 +3040,7 @@ eed.';
 	function initArticleHeaderText( resizersClass ) {
 		//TODO: Refactor to prefer relying on functionality mediated by auto-fits-text class
 		var $columns = $( '.column' );
-		var $this = $( this );
+		var $this;
 
 		$columns.find( '.article-header .header-content h1' ).each( function () {
 			$this = $( this );
@@ -3171,9 +3073,11 @@ eed.';
 		var $resizers = $( cssClass );
 		
 		this.initTextAutoResizing = function () {
-			$resizers.each( function() {
-				var textAutoResizer = new TextAutoResizingElem( $( this ), spineWidth );
-			} );
+			if ( $.isJQueryObj( $resizers ) && $resizers.length > 0 ) {
+				$resizers.each( function() {
+					var textAutoResizer = new TextAutoResizingElem( $( this ), spineWidth );
+				} );				
+			}
 		}		
 		
 		function TextAutoResizingElem( $jqObj, spineWidth ) {
@@ -3187,7 +3091,7 @@ eed.';
 					var cssData;
 					var fontSz;
 					var minFontSz;
-					var minFontSzNeedle = /^[0-9]+(?:pt[0-9])?$/;
+					var minFontSzNeedle = new RegExp( '^[0-9]+|[0-9]+pt[0-9]$' );
 					var resizeOptions;
 					var scalingAmt;
 
@@ -3202,21 +3106,17 @@ eed.';
 					if ( $this.hasClass( 'resize-against-self' ) ) {
 						resizeOptions.againstSelf = true;
 					}
-					try {
-						cssData = new CssData( $this );
-						minFontSz = cssData.getData('min-fs');
-						if ( minFontSzNeedle.test( minFontSz ) ) {
-							resizeOptions.minFontSize = minFontSz.replace( 'pt', '.' );
-						}
-						basisSlctr = cssData.getData('resize-against')
-						if ( basisSlctr !== '' ) {
-							basisSlctr = '.' + basisSlctr;
-							resizeOptions.basisSelector = basisSlctr;
-						} else {
-							basisSlctr = dfltBasisSlctr;
-						}
-					} catch( e ) {
-						console.log( e );
+					cssData = new CssData( $this );
+					minFontSz = cssData.getData('min-fs');
+					if ( typeof minFontSz === 'string' && minFontSz !== '' &&
+							minFontSzNeedle.exec( minFontSz ) ) {
+					 	resizeOptions.minFontSize = minFontSz.replace( 'pt', '.' );
+					}
+					basisSlctr = cssData.getData('resize-against')
+					if ( typeof basisSlctr === 'string' && basisSlctr !== '' ) {
+						basisSlctr = '.' + basisSlctr;
+						resizeOptions.basisSelector = basisSlctr;
+					} else {
 						basisSlctr = dfltBasisSlctr;
 					}
 					scalingAmt = calculateScalingAmount( fontSz, basisSlctr );
@@ -3318,98 +3218,11 @@ eed.';
 		}
 	}
 } catch ( errMsg ) {
-	console.log( 'Error in ' + fileName + ':' + errMsg );
+	console.log( 'Error in ' + fileName + ':' );
+	console.log( errMsg );
 }
 
 } )( jQuery, 990, 198, 'auto-fits-text', '.column', 'jQuery.textResize.js' );
-
-/*!
- * jQuery.masonry-custom.js
- * ------------------------
- * DESCRIPTION:
- *     Application of imagesLoaded and Masonry libraries, both written by David DeSandro, to WSU OUE
- *     websites. (Please see [https://github.com/desandro/imagesloaded] and [https://github.com/desa
- *     ndro/masonry] for David's repositories.) 
- *
- * AUTHOR: Daniel Rieck [daniel.rieck@wsu.edu] (https://github.com/invokeImmediately)
- */
-( function ($) {
-
-// ---- DOM IS READY: Code executed after the DOM is ready for use. --------------------------------
-$( function () {
-	var $masonryTrgts = $( 'ul.cascaded-layout' );
-	$masonryTrgts.each( function () {
-		var $thisCascade = $( this );
-		var proceedWithLayout = true;
-		var sizerFound = false;
-		var gutterSizerFound = false;
-		var $cascadeChilren = $thisCascade.children();
-		$cascadeChilren.each( function () { // Look for the correct layout
-			var $thisChild = $( this );
-			if ( !$thisChild.hasClass( 'cascaded-item' ) ) {
-				if ( !$thisChild.hasClass( 'cascade-sizer' ) ) {
-					if ( !$thisChild.hasClass( 'gutter-sizer' ) ) {
-						if ( !$thisChild.hasClass( 'cascade-other' ) ) {
-							return proceedWithLayout = false;
-						}
-					} else {
-						gutterSizerFound = true;
-					}
-				} else {
-					sizerFound = true;
-				}
-			}
-		} );
-		if ( proceedWithLayout && ( !sizerFound || !gutterSizerFound ) ) proceedWithLayout = false;
-		if ( proceedWithLayout ) {
-			$thisCascade.masonry( {
-				columnWidth: '.cascade-sizer',
-				gutter: '.gutter-sizer',
-				itemSelector: '.cascaded-item',
-				percentPosition: true
-			} );
-			$thisCascade.attr( 'data-masonry-active', '1' );
-			$thisCascade.imagesLoaded().progress( function() {
-				$thisCascade.masonry( 'layout' );
-			} );
-		}
-	} );
-});
-
-// ---- WINDOW LOADED: Code executed after the browser window has fully loaded ---------------------
-$( window ).on( 'load', function () {
-	var $masonryTrgts = $( 'ul.cascaded-layout' );
-	$masonryTrgts.each( function () {
-		var $thisCascade = $( this );
-		var proceedWithLayout = true;
-		var sizerFound = false;
-		var gutterSizerFound = false;
-		var $cascadeChilren = $thisCascade.children();
-		$cascadeChilren.each( function () {
-
-			// Verify that the layout is correct
-			var $thisChild = $( this );
-			if ( !$thisChild.hasClass( 'cascaded-item' ) ) {
-				if ( !$thisChild.hasClass( 'cascade-sizer' ) ) {
-					if ( !$thisChild.hasClass( 'gutter-sizer' ) ) {
-						if ( !$thisChild.hasClass( 'cascade-other' ) ) {
-							return proceedWithLayout = false;
-						}
-					} else {
-						gutterSizerFound = true;
-					}
-				} else {
-					sizerFound = true;
-				}
-			}
-		});
-		if ( proceedWithLayout && ( !sizerFound || !gutterSizerFound ) ) proceedWithLayout = false;
-		if ( proceedWithLayout ) {
-			$thisCascade.masonry( 'layout' );
-		}
-	} );
-} );
-} )( jQuery );
 
 /*!
  * Site-specific JS for the WSU Office of Undergraduate Research website.
