@@ -2166,6 +2166,7 @@ ol {
 }
 .column .builder-banner-slide > a {
   border: none;
+  box-shadow: none;
   height: 100%;
 }
 .column .builder-banner-slide > a:focus {
@@ -2823,7 +2824,7 @@ span.callout.top:after {
   color: #000;
 }
 .interactively-flipped-panels .container .panel-wrapper .panel.yellow div.rear {
-  background-color: #77580c;
+  background-color: #715409;
   color: #fff;
 }
 .interactively-flipped-panels .container .panel-wrapper .panel.yellow div.front {
@@ -3402,6 +3403,8 @@ a.vpue-tooltip span b {
   border-bottom-color: #981e32;
   border-bottom-left-radius: 0.15em;
   border-bottom-right-radius: 0.15em;
+  border-left: 0;
+  border-right: 0;
   box-shadow: inset 0 -1px 0 rgba(152, 30, 50, 0.25);
   text-decoration: none;
   transition: all .25s ease;
@@ -3422,23 +3425,6 @@ a.vpue-tooltip span b {
     box-shadow: none;
     text-decoration: underline;
   }
-}
-body.user-is-tabbing a:focus {
-  border: 2px dotted white;
-  outline: 2px dotted blue;
-  z-index: 99352 !important;
-}
-body.user-is-tabbing .column a:focus {
-  position: relative;
-}
-body.user-is-tabbing .column a:focus::after {
-  border: 9px solid transparent;
-  content: "";
-  left: 0;
-  position: absolute;
-  top: 0;
-  transform: translateX(-50%) translateX(-4px);
-  border-left-color: blue;
 }
 .column a.non-text-link,
 .column .article-thumbnail a {
@@ -7479,7 +7465,7 @@ body.tribe-theme-spine:not(.tribe_venue-template-default) .main-header .header-g
 }
 #tribe-events .workshop-note {
   font-size: 0.9em;
-  color: #9e7510;
+  color: #715409;
 }
 .tribe-events-calendar td.tribe-events-past div[id*=tribe-events-daynum-] > a,
 .tribe-events-calendar td.tribe-events-present div[id*=tribe-events-daynum-] > a,
