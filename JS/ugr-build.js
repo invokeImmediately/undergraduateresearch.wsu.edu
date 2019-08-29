@@ -24,42 +24,39 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 // TABLE OF CONTENTS
 // -----------------
-//   §1: Addition of functions to jQuery......................................................70
-//     §1.1: jQuery.isCssClass................................................................73
-//     §1.2: jQuery.isJQueryObj...............................................................91
-//     §1.3: jQuery.logError.................................................................103
-//   §2: OUE website initilization modules...................................................174
-//     §2.1: OueDropDownToggle class.........................................................177
-//     §2.2: OueEventCalendarFixer class.....................................................423
-//       §2.2.1: Constructor.................................................................434
-//       §2.2.2: Public members..............................................................452
-//       §2.2.3: Lexically scoped supporting functions.......................................502
-//     §2.3: OuePrintThisPage class..........................................................523
-//       §2.3.1: Constructor.................................................................534
-//       §2.3.2: Public members..............................................................550
-//       §2.3.3: Lexically scoped supporting functions.......................................596
-//   §3: DOM-Ready execution sequence........................................................610
-//   §4: Window-loaded event binding.........................................................745
-//   §5: Window-resized event binding........................................................780
-//   §6: Function declarations...............................................................787
-//     §6.1: addA11yTabPressListener.........................................................790
-//     §6.2: addDefinitionListButtons........................................................804
-//     §6.3: fixDogears......................................................................918
-//     §6.4: fixEventCalendars...............................................................943
-//     §6.5: handleMouseClickForA11y.........................................................952
-//     §6.6: handleTabPressForA11y...........................................................961
-//     §6.7: initContentFlippers.............................................................972
-//     §6.8: initDefinitionLists.............................................................988
-//     §6.9: initDropDownToggles............................................................1032
-//     §6.10: initFancyHrH2Motif............................................................1055
-//     §6.11: initFancyHrH3Motif............................................................1064
-//     §6.12: initPrintThisPageLinks........................................................1073
-//     §6.13: initQuickTabs.................................................................1082
-//     §6.14: initReadMoreToggles...........................................................1146
-//     §6.15: initTocFloating...............................................................1166
-//     §6.16: initTriggeredByHover..........................................................1243
-//     §6.17: initWelcomeMessage............................................................1262
-//     §6.18: showDefinitionListButtons.....................................................1272
+//   §1: Addition of functions to jQuery......................................................67
+//     §1.1: jQuery.isCssClass................................................................70
+//     §1.2: jQuery.isJQueryObj...............................................................88
+//     §1.3: jQuery.logError.................................................................100
+//   §2: OUE website initilization modules...................................................171
+//     §2.1: OueDropDownToggle class.........................................................174
+//     §2.2: OueEventCalendarFixer class.....................................................420
+//       §2.2.1: Constructor.................................................................431
+//       §2.2.2: Public members..............................................................449
+//       §2.2.3: Lexically scoped supporting functions.......................................499
+//     §2.3: OuePrintThisPage class..........................................................520
+//       §2.3.1: Constructor.................................................................531
+//       §2.3.2: Public members..............................................................547
+//       §2.3.3: Lexically scoped supporting functions.......................................593
+//   §3: DOM-Ready execution sequence........................................................607
+//   §4: Window-loaded event binding.........................................................733
+//   §5: Window-resized event binding........................................................771
+//   §6: Function declarations...............................................................778
+//     §6.1: addDefinitionListButtons........................................................781
+//     §6.2: fixDogears......................................................................895
+//     §6.3: fixEventCalendars...............................................................920
+//     §6.4: initContentFlippers.............................................................929
+//     §6.5: initDefinitionLists.............................................................945
+//     §6.6: initDropDownToggles.............................................................989
+//     §6.7: initFancyHrH2Motif.............................................................1012
+//     §6.8: initFancyHrH3Motif.............................................................1021
+//     §6.9: initPrintThisPageLinks.........................................................1030
+//     §6.10: initQuickTabs.................................................................1039
+//     §6.11: initReadMoreToggles...........................................................1103
+//     §6.12: initTocFloating...............................................................1123
+//     §6.13: initTriggeredByHover..........................................................1200
+//     §6.14: initWelcomeMessage............................................................1219
+//     §6.15: showDefinitionListButtons.....................................................1229
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
 ( function ( $, thisFileName ) {
@@ -559,7 +556,7 @@ var OuePrintThisPage = ( function( $, thisFileName ) {
 	OuePrintThisPage.prototype.initOnThisPageLinks = function () {
 		var $containers;
 
-		if ( this.isValid() && pageHasLinks( this.sels.identifier ) ) {
+		if ( this.isValid() ) {
 			$containers = $( this.sels.container );
 			$containers.on( 'click', this.sels.identifier, function() {
 				window.print();
@@ -706,15 +703,6 @@ $( function () {
 		args.btnDeactivatingClass, args.dtActivatingClass, args.ddRevealingClass, 
 		args.animSldDrtn );
 
-	argsList.initPrintThisPageLinks = {
-		sels: {
-			container: '.column',
-			identifier: '.link__print-this-page'
-		}
-	};
-	args = argsList.initPrintThisPageLinks;
-	initPrintThisPageLinks( args.sels );
-
 	argsList.initQuickTabs = {
 		slctrQtSctn: "section.row.single.quick-tabs"
 	};
@@ -758,6 +746,15 @@ $( window ).on( "load", function () {
 	showDefinitionListButtons( args.slctrDefList, args.expandAllClass, args.collapseAllClass,
 		args.animFadeInDrtn );
 
+	argsList.initPrintThisPageLinks = {
+		sels: {
+			container: '.column',
+			identifier: '.link__print-this-page'
+		}
+	};
+	args = argsList.initPrintThisPageLinks;
+	initPrintThisPageLinks( args.sels );
+
 	argsList.initWelcomeMessage = {
 		slctrWlcmMsg: "#welcome-message",
 		slctrPostWlcmMsg: "#post-welcome-message",
@@ -768,12 +765,6 @@ $( window ).on( "load", function () {
 	args = argsList.initWelcomeMessage;
 	initWelcomeMessage( args.slctrWlcmMsg, args.slctrPostWlcmMsg, args.msgDelay, 
 		args.fadeOutDuration, args.fadeInDuration );
-
-	argsList.addA11yTabPressListener = {
-		listenerCallback: handleTabPressForA11y
-	}
-	args = argsList.addA11yTabPressListener;
-	addA11yTabPressListener( args.listenerCallback );
 } );
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -787,21 +778,7 @@ $( window ).resize( function () {
 // §6: Function declarations
 
 ////////
-// §6.1: addA11yTabPressListener
-
-/**
- * Add an event listener to handle for keyboard navigation implied by tab presses. 
- *
- * Intended to support accessibility design.
- *
- * @param {function} listenerCallback - Function callback triggered on keydown event.
- */
-function addA11yTabPressListener( listenerCallback ) {
-	window.addEventListener( "keydown", listenerCallback );
-}
-
-////////
-// §6.2: addDefinitionListButtons
+// §6.1: addDefinitionListButtons
 
 /**
  * Automatically creates and binds events to expand/collapse all buttons designed for improving UX
@@ -915,7 +892,7 @@ parental definition list within the DOM."
 }
 
 ////////
-// §6.3: fixDogears
+// §6.2: fixDogears
 
 function fixDogears( slctrSiteNav, slctrDogeared, removedClasses ) {
 	// Fix bug wherein the wrong items in the spine become dogeared
@@ -940,7 +917,7 @@ function fixDogears( slctrSiteNav, slctrDogeared, removedClasses ) {
 }
 
 ////////
-// §6.4: fixEventCalendars
+// §6.3: fixEventCalendars
 
 function fixEventCalendars( sels ) {
 	var fixer = new OueEventCalendarFixer( sels );
@@ -949,27 +926,7 @@ function fixEventCalendars( sels ) {
 }
 
 ////////
-// §6.5: handleMouseClickForA11y
-
-function handleMouseClickForA11y( e ) {
-	$( "body" ).removeClass( "user-is-tabbing" );
-	window.removeEventListener( "mousedown", handleMouseClickForA11y );
-	window.addEventListener( "keydown", handleTabPressForA11y );
-}
-
-////////
-// §6.6: handleTabPressForA11y
-
-function handleTabPressForA11y( e ) {
-	if ( e.keyCode === 9 ) {
-		$( "body" ).addClass( "user-is-tabbing" );
-		window.removeEventListener( "keydown", handleTabPressForA11y );
-		window.addEventListener( "mousedown", handleMouseClickForA11y );
-	}
-}
-
-////////
-// §6.7: initContentFlippers
+// §6.4: initContentFlippers
 
 function initContentFlippers( slctrCntntFlppr, slctrFlppdFront, slctrFlppdBack, animDuration ) {
 	$( slctrCntntFlppr ).click( function () {
@@ -985,7 +942,7 @@ function initContentFlippers( slctrCntntFlppr, slctrFlppdFront, slctrFlppdBack, 
 }
 
 ////////
-// §6.8: initDefinitionLists
+// §6.5: initDefinitionLists
 
 // TODO: Add inline documentation in JSDoc3 format.
 function initDefinitionLists( slctrDefList, dtActivatingClass, ddRevealingClass, animHghtDrtn ) {
@@ -1029,7 +986,7 @@ function initDefinitionLists( slctrDefList, dtActivatingClass, ddRevealingClass,
 }
 
 ////////
-// §6.9: initDropDownToggles
+// §6.6: initDropDownToggles
 
 /**
  * Initialize drop down toggle elements to respond to user interaction.
@@ -1052,7 +1009,7 @@ function initDropDownToggles( selToggles, selContainers, selTargets, activatingC
 }
 
 ////////
-// §6.10: initFancyHrH2Motif
+// §6.7: initFancyHrH2Motif
 
 function initFancyHrH2Motif( slctrFancyH2, slctrPrevHr, hrClassesAdded, animAddDrtn ) {
 	$( slctrFancyH2 ).each( function () {
@@ -1061,7 +1018,7 @@ function initFancyHrH2Motif( slctrFancyH2, slctrPrevHr, hrClassesAdded, animAddD
 }
 
 ////////
-// §6.11: initFancyHrH3Motif
+// §6.8: initFancyHrH3Motif
 
 function initFancyHrH3Motif( slctrFancyH3, slctrPrevHr, hrClassesAdded, animAddDrtn ) {
 	$( slctrFancyH3 ).each( function () {
@@ -1070,7 +1027,7 @@ function initFancyHrH3Motif( slctrFancyH3, slctrPrevHr, hrClassesAdded, animAddD
 }
 
 ////////
-// §6.12: initPrintThisPageLinks
+// §6.9: initPrintThisPageLinks
 
 function initPrintThisPageLinks( sels ) {
 	var printThisPageLinks = new OuePrintThisPage( sels );
@@ -1079,7 +1036,7 @@ function initPrintThisPageLinks( sels ) {
 }
 
 ////////
-// §6.13: initQuickTabs
+// §6.10: initQuickTabs
 
 // TODO: Convert to a class-based initialization module
 function initQuickTabs( slctrQtSctn ) {
@@ -1143,7 +1100,7 @@ function initQuickTabs( slctrQtSctn ) {
 }
 
 ////////
-// §6.14: initReadMoreToggles
+// §6.11: initReadMoreToggles
 
 function initReadMoreToggles( slctrToggleIn, slctrToggleOut, slctrPanel, animDuration ) {
 	$( slctrToggleIn ).click( function () {
@@ -1163,7 +1120,7 @@ function initReadMoreToggles( slctrToggleIn, slctrToggleOut, slctrPanel, animDur
 }
 
 ////////
-// §6.15: initTocFloating
+// §6.12: initTocFloating
 
 function initTocFloating( slctrToc, slctrBackToToc ) {
 	var thisFuncName = "initTocFloating";
@@ -1240,7 +1197,7 @@ contents elements; this function only works with one table of contents.' }" );
 }
 
 ////////
-// §6.16: initTriggeredByHover
+// §6.13: initTriggeredByHover
 
 function initTriggeredByHover( slctrTrggrdOnHvr, slctrCntntRvld, slctrCntntHddn, animDuration ) {
 	$( slctrTrggrdOnHvr ).mouseenter( function () {
@@ -1259,7 +1216,7 @@ function initTriggeredByHover( slctrTrggrdOnHvr, slctrCntntRvld, slctrCntntHddn,
 }
 
 ////////
-// §6.17: initWelcomeMessage
+// §6.14: initWelcomeMessage
 
 function initWelcomeMessage( slctrWlcmMsg, slctrPostWlcmMsg, msgDelay, fadeOutDuration, 
 		fadeInDuration ) {
@@ -1269,7 +1226,7 @@ function initWelcomeMessage( slctrWlcmMsg, slctrPostWlcmMsg, msgDelay, fadeOutDu
 }
 
 ////////
-// §6.18: showDefinitionListButtons
+// §6.15: showDefinitionListButtons
 
 /**
  * Display expand/collapse all buttons, which were initially hidden
@@ -1606,20 +1563,20 @@ function showDefinitionListButtons( slctrDefList, expandAllClass, collapseAllCla
 //         §1.2.3: Privileged methods..........................................................159
 //         §1.2.4: Constructor's main execution section........................................175
 //         §1.2.5: Public methods..............................................................181
-//     §1.3: OueGFs class......................................................................309
-//         §1.3.1: Public properties...........................................................326
-//         §1.3.2: Public methods..............................................................355
-//         §1.3.3: Lexically scoped supporting functions.......................................382
-//     §1.4: WsuIdInputs class.................................................................409
-//         §1.4.1: Public properties...........................................................429
-//         §1.4.2: Public methods..............................................................444
-//         §1.4.3: Lexically scoped supporting functions.......................................541
-// §2: Application of OUE-wide Gravity Forms enhancements......................................566
-//     §2.1: Application of OueGFs module......................................................572
-//     §2.2: Document ready bindings...........................................................580
-//     §2.3: Binding of Handlers to Window Load................................................601
-//     §2.4: Window Load Event Bindings........................................................613
-//     §2.5: Function declarations.............................................................620
+//     §1.3: OueGFs class......................................................................376
+//         §1.3.1: Public properties...........................................................393
+//         §1.3.2: Public methods..............................................................422
+//         §1.3.3: Lexically scoped supporting functions.......................................449
+//     §1.4: WsuIdInputs class.................................................................476
+//         §1.4.1: Public properties...........................................................496
+//         §1.4.2: Public methods..............................................................511
+//         §1.4.3: Lexically scoped supporting functions.......................................608
+// §2: Application of OUE-wide Gravity Forms enhancements......................................633
+//     §2.1: Application of OueGFs module......................................................639
+//     §2.2: Document ready bindings...........................................................647
+//     §2.3: Binding of Handlers to Window Load................................................668
+//     §2.4: Window Load Event Bindings........................................................680
+//     §2.5: Function declarations.............................................................687
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -1750,6 +1707,7 @@ var GfCheckboxValidators = ( function( $ ) {
 	////////////////////////////////////////////////////////////////////////////////////////////
 	// §1.2.5: Public methods
 
+
 	/**
 	 * Finish the process of hiding validator fields from the user.
 	 *
@@ -1871,6 +1829,72 @@ var GfCheckboxValidators = ( function( $ ) {
 
 		return stillValid;
 	};
+
+	/**
+	 * Perform a validation of validated checkbox fields by their subsequent validator fields.
+	 *
+	 * The validator's input element will be set to "validated" if all checkboxes are checked,
+	 * otherwise it will be set to an empty string.
+	 *
+	 * @access public
+	 *
+	 * @memberof GfCheckboxValidators
+	 *
+	 * @throws {Error} Member function IsObjValid will automatically be called and must return true.
+	 * @throws {Error} The specified validated and validator fields must be found within the form,
+	 *     and each validated field must be followed by a validator field as a sibling.
+	 * @throws {Error} Validated fields must contain checkbox input elements, and validator fields
+	 *     must contain a single input element.
+	 */
+	GfCheckboxValidators.prototype.validate = function() {
+		var $form;
+		var sels = this.sels;
+		var stillValid;
+
+		stillValid = this.IsObjValid();
+		if ( !stillValid ) {
+			throw Error( "Object properties did not pass validity check." );
+		} else {
+			// Find the form appropriate fields within the form.
+			$form = this.get$form();
+			$form.each( function () {
+				var $checkBoxes;
+				var $parentField;
+				var $this;
+				var $validator_input;
+				var allChecked = true;
+				var stillValid = true;
+
+				$this = $( this );
+				$parentField = $this.find( sels.validatedField );
+				$checkBoxes = $parentField.find( " :checkbox" );
+				$validator_input = $parentField.next( sels.validator ).find( "input" );
+				stillValid = $validator_input.length === 1;
+				try {
+					if ( !stillValid ) {
+						throw Error( "Found a validated field in the DOM that was not followed by a\
+ matching, properly formed validator sibling; checkbox state cannot be properly validated." );
+					} else {
+						// Check the state of all the checkbox inputs within the validated field.
+						$checkBoxes.each( function () {
+							if ( allChecked && !this.checked) {
+								allChecked = false;
+							}
+						} );
+
+						// Appropriately set the state of the validator's input element.
+						if ( allChecked && $validator_input.val() != "validated" ) {
+							$validator_input.val( "validated" );
+						} else if ( $validator_input.val() != "" ) {
+							$validator_input.val( "" );
+						}
+					}
+				} catch ( err ) {
+					console.log(err.name + ": " + err.message);
+				}
+			} );
+		}
+	}
 
 	return GfCheckboxValidators;
 } )( jQuery );
