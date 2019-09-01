@@ -4033,6 +4033,19 @@ div.read-more-target {
     width: 100%;
   }
 }
+.column li.gfield :focus {
+  outline: 1px solid blue;
+}
+.column li.gfield .chosen-single,
+.column li.gfield .chosen-drop {
+  border-color: #717171 !important;
+}
+.column li.gfield input,
+.column li.gfield select {
+  border-color: #717171 !important;
+  border-style: solid !important;
+  border-width: 1px !important;
+}
 .column li.gfield.uses-rich-editor .tmce-active .mce-menubar {
   display: none;
 }
@@ -4117,16 +4130,6 @@ div.read-more-target {
 }
 .column li.gfield div.ginput_container_textarea > textarea {
   font-size: 16px;
-}
-.column li.gfield input,
-.column li.gfield select {
-  border-color: #717171 !important;
-  border-style: solid !important;
-  border-width: 1px !important;
-}
-.column li.gfield .chosen-single,
-.column li.gfield .chosen-drop {
-  border-color: #717171 !important;
 }
 .column .gform_fields.top_label > li.gfield.gfield_error.gf_left_half,
 .column .gform_fields.top_label > li.gfield.gfield_error.gf_right_half {
