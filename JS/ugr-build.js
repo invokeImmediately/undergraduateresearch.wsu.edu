@@ -1557,20 +1557,14 @@ function showDefinitionListButtons( slctrDefList, expandAllClass, collapseAllCla
 //     §1.1: EmailConfirmations class...........................................................59
 //         §1.1.1: Public properties............................................................83
 //         §1.1.2: Public methods...............................................................99
-//     §1.2: GfCheckboxValidators class........................................................131
-//         §1.2.1: Private properties..........................................................149
-//         §1.2.2: Public properties...........................................................154
-//         §1.2.3: Privileged methods..........................................................159
-//         §1.2.4: Constructor's main execution section........................................175
-//         §1.2.5: Public methods..............................................................181
-//     §1.3: OueGFs class......................................................................376
-//         §1.3.1: Public properties...........................................................393
-//         §1.3.2: Public methods..............................................................422
-//         §1.3.3: Lexically scoped supporting functions.......................................449
-//     §1.4: WsuIdInputs class.................................................................476
-//         §1.4.1: Public properties...........................................................496
-//         §1.4.2: Public methods..............................................................511
-//         §1.4.3: Lexically scoped supporting functions.......................................608
+//     §1.2: OueGFs class......................................................................376
+//         §1.2.1: Public properties...........................................................393
+//         §1.2.2: Public methods..............................................................422
+//         §1.2.3: Lexically scoped supporting functions.......................................449
+//     §1.2: WsuIdInputs class.................................................................476
+//         §1.3.1: Public properties...........................................................496
+//         §1.3.2: Public methods..............................................................511
+//         §1.3.3: Lexically scoped supporting functions.......................................608
 // §2: Application of OUE-wide Gravity Forms enhancements......................................633
 //     §2.1: Application of OueGFs module......................................................639
 //     §2.2: Document ready bindings...........................................................647
@@ -1654,253 +1648,8 @@ var EmailConfirmations = ( function( $ ) {
 	return EmailConfirmations;
 } )( jQuery );
 
-////////////////////////////////////////////////////////////////////////////////////////////////
-// §1.2: GfCheckboxValidators
-
-/**
- * Gravity Forms enhancement module for validating checkbox input containers wherein all checkboxes
- * must be checked.
- *
- * Links the state of a Gravity Forms checkbox field to a subsequent (and ideally hidden) validator
- * field. Currently, all of the checkboxes must be selected for the field to be validated.
- *
- * @class
- */
-var GfCheckboxValidators = ( function( $ ) {
-	
-	'use strict';
-
-	function GfCheckboxValidators( sels ) {
-
-		////////////////////////////////////////////////////////////////////////////////////////////
-		// §1.2.1: Private properties
-
-		var _$form;
-
-		////////////////////////////////////////////////////////////////////////////////////////////
-		// §1.2.2: Public properties
-
-		this.sels = sels;
-
-		////////////////////////////////////////////////////////////////////////////////////////////
-		// §1.2.3: Privileged methods
-
-		this.get$form = function () {
-			return _$form;
-		}
-
-		this.findForm = function () {
-			if ( this.IsObjValid() ) {
-				_$form = $ ( this.sels.formContainer )
-			} else {
-				console.log( "Object wasn't valid." );
-				_$form = $( [] );
-			}
-		}
-
-		////////////////////////////////////////////////////////////////////////////////////////////
-		// §1.2.4: Constructor's main execution section
-
-		this.findForm();
-	}
-
-	////////////////////////////////////////////////////////////////////////////////////////////
-	// §1.2.5: Public methods
-
-
-	/**
-	 * Finish the process of hiding validator fields from the user.
-	 *
-	 * Removes tab indexing from the field so that JavaScript can safely automate population of the
-	 * validator field with input based on the state of the preceding checkbox field.
-	 *
-	 * @access public
-	 *
-	 * @memberof GfCheckboxValidators
-	 */
-	GfCheckboxValidators.prototype.finishHidingValidators = function () {
-		var $form;
-		var $field;
-		var $validator;
-		var $validator_input;
-
-		$form = this.get$form();
-		if ( this.IsObjValid() && $form.length) {
-			// Isolate validator and its target field in the DOM.
-			$field = $form.find( this.sels.validatedField );
-			$validator = $field.next( this.sels.validator );
-
-			// Disable tab indexing to form validators.
-			if ( $field.length && $validator.length ) {
-				$validator_input = $validator.find( "input" );
-				$validator_input.attr( 'tabindex', '-1' );
-			}
-		}
-	};
-
-	/**
-	 * Initialize validation of validated checkbox fields by their subsequent validator fields.
-	 *
-	 * The validator's input element will be set to "validated" if all checkboxes are checked,
-	 * otherwise it will be set to an empty string.
-	 *
-	 * @access public
-	 *
-	 * @memberof GfCheckboxValidators
-	 *
-	 * @throws {Error} Member function IsObjValid will automatically be called and must return true.
-	 * @throws {Error} The specified validated and validator fields must be found within the form,
-	 *     and each validated field must be followed by a validator field as a sibling.
-	 * @throws {Error} Validated fields must contain checkbox input elements, and validator fields
-	 *     must contain a single input element.
-	 */
-	GfCheckboxValidators.prototype.initValidation = function() {
-		var $form;
-		var sels = this.sels;
-		var stillValid;
-
-		stillValid = this.IsObjValid();
-		if ( !stillValid ) {
-			throw Error( "Object properties did not pass validity check." );
-		} else {
-			// Find the form appropriate fields within the form.
-			$form = this.get$form();
-			$form.on('change', sels.validatedField + " :checkbox", function () {
-				var $checkBoxes;
-				var $parentField;
-				var $this;
-				var $validator_input;
-				var allChecked = true;
-				var stillValid = true;
-
-				$this = $( this );
-				$parentField = $this.parents( sels.validatedField );
-				$checkBoxes = $parentField.find( " :checkbox" );
-				$validator_input = $parentField.next( sels.validator ).find( "input" );
-				stillValid = $validator_input.length === 1;
-				try {
-					if ( !stillValid ) {
-						throw Error( "Found a validated field in the DOM that was not followed by a\
- matching, properly formed validator sibling; checkbox state cannot be properly validated." );
-					} else {
-						// Check the state of all the checkbox inputs within the validated field.
-						$checkBoxes.each( function () {
-							if ( allChecked && !this.checked) {
-								allChecked = false;
-							}
-						} );
-
-						// Appropriately set the state of the validator's input element.
-						if ( allChecked && $validator_input.val() != "validated" ) {
-							$validator_input.val( "validated" );
-						} else if ( $validator_input.val() != "" ) {
-							$validator_input.val( "" );
-						}
-					}
-				} catch ( err ) {
-					console.log(err.name + ": " + err.message);
-				}
-			} );
-		}
-	};
-
-	/**
-	 * Check the validity of the instance based on the types and values of its members.
-	 *
-	 * @return {boolean} Returns true if members are properly typed and their values conform to
-	 *     expectations. Returns false otherwise.
-	 */
-	GfCheckboxValidators.prototype.IsObjValid = function() {
-		var stillValid = true;
-		var selsProps;
-
-		if ( !( typeof this.sels === 'object' ) ) {
-			stillValid = false
-		} else if ( stillValid ) {
-			selsProps = Object.getOwnPropertyNames( this.sels );
-		}
-		if ( stillValid && !( selsProps.length === 3 &&
-				selsProps.find( function( elem ) { return elem === 'formContainer'; } ) &&
-				selsProps.find( function( elem ) { return elem === 'validatedField'; } ) &&
-				selsProps.find( function( elem ) { return elem === 'validator'; } ) ) ) {
-			stillValid = false;
-		}
-		// TODO: Check for properly formed selector strings.
-
-		return stillValid;
-	};
-
-	/**
-	 * Perform a validation of validated checkbox fields by their subsequent validator fields.
-	 *
-	 * The validator's input element will be set to "validated" if all checkboxes are checked,
-	 * otherwise it will be set to an empty string.
-	 *
-	 * @access public
-	 *
-	 * @memberof GfCheckboxValidators
-	 *
-	 * @throws {Error} Member function IsObjValid will automatically be called and must return true.
-	 * @throws {Error} The specified validated and validator fields must be found within the form,
-	 *     and each validated field must be followed by a validator field as a sibling.
-	 * @throws {Error} Validated fields must contain checkbox input elements, and validator fields
-	 *     must contain a single input element.
-	 */
-	GfCheckboxValidators.prototype.validate = function() {
-		var $form;
-		var sels = this.sels;
-		var stillValid;
-
-		stillValid = this.IsObjValid();
-		if ( !stillValid ) {
-			throw Error( "Object properties did not pass validity check." );
-		} else {
-			// Find the form appropriate fields within the form.
-			$form = this.get$form();
-			$form.each( function () {
-				var $checkBoxes;
-				var $parentField;
-				var $this;
-				var $validator_input;
-				var allChecked = true;
-				var stillValid = true;
-
-				$this = $( this );
-				$parentField = $this.find( sels.validatedField );
-				$checkBoxes = $parentField.find( " :checkbox" );
-				$validator_input = $parentField.next( sels.validator ).find( "input" );
-				stillValid = $validator_input.length === 1;
-				try {
-					if ( !stillValid ) {
-						throw Error( "Found a validated field in the DOM that was not followed by a\
- matching, properly formed validator sibling; checkbox state cannot be properly validated." );
-					} else {
-						// Check the state of all the checkbox inputs within the validated field.
-						$checkBoxes.each( function () {
-							if ( allChecked && !this.checked) {
-								allChecked = false;
-							}
-						} );
-
-						// Appropriately set the state of the validator's input element.
-						if ( allChecked && $validator_input.val() != "validated" ) {
-							$validator_input.val( "validated" );
-						} else if ( $validator_input.val() != "" ) {
-							$validator_input.val( "" );
-						}
-					}
-				} catch ( err ) {
-					console.log(err.name + ": " + err.message);
-				}
-			} );
-		}
-	}
-
-	return GfCheckboxValidators;
-} )( jQuery );
-
 ////////////////////////////////////////////////////////////////////////////////////////////
-// §1.3: OueGFs
+// §1.2: OueGFs
 
 /**
  * Module for adding enhancements to Gravity Forms found on OUE websites.
@@ -1917,7 +1666,7 @@ var OueGFs = ( function( $ ) {
 	function OueGFs() {
 
 		////////////////////////////////////////////////////////////////////////////////////////////
-		// §1.3.1: Public properties
+		// §1.2.1: Public properties
 
 		/**
 		 * Collection of selectors used to find form elements in the DOM.
@@ -1946,7 +1695,7 @@ var OueGFs = ( function( $ ) {
 	}
 
 	////////////////////////////////////////////////////////////////////////////////////////////
-	// §1.3.2: Public methods
+	// §1.2.2: Public methods
 
 	/**
 	 * Initialize Gravity Forms found on the page.
@@ -1973,7 +1722,7 @@ var OueGFs = ( function( $ ) {
 	};
 
 	////////////////////////////////////////////////////////////////////////////////////////////
-	// §1.3.3: Lexically scoped supporting functions
+	// §1.2.3: Lexically scoped supporting functions
 
 	/**
 	 * Initialize inputs accepting WSU ID numbers.
@@ -2000,7 +1749,7 @@ var OueGFs = ( function( $ ) {
 } )( jQuery );
 
 ////////////////////////////////////////////////////////////////////////////////////////////////
-// §1.4: WsuIdInputs
+// §1.3: WsuIdInputs
 
 /**
  * Provides RegEx mediated validation of gravity form inputs that accept WSU ID numbers.
@@ -2020,7 +1769,7 @@ var WsuIdInputs = ( function ( $ ) {
 	function WsuIdInputs( selGfield ) {
 
 		////////////////////////////////////////////////////////////////////////////////////////////
-		// §1.4.1: Public properties
+		// §1.3.1: Public properties
 
 		/**
 		 * The collection of selectors used to find inputs accepting WSU ID numbers in the DOM.
@@ -2035,7 +1784,7 @@ var WsuIdInputs = ( function ( $ ) {
 	}
 
 	////////////////////////////////////////////////////////////////////////////////////////////
-	// §1.4.2: Public methods
+	// §1.3.2: Public methods
 
 	/**
 	 * Initializes RegEx mediated validation of inputs accepting WSU ID numbers.
@@ -2132,7 +1881,7 @@ ill automatically be corrected. Please check the result to see if further correc
 	};
 
 	////////////////////////////////////////////////////////////////////////////////////////////
-	// §1.4.3: Lexically scoped supporting functions
+	// §1.3.3: Lexically scoped supporting functions
 
 	/**
 	 * Obtains the regular expression pattern representing valid complete or incomple WSU ID input.
@@ -3508,86 +3257,10 @@ $( function () {
 	// Tweak HTML source to work around some quirks of WordPress setup
 	addPageHeaderToNews();
 	checkForEventsCalendarPage();
-	initTravelAwardForm( {
-		formContainer: '#gform_wrapper_6',
-		validatedField: '.travel-award__eligibility',
-		validator: '.travel-award__validator'
-	} );
 } );
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
-// §2: Class Declarations
-
-// TODO: Provide inline documentation
-function OueTermYearInputs( slctrWhichFields ) {
-
-	// DECLARE PRIVATE PROPERTIES
-	var _selector = slctrWhichFields;
-	var _$fields = $( slctrWhichFields );
-	var _$inputs = _$fields.find( 'input' );
-	var _regExFilterFinal = /^[A-Za-z]+ (?:[0-9]{2}|[0-9]{4})$/;
-	var _regExPreventExtraChars = /^[A-Za-z]+ [0-9]{4}$/;
-	var _regExStartWithAlphas = /^[A-Za-z]*$/;
-	var _regExStartEndWithNumbers = /^[A-Za-z]+ [0-9]{0,3}$/;
-	var _validAlphaKeyCodes;
-	var _validNumberKeyCodes;
-	var _validSpaceKeyCode = [32]
-	var _validOtherKeyCodes = [8, 9, 13, 16, 17, 18, 20, 35, 36, 37, 39, 46, 91, 92, 93, 144];
-	var _allValidKeyCodes;
-	var _msgInputIsWrong = 'Please revise what you entered into the "Expeced WSU Gradution Term" '
-		+ 'field. Input should be in Term YYYY format (e.g., Fall 2019).';
-
-	// DECLARE PRIVILEGED METHODS
-	this.setValidKeyCodes = function() {
-		_validNumberKeyCodes = createArrayFromNumberSequence( 48, 57 ).concat( 
-			createArrayFromNumberSequence( 94, 105 ) );
-		_validAlphaKeyCodes = createArrayFromNumberSequence( 65, 90 );
-		_allValidKeyCodes = _validAlphaKeyCodes.concat(_validSpaceKeyCode, _validNumberKeyCodes, 
-			_validOtherKeyCodes);
-	};
-
-	this.applyKeyDownHandler = function() {
-		_$inputs.keydown( function( e ) {
-			var $this = $(this);
-			var inputText = $this.val();
-
-			if( !~_allValidKeyCodes.indexOf( e.keyCode ) ) {
-				e.preventDefault();
-			} else if ( !~_validOtherKeyCodes.indexOf( e.keyCode ) ) {
-				if ( inputText.match( _regExStartWithAlphas ) && !( ~_validNumberKeyCodes.indexOf( 
-						e.keyCode ) || ~_validAlphaKeyCodes.indexOf( e.keyCode ) || 
-						~_validSpaceKeyCode.indexOf( e.keyCode ) ) ) {
-					e.preventDefault();
-				} else if ( inputText.match( _regExStartEndWithNumbers ) && 
-						!~_validNumberKeyCodes.indexOf( e.keyCode ) ) {
-					e.preventDefault();
-				} else if ( inputText.match( _regExPreventExtraChars ) ) {
-					e.preventDefault();
-				}
-			}            
-		} );
-	};
-
-	this.applyBlurHandler = function() {
-		_$inputs.blur( function( e ) {
-			var $this = $(this);
-			var inputText = $this.val();
-
-			if ( inputText != "" && !inputText.match( _regExFilterFinal ) ) {
-				alert( _msgInputIsWrong );
-				$this.val("");
-			}
-		} );
-	};
-
-	// EXECUTE REMAINING CONSTRUCTION INSTRUCTIONS
-	this.setValidKeyCodes();
-	this.applyKeyDownHandler();
-	this.applyBlurHandler();
-}
-
-////////////////////////////////////////////////////////////////////////////////////////////////////
-// §3: Function Declarations
+// §2: Function Declarations
 
 /**
  * Adds a page header containing navigational context to the news section of the website.
@@ -3625,30 +3298,6 @@ function checkForEventsCalendarPage() {
 	}
 }
 
-/**
- * Creates an array containing the sequence of n_i = i + lower bound from a lower to an upper bound.
- *
- * Contents of the array follow the pattern [start, start + 1, start + 2, ..., end - 1, end].
- *
- * @param {number} start - The lower bound of the number sequence.
- * @param {number} end - The upper bound of the number sequence.
- *
- * @return {array} Returns an empty array if there is a type problem or if end is less than start.
- */
-function createArrayFromNumberSequence ( start, end ) {
-	var result;
-
-	if ( typeof start === 'number' && typeof end === 'number' && start <= end ) {
-		result = Array.apply(null, { length: ( end - start + 1 ) } )
-			.map(Number.call, Number)
-			.map( function( i ) { return i + start; } );
-	} else {
-		result = [];
-	}
-
-	return result;
-}
-
 // TODO: Add inline documentation
 function fixEventsCalendarHeader( $body ) {
 	var $main;
@@ -3660,25 +3309,6 @@ function fixEventsCalendarHeader( $body ) {
 		$mainHeader = $main.find( '.main-header' );
 		$subHeaderDefault = $mainHeader.find( '.sub-header-default' );
 		$subHeaderDefault.text( 'Office of Undergraduate Research' );		
-	}
-}
-
-/**
- * Intialize a travel scholarship form when it is present on the active web page.
- *
- * @param {string} selForm - The selector for isolating the travel scholarship form from the DOM.
- */
-function initTravelAwardForm( sels ) {
-	var checkboxValidators;
-
-	checkboxValidators = new GfCheckboxValidators( sels );
-	if ( checkboxValidators.get$form().length ) {
-		try {
-			checkboxValidators.finishHidingValidators();
-			checkboxValidators.initValidation();
-		} catch ( err ) {
-			console.log( err.name + ': ' + err.message );
-		}
 	}
 }
 
