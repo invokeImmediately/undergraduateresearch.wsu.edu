@@ -1677,6 +1677,7 @@ ol {
 
 .column .builder-banner-slide>a {
 	border: none;
+	box-shadow: none;
 	height: 100%;
 }
 
@@ -2042,7 +2043,7 @@ div.callout.top:after,span.callout.top:after {
 }
 
 .interactively-flipped-panels .container .panel-wrapper .panel.yellow div.rear {
-	background-color: #77580c;
+	background-color: #715409;
 	color: #fff;
 }
 
@@ -2623,6 +2624,8 @@ a.vpue-tooltip span b {
 	border-bottom-color: #981e32;
 	border-bottom-left-radius: .15em;
 	border-bottom-right-radius: .15em;
+	border-left: 0;
+	border-right: 0;
 	box-shadow: inset 0 -1px 0 rgba(152,30,50,.25);
 	text-decoration: none;
 	transition: all .25s ease;
@@ -2638,26 +2641,6 @@ a.vpue-tooltip span b {
 
 .column a.gform_anchor {
 	border: none;
-}
-
-body.user-is-tabbing a:focus {
-	border: 2px dotted #fff;
-	outline: 2px dotted #00f;
-	z-index: 99352 !important;
-}
-
-body.user-is-tabbing .column a:focus {
-	position: relative;
-}
-
-body.user-is-tabbing .column a:focus::after {
-	border: 9px solid transparent;
-	content: "";
-	left: 0;
-	position: absolute;
-	top: 0;
-	transform: translateX(-50%) translateX(-4px);
-	border-left-color: #00f;
 }
 
 .column .article-thumbnail a,.column a.non-text-link {
@@ -3217,6 +3200,20 @@ div.read-more-target {
 	padding-bottom: 0;
 }
 
+.column li.gfield :focus {
+	outline: 1px solid #00f;
+}
+
+.column li.gfield .chosen-drop,.column li.gfield .chosen-single {
+	border-color: #717171 !important;
+}
+
+.column li.gfield input,.column li.gfield select {
+	border-color: #717171 !important;
+	border-style: solid !important;
+	border-width: 1px !important;
+}
+
 .column li.gfield.uses-rich-editor .tmce-active .mce-menubar {
 	display: none;
 }
@@ -3269,16 +3266,6 @@ div.read-more-target {
 
 .column li.gfield div.ginput_container_textarea>textarea {
 	font-size: 16px;
-}
-
-.column li.gfield input,.column li.gfield select {
-	border-color: #717171 !important;
-	border-style: solid !important;
-	border-width: 1px !important;
-}
-
-.column li.gfield .chosen-drop,.column li.gfield .chosen-single {
-	border-color: #717171 !important;
 }
 
 .column .gform_fields.top_label>li.gfield.gfield_error.gf_left_half,.column .gform_fields.top_label>li.gfield.gfield_error.gf_right_half {
@@ -6686,7 +6673,7 @@ body.tribe-theme-spine:not(.tribe_venue-template-default) .main-header .header-g
 
 #tribe-events .workshop-note {
 	font-size: .9em;
-	color: #9e7510;
+	color: #715409;
 }
 
 .tribe-events-calendar td.tribe-events-future div[id*=tribe-events-daynum-]>a,.tribe-events-calendar td.tribe-events-past div[id*=tribe-events-daynum-]>a,.tribe-events-calendar td.tribe-events-present div[id*=tribe-events-daynum-]>a {
