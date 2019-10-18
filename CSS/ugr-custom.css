@@ -287,38 +287,44 @@ html {
 .column article.post + article.post {
   margin-top: 1.5em;
 }
-.row.h1-header.new-article-section {
+.h1-header.new-article-section {
   padding: 1rem;
 }
-.row.h1-header.new-article-section h1,
-.row.h1-header.new-article-section h2,
-.row.h1-header.new-article-section h3,
-.row.h1-header.new-article-section h4,
-.row.h1-header.new-article-section h5,
-.row.h1-header.new-article-section h6 {
+.h1-header.new-article-section h1,
+.h1-header.new-article-section h2,
+.h1-header.new-article-section h3,
+.h1-header.new-article-section h4,
+.h1-header.new-article-section h5,
+.h1-header.new-article-section h6 {
   color: inherit;
   margin: 0;
   padding: 0;
   text-align: center;
 }
-.row.side-right .column.one.new-article-section header {
+.side-left .one.new-article-section header,
+.side-right .one.new-article-section header {
   margin-bottom: 2rem;
   margin-left: -2rem;
   padding: 1rem 2rem;
 }
-.row.side-right .column.two.new-article-section header {
+.side-left .two.new-article-section header,
+.side-right .two.new-article-section header {
   margin-bottom: 2rem;
   margin-right: -2.01rem;
   padding: 1rem 2rem;
 }
-.row.side-right .column.one.new-article-section header,
-.row.side-right .column.two.new-article-section header {
+.side-left .one.new-article-section header,
+.side-left .two.new-article-section header,
+.side-right .one.new-article-section header,
+.side-right .two.new-article-section header {
   background-color: #2f3438;
   color: #fff;
 }
 @media only screen and (min-width: 361px) and (max-width: 480px) {
-  .row.side-right .column.one.new-article-section header,
-  .row.side-right .column.two.new-article-section header {
+  .side-left .one.new-article-section header,
+  .side-left .two.new-article-section header,
+  .side-right .one.new-article-section header,
+  .side-right .two.new-article-section header {
     padding-left: 1rem;
     padding-right: 1rem;
     margin-left: -1rem;
@@ -326,16 +332,20 @@ html {
   }
 }
 @media only screen and (max-width: 360px) {
-  .row.side-right .column.one.new-article-section header,
-  .row.side-right .column.two.new-article-section header {
+  .side-left .one.new-article-section header,
+  .side-left .two.new-article-section header,
+  .side-right .one.new-article-section header,
+  .side-right .two.new-article-section header {
     padding-left: 0.5rem;
     padding-right: 0.5rem;
     margin-left: -0.5rem;
     margin-right: -0.5rem;
   }
 }
-.row.side-right .column.one.new-article-section header > *,
-.row.side-right .column.two.new-article-section header > * {
+.side-left .one.new-article-section header > *,
+.side-left .two.new-article-section header > *,
+.side-right .one.new-article-section header > *,
+.side-right .two.new-article-section header > * {
   color: inherit;
   margin: 0;
   padding: 0;
@@ -2006,18 +2016,11 @@ ol {
   box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.9), 0 0 0 2px rgba(0, 0, 0, 0.2), 3px 4px 4px rgba(0, 0, 0, 0.25) !important;
   padding: 1em;
 }
-.widget.widget_recent_entries {
-  font-size: 0.8rem;
-}
 .widget.widget_recent_entries ul {
-  padding: 0.75em 0 0 1em;
+  padding: 0;
 }
 .widget.widget_recent_entries ul li {
   padding-bottom: 0.5em;
-}
-.widget.widget_recent_entries ul li a {
-  border-bottom: none;
-  box-shadow: none;
 }
 .widget.widget_recent_entries .post-date:before {
   font-weight: bold;
@@ -2114,11 +2117,20 @@ ol {
 }
 .wsuwp-json--headlines.layout--2-columns .wsuwp-content-syndicate-list {
   font-size: 0.9em;
+  max-width: none !important;
 }
 .wsuwp-json--headlines.layout--2-columns .wsuwp-content-syndicate-item {
   padding-bottom: 2em;
   padding-right: 2em;
   width: 50%;
+}
+@media all and (max-width: 480px) {
+  .wsuwp-json--headlines.layout--2-columns .wsuwp-content-syndicate-item {
+    width: 100%;
+  }
+}
+.wsuwp-json--headlines.layout--2-columns * + .wsuwp-content-syndicate-item {
+  margin-top: 0;
 }
 .award-banner {
   margin-top: 1rem;
