@@ -6,53 +6,78 @@
 /**  ───────────────────────────────────────────────────────────────────────────────────────────────
 ***  TABLE OF CONTENTS:
 ***  ────────────────────────────────────────────────────────────────────────────────────────────
-***  §1: Backgrounds...........................................................................51
-***    >>> §1.1: Spine binder..................................................................55
-***    >>> §1.2: Spine jacket..................................................................66
-***    >>> §1.3: Page body.....................................................................76
-***    >>> §1.4: Main content section.........................................................105
-***    >>> §1.5: Main header..................................................................113
-***    >>> §1.6: Columnar headers.............................................................134
-***  §2: Styling at the document section level................................................158
-***    >>> §2.1: Headings.....................................................................162
-***  §3: Styling at the content grouping level................................................173
-***    >>> §3.1: Lists........................................................................177
-***  §4: Styling at the embedded content level................................................192
-***    >>> §4.1: Iframes......................................................................196
-***  §5: Styling of forms.....................................................................225
-***  §6: Optional styling included via Less mixins............................................296
-***  §7: Component-based styling..............................................................377
-***    >>> §7.1: Page specific components.....................................................381
-***    >>> §7.2: Banner slideshows............................................................530
-***    >>> §7.3: Travel award forms...........................................................556
+***  §1: Build entry point from DAESA's CSS development project................................34
+***  §2: Persistent section header comment for unit specific styling...........................44
+***  §3: Backgrounds...........................................................................76
+***    >>> §3.1: Spine binder..................................................................80
+***    >>> §3.2: Spine jacket..................................................................91
+***    >>> §3.3: Page body....................................................................101
+***    >>> §3.4: Main content section.........................................................130
+***    >>> §3.5: Main header..................................................................138
+***    >>> §3.6: Columnar headers.............................................................159
+***  §4: Styling at the document section level................................................183
+***    >>> §4.1: Headings.....................................................................187
+***  §5: Styling at the content grouping level................................................198
+***    >>> §5.1: Lists........................................................................202
+***  §6: Styling at the embedded content level................................................217
+***    >>> §6.1: Iframes......................................................................221
+***  §7: Styling of forms.....................................................................250
+***  §8: Optional styling included via Less mixins............................................321
+***  §9: Component-based styling..............................................................402
+***    >>> §9.1: Page specific components.....................................................406
+***    >>> §9.2: Banner slideshows............................................................554
+***    >>> §9.3: Travel award forms...........................................................580
 ***  ───────────────────────────────────────────────────────────────────────────────────────────────
+**/
+
+/** ================================================================================================
+*** §1: Build entry point from DAESA's CSS development project
 **/
 
 @grid-behavior: "hybrid";
 @oue-rules-wrapper: ~"";
-
 @import "..\WSU-UE---CSS\variables.less";
-@import "..\WSU-UE---CSS\wp-master-style-sheet.less";
+@use-design__content-boxes: true;
+@import "..\WSU-UE---CSS\css-build-entry-point.less";
+
+/** ================================================================================================
+*** §2: Persistent section header comment for unit specific styling
+**/
 
 /*! ================================================================================================
-*** CUSTOM STYLE SHEET for the WSU Office of Undergraduate Research
+*** Office of Undergraduate Research Styling Section
 *** ================================================================================================
-***   AUTHOR: Daniel Rieck [daniel.rieck@wsu.edu] (https://github.com/invokeImmediately)            
+*** SUMMARY: The following section consists of CSS code designed for use on the website of the
+***   Office of Undergraduate Research at WSU. It was built from precompiled CSS written in the Less
+***   language extension of CSS.
 ***
-***   CONTENTS: CSS compiled from Less language extension of CSS; only used on the Office of
-***      Undergraduate Research website.
+*** DESCRIPTION: Fully documented, precompiled source code from which this section of the custom
+***   stylesheet was built is developed and maintained on the following GitHub project:
+***   https://github.com/invokeImmediately/undergraduateresearch.wsu.edu/
 ***
-***   GIT REPOSITORY: https://github.com/invokeImmediately/undergraduateresearch.wsu.edu
-***     See git repository for fully documented, precompiled source code.
+*** AUTHOR: Daniel Rieck [daniel.rieck@wsu.edu] (https://github.com/invokeImmediately)
+***
+*** LICENSE: ISC - Copyright (c) 2019 Daniel C. Rieck.
+***
+***   Permission to use, copy, modify, and/or distribute this software for any purpose with or
+***   without fee is hereby granted, provided that the above copyright notice and this permission
+***   notice appear in all copies.
+***
+***   THE SOFTWARE IS PROVIDED "AS IS" AND DANIEL RIECK DISCLAIMS ALL WARRANTIES WITH REGARD TO THIS
+***   SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL
+***   DANIEL RIECK BE LIABLE FOR ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY
+***   DAMAGES WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF
+***   CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
+***   PERFORMANCE OF THIS SOFTWARE.
 *** ================================================================================================
 **/
 
 /** ================================================================================================
-*** §1: Backgrounds
+*** §3: Backgrounds
 **/
 
 /**   ----------------------------------------------------------------------------------------------
-***   >>> §1.1: Spine binder
+***   >>> §3.1: Spine binder
 **/
 
 #binder {
@@ -63,7 +88,7 @@
 }
 
 /**   ----------------------------------------------------------------------------------------------
-***   >>> §1.2: Spine jacket
+***   >>> §3.2: Spine jacket
 **/
 
 #jacket {
@@ -73,7 +98,7 @@
 }
 
 /**   ----------------------------------------------------------------------------------------------
-***   >>> §1.3: Page body
+***   >>> §3.3: Page body
 **/
 
 body {
@@ -102,7 +127,7 @@ body {
 }
 
 /**   ----------------------------------------------------------------------------------------------
-***   >>> §1.4: Main content section
+***   >>> §3.4: Main content section
 **/
 
 main {
@@ -110,7 +135,7 @@ main {
 }
 
 /**   ----------------------------------------------------------------------------------------------
-***   >>> §1.5: Main header
+***   >>> §3.5: Main header
 **/
 
 header.main-header {
@@ -131,7 +156,7 @@ header.main-header {
 }
 
 /**   ----------------------------------------------------------------------------------------------
-***   >>> §1.6: Columnar headers
+***   >>> §3.6: Columnar headers
 **/
 
 .column {
@@ -155,11 +180,11 @@ header.main-header {
 }
 
 /** ================================================================================================
-*** §2: Styling at the document section level
+*** §4: Styling at the document section level
 **/
 
 /**   ----------------------------------------------------------------------------------------------
-***   >>> §2.1: Headings
+***   >>> §4.1: Headings
 **/
 
 .explore-more.auto-fits-text {
@@ -170,11 +195,11 @@ header.main-header {
 }
 
 /**   ----------------------------------------------------------------------------------------------
-***   §3: Styling at the content grouping level
+***   §5: Styling at the content grouping level
 **/
 
 /**   ----------------------------------------------------------------------------------------------
-***   >>> §3.1: Lists
+***   >>> §5.1: Lists
 **/
 
 .column ul:not(.content-boxes):not(.lsi--none) {
@@ -189,11 +214,11 @@ ul.lsi--none {
 }
 
 /**   ----------------------------------------------------------------------------------------------
-***   §4: Styling at the embedded content level
+***   §6: Styling at the embedded content level
 **/
 
 /**   ----------------------------------------------------------------------------------------------
-***   >>> §4.1: Iframes
+***   >>> §6.1: Iframes
 **/
 
 div.iframe-container {
@@ -222,7 +247,7 @@ div.iframe-container {
 }
 
 /**   ----------------------------------------------------------------------------------------------
-***   §5: Styling of forms
+***   §7: Styling of forms
 **/
 
 .ugrf-name, .ugrf-wsu-id, .ugrf-email, .ugrf-institution, .ugrf-phone, .ugrf-major,
@@ -293,7 +318,7 @@ div.iframe-container {
 }
 
 /**   ----------------------------------------------------------------------------------------------
-***   §6: Optional styling included via Less mixins
+***   §8: Optional styling included via Less mixins
 **/
 
 .use-glass-button-layout();
@@ -374,11 +399,11 @@ body.tribe-theme-spine {
 .use-upcoming-events-on-home();
 
 /**   ----------------------------------------------------------------------------------------------
-***   §7: Component-based styling
+***   §9: Component-based styling
 **/
 
 /**   ----------------------------------------------------------------------------------------------
-***   >>> §7.1: Page specific components
+***   >>> §9.1: Page specific components
 **/
 
 .page {
@@ -487,8 +512,7 @@ body.tribe-theme-spine {
 	
 	&.for-students-parents {
 		.wsuwp-content-syndicate-wrapper {
-			padding-left: @v-p-sz;
-			margin-top: (-0.7 * @v-p-sz);
+			margin-top: (0.5 * @v-p-sz);
 		}
 	}
 }
@@ -527,7 +551,7 @@ body.home {
 }
 
 /**   ----------------------------------------------------------------------------------------------
-***   >>> §7.2: Banner slideshows
+***   >>> §9.2: Banner slideshows
 **/
 
 .builder-section-banner {
@@ -553,7 +577,7 @@ body.home {
 }
 
 /**   ----------------------------------------------------------------------------------------------
-***   >>> §7.3: Travel award form
+***   >>> §9.3: Travel award form
 **/
 
 .travel-award__validator {
