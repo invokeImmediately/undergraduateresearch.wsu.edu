@@ -45,8 +45,6 @@ body {
 .ff--condensed,
 .has-subst-font,
 .ff--condensed-2,
-.article-tagline.sans,
-.article-tagline.article-tagline--sans,
 span.accentuated-text {
   font-family: 'Roboto Condensed', 'Arial Narrow', sans-serif;
 }
@@ -1349,162 +1347,13 @@ footer.article-footer div.author-info {
   color: #8f7e35;
 }
 .article-tagline {
-  font-size: 1.305em;
-  font-weight: 500;
-  font-family: 'PT Serif', 'Palatino Linotype', 'Palatino', serif;
-  line-height: 1.275em;
+  font-size: 1.43em;
+  font-weight: 300;
+  line-height: 1.313em;
 }
 .article-tagline.home,
 .article-tagline.article-tagline--home {
-  font-size: 1.50075em;
-}
-.article-tagline.sans,
-.article-tagline.article-tagline--sans {
-  color: #000;
-  font-weight: 300;
-}
-.article-tagline.sans .lead-in,
-.article-tagline.article-tagline--sans .lead-in,
-.article-tagline.sans .article-tagline__lead-in,
-.article-tagline.article-tagline--sans .article-tagline__lead-in {
-  color: #77580c;
-  font-weight: 700;
-  letter-spacing: normal;
-}
-.article-tagline:not(.has-no-bordering):not(.article-tagline--borderless):not(.alt) {
-  position: relative;
-  padding-top: 0.33333333rem !important;
-  padding-bottom: 0.33333333rem !important;
-}
-.article-tagline:not(.has-no-bordering):not(.article-tagline--borderless):not(.alt):not(:first-child) {
-  margin-top: 2rem;
-}
-.article-tagline:not(.has-no-bordering):not(.article-tagline--borderless):not(.alt):first-child,
-header:first-child + .article-tagline:not(.has-no-bordering):not(.article-tagline--borderless):not(.alt) {
-  margin-top: 0.33333333rem;
-}
-.article-tagline:not(.has-no-bordering):not(.article-tagline--borderless):not(.alt):before,
-.article-tagline:not(.has-no-bordering):not(.article-tagline--borderless):not(.alt):after {
-  content: "";
-  position: absolute;
-  left: 0;
-  width: 67%;
-}
-.article-tagline:not(.has-no-bordering):not(.article-tagline--borderless):not(.alt):before {
-  top: -0.33333333rem;
-  height: 5px;
-  border-top: 5px solid #3b4042;
-}
-.article-tagline:not(.has-no-bordering):not(.article-tagline--borderless):not(.alt):after {
-  bottom: -0.33333333rem;
-  height: 1px;
-  width: 33%;
-  border-top: 1px solid rgba(59, 64, 66, 0.75757576);
-}
-.article-tagline:not(.has-no-bordering):not(.article-tagline--borderless).alt {
-  position: relative;
-  padding-left: 0.75rem !important;
-  padding-right: 0.75rem !important;
-  border-right: 1px solid rgba(59, 64, 66, 0.18939394);
-  border-left: 5px solid #3b4042;
-}
-.article-tagline:not(.has-no-bordering):not(.article-tagline--borderless).alt:before,
-.article-tagline:not(.has-no-bordering):not(.article-tagline--borderless).alt:after {
-  content: "";
-  position: absolute;
-  top: 0;
-  width: 1px;
-  height: 100%;
-}
-.article-tagline:not(.has-no-bordering):not(.article-tagline--borderless).alt:before {
-  right: 1px;
-  background-color: rgba(59, 64, 66, 0.37878788);
-}
-.article-tagline:not(.has-no-bordering):not(.article-tagline--borderless).alt:after {
-  right: 3px;
-  background-color: rgba(59, 64, 66, 0.37878788);
-}
-.article-tagline:not(.has-no-bordering):not(.article-tagline--borderless).crimson,
-.article-tagline:not(.has-no-bordering):not(.article-tagline--borderless).article-tagline--crimson {
-  color: #981e32;
-}
-.article-tagline:not(.has-no-bordering):not(.article-tagline--borderless).crimson:not(.alt),
-.article-tagline:not(.has-no-bordering):not(.article-tagline--borderless).article-tagline--crimson:not(.alt) {
-  position: relative;
-  padding-top: 0.33333333rem !important;
-  padding-bottom: 0.33333333rem !important;
-}
-.article-tagline:not(.has-no-bordering):not(.article-tagline--borderless).crimson:not(.alt):not(:first-child),
-.article-tagline:not(.has-no-bordering):not(.article-tagline--borderless).article-tagline--crimson:not(.alt):not(:first-child) {
-  margin-top: 2rem;
-}
-.article-tagline:not(.has-no-bordering):not(.article-tagline--borderless).crimson:not(.alt):first-child,
-.article-tagline:not(.has-no-bordering):not(.article-tagline--borderless).article-tagline--crimson:not(.alt):first-child,
-header:first-child + .article-tagline:not(.has-no-bordering):not(.article-tagline--borderless).crimson:not(.alt),
-header:first-child + .article-tagline:not(.has-no-bordering):not(.article-tagline--borderless).article-tagline--crimson:not(.alt) {
-  margin-top: 0.33333333rem;
-}
-.article-tagline:not(.has-no-bordering):not(.article-tagline--borderless).crimson:not(.alt):before,
-.article-tagline:not(.has-no-bordering):not(.article-tagline--borderless).article-tagline--crimson:not(.alt):before,
-.article-tagline:not(.has-no-bordering):not(.article-tagline--borderless).crimson:not(.alt):after,
-.article-tagline:not(.has-no-bordering):not(.article-tagline--borderless).article-tagline--crimson:not(.alt):after {
-  content: "";
-  position: absolute;
-  left: 0;
-  width: 67%;
-}
-.article-tagline:not(.has-no-bordering):not(.article-tagline--borderless).crimson:not(.alt):before,
-.article-tagline:not(.has-no-bordering):not(.article-tagline--borderless).article-tagline--crimson:not(.alt):before {
-  top: -0.33333333rem;
-  height: 5px;
-  border-top: 5px solid #981e32;
-}
-.article-tagline:not(.has-no-bordering):not(.article-tagline--borderless).crimson:not(.alt):after,
-.article-tagline:not(.has-no-bordering):not(.article-tagline--borderless).article-tagline--crimson:not(.alt):after {
-  bottom: -0.33333333rem;
-  height: 1px;
-  width: 33%;
-  border-top: 1px solid rgba(152, 30, 50, 0.75757576);
-}
-.article-tagline:not(.has-no-bordering):not(.article-tagline--borderless).crimson.alt,
-.article-tagline:not(.has-no-bordering):not(.article-tagline--borderless).article-tagline--crimson.alt {
-  position: relative;
-  padding-left: 0.75rem !important;
-  padding-right: 0.75rem !important;
-  border-right: 1px solid rgba(152, 30, 50, 0.18939394);
-  border-left: 5px solid #981e32;
-}
-.article-tagline:not(.has-no-bordering):not(.article-tagline--borderless).crimson.alt:before,
-.article-tagline:not(.has-no-bordering):not(.article-tagline--borderless).article-tagline--crimson.alt:before,
-.article-tagline:not(.has-no-bordering):not(.article-tagline--borderless).crimson.alt:after,
-.article-tagline:not(.has-no-bordering):not(.article-tagline--borderless).article-tagline--crimson.alt:after {
-  content: "";
-  position: absolute;
-  top: 0;
-  width: 1px;
-  height: 100%;
-}
-.article-tagline:not(.has-no-bordering):not(.article-tagline--borderless).crimson.alt:before,
-.article-tagline:not(.has-no-bordering):not(.article-tagline--borderless).article-tagline--crimson.alt:before {
-  right: 1px;
-  background-color: rgba(152, 30, 50, 0.37878788);
-}
-.article-tagline:not(.has-no-bordering):not(.article-tagline--borderless).crimson.alt:after,
-.article-tagline:not(.has-no-bordering):not(.article-tagline--borderless).article-tagline--crimson.alt:after {
-  right: 3px;
-  background-color: rgba(152, 30, 50, 0.37878788);
-}
-.article-tagline:not(.has-no-bordering):not(.article-tagline--borderless).crimson .has-gray-text,
-.article-tagline:not(.has-no-bordering):not(.article-tagline--borderless).article-tagline--crimson .has-gray-text {
-  color: #3b4042;
-}
-h1 + .article-tagline:not(.alt),
-h2 + .article-tagline:not(.alt),
-h3 + .article-tagline:not(.alt),
-h4 + .article-tagline:not(.alt),
-h5 + .article-tagline:not(.alt),
-h6 + .article-tagline:not(.alt) {
-  margin-top: 1.33333333rem;
+  font-size: 1.6445em;
 }
 p {
   font-size: 1em;
@@ -1519,11 +1368,9 @@ p ~ p {
   margin-top: 1em;
 }
 hr {
-  background: none;
+  background-color: #d7dadb;
   border: 0;
-  border-bottom: 1px solid rgba(42, 48, 51, 0.2);
-  border-top: 1px solid #2a3033;
-  height: 0;
+  height: 1px;
   margin-bottom: 2em;
   margin-top: 2em;
   overflow: visible;
@@ -1625,7 +1472,7 @@ ul li {
   position: relative;
 }
 .column dl.faq dt {
-  background-color: #d7dadb;
+  background-color: #e4e6e7;
   border: 1px solid #afb5b7;
   cursor: pointer;
   font-size: 1em;
@@ -1662,7 +1509,7 @@ ul li {
   border-left: 8px solid transparent;
 }
 .column dl.faq dt.activated {
-  background-color: #d3b0b8;
+  background-color: #e7d4d9;
   color: #3b4042;
   border-color: #b87f8c;
 }
@@ -1683,14 +1530,14 @@ ul li {
   border-left: 8px solid transparent;
 }
 .column dl.faq.blue dt {
-  background-color: #d8ecf3;
+  background-color: #ecf6f9;
   border-color: #9ed0e1;
 }
 .column dl.faq.blue dt:hover {
   background-color: #3f6b72;
 }
 .column dl.faq.blue dt.activated {
-  background-color: #d3b0b8;
+  background-color: #e7d4d9;
   border-color: #b87f8c;
 }
 .column dl.faq.blue dt.activated:hover {
@@ -1725,7 +1572,7 @@ ul li {
   top: 0;
   padding: 5px;
   border: 1px solid #afb5b7;
-  background-color: #d7dadb;
+  background-color: #e4e6e7;
   font-family: 'Roboto Mono', monospace, sans-serif;
   cursor: pointer;
   transform: translateY(-100%) translateY(-5px);
@@ -1780,7 +1627,7 @@ ul li {
 }
 .column dl.faq.blue > .expand-all-button,
 .column dl.faq.blue > .collapse-all-button {
-  background-color: #d8ecf3;
+  background-color: #ecf6f9;
   border-color: #9ed0e1;
 }
 .column dl.faq.blue > .expand-all-button:hover,
@@ -1909,6 +1756,9 @@ ul.cascaded-layout.blank > li.gutter-sizer {
   position: relative;
   line-height: 1.5em;
 }
+.article-footer {
+  border-top: 1px solid #d7dadb;
+}
 .blog .article-header,
 .archive.category .article-header,
 .archive.tag .article-header,
@@ -1932,8 +1782,12 @@ ul.cascaded-layout.blank > li.gutter-sizer {
 }
 .column .article-header .article-title,
 .column .article-header .article-title {
-  font-size: 1.5em;
+  font-size: 2em;
   line-height: 1.1em;
+}
+.column .article-header .article-title a,
+.column .article-header .article-title a {
+  font-weight: bold;
 }
 .article-summary {
   line-height: 1.5em;
@@ -1987,6 +1841,7 @@ ul.cascaded-layout.blank > li.gutter-sizer {
   border-radius: 5px;
   box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.9), 0 0 0 2px rgba(0, 0, 0, 0.2), 3px 4px 4px rgba(0, 0, 0, 0.25) !important;
   padding: 1em;
+  overflow: hidden;
 }
 .widget.widget_recent_entries ul {
   padding: 0;
@@ -3151,12 +3006,8 @@ main > .page > .row:last-child > .column:last-child {
 .column a {
   border: 1px solid transparent;
   border-bottom-color: #981e32;
-  border-bottom-left-radius: 0.15em;
-  border-bottom-right-radius: 0.15em;
   border-left: 0;
   border-right: 0;
-  box-shadow: inset 0 -1px 0 rgba(152, 30, 50, 0.25);
-  font-weight: normal;
   text-decoration: none;
   transition: color .4s, background 0.4s, border 0.1s;
 }
@@ -3164,8 +3015,6 @@ main > .page > .row:last-child > .column:last-child {
   background-color: rgba(198, 12, 48, 0.15);
   border-bottom-width: 3px;
   border-color: #c60c30;
-  border-radius: 0;
-  box-shadow: inset 0 -1px 0 transparent;
   text-shadow: 1px 1px 2px rgba(152, 30, 50, 0.3);
 }
 .column a.gform_anchor {
@@ -3177,6 +3026,9 @@ main > .page > .row:last-child > .column:last-child {
     box-shadow: none;
     text-decoration: underline;
   }
+}
+.column strong a {
+  font-weight: bold;
 }
 .column a.pop-out-link {
   transition: color .4s linear, background .4s ease-in, font-size .25s linear;
@@ -3204,7 +3056,7 @@ main > .page > .row:last-child > .column:last-child {
 }
 .column a.non-text-link img,
 .column .article-thumbnail a img {
-  border-bottom: 3px solid #fff;
+  border-bottom: 3px solid #e1e3e5;
   box-shadow: 0 3px #981e32;
   transition: all .25s ease;
 }
@@ -3236,10 +3088,19 @@ main > .page > .row:last-child > .column:last-child {
 .column h5 a:not(.non-text-link),
 .column h6 a:not(.non-text-link),
 .gform_heading h3.gform_title a:not(.non-text-link) {
-  border-bottom: 1px solid transparent;
-  box-shadow: none;
   line-height: 1.4em;
   line-height: calc(1.4em + 1px);
+}
+.column h1 a:not(.non-text-link),
+.column h2 a:not(.non-text-link),
+.column h3 a:not(.non-text-link),
+.column h4 a:not(.non-text-link),
+.column h5 a:not(.non-text-link),
+.column h6 a:not(.non-text-link),
+.column .article-footer a,
+.gform_heading h3.gform_title a:not(.non-text-link) {
+  border-bottom: 1px solid transparent;
+  box-shadow: none;
   text-decoration: underline;
 }
 .column h1 a:not(.non-text-link):hover,
@@ -3248,6 +3109,7 @@ main > .page > .row:last-child > .column:last-child {
 .column h4 a:not(.non-text-link):hover,
 .column h5 a:not(.non-text-link):hover,
 .column h6 a:not(.non-text-link):hover,
+.column .article-footer a:hover,
 .gform_heading h3.gform_title a:not(.non-text-link):hover {
   border-bottom: 4px solid #c60c30;
   text-decoration: none;
@@ -3260,6 +3122,9 @@ strong.opening-line {
 strong.stands-out {
   font-family: 'Roboto Condensed', 'Arial Narrow', sans-serif;
   font-size: 1.2em;
+}
+strong:not([class*="fw--"]) {
+  font-weight: 600;
 }
 mark.highlight {
   background-color: transparent;
@@ -4692,14 +4557,12 @@ div.auto-scroller ul li {
   list-style-image: none;
 }
 .style--card {
-  background-color: #ffffff;
   box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.9), 0 0 0 2px rgba(0, 0, 0, 0.2), 0 3px 2px 0 rgba(0, 0, 0, 0.22);
   border-radius: 4px;
   box-sizing: border-box;
   padding: 1rem;
 }
 .style--card--raised {
-  background-color: #ffffff;
   border: 1px solid #3b4042;
   box-shadow: 0 4px 8px 1px rgba(0, 0, 0, 0.22);
   border-radius: 4px;
@@ -4707,7 +4570,6 @@ div.auto-scroller ul li {
   padding: 1rem;
 }
 .style--card__title {
-  background-color: #d7dadb;
   color: #2a3033;
   margin-left: -1rem;
   margin-right: -1rem;
@@ -4732,7 +4594,7 @@ div.auto-scroller ul li {
   padding: 0.5rem 1rem;
   word-spacing: 1px;
 }
-.style-card__title + .style--card__sub-title {
+.style--card__title + .style--card__sub-title {
   margin-top: 0em;
 }
 .page-header {
@@ -4841,6 +4703,7 @@ div.auto-scroller ul li {
 .on-this-page__menu-item a:hover {
   background-color: #23272a;
   border-color: #ffffff;
+  border-width: 1px;
   text-decoration: underline;
 }
 @media all and (max-width: 791px) {
@@ -4906,6 +4769,99 @@ div.auto-scroller ul li {
   left: -3px;
   height: 0.9rem;
   background: url(https://s3.wp.wsu.edu/uploads/sites/50/2017/10/micon_returnKey_rotated-90-deg-cw_54x64.png) center center / auto 100% no-repeat;
+}
+.hero-container {
+  background-color: #a60e2d;
+  background-position: center;
+  position: relative;
+}
+.hero-container:after,
+.hero-container:before {
+  content: "";
+  display: block;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+}
+.hero-container:after {
+  background: linear-gradient(to right, #a60e2d 0%, rgba(125, 185, 232, 0) 100%);
+}
+.hero-container:before {
+  background: url(https://s3.wp.wsu.edu/uploads/sites/57/2020/02/bg-dots.png) top left repeat;
+}
+.hero-container--faded:after {
+  background: linear-gradient(to right, rgba(166, 14, 45, 0.5) 0%, rgba(125, 185, 232, 0) 100%);
+}
+.hero-container__content {
+  align-items: center;
+  color: white;
+  display: flex;
+  padding: 2rem;
+  position: relative;
+  text-shadow: 1px 2px 2px black;
+  z-index: 3;
+}
+.hero-container__content:after,
+.hero-container__content:before {
+  opacity: 0;
+  position: absolute;
+  transition: opacity .4s;
+}
+.hero-container__content:after {
+  content: "»";
+  color: white;
+  font-size: 4rem;
+  left: 100%;
+  line-height: 1em;
+  top: 100%;
+  transform: translate(-100%,-100%) translate(-1rem, -.6rem);
+}
+.hero-container__content:before {
+  background: white;
+  content: "";
+  height: 100%;
+  left: 0;
+  top: 0;
+  width: 100%;
+}
+.hero-container-link:hover .hero-container__content:before {
+  opacity: 0.25;
+}
+.hero-container-link:hover .hero-container__content:after {
+  opacity: 0.75;
+}
+.breadcrumb-list {
+  display: flex;
+  flex-wrap: wrap;
+  list-style-type: none;
+  padding-left: 0;
+}
+.breadcrumb-list__breadcrumb:after {
+  content: "/";
+  margin-left: 0.25em;
+  margin-right: 0.25em;
+}
+.breadcrumb-list__link:not(:hover) {
+  box-shadow: none;
+  border-bottom-color: transparent;
+  color: inherit;
+  text-decoration: underline;
+}
+.arrowed-bullet-list {
+  list-style-type: none;
+  padding-left: 2em;
+}
+.arrowed-bullet-list__item {
+  position: relative;
+}
+.arrowed-bullet-list__item:before {
+  content: "⇒";
+  font-weight: bold;
+  position: absolute;
+  transform: translateX(-100%) translateX(-.5em);
 }
 .w--5pct {
   width: 5%;
@@ -5258,6 +5214,9 @@ div.auto-scroller ul li {
 .h--400px {
   height: 400px;
 }
+.h--auto {
+  height: auto;
+}
 .font-size--400mx,
 .fs--400mx {
   font-size: 0.4em;
@@ -5428,6 +5387,12 @@ div.auto-scroller ul li {
 }
 .lh--1500mx {
   line-height: 1.5em;
+}
+.lh--1750mx {
+  line-height: 1.75em;
+}
+.lh--2000mx {
+  line-height: 2em;
 }
 .fw--light {
   font-weight: 300;
@@ -7289,20 +7254,26 @@ div.iframe-container + p {
   }
 }
 .column .notice {
-  background-color: rgba(198, 12, 48, 0.2);
-  border-radius: 10px;
+  background-color: #fef1f4;
+  border: 1px solid #a60f2d;
+  border-radius: 4px;
+  box-sizing: border-box;
   margin-left: auto;
   margin-right: auto;
+  overflow: hidden;
   padding: 1rem;
   padding-right: calc(1rem + 32px);
   position: relative;
   width: 80%;
   width: calc(90% - 2 * 1rem - 32px);
 }
+.column .notice.full-width {
+  width: 100%;
+}
 .column .notice::before {
   bottom: 0;
-  border-bottom-right-radius: 10px;
-  border-top-right-radius: 10px;
+  border-bottom-right-radius: 3px;
+  border-top-right-radius: 3px;
   content: "";
   position: absolute;
   right: 0;
@@ -7360,6 +7331,7 @@ div.iframe-container + p {
 }
 .column .notice.donor-thank-you {
   background-color: #eff0f1;
+  border-color: #5e5e5e;
   padding-right: calc(1rem + 100px);
 }
 .column .notice.donor-thank-you::before {
@@ -7405,11 +7377,11 @@ span.has-tooltip:hover:after {
 .row.single.article-header.pad-top .column {
   padding-top: 0;
 }
-.row.article-header {
+.row.article-header:not([class*="h--"]) {
   height: 230px;
 }
 @media all and (max-width: 480px) {
-  .row.article-header {
+  .row.article-header:not([class*="h--"]) {
     height: 340px;
   }
 }
@@ -7606,27 +7578,17 @@ span.has-tooltip:hover:after {
     font-size: 5.5vw;
   }
 }
-body.tribe-theme-spine:not(.tribe_venue-template-default) .main-header .header-group {
-  width: calc(90%);
-  width: calc(100% - 2rem);
+.single-tribe_venue .tribe-events-venue-meta .tribe-venue-name::before {
+  content: "Events by Venue: ";
 }
-body.tribe-theme-spine:not(.tribe_venue-template-default) .main-header .header-group .sub-header {
-  color: transparent !important;
-}
-body.tribe-theme-spine:not(.tribe_venue-template-default) .main-header .header-group .sub-header a {
+.single-tribe_venue .tribe-events-venue-meta .venue-address {
   display: none;
 }
-body.tribe-theme-spine:not(.tribe_venue-template-default) .main-header .header-group .sub-header::before {
-  content: "Office of Undergraduate Research";
-  position: absolute;
-  color: #fff;
+.tribe-events-before-html {
+  margin-bottom: 2rem;
 }
-.column #tribe-events ul li {
-  list-style-image: none;
-}
-#tribe-events .workshop-note {
-  font-size: 0.9em;
-  color: #715409;
+.single-tribe_events .tribe-events-before-html .calendar-intro-message {
+  display: none;
 }
 .tribe-events-calendar td.tribe-events-past div[id*=tribe-events-daynum-] > a,
 .tribe-events-calendar td.tribe-events-present div[id*=tribe-events-daynum-] > a,
@@ -7644,56 +7606,8 @@ body.tribe-theme-spine:not(.tribe_venue-template-default) .main-header .header-g
   box-shadow: inset 0 -0.3125em 0 rgba(152, 30, 50, 0.15);
   color: #c60c30;
 }
-#tribe-bar-views a {
-  border-bottom: none;
-  border-bottom-left-radius: 0;
-  border-bottom-right-radius: 0;
-  box-shadow: none;
-  text-shadow: none;
-}
-#tribe-bar-views li.tribe-bar-active a {
-  border-bottom: 0.0625em solid transparent;
-}
-#tribe-bar-views li.tribe-bar-active a:hover {
-  border-bottom-right-radius: 0.25em;
-  border-bottom-left-radius: 0.25em;
-  border-bottom: 0.0625em solid #981e32;
-  box-shadow: inset 0 -0.3125em 0 rgba(152, 30, 50, 0.15);
-  color: #c60c30 !important;
-}
-.type-tribe_events[class*=post-] .tribe-events-event-image {
-  float: left;
-  height: 0;
-  padding-bottom: 30%;
-  position: relative;
-}
-.tribe-events-single .type-tribe_events[class*=post-] .tribe-events-event-image {
-  width: 30%;
-  margin-right: 3%;
-}
-@media all and (min-width: 601px) {
-  .tribe-events-single .type-tribe_events[class*=post-] .tribe-events-event-image {
-    width: 20%;
-    padding-bottom: 20%;
-  }
-}
-.type-tribe_events[class*=post-] .tribe-events-event-image a {
-  display: block;
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  border-bottom: none;
-  box-shadow: none;
-  z-index: 1;
-}
-.type-tribe_events[class*=post-] .tribe-events-event-image img {
-  width: 100%;
-  height: auto;
-}
-.type-tribe_events[class*=post-] .tribe-events-cal-links {
-  clear: left;
+.tribe-events-sub-nav {
+  max-width: none;
 }
 .tribe-related-events-thumbnail {
   max-width: 198px;
@@ -7714,6 +7628,21 @@ body.tribe-theme-spine:not(.tribe_venue-template-default) .main-header .header-g
 .tribe-events-single ul.tribe-related-events .tribe-related-events-thumbnail img:hover {
   border: 0.0625em solid #981e32;
 }
+.wsuwp-content-syndicate-event .content-item-event-date {
+  font-weight: bold;
+}
+.wsuwp-content-syndicate-event .content-item-event-date::after {
+  content: ":";
+}
+.wsuwp-content-syndicate-event .content-item-event-venue::before {
+  content: "in ";
+}
+.wsuwp-content-syndicate-event .content-item-event-venue::empty {
+  display: none;
+}
+.wsuwp-content-syndicate-list:empty::after {
+  content: "None.";
+}
 .recurring-info-tooltip,
 .tribe-events-calendar .tribe-events-tooltip,
 .tribe-events-shortcode.view-week .tribe-events-tooltip,
@@ -7725,6 +7654,120 @@ body.tribe-theme-spine:not(.tribe_venue-template-default) .main-header .header-g
 .tribe-events-shortcode.view-week .tribe-events-tooltip .workshop-note,
 .tribe-events-week .tribe-events-tooltip .workshop-note {
   display: none;
+}
+.tribe_events-template-default .article-header,
+.tribe_venue-template-default .article-header,
+.tribe-theme-spine.events-archive .article-header {
+  display: none;
+}
+.type-tribe_events[class*=post-] .tribe-events-cal-links {
+  clear: left;
+}
+.type-tribe_events[class*=post-] .tribe-events-event-image {
+  float: left;
+  height: 0;
+  padding-bottom: 30%;
+  position: relative;
+}
+.type-tribe_events[class*=post-] .tribe-events-event-image a {
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border-bottom: none;
+  box-shadow: none;
+  z-index: 1;
+}
+.type-tribe_events[class*=post-] .tribe-events-event-image img {
+  width: 100%;
+  height: auto;
+}
+.tribe-events-single .type-tribe_events[class*=post-] .tribe-events-event-image {
+  width: 30%;
+  margin-right: 3%;
+}
+@media all and (min-width: 601px) {
+  .tribe-events-single .type-tribe_events[class*=post-] .tribe-events-event-image {
+    width: 20%;
+    padding-bottom: 20%;
+  }
+}
+body.tribe-theme-spine:not(.tribe_venue-template-default) .main-header .header-group {
+  width: calc(90%);
+  width: calc(100% - 2rem);
+}
+body.tribe-theme-spine:not(.tribe_venue-template-default) .main-header .header-group .sub-header {
+  color: transparent !important;
+}
+body.tribe-theme-spine:not(.tribe_venue-template-default) .main-header .header-group .sub-header::before {
+  content: "Office of Undergraduate Research";
+  position: absolute;
+  color: #fff;
+}
+body.tribe-theme-spine:not(.tribe_venue-template-default) .main-header .header-group .sub-header a {
+  display: none;
+}
+#tribe-bar-views a {
+  border-bottom: none;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  box-shadow: none;
+  text-shadow: none;
+}
+#tribe-bar-views li.tribe-bar-active a {
+  border-bottom: 0.0625em solid transparent;
+}
+#tribe-bar-views li.tribe-bar-active a:hover {
+  border-bottom-right-radius: 0.25em;
+  border-bottom-left-radius: 0.25em;
+  border-bottom: 0.0625em solid #981e32;
+  box-shadow: inset 0 -0.3125em 0 rgba(152, 30, 50, 0.15);
+  color: #c60c30 !important;
+}
+#tribe-events .workshop-note {
+  font-size: 0.9em;
+  color: #715409;
+}
+.column #tribe-events ul li {
+  list-style-image: none;
+}
+#tribe-events-content.tribe-events-day .tribe-events-day-time-slot > h5:first-child {
+  background-color: #3b4042;
+}
+#tribe-events-content.tribe-events-list .tribe-events-page-title {
+  padding-bottom: 0.5em;
+  padding-top: 0.42em;
+  border-radius: 10px;
+  background-color: #58111d;
+  color: #fff;
+}
+#tribe-events-content.tribe-events-list .tribe-events-page-title a {
+  color: #c60c30;
+  border-bottom: 1px solid transparent;
+}
+#tribe-events-content.tribe-events-list .tribe-events-page-title a:hover {
+  color: #e38698;
+  border-bottom-color: #e38698;
+}
+#tribe-events-content.tribe-events-list .tribe-event-schedule-details {
+  font-size: 1.3rem;
+}
+#tribe-events-content.tribe-events-list .tribe-events-venue-details {
+  font-size: 1.3rem;
+  margin-top: 0;
+  /*! TODO: Replace with a JavaScript-based solution b/c some events lack a venue, but the plugin loads empty HTML tags regardless.
+				&:before {
+					content: "Location: ";
+					font-weight: bold;
+				}*/
+}
+#tribe-events-content.tribe-events-list .tribe-events-list-separator-month span {
+  padding-bottom: 0.2em;
+  border-radius: 4px;
+  background-color: #981e32;
+  color: white;
 }
 #tribe-events-content.tribe-events-month {
   border-radius: 10px;
@@ -7821,9 +7864,6 @@ body.tribe-theme-spine:not(.tribe_venue-template-default) .main-header .header-g
   background-color: #fff;
   font-size: 0.925rem;
 }
-#tribe-events-content.tribe-events-day .tribe-events-day-time-slot > h5:first-child {
-  background-color: #3b4042;
-}
 #tribe-events-content.tribe-events-single .tribe-events-event-meta {
   padding-top: 1.5rem;
 }
@@ -7833,75 +7873,65 @@ body.tribe-theme-spine:not(.tribe_venue-template-default) .main-header .header-g
 #tribe-events-content.tribe-events-single .tribe-events-schedule h2 {
   font-size: 1.3rem;
 }
-#tribe-events-content.tribe-events-list .tribe-events-page-title {
-  padding-bottom: 0.5em;
-  padding-top: 0.42em;
-  border-radius: 10px;
-  background-color: #58111d;
-  color: #fff;
-}
-#tribe-events-content.tribe-events-list .tribe-events-page-title a {
-  color: #c60c30;
-  border-bottom: 1px solid transparent;
-}
-#tribe-events-content.tribe-events-list .tribe-events-page-title a:hover {
-  color: #e38698;
-  border-bottom-color: #e38698;
-}
-#tribe-events-content.tribe-events-list .tribe-events-list-separator-month span {
-  padding-bottom: 0.2em;
-  border-radius: 4px;
-  background-color: #981e32;
-  color: white;
-}
-#tribe-events-content.tribe-events-list .tribe-event-schedule-details {
-  font-size: 1.3rem;
-}
-#tribe-events-content.tribe-events-list .tribe-events-venue-details {
-  font-size: 1.3rem;
-  margin-top: 0;
-  /*! TODO: Replace with a JavaScript-based solution b/c some events lack a venue, but the plugin loads empty HTML tags regardless.
-				&:before {
-					content: "Location: ";
-					font-weight: bold;
-				}*/
-}
-.single-tribe_events .tribe-events-before-html .calendar-intro-message {
-  display: none;
-}
-.wsuwp-content-syndicate-event .content-item-event-date {
-  font-weight: bold;
-}
-.wsuwp-content-syndicate-event .content-item-event-date::after {
-  content: ":";
-}
-.wsuwp-content-syndicate-event .content-item-event-venue::before {
-  content: "in ";
-}
-.wsuwp-content-syndicate-event .content-item-event-venue::empty {
-  display: none;
-}
-.wsuwp-content-syndicate-list:empty::after {
-  content: "None.";
-}
 body.tribe-theme-spine .sub-header {
   text-shadow: 0.5px 0.5px 1px transparent;
 }
 body.tribe-theme-spine .sub-header:before {
   text-shadow: 0.5px 0.5px 1px #000;
 }
-body.home #upcoming-events .wsuwp-content-syndicate-wrapper {
-  overflow: hidden;
-}
-body.home #upcoming-events .wsuwp-content-syndicate-list {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  flex-flow: row wrap;
-  font-size: 0.925rem;
-  list-style-type: none;
-  padding: 0;
+body.home #upcoming-events .content-item-event-date {
+  box-sizing: border-box;
+  color: #fff;
+  float: left;
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 50px;
   position: relative;
+  text-align: center;
+  text-transform: uppercase;
+  width: 2.5rem;
+  word-spacing: 2rem;
+  z-index: 1;
+}
+body.home #upcoming-events .content-item-event-date::before,
+body.home #upcoming-events .content-item-event-date::after {
+  content: "";
+  left: 0;
+  position: absolute;
+  -webkit-transition: background 0.4s;
+  transition: background 0.4s;
+  width: 100%;
+  z-index: -1;
+}
+body.home #upcoming-events .content-item-event-date::before {
+  background: #717171;
+  bottom: 0;
+  top: 0;
+}
+body.home #upcoming-events .content-item-event-date::after {
+  background: #b5babe;
+  bottom: 0;
+  height: 48px;
+}
+body.home #upcoming-events .content-item-event-date:first-line {
+  font-size: 12px;
+  font-weight: 300;
+  line-height: 24px;
+}
+body.home #upcoming-events .content-item-event-meta {
+  display: none;
+}
+body.home #upcoming-events .content-item-event-title {
+  display: block;
+  margin-left: 3.25rem;
+}
+body.home #upcoming-events .content-item-event-title a {
+  border-bottom-color: transparent;
+  text-shadow: none;
+}
+body.home #upcoming-events .content-item-event-title a:hover {
+  border-bottom-color: #981e32;
+  background-color: #efefef;
 }
 body.home #upcoming-events .wsuwp-content-syndicate-item a,
 body.home #upcoming-events .wsuwp-content-syndicate-event a {
@@ -7941,65 +7971,24 @@ body.home #upcoming-events .wsuwp-content-syndicate-event {
     flex: 1 0 50%;
   }
 }
-body.home #upcoming-events .content-item-event-date {
-  box-sizing: border-box;
-  color: #fff;
-  float: left;
-  font-size: 32px;
-  font-weight: 600;
-  line-height: 50px;
+body.home #upcoming-events .wsuwp-content-syndicate-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-flow: row wrap;
+  font-size: 0.925rem;
+  list-style-type: none;
+  padding: 0;
   position: relative;
-  text-align: center;
-  text-transform: uppercase;
-  width: 2.5rem;
-  word-spacing: 2rem;
-  z-index: 1;
 }
-body.home #upcoming-events .content-item-event-date:first-line {
-  font-size: 12px;
-  font-weight: 300;
-  line-height: 24px;
-}
-body.home #upcoming-events .content-item-event-date::before,
-body.home #upcoming-events .content-item-event-date::after {
-  content: "";
-  left: 0;
-  position: absolute;
-  -webkit-transition: background 0.4s;
-  transition: background 0.4s;
-  width: 100%;
-  z-index: -1;
-}
-body.home #upcoming-events .content-item-event-date::before {
-  background: #717171;
-  bottom: 0;
-  top: 0;
-}
-body.home #upcoming-events .content-item-event-date::after {
-  background: #b5babe;
-  bottom: 0;
-  height: 48px;
+body.home #upcoming-events .wsuwp-content-syndicate-wrapper {
+  overflow: hidden;
 }
 body.home #upcoming-events li:hover .content-item-event-date::before {
   background: #b5babe;
 }
 body.home #upcoming-events li:hover .content-item-event-date::after {
   background: #981e32;
-}
-body.home #upcoming-events .content-item-event-title {
-  display: block;
-  margin-left: 3.25rem;
-}
-body.home #upcoming-events .content-item-event-title a {
-  border-bottom-color: transparent;
-  text-shadow: none;
-}
-body.home #upcoming-events .content-item-event-title a:hover {
-  border-bottom-color: #981e32;
-  background-color: #efefef;
-}
-body.home #upcoming-events .content-item-event-meta {
-  display: none;
 }
 @media all and (max-width: 693px) {
   .page.about-us #meet-our-staff .column p {
