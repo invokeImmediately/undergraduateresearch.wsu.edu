@@ -114,8 +114,18 @@ span.accentuated-text {
 .column .soft-gray-border {
   border: 1px solid rgba(42, 48, 51, 0.5);
 }
+.fade-in {
+  animation: anim-fade-in 1s linear 1;
+}
+@keyframes anim-fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 .fade-in-from-top {
-  opacity: 0;
   animation: anim-fade-in-from-top 1s linear 1;
 }
 @keyframes anim-fade-in-from-top {
