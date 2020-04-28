@@ -23,7 +23,7 @@
   },
   "homepage": "https://github.com/invokeImmediately/undergraduateresearch.wsu.edu#readme",
   "devDependencies": {
-    "gulp": "^4.0.0",
+    "gulp": "^4.0.2",
     "gulp-clean-css": "^3.10.0",
     "gulp-concat": "^2.6.1",
     "gulp-extname": "^0.2.2",
@@ -31,9 +31,8 @@
     "gulp-insert": "^0.5.0",
     "gulp-insert-lines": "git+https://github.com/invokeImmediately/gulp-insert-lines.git",
     "gulp-less": "^4.0.1",
-    "gulp-regex-replace": "^0.2.3",
     "gulp-replace": "^1.0.0",
-    "gulp-uglify": "^3.0.1",
+    "gulp-uglify": "^3.0.2",
     "pump": "^3.0.0"
   }
 }
