@@ -28,8 +28,8 @@
 // §1: Gulp task dependencies..................................................................40
 // §2: Specificiation of build settings .......................................................45
 //   §2.1: getCssBuildSettings()...............................................................48
-//   §2.2: getJsBuildSettings()................................................................99
-// §3: Entry point: Set up of build taks......................................................131
+//   §2.2: getJsBuildSettings()................................................................97
+// §3: Entry point: Set up of build taks......................................................129
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
 ( function() {
@@ -85,9 +85,7 @@ RE.\r\n*** =====================================================================
 			'stopAfterFirstMatch': true
 		};
 	var minCssFileExtension = '.min.css';
-	var minCssFileHeaderStr = '/*! Built with the Less CSS preprocessor [http://lesscss.org/]. Plea\
-se see [https://github.com/invokeImmediately/undergraduateresearch.wsu.edu] for a repository of sou\
-rce code. */\r\n';
+	var minCssFileHeaderStr = '';
  	var sourceFile = './CSS/ugr-custom.less';
 
 	return new gulpBuilder.CssBuildSettings(commentRemovalNeedle, dependenciesPath,
