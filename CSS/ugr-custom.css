@@ -3659,7 +3659,7 @@ figure figcaption {
   position: absolute;
   left: 0;
   text-transform: uppercase;
-  top: 1.3em;
+  top: 0.3em;
 }
 body .gform_wrapper div.gform_body ul.gform_fields li.gfield.gfield_html ol.progress-indicator,
 body .gform_wrapper form div.gform_body ul.gform_fields li.gfield.gfield_html ol.progress-indicator {
@@ -3701,6 +3701,7 @@ body .gform_wrapper form div.gform_body ul.gform_fields li.gfield.gfield_html ol
   color: black;
   padding: 0.5em 1em;
   position: relative;
+  text-align: center;
 }
 body .gform_wrapper div.gform_body ul.gform_fields li.gfield.gfield_html ol .progress-indicator__section,
 body .gform_wrapper form div.gform_body ul.gform_fields li.gfield.gfield_html ol .progress-indicator__section {
