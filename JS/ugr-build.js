@@ -1932,42 +1932,49 @@ ill automatically be corrected. Please check the result to see if further correc
 	////////////////////////////////////////////////////////////////////////////////////////////////
 	// §2.2: Document ready bindings
 
-	$( function () {
-		var $requiredFields;
-		if ( $( '.gform_body' ).length > 0 ) {
-			setupActvtrChckbxs( '.oue-gf-actvtr-checkbox' );
-			setupActvtrChain( '.oue-gf-actvtr-chain' );
-			setupUploadChain( '.oue-gf-upload-chain' );
+	// $( function () {
+	// 	var $requiredFields;
+	// 	if ( $( '.gform_body' ).length > 0 ) {
+	// 		setupActvtrChckbxs( '.oue-gf-actvtr-checkbox' );
+	// 		setupActvtrChain( '.oue-gf-actvtr-chain' );
+	// 		setupUploadChain( '.oue-gf-upload-chain' );
 			
-			// TODO: streamline functions by querying all ul.gform_fields li.gfield, then determine
-			//   how to handle object by finding div children with gfield_container_class. Best to
-			//   implement as a class.
-			$requiredFields =  $( '.gfield_contains_required' );
-			hghlghtRqrdInpts( $requiredFields.find( 'input' ) );
-			hghlghtRqrdChckbxs( $requiredFields.find( '.gfield_checkbox, .gfield_radio' ) );
-			hghlghtRqrdTxtAreas( $requiredFields.find( 'textarea' ) );
-			hghlghtRqrdSelects( $requiredFields.find( 'select' ) );
-		}
-	} );
+	// 		// TODO: streamline functions by querying all ul.gform_fields li.gfield, then determine
+	// 		//   how to handle object by finding div children with gfield_container_class. Best to
+	// 		//   implement as a class.
+	// 		$requiredFields =  $( '.gfield_contains_required' );
+	// 		hghlghtRqrdInpts( $requiredFields.find( 'input' ) );
+	// 		hghlghtRqrdChckbxs( $requiredFields.find( '.gfield_checkbox, .gfield_radio' ) );
+	// 		hghlghtRqrdTxtAreas( $requiredFields.find( 'textarea' ) );
+	// 		hghlghtRqrdSelects( $requiredFields.find( 'select' ) );
+	// 	}
+	// } );
 
 	////////////////////////////////////////////////////////////////////////////////////////////////
 	// §2.3: Binding of Handlers to Window Load
 
 	$( document ).on( 'gform_post_render', function () {
+		setupActvtrChckbxs( '.oue-gf-actvtr-checkbox' );
+		setupActvtrChain( '.oue-gf-actvtr-chain' );
+		setupUploadChain( '.oue-gf-upload-chain' );
 		var $requiredFields = $( '.gfield_contains_required' );
-
 		checkRqrdInpts( $requiredFields.find( 'input[type="text"]' ) );
 		checkRqrdChckbxs( $requiredFields.find( '.gfield_checkbox, .gfield_radio' ) );
 		checkRqrdTxtAreas( $requiredFields.find( 'textarea' ) );
+		hghlghtRqrdInpts( $requiredFields.find( 'input' ) );
+		hghlghtRqrdChckbxs( $requiredFields.find( '.gfield_checkbox, .gfield_radio' ) );
+		hghlghtRqrdTxtAreas( $requiredFields.find( 'textarea' ) );
+		hghlghtRqrdSelects( $requiredFields.find( 'select' ) );
+	 	hghlghtRqrdRchTxtEdtrs( $( '.gfield_contains_required.uses-rich-editor' ) );
 	} );
 
 
 	////////////////////////////////////////////////////////////////////////////////////////////////
 	// §2.4: Window Load Event Bindings
 
-	$( window ).load( function () {
-		hghlghtRqrdRchTxtEdtrs( $( '.gfield_contains_required.uses-rich-editor' ) );
-	} );
+	// $( window ).load( function () {
+	// 	hghlghtRqrdRchTxtEdtrs( $( '.gfield_contains_required.uses-rich-editor' ) );
+	// } );
 
 	////////////////////////////////////////////////////////////////////////////////////////////////
 	// §2.5: Function declarations
