@@ -2,5 +2,5 @@
 	path = WSU-UE---CSS
 	url = https://github.com/invokeImmediately/WSU-UE---CSS
 [submodule "WSU-UE---JS"]
-	path = WSU-UE---JS
+	path = WSU-DAESA-JS
 	url = https://github.com/invokeImmediately/WSU-DAESA-JS.git
