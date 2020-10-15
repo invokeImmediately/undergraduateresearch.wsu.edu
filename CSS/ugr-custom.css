@@ -7792,6 +7792,139 @@ body.home .builder-section-banner .cycle-next {
   display: block;
 }
 
+#tablepress-2_wrapper .column-1 {
+  min-width: 10em;
+}
+
+.tf-profile .tf-profile__image {
+  background-color: #eff0f1;
+  background-size: cover;
+  display: block;
+  height: 108px;
+  margin-bottom: 0.25em;
+  width: 108px;
+}
+
+.tf-profile.tf-profile--suzanne-appleyard-wayman .tf-profile__image {
+  background-image: url(https://ipn.vetmed.wsu.edu/images/librariesprovider28/faculty/appleyard-suzanne.jpg);
+}
+
+.tf-profile.tf-profile--santanu-bose .tf-profile__image {
+  background-image: url(https://vmp.vetmed.wsu.edu/images/librariesprovider28/faculty/santanu-bosec48f1b9200636ae48082ff00000c094d.jpg);
+}
+
+.tf-profile.tf-profile--jim-brozik .tf-profile__image {
+  background-image: url(https://s3.wp.wsu.edu/uploads/sites/89/2014/06/DSC_7353-396x264.jpg);
+}
+
+.tf-profile.tf-profile--jean-celli .tf-profile__image {
+  background-image: url(https://globalhealth.wsu.edu/images/librariesprovider28/faculty/celli-jean.jpg);
+}
+
+.tf-profile.tf-profile--michael-cleveland .tf-profile__image {
+  background-image: url(https://s3.wp.wsu.edu/uploads/sites/908/2016/08/Michael-Cleveland-compressed.jpg);
+}
+
+.tf-profile.tf-profile--allison-coffin .tf-profile__image {
+  background-image: url(https://directory.vancouver.wsu.edu/sites/directory.vancouver.wsu.edu/files/styles/rectangle/public/profile_photos/coffin_0.jpg);
+}
+
+.tf-profile.tf-profile--min-du .tf-profile__image {
+  background-image: url(https://s3.wp.wsu.edu/uploads/sites/386/2017/06/MinDu20170531_200x237.jpg);
+}
+
+.tf-profile.tf-profile--rita-fuchs-lokensgard .tf-profile__image {
+  background-image: url(https://ipn.vetmed.wsu.edu/images/librariesprovider28/faculty/rita-fuchs.jpg);
+}
+
+.tf-profile.tf-profile--hassan-ghasemzadeh .tf-profile__image {
+  background-image: url(https://s3.wp.wsu.edu/uploads/sites/908/2019/11/Hassan-Ghasemzadeh-198x198.jpg);
+}
+
+.tf-profile.tf-profile--alan-goodman .tf-profile__image {
+  background-image: url(https://smb.wsu.edu/images/librariesprovider28/faculty/alan-goodman.jpg);
+}
+
+.tf-profile.tf-profile--thomas-kawula .tf-profile__image {
+  background-image: url(https://globalhealth.wsu.edu/images/librariesprovider28/faculty/kawula-tom.jpg);
+}
+
+.tf-profile.tf-profile--leigh-knodler .tf-profile__image {
+  background-image: url(https://vmp.vetmed.wsu.edu/images/librariesprovider28/faculty/knodler-leigh.jpg);
+}
+
+.tf-profile.tf-profile--michael-konkel .tf-profile__image {
+  background-image: url(https://smb.wsu.edu/images/librariesprovider28/faculty/michael-konkel.jpg);
+}
+
+.tf-profile.tf-profile--alla-kostyukova .tf-profile__image {
+  background-image: url(https://s3.wp.wsu.edu/uploads/sites/734/2019/08/akostyukova-headshot-2019-150w-132x198.jpg);
+}
+
+.tf-profile.tf-profile--david-lin .tf-profile__image {
+  background-image: url(https://s3.wp.wsu.edu/uploads/sites/734/2019/08/dlin-headshot-2019-150w-132x198.jpg);
+}
+
+.tf-profile.tf-profile--eric-lofgren .tf-profile__image {
+  background-image: url(https://globalhealth.wsu.edu/images/librariesprovider28/faculty/eric-lofgren.jpg);
+}
+
+.tf-profile.tf-profile--ryan-mclaughlin .tf-profile__image {
+  background-image: url(https://ipn.vetmed.wsu.edu/images/librariesprovider28/faculty/ryan-mclaughlin.jpg);
+}
+
+.tf-profile.tf-profile--anthony-nicola .tf-profile__image {
+  background-image: url(https://vmp.vetmed.wsu.edu/images/librariesprovider28/faculty/nicola-anthony.jpg);
+}
+
+.tf-profile.tf-profile--roberta-o-connor .tf-profile__image {
+  background-image: url("https://vmp.vetmed.wsu.edu/images/librariesprovider28/faculty/roberta-(robbie)-o\'connor.jpeg");
+}
+
+.tf-profile.tf-profile--anders-omsland .tf-profile__image {
+  background-image: url(https://globalhealth.wsu.edu/images/librariesprovider28/faculty/omsland-anders.jpg);
+}
+
+.tf-profile.tf-profile--james-pru .tf-profile__image {
+  background-image: url(https://ansci.wsu.edu/wp-content/uploads/sites/386/2014/12/pru.jpg);
+}
+
+.tf-profile.tf-profile--ray-quock .tf-profile__image {
+  background-image: url(https://s3.wp.wsu.edu/uploads/sites/514/2015/02/raymond_quock.jpg);
+}
+
+.tf-profile.tf-profile--steven-roberts .tf-profile__image {
+  background-image: url(https://smb.wsu.edu/images/librariesprovider28/faculty/steven-roberts.jpg);
+}
+
+.tf-profile.tf-profile--dana-shaw .tf-profile__image {
+  background-image: url(https://vmp.vetmed.wsu.edu/images/librariesprovider28/faculty/dana-shaw-sm.jpg);
+}
+
+.tf-profile.tf-profile--michael-skinner .tf-profile__image {
+  background-image: url(https://s3.wp.wsu.edu/uploads/sites/1176/2018/10/Michael-Skinner_6196.jpg);
+}
+
+.tf-profile.tf-profile--viveka-vadyvaloo .tf-profile__image {
+  background-image: url(https://vmp.vetmed.wsu.edu/images/librariesprovider28/faculty/vadyvaloo-viveka.jpg);
+}
+
+.tf-profile.tf-profile--anita-vasavada .tf-profile__image {
+  background-image: url(https://s3.wp.wsu.edu/uploads/sites/734/2019/08/vasavada-headshot-2019-150w-132x198.jpg);
+}
+
+.tf-profile.tf-profile--gary-wayman .tf-profile__image {
+  background-image: url(https://ipn.vetmed.wsu.edu/images/librariesprovider28/faculty/wayman_gary.jpg);
+}
+
+.tf-profile.tf-profile--john-wyrick .tf-profile__image {
+  background-image: url(https://smb.wsu.edu/images/librariesprovider28/faculty/john-wyrick.jpg);
+}
+
+.tf-profile.tf-profile--ming-xian .tf-profile__image {
+  background-image: url(https://s3.wp.wsu.edu/uploads/sites/89/2014/07/Xian11-396x594.jpg);
+}
+
 /*! ================================================================================================
 *** Media queries section
 *** ================================================================================================

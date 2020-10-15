@@ -6,27 +6,29 @@
 /**  ───────────────────────────────────────────────────────────────────────────────────────────────
 ***  TABLE OF CONTENTS:
 ***  ────────────────────────────────────────────────────────────────────────────────────────────
-***  §1: Build entry point from DAESA's CSS development project................................34
-***  §2: Persistent section header comment for unit specific styling...........................45
-***  §3: Backgrounds...........................................................................77
-***    >>> §3.1: Spine binder..................................................................81
-***    >>> §3.2: Spine jacket..................................................................92
-***    >>> §3.3: Page body....................................................................102
-***    >>> §3.4: Main content section.........................................................131
-***    >>> §3.5: Main header..................................................................139
-***    >>> §3.6: Columnar headers.............................................................160
-***  §4: Styling at the document section level................................................184
-***    >>> §4.1: Headings.....................................................................188
-***  §5: Styling at the content grouping level................................................199
-***    >>> §5.1: Lists........................................................................203
-***  §6: Styling at the embedded content level................................................218
-***    >>> §6.1: Iframes......................................................................222
-***  §7: Styling of forms.....................................................................251
-***  §8: Optional styling included via Less mixins............................................322
-***  §9: Component-based styling..............................................................404
-***    >>> §9.1: Page specific components.....................................................408
-***    >>> §9.2: Banner slideshows............................................................556
-***    >>> §9.3: Travel award forms...........................................................582
+***  §1: Build entry point from DAESA's CSS development project................................36
+***  §2: Persistent section header comment for unit specific styling...........................47
+***  §3: Backgrounds...........................................................................79
+***    >>> §3.1: Spine binder..................................................................83
+***    >>> §3.2: Spine jacket..................................................................94
+***    >>> §3.3: Page body....................................................................104
+***    >>> §3.4: Main content section.........................................................133
+***    >>> §3.5: Main header..................................................................141
+***    >>> §3.6: Columnar headers.............................................................162
+***  §4: Styling at the document section level................................................186
+***    >>> §4.1: Headings.....................................................................190
+***  §5: Styling at the content grouping level................................................201
+***    >>> §5.1: Lists........................................................................205
+***  §6: Styling at the embedded content level................................................220
+***    >>> §6.1: Iframes......................................................................224
+***  §7: Styling of forms.....................................................................253
+***  §8: Optional styling included via Less mixins............................................324
+***  §9: Component-based styling..............................................................406
+***    >>> §9.1: Page specific components.....................................................410
+***    >>> §9.2: Banner slideshows............................................................558
+***    >>> §9.3: Travel award forms...........................................................584
+***    >>> §9.4: DAESA focus features.........................................................599
+***    >>> §9.5: ESTEEMED MIRA Training Faculty table.........................................632
 ***  ───────────────────────────────────────────────────────────────────────────────────────────────
 **/
 
@@ -626,3 +628,209 @@ body.home {
 };
 @rs-daesa-focus-feature();
 
+/**   ----------------------------------------------------------------------------------------------
+***   >>> §9.5: ESTEEMED MIRA Training Faculty table
+**/
+
+@rs-esteemed-mira-training-faculty-table: {
+	@profile_h: 108px;
+	@profile_w: @profile_h;
+
+	#tablepress-2_wrapper {
+		.column-1 {
+			min-width: 10em;
+		}
+	}
+
+	.tf-profile {
+		.tf-profile__image {
+			background-color: #eff0f1;
+			background-size: cover;
+			display: block;
+			height: @profile_h;
+			margin-bottom: .25em;
+			width: @profile_w;
+		}
+
+		&.tf-profile--suzanne-appleyard-wayman {
+			.tf-profile__image {
+				background-image: url(https://ipn.vetmed.wsu.edu/images/librariesprovider28/faculty/appleyard-suzanne.jpg);
+			}
+		}
+
+		&.tf-profile--santanu-bose {
+			.tf-profile__image {
+				background-image: url(https://vmp.vetmed.wsu.edu/images/librariesprovider28/faculty/santanu-bosec48f1b9200636ae48082ff00000c094d.jpg);
+			}
+		}
+
+		&.tf-profile--jim-brozik {
+			.tf-profile__image {
+				background-image: url(https://s3.wp.wsu.edu/uploads/sites/89/2014/06/DSC_7353-396x264.jpg);
+			}
+		}
+
+		&.tf-profile--jean-celli {
+			.tf-profile__image {
+				background-image: url(https://globalhealth.wsu.edu/images/librariesprovider28/faculty/celli-jean.jpg);
+			}
+		}
+
+		&.tf-profile--michael-cleveland {
+			.tf-profile__image {
+				background-image: url(https://s3.wp.wsu.edu/uploads/sites/908/2016/08/Michael-Cleveland-compressed.jpg);
+			}
+		}
+
+		&.tf-profile--allison-coffin {
+			.tf-profile__image {
+				background-image: url(https://directory.vancouver.wsu.edu/sites/directory.vancouver.wsu.edu/files/styles/rectangle/public/profile_photos/coffin_0.jpg);
+			}
+		}
+
+		&.tf-profile--min-du {
+			.tf-profile__image {
+				background-image: url(https://s3.wp.wsu.edu/uploads/sites/386/2017/06/MinDu20170531_200x237.jpg);
+			}
+		}
+
+		&.tf-profile--rita-fuchs-lokensgard {
+			.tf-profile__image {
+				background-image: url(https://ipn.vetmed.wsu.edu/images/librariesprovider28/faculty/rita-fuchs.jpg);
+			}
+		}
+
+		&.tf-profile--hassan-ghasemzadeh {
+			.tf-profile__image {
+				background-image: url(https://s3.wp.wsu.edu/uploads/sites/908/2019/11/Hassan-Ghasemzadeh-198x198.jpg);
+			}
+		}
+
+		&.tf-profile--alan-goodman {
+			.tf-profile__image {
+				background-image: url(https://smb.wsu.edu/images/librariesprovider28/faculty/alan-goodman.jpg);
+			}
+		}
+
+		&.tf-profile--thomas-kawula {
+			.tf-profile__image {
+				background-image: url(https://globalhealth.wsu.edu/images/librariesprovider28/faculty/kawula-tom.jpg);
+			}
+		}
+
+		&.tf-profile--leigh-knodler {
+			.tf-profile__image {
+				background-image: url(https://vmp.vetmed.wsu.edu/images/librariesprovider28/faculty/knodler-leigh.jpg);
+			}
+		}
+
+		&.tf-profile--michael-konkel {
+			.tf-profile__image {
+				background-image: url(https://smb.wsu.edu/images/librariesprovider28/faculty/michael-konkel.jpg);
+			}
+		}
+
+		&.tf-profile--alla-kostyukova {
+			.tf-profile__image {
+				background-image: url(https://s3.wp.wsu.edu/uploads/sites/734/2019/08/akostyukova-headshot-2019-150w-132x198.jpg);
+			}
+		}
+
+		&.tf-profile--david-lin {
+			.tf-profile__image {
+				background-image: url(https://s3.wp.wsu.edu/uploads/sites/734/2019/08/dlin-headshot-2019-150w-132x198.jpg);
+			}
+		}
+
+		&.tf-profile--eric-lofgren {
+			.tf-profile__image {
+				background-image: url(https://globalhealth.wsu.edu/images/librariesprovider28/faculty/eric-lofgren.jpg);
+			}
+		}
+
+		&.tf-profile--ryan-mclaughlin {
+			.tf-profile__image {
+				background-image: url(https://ipn.vetmed.wsu.edu/images/librariesprovider28/faculty/ryan-mclaughlin.jpg);
+			}
+		}
+
+		&.tf-profile--anthony-nicola {
+			.tf-profile__image {
+				background-image: url(https://vmp.vetmed.wsu.edu/images/librariesprovider28/faculty/nicola-anthony.jpg);
+			}
+		}
+
+		&.tf-profile--roberta-o-connor {
+			.tf-profile__image {
+				background-image: url("https://vmp.vetmed.wsu.edu/images/librariesprovider28/faculty/roberta-(robbie)-o\'connor.jpeg");
+			}
+		}
+
+		&.tf-profile--anders-omsland {
+			.tf-profile__image {
+				background-image: url(https://globalhealth.wsu.edu/images/librariesprovider28/faculty/omsland-anders.jpg);
+			}
+		}
+
+		&.tf-profile--james-pru {
+			.tf-profile__image {
+				background-image: url(https://ansci.wsu.edu/wp-content/uploads/sites/386/2014/12/pru.jpg);
+			}
+		}
+
+		&.tf-profile--ray-quock {
+			.tf-profile__image {
+				background-image: url(https://s3.wp.wsu.edu/uploads/sites/514/2015/02/raymond_quock.jpg);
+			}
+		}
+
+		&.tf-profile--steven-roberts {
+			.tf-profile__image {
+				background-image: url(https://smb.wsu.edu/images/librariesprovider28/faculty/steven-roberts.jpg);
+			}
+		}
+
+		&.tf-profile--dana-shaw {
+			.tf-profile__image {
+				background-image: url(https://vmp.vetmed.wsu.edu/images/librariesprovider28/faculty/dana-shaw-sm.jpg);
+			}
+		}
+
+		&.tf-profile--michael-skinner {
+			.tf-profile__image {
+				background-image: url(https://s3.wp.wsu.edu/uploads/sites/1176/2018/10/Michael-Skinner_6196.jpg);
+			}
+		}
+
+		&.tf-profile--viveka-vadyvaloo {
+			.tf-profile__image {
+				background-image: url(https://vmp.vetmed.wsu.edu/images/librariesprovider28/faculty/vadyvaloo-viveka.jpg);
+			}
+		}
+
+		&.tf-profile--anita-vasavada {
+			.tf-profile__image {
+				background-image: url(https://s3.wp.wsu.edu/uploads/sites/734/2019/08/vasavada-headshot-2019-150w-132x198.jpg);
+			}
+		}
+
+		&.tf-profile--gary-wayman {
+			.tf-profile__image {
+				background-image: url(https://ipn.vetmed.wsu.edu/images/librariesprovider28/faculty/wayman_gary.jpg);
+			}
+		}
+
+		&.tf-profile--john-wyrick {
+			.tf-profile__image {
+				background-image: url(https://smb.wsu.edu/images/librariesprovider28/faculty/john-wyrick.jpg);
+			}
+		}
+
+		&.tf-profile--ming-xian {
+			.tf-profile__image {
+				background-image: url(https://s3.wp.wsu.edu/uploads/sites/89/2014/07/Xian11-396x594.jpg);
+			}
+		}
+	}
+};
+@rs-esteemed-mira-training-faculty-table();
