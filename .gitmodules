@@ -1,7 +1,6 @@
-[submodule "WSU-UE---CSS"]
-	path = WSU-UE---CSS
-	url = https://github.com/invokeImmediately/WSU-UE---CSS
+[submodule "WSU-DAESA-CSS"]
+	path = WSU-DAESA-CSS
+	url = https://github.com/invokeImmediately/WSU-DAESA-CSS
 [submodule "WSU-DAESA-JS"]
 	path = WSU-DAESA-JS
-	url = https://github.com/invokeImmediately/WSU-DAESA-JS.git
-	branch = devExtendGulp
+	url = https://github.com/invokeImmediately/WSU-DAESA-JS
