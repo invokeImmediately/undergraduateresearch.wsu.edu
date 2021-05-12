@@ -1,35 +1,36 @@
 /*!*************************************************************************************************
- * gulpfile.js
- * -------------------------------------------------------------------------------------------------
- * SUMMARY: Gulp automation task definition file for setting up tasks that build CSS and JS
- * files for use on the WSUWP website of the Office of Undergraduate Research at WSU.
+ * █▀▀▀ █  █ █    █▀▀▄ █▀▀▀ ▀█▀ █    █▀▀▀      █ ▄▀▀▀
+ * █ ▀▄ █  █ █  ▄ █▄▄▀ █▀▀▀  █  █  ▄ █▀▀    ▄  █ ▀▀▀█
+ * ▀▀▀▀  ▀▀  ▀▀▀  █    ▀    ▀▀▀ ▀▀▀  ▀▀▀▀ ▀ ▀▄▄█ ▀▀▀ 
  *
- * DESCRIPTION: This gulp automation task definition file is designed for use on the following
- *   project that is maintained on GitHub:
- *   https://github.com/invokeImmediately/undergraduateresearch.wsu.edu
+ * Gulp automation task definition file for setting up tasks that build CSS and JS files for use on
+ *   the WSUWP website of the Office of Undergraduate Research.
  *
- * LICENSE: ISC - Copyright (c) 2020 Daniel C. Rieck.
- *
- *   Permission to use, copy, modify, and/or distribute this software for any purpose with or
- *   without fee is hereby granted, provided that the above copyright notice and this permission
- *   notice appear in all copies.
- *
- *   THE SOFTWARE IS PROVIDED "AS IS" AND DANIEL C. RIECK DISCLAIMS ALL WARRANTIES WITH REGARD TO
- *   THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS. IN NO EVENT
- *   SHALL DANIEL C. RIECK BE LIABLE FOR ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR
- *   ANY DAMAGES WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF
- *   CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
- *   PERFORMANCE OF THIS SOFTWARE.
+ * @link https://github.com/invokeImmediately/undergraduateresearch.wsu.edu/blob/master/gulpfile.js
+ * @author Daniel Rieck [daniel.rieck@wsu.edu] (https://github.com/invokeImmediately)
+ * @license MIT - Copyright (c) 2021 Washington State University
+ *   Permission is hereby granted, free of charge, to any person obtaining a copy of this software
+ *     and associated documentation files (the “Software”), to deal in the Software without
+ *     restriction, including without limitation the rights to use, copy, modify, merge, publish,
+ *     distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom
+ *     the Software is furnished to do so, subject to the following conditions:
+ *   The above copyright notice and this permission notice shall be included in all copies or
+ *     substantial portions of the Software.
+ *   THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING
+ *     BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+ *     NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,
+ *     DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+ *     FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  **************************************************************************************************/
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 // TABLE OF CONTENTS
 // -----------------
-// §1: Gulp task dependencies..................................................................40
-// §2: Specificiation of build settings .......................................................45
-//   §2.1: getCssBuildSettings()...............................................................48
-//   §2.2: getJsBuildSettings()................................................................97
-// §3: Entry point: Set up of build taks......................................................129
+// §1: Gulp task dependencies...................................................................41
+// §2: Specification of build settings .........................................................46
+//   §2.1: getCssBuildSettings()................................................................49
+//   §2.2: getJsBuildSettings()................................................................127
+// §3: Entry point: Set up of build tasks......................................................158
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
 ( function() {
@@ -39,7 +40,7 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 // §1: Gulp task dependencies
 
-var gulpBuilder = require( './WSU-UE---JS/gulpBuilder.js' );
+var gulpBuilder = require( './WSU-DAESA-JS/gulpCssJsBuilder.js' );
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 // §2: Specificiation of build settings 
@@ -53,44 +54,73 @@ var gulpBuilder = require( './WSU-UE---JS/gulpBuilder.js' );
  * @return {object} - Instance of gulpBuilder.CssBuildSettings.
  */
 function getCssBuildSettings() {
-	var commentRemovalNeedle = /^(?:[ \t]*)?\/\*[^!].*$\n(?:^\*\*?[^/].*$\n)*\*\*?\/\n\n?/gm;
-	var dependenciesPath = './WSU-UE---CSS/';
-	var destFolder = './CSS/';
-	var fontImportStr = '@import url(\'https://fonts.googleapis.com/css?family=Open+Sans:300,300i,4\
-00,400i,600,600i,700,700i|Roboto+Condensed:400,400i,700,700i|PT+Serif:400,400i,700,700i|Roboto+Mono\
-:400,400i,700,700i&display=swap\');\r\n';
-	var insertingMediaQuerySectionHeader = {
-			'before': /^@media/,
-			'lineBefore': '/*! ====================================================================\
-============================\r\n*** Media queries section\r\n*** ==================================\
-==============================================================\r\n***   SUMMARY: Media queries buil\
-t from precompiled CSS written in the Less language extension of\r\n***    CSS. Queries in this sec\
-tion are a combination of those designed for use on DAESA websites***\r\n    and those intended spe\
-cifically for use on the Office of Undergraduate Research website.\r\n***\r\n***   DESCRIPTION: Ful\
-ly documented, precompiled source code from which this section of the custom\r\n***    stylesheet w\
-as built is developed and maintained on the following two GitHub projects:\r\n***    https://github\
-.com/invokeImmediately/WSU-UE---CSS/\r\n***    https://github.com/invokeImmediately/undergraduatere\
-search.wsu.edu/\r\n***   AUTHOR: Daniel Rieck [daniel.rieck@wsu.edu] (https://github.com/invokeImme\
-diately)\r\n***\r\n***   LICENSE: ISC - Copyright (c) 2020 Daniel C. Rieck.\r\n***\r\n***     Permi\
-ssion to use, copy, modify, and/or distribute this software for any purpose with or\r\n***     with\
-out fee is hereby granted, provided that the above copyright notice and this permission\r\n***     \
-notice appear in all copies.\r\n***\r\n***     THE SOFTWARE IS PROVIDED "AS IS" AND DANIEL C. RIECK\
- DISCLAIMS ALL WARRANTIES WITH REGARD TO\r\n***     THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES \
-OF MERCHANTABILITY AND FITNESS. IN NO EVENT\r\n***     SHALL DANIEL C. RIECK BE LIABLE FOR ANY SPEC\
-IAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR\r\n***     ANY DAMAGES WHATSOEVER RESULTING FROM\
- LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF\r\n***     CONTRACT, NEGLIGENCE OR OTHER TOR\
-TIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE\r\n***     OR PERFORMANCE OF THIS SOFTWA\
-RE.\r\n*** ========================================================================================\
-========\r\n**/',
-			'stopAfterFirstMatch': true
-		};
-	var minCssFileExtension = '.min.css';
-	var minCssFileHeaderStr = '';
- 	var sourceFile = './CSS/ugr-custom.less';
-
-	return new gulpBuilder.CssBuildSettings(commentRemovalNeedle, dependenciesPath,
- 		destFolder, fontImportStr, insertingMediaQuerySectionHeader, minCssFileExtension,
- 		minCssFileHeaderStr, sourceFile);
+	return new gulpBuilder.CssBuildSettings( {
+		commentRemovalNeedle: /^(?:[ \t]*)?\/\*[^!].*$\n(?:^\*\*?[^/].*$\n)*\*\*?\/\n\n?/gm,
+		dependenciesPath: './WSU-DAESA-CSS/',
+		destFolder: './CSS/',
+		fontImportStr: '@import url(\'https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,' +
+			'400i,600,600i,700,700i|Roboto+Condensed:400,400i,700,700i|PT+Serif:400,400i,700,700i|Robot' +
+			'o+Mono:400,400i,700,700i&display=swap\');\r\n',
+		insertingMediaQuerySectionHeader: {
+			before: /^@media/,
+			lineBefore:  '/*! ========================================================================' +
+						'========================\r\n' +
+					'*** ▐▀▄▀▌█▀▀▀ █▀▀▄ ▀█▀ ▄▀▀▄   ▄▀▀▄ █  █ █▀▀▀ █▀▀▄ ▀█▀ █▀▀▀ ▄▀▀▀   ▄▀▀▀ █▀▀▀ ▄▀▀▀▐▀█▀▌' +
+						'▀█▀ ▄▀▀▄ ▐▀▀▄\r\n' +
+					'*** █ ▀ ▌█▀▀  █  █  █  █▄▄█   █  █ █  █ █▀▀  █▄▄▀  █  █▀▀  ▀▀▀█   ▀▀▀█ █▀▀  █     █  ' +
+						' █  █  █ █  ▐\r\n' +
+					'*** █   ▀▀▀▀▀ ▀▀▀  ▀▀▀ █  ▀    ▀█▄  ▀▀  ▀▀▀▀ ▀  ▀▄▀▀▀ ▀▀▀▀ ▀▀▀    ▀▀▀  ▀▀▀▀  ▀▀▀  █  ' +
+						'▀▀▀  ▀▀  ▀  ▐\r\n' +
+					'*** ==================================================================================' +
+						'==============\r\n' +
+					'*** Media queries built from precompiled CSS written in the Less language extension' +
+					  ' of CSS. Queries\r\n' +
+					'***   in this section are a combination of those designed for use on DAESA websites' +
+						' and those\r\n' +
+					'***   intended specifically for use on the Office of Undergraduate Research' +
+						' website.\r\n' +
+					'***\r\n' +
+					'*** Fully documented, precompiled source code from which this section of stylesheet' +
+						' was developed\r\n' +
+					'***   is maintained on the following two GitHub projects:\r\n' +
+					'***   - https://github.com/invokeImmediately/WSU-DAESA-CSS/\r\n' +
+					'***   - https://github.com/invokeImmediately/undergraduateresearch.wsu.edu/\r\n' +
+					'***\r\n' +
+					'*** @author Daniel Rieck [daniel.rieck@wsu.edu]' +
+						' (https://github.com/invokeImmediately)\r\n' +
+					'*** @license: MIT - Copyright (c) 2021 Washington State University\r\n' +
+					'***   Permission is hereby granted, free of charge, to any person obtaining a copy of' +
+						' this software\r\n' +
+					'***     and associated documentation files (the "Software"), to deal in the Software' +
+						' without\r\n' +
+					'***     restriction, including without limitation the rights to use, copy, modify,' +
+						' merge, publish,\r\n' +
+					'***     distribute, sublicense, and/or sell copies of the Software, and to permit' +
+						' persons to whom\r\n' +
+					'***     the Software is furnished to do so, subject to the following conditions:\r\n' +
+					'***   The above copyright notice and this permission notice shall be included in all' +
+						' copies or\r\n' +
+					'***     substantial portions of the Software.\r\n' +
+					'***   THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR' +
+						' IMPLIED, INCLUDING\r\n' +
+					'***     BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR' +
+						' PURPOSE AND\r\n' +
+					'***     NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE' +
+						' FOR ANY\r\n' +
+					'***     CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR' +
+						' OTHERWISE,\r\n' +
+					'***     ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER' +
+						' DEALINGS IN THE\r\n' +
+					'***     SOFTWARE.\r\n' +
+					'*** ==================================================================================' +
+						'==============\r\n' +
+					'**/',
+			stopAfterFirstMatch: true
+		},
+		minCssFileExtension: '.min.css',
+		minCssFileHeaderStr: '',
+		sourceFile: './CSS/ugr-custom.less'
+	} );
 }
 
 ////////
@@ -104,17 +134,16 @@ RE.\r\n*** =====================================================================
 function getJsBuildSettings() {
 	return {
 		buildDependenciesList: [
-			'./WSU-UE---JS/jQuery.oue-custom.js',
-			'./WSU-UE---JS/jQuery.oue-animate.js',
-			'./WSU-UE---JS/jQuery.cookieObjs.js',
-			'./WSU-UE---JS/jQuery.forms.js',
+			'./WSU-DAESA-JS/jQuery.daesa-custom.js',
+			'./WSU-DAESA-JS/jQuery.oue-animate.js',
+			'./WSU-DAESA-JS/jQuery.cookieObjs.js',
+			'./WSU-DAESA-JS/jQuery.forms.js',
 			'../jQuery.AreYouSure/jquery.are-you-sure.js',
-			'./WSU-UE---JS/jQuery.are-you-sure.js',
+			'./WSU-DAESA-JS/jQuery.are-you-sure.js',
 			'../qTip2/dist/jquery.qtip.min.js',
-			'./WSU-UE---JS/jQuery.qTip.js',
-			'./WSU-UE---JS/jQuery.css-data.js',
-			'./WSU-UE---JS/jQuery.textResize.js',
-			'./WSU-UE---JS/jQuery.masonry-custom.js',
+			'./WSU-DAESA-JS/jQuery.qTip.js',
+			'./WSU-DAESA-JS/jQuery.css-data.js',
+			'./WSU-DAESA-JS/jQuery.masonry-custom.js',
 			'./JS/ugr-custom.js'
 		],
 		commentNeedle: /^(\/\*)(?!!)/g,
@@ -128,11 +157,9 @@ function getJsBuildSettings() {
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 // §3: Entry point: Set up of build task
 
-/* -------------------------------------------------------------------------------------------------
-** Main execution sequence
-*/
-
 gulpBuilder.setUpCssBuildTask( getCssBuildSettings() );
 gulpBuilder.setUpJsBuildTask( getJsBuildSettings() );
+gulpBuilder.setUpHelpTask();
+gulpBuilder.setUpDefaultTask();
 
 } )();
