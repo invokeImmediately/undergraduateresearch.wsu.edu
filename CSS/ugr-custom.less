@@ -1,34 +1,43 @@
 /** ┌──────────────────────────────────────────────────────────────────────────────────────────────┐
-*** │ FILENAME: undergraduate-research-custom.less                                                 │
+***   █  █ ▐▀▀▄ █▀▀▄ █▀▀▀ █▀▀▄ █▀▀▀ █▀▀▄ ▄▀▀▄ █▀▀▄ █  █ ▄▀▀▄▐▀█▀▌█▀▀▀
+***   █  █ █  ▐ █  █ █▀▀  █▄▄▀ █ ▀▄ █▄▄▀ █▄▄█ █  █ █  █ █▄▄█  █  █▀▀  ▀▀
+***    ▀▀  ▀  ▐ ▀▀▀  ▀▀▀▀ ▀  ▀▄▀▀▀▀ ▀  ▀▄█  ▀ ▀▀▀   ▀▀  █  ▀  █  ▀▀▀▀
+***
+***      █▀▀▄ █▀▀▀ ▄▀▀▀ █▀▀▀ ▄▀▀▄ █▀▀▄ ▄▀▀▀ █  █
+***      █▄▄▀ █▀▀  ▀▀▀█ █▀▀  █▄▄█ █▄▄▀ █    █▀▀█ ▀▀
+***      ▀  ▀▄▀▀▀▀ ▀▀▀  ▀▀▀▀ █  ▀ ▀  ▀▄ ▀▀▀ █  ▀
+***
+***      ▄▀▀▀ █  █ ▄▀▀▀▐▀█▀▌▄▀▀▄ ▐▀▄▀▌   █    █▀▀▀ ▄▀▀▀ ▄▀▀▀
+***      █    █  █ ▀▀▀█  █  █  █ █ ▀ ▌   █  ▄ █▀▀  ▀▀▀█ ▀▀▀█
+***       ▀▀▀  ▀▀  ▀▀▀   █   ▀▀  █   ▀ ▀ ▀▀▀  ▀▀▀▀ ▀▀▀  ▀▀▀
+***
+***   See persistent section header comment below (§2) for additional information and license.
 *** └──────────────────────────────────────────────────────────────────────────────────────────────┘
-**/
-
-/**  ───────────────────────────────────────────────────────────────────────────────────────────────
 ***  TABLE OF CONTENTS:
 ***  ────────────────────────────────────────────────────────────────────────────────────────────
-***  §1: Build entry point from DAESA's CSS development project................................36
-***  §2: Persistent section header comment for unit specific styling...........................47
-***  §3: Backgrounds...........................................................................79
-***    >>> §3.1: Spine binder..................................................................83
-***    >>> §3.2: Spine jacket..................................................................94
-***    >>> §3.3: Page body....................................................................104
-***    >>> §3.4: Main content section.........................................................133
-***    >>> §3.5: Main header..................................................................141
-***    >>> §3.6: Columnar headers.............................................................162
-***  §4: Styling at the document section level................................................186
-***    >>> §4.1: Headings.....................................................................190
-***  §5: Styling at the content grouping level................................................201
-***    >>> §5.1: Lists........................................................................205
-***  §6: Styling at the embedded content level................................................220
-***    >>> §6.1: Iframes......................................................................224
-***  §7: Styling of forms.....................................................................253
-***  §8: Optional styling included via Less mixins............................................324
-***  §9: Component-based styling..............................................................406
-***    >>> §9.1: Page specific components.....................................................410
-***    >>> §9.2: Banner slideshows............................................................558
-***    >>> §9.3: Travel award forms...........................................................584
-***    >>> §9.4: DAESA focus features.........................................................599
-***    >>> §9.5: ESTEEMED MIRA Training Faculty table.........................................632
+***  §1: Build entry point from DAESA's CSS development project................................45
+***  §2: Persistent section header comment for unit specific styling...........................65
+***  §3: Backgrounds..........................................................................111
+***    >>> §3.1: Spine binder.................................................................115
+***    >>> §3.2: Spine jacket.................................................................126
+***    >>> §3.3: Page body....................................................................136
+***    >>> §3.4: Main content section.........................................................165
+***    >>> §3.5: Main header..................................................................173
+***    >>> §3.6: Columnar headers.............................................................194
+***  §4: Styling at the document section level................................................218
+***    >>> §4.1: Headings.....................................................................222
+***  §5: Styling at the content grouping level................................................233
+***    >>> §5.1: Lists........................................................................237
+***  §6: Styling at the embedded content level................................................252
+***    >>> §6.1: Iframes......................................................................256
+***  §7: Styling of forms.....................................................................285
+***  §8: Optional styling included via Less mixins............................................356
+***  §9: Component-based styling..............................................................438
+***    >>> §9.1: Page specific components.....................................................442
+***    >>> §9.2: Banner slideshows............................................................590
+***    >>> §9.3: Travel award forms...........................................................616
+***    >>> §9.4: DAESA focus features.........................................................631
+***    >>> §9.5: ESTEEMED MIRA Training Faculty table.........................................664
 ***  ───────────────────────────────────────────────────────────────────────────────────────────────
 **/
 
@@ -36,11 +45,20 @@
 *** §1: Build entry point from DAESA's CSS development project
 **/
 
+// Set Grid behavior to match the Spine theme's hybrid mode.
 @grid-behavior: "hybrid";
+
+// Specify an empty OUE rules wrapping class, as one is not needed on the UGR website.
 @oue-rules-wrapper: ~"";
+
+// Pull in our default build settings.
 @import "..\WSU-DAESA-CSS\Settings\build-settings.less";
+
+// Specify any overrides to the default build settings.
 @use-design__content-boxes: true;
 @use-design__gf-progress-indicators: true;
+
+// Pull in the custom styling that is used on all DAESA websites.
 @import "..\WSU-DAESA-CSS\build-entry-point.less";
 
 /** ================================================================================================
@@ -48,30 +66,44 @@
 **/
 
 /*! ================================================================================================
-*** Office of Undergraduate Research Styling Section
+*** ▄▀▀▄ █▀▀▀ █▀▀▀ ▀█▀ ▄▀▀▀ █▀▀▀   ▄▀▀▄ █▀▀▀   █  █ ▐▀▀▄ █▀▀▄ █▀▀▀ █▀▀▄ █▀▀▀ █▀▀▄ ▄▀▀▄ █▀▀▄
+*** █  █ █▀▀▀ █▀▀▀  █  █    █▀▀    █  █ █▀▀▀   █  █ █  ▐ █  █ █▀▀  █▄▄▀ █ ▀▄ █▄▄▀ █▄▄█ █  █ ▀▀
+***  ▀▀  ▀    ▀    ▀▀▀  ▀▀▀ ▀▀▀▀    ▀▀  ▀       ▀▀  ▀  ▐ ▀▀▀  ▀▀▀▀ ▀  ▀▄▀▀▀▀ ▀  ▀▄█  ▀ ▀▀▀
+***
+***    █  █ ▄▀▀▄▐▀█▀▌█▀▀▀   █▀▀▄ █▀▀▀ ▄▀▀▀ █▀▀▀ ▄▀▀▄ █▀▀▄ ▄▀▀▀ █  █   ▄▀▀▀ █  █ ▄▀▀▀▐▀█▀▌▄▀▀▄ ▐▀▄▀▌
+***    █  █ █▄▄█  █  █▀▀    █▄▄▀ █▀▀  ▀▀▀█ █▀▀  █▄▄█ █▄▄▀ █    █▀▀█   █    █  █ ▀▀▀█  █  █  █ █ ▀ ▌
+***     ▀▀  █  ▀  █  ▀▀▀▀   ▀  ▀▄▀▀▀▀ ▀▀▀  ▀▀▀▀ █  ▀ ▀  ▀▄ ▀▀▀ █  ▀    ▀▀▀  ▀▀  ▀▀▀   █   ▀▀  █   ▀
+***
+***    ▄▀▀▀▐▀█▀▌█  █ █    ▀█▀ ▐▀▀▄ █▀▀▀
+***    ▀▀▀█  █  ▀▄▄█ █  ▄  █  █  ▐ █ ▀▄
+***    ▀▀▀   █  ▄▄▄▀ ▀▀▀  ▀▀▀ ▀  ▐ ▀▀▀▀
 *** ================================================================================================
-*** SUMMARY: The following section consists of CSS code designed for use on the website of the
-***   Office of Undergraduate Research at WSU. It was built from precompiled CSS written in the Less
-***   language extension of CSS.
+*** The following section consists of CSS code designed for use on the website of the Office of
+***   Undergraduate Research at WSU. It was built from precompiled CSS written in the Less language
+***   extension of CSS.
 ***
-*** DESCRIPTION: Fully documented, precompiled source code from which this section of the custom
-***   stylesheet was built is developed and maintained on the following GitHub project:
-***   https://github.com/invokeImmediately/undergraduateresearch.wsu.edu/
+*** Fully documented, precompiled source code from which this section of the custom stylesheet was
+***   built is developed and maintained on the GitHub project linked below.
 ***
-*** AUTHOR: Daniel Rieck [daniel.rieck@wsu.edu] (https://github.com/invokeImmediately)
+*** @version 1.0.0
 ***
-*** LICENSE: ISC - Copyright (c) 2019 Daniel C. Rieck.
-***
-***   Permission to use, copy, modify, and/or distribute this software for any purpose with or
-***   without fee is hereby granted, provided that the above copyright notice and this permission
-***   notice appear in all copies.
-***
-***   THE SOFTWARE IS PROVIDED "AS IS" AND DANIEL RIECK DISCLAIMS ALL WARRANTIES WITH REGARD TO THIS
-***   SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL
-***   DANIEL RIECK BE LIABLE FOR ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY
-***   DAMAGES WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF
-***   CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
-***   PERFORMANCE OF THIS SOFTWARE.
+*** @link https://undergraduateresearch.wsu.edu
+*** @link https://github.com/invokeImmediately/undergraduateresearch.wsu.edu/
+*** @author Daniel Rieck [daniel.rieck@wsu.edu] (https://github.com/invokeImmediately)
+*** @license MIT Copyright (c) 2021 Washington State University
+***   Permission is hereby granted, free of charge, to any person obtaining a copy of this software
+***     and associated documentation files (the "Software"), to deal in the Software without
+***     restriction, including without limitation the rights to use, copy, modify, merge, publish,
+***     distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom
+***     the Software is furnished to do so, subject to the following conditions:
+***   The above copyright notice and this permission notice shall be included in all copies or
+***     substantial portions of the Software.
+***   THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING
+***     BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+***     NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
+***     CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE,
+***     ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+***     SOFTWARE.
 *** ================================================================================================
 **/
 
