@@ -6,6 +6,8 @@
  * Gulp automation task definition file for setting up tasks that build CSS and JS files for use on
  *   the WSUWP website of the Office of Undergraduate Research.
  *
+ * @version 1.0.0
+ *
  * @link https://github.com/invokeImmediately/undergraduateresearch.wsu.edu/blob/master/gulpfile.js
  * @author Daniel Rieck [daniel.rieck@wsu.edu] (https://github.com/invokeImmediately)
  * @license MIT - Copyright (c) 2021 Washington State University
@@ -26,11 +28,11 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 // TABLE OF CONTENTS
 // -----------------
-// §1: Gulp task dependencies...................................................................41
-// §2: Specification of build settings .........................................................46
-//   §2.1: getCssBuildSettings()................................................................49
-//   §2.2: getJsBuildSettings()................................................................127
-// §3: Entry point: Set up of build tasks......................................................158
+// §1: Gulp task dependencies...................................................................43
+// §2: Specification of build settings .........................................................48
+//   §2.1: getCssBuildSettings()................................................................51
+//   §2.2: getJsBuildSettings()................................................................129
+// §3: Entry point: Set up of build tasks......................................................160
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
 ( function() {
