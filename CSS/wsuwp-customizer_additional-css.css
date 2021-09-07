@@ -1,0 +1,148 @@
+/*!*********************************
+█▀▀▀▐▄ ▄▌▐▀█▀▌█▀▀▄ ▄▀▀▄
+█▀▀   █    █  █▄▄▀ █▄▄█
+▀▀▀▀▐▀ ▀▌  █  ▀  ▀▄█  ▀
+
+   ▄▀▀▀ ▄▀▀▀ ▄▀▀▀
+   █    ▀▀▀█ ▀▀▀█
+    ▀▀▀ ▀▀▀  ▀▀▀ 
+FOR THE UNDERGRADUATE RESEARCH
+  WEBSITE
+---------------------
+@version 1.0.0
+@author Daniel Rieck
+  [daniel.rieck@wsu.edu]
+  (github.com/invokeImmediately)
+@license MIT - Copyright © 2021
+  Washington State University
+  https://mit-license.org/
+***********************************/
+
+/*!*************************************
+ * SPINE NAVIGATION MENU FIX
+ * Visually show which menu items in the spine can be expanded; the default design provides no visual indicator.
+ * @author Daniel Rieck
+ **************************************/
+#spine nav li.parent>a:not(:hover):after {
+  display:block;
+}
+
+#spine nav li.parent:not(.opened)>a:not(:hover):after {
+  color:rgba(117, 117, 117, 0.5);
+}
+
+/*!*************************************
+ * BREADCRUMB LINKS TWEAKS
+ * @author Daniel Rieck
+ **************************************/
+.breadcrumb-list__breadcrumb:first-child a {
+  padding-left: 1.4em;
+  position: relative;
+}
+
+.breadcrumb-list__breadcrumb:first-child .breadcrumb-list__link:before {
+  background: url(https://repo.wsu.edu/spine/2.0.2/icons/home-gray.svg) center/.9em auto;
+  content: "";
+  width: .9em;
+  height: .9em;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%) translate(.2em, .1em);
+}
+
+
+.breadcrumb-list__breadcrumb:first-child .breadcrumb-list__link:hover:before,
+.breadcrumb-list__breadcrumb:first-child .breadcrumb-list__link:focus:before {
+  background-image: url(https://repo.wsu.edu/spine/2.0.2/icons/home-crimson.svg);
+}
+
+.article-header h1 {
+  text-transform: uppercase;
+}
+
+/*!*************************************
+ * TYPOGRAPHY TWEAK FOR "EXPLORE MORE" TITLE
+ * @author Daniel Rieck
+ **************************************/
+
+.explore-more-title {
+  min-height: 2.2em;
+}
+
+/*!*************************************
+ * COLOR OVERRIDES
+ * @author Daniel Rieck
+ **************************************/
+.orange-lightest-back {
+  background-color: #fcefdf;  
+}
+
+/*!*************************************
+ * NEWS FEED TWEAKS
+ * @author Daniel Rieck
+ **************************************/
+.wsuwp-content-syndicate-item .article-sub-heading {
+  display: none;
+}
+
+/*!*************************************
+ * FIXES TO GRAVITY FORM STYLING
+ * @author Daniel Rieck
+ **************************************/
+.progress-indicator {
+  flex-wrap: wrap;
+}
+
+.progress-indicator__section {
+  font-size: .9em;
+}
+
+.gform_wrapper .gfield_checkbox li input, .gform_wrapper .gfield_checkbox li input[type=checkbox], .gform_wrapper .gfield_radio li input[type=radio] {
+  margin-left: 3px;
+}
+
+.column .gform_fields>.gfield.gfield_contains_required .gfield_checkbox, .column .gform_fields>.gfield.gfield_contains_required .gfield_radio {
+  padding: .25em .5em !important
+}
+
+.fade-in-from-right.fast {
+  animation: anim-fade-in-from-right 0.5s ease-in 1;
+}
+
+/*!*************************************
+ * MARC MENU ENTRY
+ * @author Daniel Rieck
+ **************************************/
+
+#menu-item-4053 {
+  border-color: transparent !important;
+  margin-top: 20px !important;
+}
+
+/*!*************************************
+ * MICROSOFT BOOKINGS EMBEDS
+ * @author Daniel Rieck
+ **************************************/
+
+#ms-bookings-embed {
+  height: 100vh;
+  height: calc(100vh - 8rem);
+}
+
+/*!*************************************
+ * ATOMIC CSS ADDITIONS
+ * @author Daniel Rieck
+ **************************************/
+
+.lh--0mx {
+  line-height: 0;
+}
+
+.mh--288px {
+  max-height: 288px;
+}
+
+.mh--320px {
+  max-height: 320px;
+}
