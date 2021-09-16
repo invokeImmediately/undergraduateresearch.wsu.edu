@@ -16,28 +16,28 @@
 ***  TABLE OF CONTENTS:
 ***  ────────────────────────────────────────────────────────────────────────────────────────────
 ***  §1: Build entry point from DAESA's CSS development project................................45
-***  §2: Persistent section header comment for unit specific styling...........................65
-***  §3: Backgrounds..........................................................................111
-***    >>> §3.1: Spine binder.................................................................115
-***    >>> §3.2: Spine jacket.................................................................126
-***    >>> §3.3: Page body....................................................................136
-***    >>> §3.4: Main content section.........................................................165
-***    >>> §3.5: Main header..................................................................173
-***    >>> §3.6: Columnar headers.............................................................194
-***  §4: Styling at the document section level................................................218
-***    >>> §4.1: Headings.....................................................................222
-***  §5: Styling at the content grouping level................................................233
-***    >>> §5.1: Lists........................................................................237
-***  §6: Styling at the embedded content level................................................252
-***    >>> §6.1: Iframes......................................................................256
-***  §7: Styling of forms.....................................................................285
-***  §8: Optional styling included via Less mixins............................................356
-***  §9: Component-based styling..............................................................438
-***    >>> §9.1: Page specific components.....................................................442
-***    >>> §9.2: Banner slideshows............................................................590
-***    >>> §9.3: Travel award forms...........................................................616
-***    >>> §9.4: DAESA focus features.........................................................631
-***    >>> §9.5: ESTEEMED MIRA Training Faculty table.........................................664
+***  §2: Persistent section header comment for unit specific styling...........................68
+***  §3: Backgrounds..........................................................................114
+***    >>> §3.1: Spine binder.................................................................118
+***    >>> §3.2: Spine jacket.................................................................129
+***    >>> §3.3: Page body....................................................................139
+***    >>> §3.4: Main content section.........................................................168
+***    >>> §3.5: Main header..................................................................176
+***    >>> §3.6: Columnar headers.............................................................197
+***  §4: Styling at the document section level................................................221
+***    >>> §4.1: Headings.....................................................................225
+***  §5: Styling at the content grouping level................................................236
+***    >>> §5.1: Lists........................................................................240
+***  §6: Styling at the embedded content level................................................255
+***    >>> §6.1: Iframes......................................................................259
+***  §7: Styling of forms.....................................................................288
+***  §8: Optional styling included via Less mixins............................................359
+***  §9: Component-based styling..............................................................396
+***    >>> §9.1: Page specific components.....................................................400
+***    >>> §9.2: Banner slideshows............................................................548
+***    >>> §9.3: Travel award forms...........................................................574
+***    >>> §9.4: DAESA focus features.........................................................589
+***    >>> §9.5: ESTEEMED MIRA Training Faculty table.........................................622
 ***  ───────────────────────────────────────────────────────────────────────────────────────────────
 **/
 
@@ -57,6 +57,9 @@
 // Specify any overrides to the default build settings.
 @use-design__content-boxes: true;
 @use-design__gf-progress-indicators: true;
+@use-design__daesa-main-headers: false;
+@use-design__provost-main-headers: true;
+@use-wds-color-scheme: true;
 
 // Pull in the custom styling that is used on all DAESA websites.
 @import "..\WSU-DAESA-CSS\build-entry-point.less";
@@ -85,7 +88,7 @@
 *** Fully documented, precompiled source code from which this section of the custom stylesheet was
 ***   built is developed and maintained on the GitHub project linked below.
 ***
-*** @version 1.0.0
+*** @version 1.0.1
 ***
 *** @link https://undergraduateresearch.wsu.edu
 *** @link https://github.com/invokeImmediately/undergraduateresearch.wsu.edu/
@@ -173,22 +176,22 @@ main {
 ***   >>> §3.5: Main header
 **/
 
-header.main-header {
-	background: #981e32 url(/wp-content/uploads/sites/50/2015/04/seamless-marble-texture_528x528.png) repeat scroll left top;
-	font-family: 'Open Sans', 'Lucida Sans Unicode', 'Lucida Sans', 'Lucida Grande';
-	color: #fff !important;
-	text-shadow: .5px .5px 1px #000;
-}
+// header.main-header {
+// 	background: #981e32 url(/wp-content/uploads/sites/50/2015/04/seamless-marble-texture_528x528.png) repeat scroll left top;
+// 	font-family: 'Open Sans', 'Lucida Sans Unicode', 'Lucida Sans', 'Lucida Grande';
+// 	color: #fff !important;
+// 	text-shadow: .5px .5px 1px #000;
+// }
 
-@media print {
-	header.main-header {
-		background: #981e32 url(/wp-content/uploads/sites/50/2015/04/seamless-marble-texture_528x528.png) left top repeat;
-	}
-}
+// @media print {
+// 	header.main-header {
+// 		background: #981e32 url(/wp-content/uploads/sites/50/2015/04/seamless-marble-texture_528x528.png) left top repeat;
+// 	}
+// }
 
-.main-header sub:not(.unset), .main-header sup:not(.unset) {
-	color: #fff !important;
-}
+// .main-header sub:not(.unset), .main-header sup:not(.unset) {
+// 	color: #fff !important;
+// }
 
 /**   ----------------------------------------------------------------------------------------------
 ***   >>> §3.6: Columnar headers
@@ -376,51 +379,6 @@ div.iframe-container {
 .use-tool-tip-indicator-icon(url(/wp-content/uploads/sites/51/2017/10/icon_indicator_tool-tip-info_24x24.png));
 
 .use-sectional-article-headers();
-.page.has-short-main-header {
-	.main-header {
-		height: 85px;
-		& > .header-group {
-			@media all {
-				@media (max-width: (@large-mobile-screen-width)) {
-					padding-bottom: .75em !important;
-				}
-			}
-		}
-		.sup-header-default {
-			margin-bottom: 3px !important;
-		}
-		.sub-header {
-			@media all {
-				@media (max-width: (@column-floating-threshold)) {
-					line-height: 5vw !important;
-				}
-			}
-		}
-		.sub-header-default {
-			@media all {
-				@media (max-width: (@column-floating-threshold)) {
-					font-size: 5.1vw !important;
-				}
-				@media (max-width: (@large-mobile-screen-width)) {
-					font-size: 1.42rem !important;
-				}
-			}
-		}
-	}
-}
-.page.has-short-main-header {
-	.row.halves.article-header.ugr-awards {
-		.column.one {
-			h1 {
-				@v-ugr-awards-h1-scaling: 1.0, .85, .85, .75, .67, .67;
-				.has-responsive-font(@v-h1-sz, .95em, @v-ugr-awards-h1-scaling);
-				@media all and (max-width: @column-floating-threshold) {
-					font-size: 5.5vw;
-				}
-			}
-		}
-	}
-}
 
 .use-events-calendar("Office of Undergraduate Research");
 body.tribe-theme-spine {
