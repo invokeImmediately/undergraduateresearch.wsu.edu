@@ -1,5 +1,147 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700&family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Roboto+Condensed:ital,wght@0,400;0,700;1,400;1,700&family=Roboto+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 /** ────────────────────────────────────────────────────────────────────────────────────────────────
+ *  █▀▀▄ █  █ ▀█▀ █    █▀▀▄    ▄▀▀▀ █▀▀▀▐▀█▀▌▐▀█▀▌▀█▀ ▐▀▀▄ █▀▀▀ ▄▀▀▀   █    █▀▀▀ ▄▀▀▀ ▄▀▀▀
+ *  █▀▀▄ █  █  █  █  ▄ █  █ ▀▀ ▀▀▀█ █▀▀   █    █   █  █  ▐ █ ▀▄ ▀▀▀█   █  ▄ █▀▀  ▀▀▀█ ▀▀▀█
+ *  ▀▀▀   ▀▀  ▀▀▀ ▀▀▀  ▀▀▀     ▀▀▀  ▀▀▀▀  █    █  ▀▀▀ ▀  ▐ ▀▀▀▀ ▀▀▀  ▀ ▀▀▀  ▀▀▀▀ ▀▀▀  ▀▀▀
+ * 
+ *  Contains settings, implemented as Less variables, that the process for compiling Less files
+ *    into a custom stylesheet for use on a [WSU DAESA](https://daesa.wsu.edu/) websites.
+ * 
+ *  @version 1.1.2
+ * 
+ *  @link https://github.com/invokeImmediately/WSU-DAESA-CSS/main/blob/Settings/build-settings.less
+ *  @author Daniel Rieck [daniel.rieck@wsu.edu] (https://github.com/invokeImmediately)
+ *  @license MIT Copyright (c) 2021 Washington State University
+ *    Permission is hereby granted, free of charge, to any person obtaining a copy of this software
+ *      and associated documentation files (the "Software"), to deal in the Software without
+ *      restriction, including without limitation the rights to use, copy, modify, merge, publish,
+ *      distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom
+ *      the Software is furnished to do so, subject to the following conditions:
+ *    The above copyright notice and this permission notice shall be included in all copies or
+ *      substantial portions of the Software.
+ *    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING
+ *      BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+ *      NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
+ *      CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE,
+ *      ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ *      SOFTWARE.
+ *  ────────────────────────────────────────────────────────────────────────────────────────────────
+ *   TABLE OF CONTENTS:
+ *   ────────────────────────────────────────────────────────────────────────────────────────────
+ *   §1: Default sizing of spacing and fonts...................................................55
+ *     >>> §1.1:  Columns......................................................................59
+ *     >>> §1.2:  Paragraphs...................................................................89
+ *     >>> §1.3:  Headings....................................................................106
+ *     >>> §1.4:  Article components..........................................................128
+ *   §2: Responsive design scaling factors....................................................150
+ *   §3: Screen thresholds for responsive design..............................................172
+ *   §4: Colors...............................................................................230
+ *     >>> §4.1:  Color scheme flags..........................................................234
+ *     >>> §4.2:  Hyperlink coloring..........................................................241
+ *   §5: Switches for controlling dependency inclusion........................................249
+ *     >>> §5.1:  Builder template columns....................................................253
+ *     >>> §5.2:  Feeds.......................................................................260
+ *     >>> §5.3:  Nav.........................................................................268
+ *     >>> §5.4:  Footers.....................................................................273
+ *     >>> §5.5:  Forms.......................................................................280
+ *     >>> §5.6:  Headers.....................................................................290
+ *     >>> §5.7:  Hyperlinks..................................................................298
+ *     >>> §5.8:  Lists.......................................................................308
+ *     >>> §5.9:  Tables......................................................................320
+ *     >>> §5.10: Other Spine components......................................................320
+ *     >>> §5.11: Custom DAESA components.....................................................330
+ *   ───────────────────────────────────────────────────────────────────────────────────────────────
+ */
+
+/** ================================================================================================
+ *  §1: Default sizing of spacing and fonts
+ */
+
+/**   ----------------------------------------------------------------------------------------------
+ *      >>> §1.1: Columns
+ */
+
+/**   ----------------------------------------------------------------------------------------------
+ *      >>> §1.2: Paragraphs
+ */
+
+/**   ----------------------------------------------------------------------------------------------
+ *      >>> §1.3: Headings
+ */
+
+/**   ----------------------------------------------------------------------------------------------
+ *      >>> §1.4: Article components
+ */
+
+/** ================================================================================================
+ *  §2: Responsive design scaling factors
+ */
+
+/** ================================================================================================
+ *  §3: Screen thresholds for responsive design
+ */
+
+/** ================================================================================================
+ *  §4: Colors
+ */
+
+/**   ----------------------------------------------------------------------------------------------
+ *      >>> §4.1: Color scheme flags
+ */
+
+/**   ----------------------------------------------------------------------------------------------
+ *      >>> §4.2: Hyperlink coloring
+ */
+
+/** ================================================================================================
+ *  §5: Switches for controlling depdendency inclusion
+ */
+
+/**   ----------------------------------------------------------------------------------------------
+ *      >>> §5.1: Builder template columns
+ */
+
+/**   ----------------------------------------------------------------------------------------------
+ *      >>> §5.2: Feeds
+ */
+
+/**   ----------------------------------------------------------------------------------------------
+ *      >>> §5.3: Nav
+ */
+
+/**   ----------------------------------------------------------------------------------------------
+ *      >>> §5.4: Footers
+ */
+
+/**   ----------------------------------------------------------------------------------------------
+ *      >>> §5.5: Forms
+ */
+
+/**   ----------------------------------------------------------------------------------------------
+ *      >>> §5.6: Headers
+ */
+
+/**   ----------------------------------------------------------------------------------------------
+ *      >>> §5.7: Hyperlinks
+ */
+
+/**   ----------------------------------------------------------------------------------------------
+ *      >>> §5.8: Lists
+ */
+
+/**   ----------------------------------------------------------------------------------------------
+ *      >>> §5.9: Tables
+ */
+
+/**   ----------------------------------------------------------------------------------------------
+ *      >>> §5.10: Other Spine components
+ */
+
+/**   ----------------------------------------------------------------------------------------------
+ *      >>> §5.11: Custom DAESA components
+ */
+
+/** ────────────────────────────────────────────────────────────────────────────────────────────────
  *  █▀▀▄ █  █ ▀█▀ █    █▀▀▄    █▀▀▀ ▐▀▀▄▐▀█▀▌█▀▀▄ █  █    █▀▀▄ ▄▀▀▄ ▀█▀ ▐▀▀▄▐▀█▀▌
  *  █▀▀▄ █  █  █  █  ▄ █  █ ▀▀ █▀▀  █  ▐  █  █▄▄▀ ▀▄▄█ ▀▀ █▄▄▀ █  █  █  █  ▐  █ 
  *  ▀▀▀   ▀▀  ▀▀▀ ▀▀▀  ▀▀▀     ▀▀▀▀ ▀  ▐  █  ▀  ▀▄▄▄▄▀    █     ▀▀  ▀▀▀ ▀  ▐  █ 
@@ -19,60 +161,61 @@
  *  ────────────────────────────────────────────────────────────────────────────────────────────────
  *   TABLE OF CONTENTS:
  *   ────────────────────────────────────────────────────────────────────────────────────────────
- *   §1: Persistent comment for documenting general DAESA styling section of stylesheet........79
- *   §2:  Global Less variables and Less mixins/utility classes...............................144
- *     >>> §2.1: Additional fonts.............................................................148
- *     >>> §2.2: Color variables and mixins...................................................154
- *     >>> §2.3: Miscellaneous mixins.........................................................160
- *     >>> §2.4: Utility mixins...............................................................166
- *     >>> §2.5: Animation utility classes....................................................172
- *   §3: Redesigning of the WSUWP Spine Theme.................................................178
- *     >>> §3.1: Anchor pseudo-class..........................................................182
- *     >>> §3.2: Document section nodes.......................................................188
- *        └> §3.2.1: HTML element.............................................................192
- *        └> §3.2.2: Body.....................................................................200
- *        └> §3.2.3: Nav......................................................................218
- *        └> §3.2.4: Article..................................................................224
- *        └> §3.2.5: Section..................................................................230
- *        └> §3.2.6: Aside....................................................................238
- *        └> §3.2.7: Heading..................................................................244
- *        └> §3.2.8: Header...................................................................250
- *        └> §3.2.9: Footer...................................................................256
- *     >>> §3.3: Content grouping nodes.......................................................268
- *        └> §3.3.1: Paragraph elements.......................................................272
- *        └> §3.3.2: Hr elements..............................................................278
- *        └> §3.3.3: List elements............................................................284
- *        └> §3.3.4: Div elements.............................................................290
- *        └> §3.3.5: Banner slideshows........................................................304
- *        └> §3.3.6: Columns..................................................................310
- *        └> §3.3.7: Flippable content panels.................................................316
- *        └> §3.3.8: Page covering notices....................................................322
- *        └> §3.3.9: Recent updates...........................................................328
- *        └> §3.3.10: Main element............................................................334
- *     >>> §3.4: Text-level nodes.............................................................340
- *        └> §3.4.1: Hyperlink elements.......................................................344
- *        └> §3.4.2: Strong elements..........................................................350
- *        └> §3.4.3: Mark elements............................................................370
- *        └> §3.4.4: Span elements............................................................380
- *        └> §3.4.5: Cite elements............................................................386
- *     >>> §3.5: Embedded content nodes.......................................................394
- *        └> §3.5.1: Image elements...........................................................398
- *        └> §3.5.2: Iframe elements..........................................................404
- *     >>> §3.6: Tabular data nodes...........................................................410
- *     >>> §3.7: Form nodes...................................................................416
- *     >>> §3.8: Scripted elements............................................................422
- *        └> §3.8.1: Toggled drop-down panels.................................................426
- *        └> §3.8.2: Subtle panels............................................................432
- *        └> §3.8.3: Flippable content panels.................................................473
- *        └> §3.8.4: QTip driven tooltips.....................................................482
- *        └> §3.8.5: Quick-tabs panels........................................................488
- *        └> §3.8.6: Tribe Events Calendars...................................................494
- *        └> §3.8.7: Auto-scrolling image panels..............................................500
- *   §4: Component-based CSS..................................................................528
- *     >>> §4.1: Website notices..............................................................532
- *     >>> §4.2: News posts...................................................................538
- *     >>> §4.3: Other components.............................................................549
- *   §5: Atomic CSS...........................................................................555
+ *   §1: Persistent comment for documenting general DAESA styling section of stylesheet........80
+ *   §2:  Global Less variables and Less mixins/utility classes...............................145
+ *     >>> §2.1: Additional fonts.............................................................149
+ *     >>> §2.2: Color variables and mixins...................................................155
+ *     >>> §2.3: Miscellaneous mixins.........................................................161
+ *     >>> §2.4: Utility mixins...............................................................167
+ *     >>> §2.5: Animation utility classes....................................................173
+ *   §3: Redesigning of the WSUWP Spine Theme.................................................179
+ *     >>> §3.1: Anchor pseudo-class..........................................................183
+ *     >>> §3.2: Document section nodes.......................................................189
+ *        └> §3.2.1: HTML element.............................................................193
+ *        └> §3.2.2: Body.....................................................................201
+ *        └> §3.2.3: Nav......................................................................219
+ *        └> §3.2.4: Article..................................................................225
+ *        └> §3.2.5: Section..................................................................231
+ *        └> §3.2.6: Aside....................................................................239
+ *        └> §3.2.7: Heading..................................................................245
+ *        └> §3.2.8: Header...................................................................251
+ *        └> §3.2.9: Footer...................................................................257
+ *     >>> §3.3: Content grouping nodes.......................................................269
+ *        └> §3.3.1: Paragraph elements.......................................................273
+ *        └> §3.3.2: Hr elements..............................................................279
+ *        └> §3.3.3: List elements............................................................285
+ *        └> §3.3.4: Div elements.............................................................291
+ *        └> §3.3.5: Banner slideshows........................................................305
+ *        └> §3.3.6: Columns..................................................................311
+ *        └> §3.3.7: Flippable content panels.................................................317
+ *        └> §3.3.8: Page covering notices....................................................323
+ *        └> §3.3.9: Recent updates...........................................................329
+ *        └> §3.3.10: Main element............................................................335
+ *     >>> §3.4: Text-level nodes.............................................................341
+ *        └> §3.4.1: Hyperlink elements.......................................................345
+ *        └> §3.4.2: Strong elements..........................................................351
+ *        └> §3.4.3: Mark elements............................................................371
+ *        └> §3.4.4: Span elements............................................................381
+ *        └> §3.4.5: Cite elements............................................................387
+ *     >>> §3.5: Embedded content nodes.......................................................395
+ *        └> §3.5.1: Image elements...........................................................399
+ *        └> §3.5.2: Iframe elements..........................................................405
+ *     >>> §3.6: Tabular data nodes...........................................................411
+ *     >>> §3.7: Form nodes...................................................................417
+ *     >>> §3.8: Scripted elements............................................................423
+ *        └> §3.8.1: Toggled drop-down panels.................................................427
+ *        └> §3.8.2: Subtle panels............................................................433
+ *        └> §3.8.3: Flippable content panels.................................................474
+ *        └> §3.8.4: QTip driven tooltips.....................................................483
+ *        └> §3.8.5: Quick-tabs panels........................................................489
+ *        └> §3.8.6: Tribe Events Calendars...................................................495
+ *        └> §3.8.7: Auto-scrolling image panels..............................................501
+ *   §4: Component-based CSS..................................................................529
+ *     >>> §4.1: Website notices..............................................................533
+ *     >>> §4.2: News posts...................................................................539
+ *     >>> §4.3: DAESA grids..................................................................550
+ *     >>> §4.4: Other components.............................................................556
+ *   §5: Atomic CSS...........................................................................562
  *  ────────────────────────────────────────────────────────────────────────────────────────────────
  */
 
@@ -95,7 +238,7 @@
  *
  *  Please refer to the linked GitHub project for fully documented, precompiled source code.
  *
- *  @version 1.1.0-rc0.4.16
+ *  @version 1.2.0-rc0.0.2
  *
  *  @link https://github.com/invokeImmediately/WSU-DAESA-CSS
  *  @author Daniel Rieck [daniel.rieck@wsu.edu] (https://github.com/invokeImmediately)
@@ -195,7 +338,7 @@ span.accentuated-text {
  *    invocation or inclusion of these mixins are designed to accompany or supersede styling
  *    associated with the active theme.
  *
- *  @version 1.1.1
+ *  @version 1.1.2
  *
  *  @author Daniel Rieck <daniel.rieck@wsu.edu> (https://github.com/invokeImmediately)
  *  @link https://github.com/invokeImmediately/WSU-DAESA-CSS/blob/main/mixins.less
@@ -224,12 +367,12 @@ span.accentuated-text {
  *   §6: Typography...........................................................................280
  *   §7: Borders..............................................................................309
  *   §8: More typography......................................................................374
- *   §9: Semantic mixins for responsive layouts...............................................517
- *   §10: Iteratively specified CSS declarations..............................................532
- *   §11: Interpolated style declarations.....................................................697
- *   §12: Declaration of detached rulesets....................................................726
- *     >>> §12.1: Rulesets whose selectors might be "wrapped" by a prepended substring........730
- *     >>> §12.2: Unwrapped rulesets..........................................................750
+ *   §9: Semantic mixins for responsive layouts...............................................518
+ *   §10: Iteratively specified CSS declarations..............................................533
+ *   §11: Interpolated style declarations.....................................................698
+ *   §12: Declaration of detached rulesets....................................................727
+ *     >>> §12.1: Rulesets whose selectors might be "wrapped" by a prepended substring........731
+ *     >>> §12.2: Unwrapped rulesets..........................................................751
  *   ───────────────────────────────────────────────────────────────────────────────────────────────
  */
 
@@ -1948,7 +2091,7 @@ ul.cascaded-layout.blank > li.gutter-sizer {
  *       └> §3.3.4: Div elements
  */
 
-.column * + div:not([class*="margined-top"]):not([class*="mt--"]):not([class*="sv--"]) {
+.column > * + div:not([class*="margined-top"]):not([class*="mt--"]):not([class*="sv--"]) {
   margin-top: 1em;
 }
 
@@ -2735,8 +2878,7 @@ main > .page > .row:last-child > .column:last-child {
 .column h3 a:not([class*="fw--"]),
 .column h4 a:not([class*="fw--"]),
 .column h5 a:not([class*="fw--"]),
-.column h6 a:not([class*="fw--"]),
-.gform_heading h3.gform_title a:not([class*="fw--"]) {
+.column h6 a:not([class*="fw--"]) {
   font-weight: inherit;
 }
 
@@ -2824,7 +2966,7 @@ main > .page > .row:last-child > .column:last-child {
 }
 
 .overlay-link:after {
-  background: rgba(202,18,55,.33) url(https://s3.wp.wsu.edu/uploads/sites/57/2020/07/overlay-link_open-sans-0xbb.svg) 60% center/8rem no-repeat;
+  background: rgba(202,18,55,.33) url(https://s3.wp.wsu.edu/uploads/sites/57/2020/07/overlay-link_open-sans-0xbb.svg) 50% center/8rem no-repeat;
   background-position-y: calc(50% - 1.2rem);
   height: 100%;
   left: 0;
@@ -2852,7 +2994,7 @@ main > .page > .row:last-child > .column:last-child {
 }
 
 .overlay-link--smaller-icon:after {
-  background: rgba(202,18,55,.33) url(https://s3.wp.wsu.edu/uploads/sites/57/2020/07/overlay-link_open-sans-0xbb.svg) 55% center/4rem no-repeat;
+  background: rgba(202,18,55,.33) url(https://s3.wp.wsu.edu/uploads/sites/57/2020/07/overlay-link_open-sans-0xbb.svg) 50% center/4rem no-repeat;
 }
 
 .overlay-link--smaller-icon:before {
@@ -2867,8 +3009,7 @@ main > .page > .row:last-child > .column:last-child {
 .column h3 a:not(.non-text-link),
 .column h4 a:not(.non-text-link),
 .column h5 a:not(.non-text-link),
-.column h6 a:not(.non-text-link),
-.gform_heading h3.gform_title a:not(.non-text-link) {
+.column h6 a:not(.non-text-link) {
   line-height: 1.4em;
   line-height: calc(1.4em + 1px);
 }
@@ -2879,8 +3020,7 @@ main > .page > .row:last-child > .column:last-child {
 .column h4 a:not(.non-text-link),
 .column h5 a:not(.non-text-link),
 .column h6 a:not(.non-text-link),
-.column .article-footer a,
-.gform_heading h3.gform_title a:not(.non-text-link) {
+.column .article-footer a {
   border-bottom: 1px solid transparent;
   box-shadow: none;
   text-decoration: underline;
@@ -2892,8 +3032,7 @@ main > .page > .row:last-child > .column:last-child {
 .column h4 a:not(.non-text-link):hover,
 .column h5 a:not(.non-text-link):hover,
 .column h6 a:not(.non-text-link):hover,
-.column .article-footer a:hover,
-.gform_heading h3.gform_title a:not(.non-text-link):hover {
+.column .article-footer a:hover {
   border-bottom: 4px solid #ca1237;
   text-decoration: none;
 }
@@ -3255,283 +3394,179 @@ figure figcaption {
  *    >>> §3.7: Form nodes
  */
 
-.column .gform_wrapper {
-  max-width: 990px;
+/** ────────────────────────────────────────────────────────────────────────────────────────────────
+ *  █▀▀▀ ▄▀▀▄ █▀▀▄ ▐▀▄▀▌▄▀▀▀   █    █▀▀▀ ▄▀▀▀ ▄▀▀▀
+ *  █▀▀▀ █  █ █▄▄▀ █ ▀ ▌▀▀▀█   █  ▄ █▀▀  ▀▀▀█ ▀▀▀█
+ *  ▀     ▀▀  ▀  ▀▄█   ▀▀▀▀  ▀ ▀▀▀  ▀▀▀▀ ▀▀▀  ▀▀▀
+ * 
+ *  Custom styling for forms appearing on WSUWP websites that is generally used on websites managed
+ *    by WSU DAESA.
+ * 
+ *  @version 1.0.1
+ * 
+ *  @link https://github.com/invokeImmediately/WSU-DAESA-CSS/main/blob/forms.less
+ *  @author Daniel Rieck [daniel.rieck@wsu.edu] (https://github.com/invokeImmediately)
+ *  @license MIT Copyright (c) 2021 Washington State University
+ *    Permission is hereby granted, free of charge, to any person obtaining a copy of this software
+ *      and associated documentation files (the "Software"), to deal in the Software without
+ *      restriction, including without limitation the rights to use, copy, modify, merge, publish,
+ *      distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom
+ *      the Software is furnished to do so, subject to the following conditions:
+ *    The above copyright notice and this permission notice shall be included in all copies or
+ *      substantial portions of the Software.
+ *    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING
+ *      BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+ *      NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,
+ *      DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+ *      FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ *      SOFTWARE.
+ *  ────────────────────────────────────────────────────────────────────────────────────────────────
+ *   TABLE OF CONTENTS:
+ *   ────────────────────────────────────────────────────────────────────────────────────────────
+ *   §1: Vanilla forms.........................................................................43
+ *     >>> §1.1: Form-mediated "Read More" interfaces..........................................47
+ *   §2: Gravity forms........................................................................123
+ *     >>> §2.1: Modifications of default GF styling (Spine compatible).......................127
+ *     >>> §2.2: Modifications of default GF styling (WDS and Spine compatible)...............398
+ *     >>> §2.3: Required field highlighting..................................................483
+ *     >>> §2.4: Advanced form controls.......................................................629
+ *   §3: WSUWP password entry form............................................................728
+ *   §4: DAESA styled progress indicators.....................................................740
+ *   ───────────────────────────────────────────────────────────────────────────────────────────────
+ */
+
+/** ================================================================================================
+ *  §1: Vanilla forms
+ */
+
+/**     ····························································································
+ *      >>> §1.1: Form-mediated "Read More" interfaces
+ */
+
+/**   ----------------------------------------------------------------------------------------------
+ *    §2: Gravity forms
+ */
+
+/**     ····························································································
+ *      >>> §2.1: Modifications of default GF styling (Spine compatible)
+ */
+
+/**     ····························································································
+ *      >>> §2.2: Modifications of default GF styling (WDS and Spine Compatible)
+ */
+
+.gform_wrapper.gravity-theme .gform_body {
+  background-color: #f7f7f7;
+  padding: 0.5rem 2rem 2rem;
 }
 
-.column .gform_wrapper #extensions_message {
-  padding-left: 1rem;
-}
-
-.column .gform_wrapper .field_sublabel_above .ginput_complex.ginput_container label {
-  margin: 0;
-}
-
-.column .gform_wrapper .gfield_checkbox li {
-  margin-bottom: 0;
-}
-
-.column .gform_wrapper .gfield_checkbox li label,
-.column .gform_wrapper .gfield_radio li label {
-  font-weight: normal;
-}
-
-.column .gform_wrapper .gfield_checkbox li input,
-.column .gform_wrapper .gfield_checkbox li input[type=checkbox],
-.column .gform_wrapper .gfield_radio li input[type=radio] {
-  vertical-align: top;
-}
-
-.column .gform_wrapper.gf_browser_chrome .gfield_checkbox li input,
-.column .gform_wrapper.gf_browser_chrome .gfield_checkbox li input[type=checkbox],
-.column .gform_wrapper.gf_browser_chrome .gfield_radio li input[type=radio] {
-  margin-top: 8px;
-}
-
-.column .gform_wrapper .gfield_description {
-  max-width: 80ch;
-}
-
-.column .gform_wrapper .gform_body > ul > li.has-top-border:not(.gsection):not(.gfield_html) + li:not(.gsection)::before,
-.column .gform_wrapper .gform_body > ul > li.has-top-spacer:not(.gsection):not(.gfield_html) + li:not(.gsection)::before {
-  content: "";
-  display: block;
-  height: 0;
-  margin: 2rem auto 0;
-  width: 95%;
-}
-
-.column .gform_wrapper .gform_body > ul > li.has-top-border:not(.gsection):not(.gfield_html) + li:not(.gsection)::before {
-  border-bottom: 1px dashed rgba(160, 160, 160, 0.25);
-  border-top: 1px dashed rgba(94, 94, 94, 0.3333);
-}
-
-.column .gform_wrapper .gform_body > ul > li.gf-bckgrnd-field {
-  display: none !important;
-}
-
-.column .gform_wrapper .gform_heading li {
-  list-style: disc !important;
-}
-
-.column .gform_wrapper .ginput_complex span.ginput_full:not(:first-of-type) label,
-.column .gform_wrapper .ginput_complex span.ginput_left:not(:first-of-type) label,
-.column .gform_wrapper .ginput_complex span.ginput_right:not(:nth-of-type(2)) label {
-  margin-top: 0.4em;
-}
-
-.column .gform_wrapper .gsection {
-  margin-bottom: 0;
-  margin-top: 2rem;
-}
-
-.column .gform_wrapper .percentbar_blue {
-  background-color: #a60f2d;
-}
-
-.column .gform_wrapper h2.fancy {
-  margin-right: 0;
-  margin-left: 0;
-}
-
-.column .gform_wrapper h2.gsection_title {
-  font-size: 1.6em;
-}
-
-.column .gform_wrapper label.gfield_label {
+.gform_wrapper.gravity-theme .field_sublabel_above .gfield_description {
   margin-top: 0;
-  margin-bottom: 0;
-  font-size: 1.125em;
-}
-
-.column .gform_wrapper table.gfield_list thead th {
-  font-weight: 600;
-}
-
-.column .gform_wrapper ul:last-child {
   padding-bottom: 0;
 }
 
-.column li.gfield :focus {
-  outline: 1px solid blue;
+.gform_wrapper.gravity-theme .field_sublabel_above .gfield_description + .ginput_container {
+  margin-top: 0.5rem;
 }
 
-.column li.gfield .chosen-single,
-.column li.gfield .chosen-drop {
-  border-color: #717171 !important;
-}
-
-.column li.gfield input,
-.column li.gfield select {
-  border-color: #717171 !important;
-  border-style: solid !important;
-  border-width: 1px !important;
-}
-
-.column li.gfield.uses-rich-editor .tmce-active .mce-menubar {
-  display: none;
-}
-
-.column li.gfield.uses-rich-editor .tmce-active .mce-toolbar .mce-btn[aria-label="Insert/edit image (Shift+Alt+M)"],
-.column li.gfield.uses-rich-editor .tmce-active .mce-toolbar-grp .mce-btn[aria-label="Insert/edit image (Shift+Alt+M)"],
-.column li.gfield.uses-rich-editor .tmce-active .mce-toolbar .mce-btn[aria-label="Align left (Shift+Alt+L)"],
-.column li.gfield.uses-rich-editor .tmce-active .mce-toolbar-grp .mce-btn[aria-label="Align left (Shift+Alt+L)"],
-.column li.gfield.uses-rich-editor .tmce-active .mce-toolbar .mce-btn[aria-label="Align center (Shift+Alt+C)"],
-.column li.gfield.uses-rich-editor .tmce-active .mce-toolbar-grp .mce-btn[aria-label="Align center (Shift+Alt+C)"],
-.column li.gfield.uses-rich-editor .tmce-active .mce-toolbar .mce-btn[aria-label="Align right (Shift+Alt+R)"],
-.column li.gfield.uses-rich-editor .tmce-active .mce-toolbar-grp .mce-btn[aria-label="Align right (Shift+Alt+R)"],
-.column li.gfield.uses-rich-editor .tmce-active .mce-toolbar .mce-btn[aria-label="Align left (Shift+Alt+L)"],
-.column li.gfield.uses-rich-editor .tmce-active .mce-toolbar-grp .mce-btn[aria-label="Align left (Shift+Alt+L)"],
-.column li.gfield.uses-rich-editor .tmce-active .mce-toolbar .mce-btn[aria-label="Table"],
-.column li.gfield.uses-rich-editor .tmce-active .mce-toolbar-grp .mce-btn[aria-label="Table"],
-.column li.gfield.uses-rich-editor .tmce-active .mce-toolbar .mce-btn[aria-label="Show blocks"],
-.column li.gfield.uses-rich-editor .tmce-active .mce-toolbar-grp .mce-btn[aria-label="Show blocks"],
-.column li.gfield.uses-rich-editor .tmce-active .mce-toolbar .mce-btn[aria-label="Source code"],
-.column li.gfield.uses-rich-editor .tmce-active .mce-toolbar-grp .mce-btn[aria-label="Source code"],
-.column li.gfield.uses-rich-editor .tmce-active .mce-toolbar .mce-btn[aria-label="Text color"],
-.column li.gfield.uses-rich-editor .tmce-active .mce-toolbar-grp .mce-btn[aria-label="Text color"],
-.column li.gfield.uses-rich-editor .tmce-active .mce-toolbar .mce-btn[aria-label="Toolbar Toggle (Shift+Alt+Z)"],
-.column li.gfield.uses-rich-editor .tmce-active .mce-toolbar-grp .mce-btn[aria-label="Toolbar Toggle (Shift+Alt+Z)"] {
-  display: none;
-}
-
-.column li.gfield.uses-rich-editor .tmce-active .mce-statusbar {
-  display: none;
-}
-
-.column li.gfield.uses-rich-editor .wp-editor-container {
-  border-color: #717171 !important;
-}
-
-.column li.gfield.uses-rich-editor iframe {
-  width: 100% !important;
-}
-
-.column li.gfield.uses-rich-editor span.gp-word-count-label {
-  margin-top: 0 !important;
-}
-
-.column li.gfield > div.ginput_complex > span > label {
-  color: #360b12;
-}
-
-.column li.gfield > .ginput_container_select > .chosen-container {
-  width: 100% !important;
-}
-
-.column li.gfield > .ginput_container_select > .chosen-container-single > .chosen-single {
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 20%, rgba(0, 0, 0, 0.038) 50%, rgba(0, 0, 0, 0.07) 52%, rgba(0, 0, 0, 0.045) 100%), linear-gradient(to bottom, #fff, #fff);
-  height: 1.98em;
-  line-height: 1.98em;
-}
-
-.column li.gfield > .ginput_container_select > .chosen-container-single > .chosen-single:hover {
-  text-shadow: none;
-}
-
-.column li.gfield > .ginput_container_select > .chosen-container-single > .chosen-single > div > b {
-  background-position: 0 calc(-10px + 1.98em / 2);
-}
-
-.column li.gfield > .ginput_container_select > .chosen-container-single.chosen-with-drop > .chosen-single {
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.07) 20%, rgba(0, 0, 0, 0) 80%), linear-gradient(to bottom, #fff, #fff);
-}
-
-.column li.gfield div.ginput_container_textarea > textarea {
-  font-size: 16px;
-}
-
-.column .gform_fields.top_label > li.gfield.gfield_error.gf_left_half,
-.column .gform_fields.top_label > li.gfield.gfield_error.gf_right_half {
-  width: calc(50% - 16px);
-}
-
-.column .gform_fields.top_label > li.gfield.gf_left_half ul.gfield_radio,
-.column .gform_fields.top_label > li.gfield.gf_right_half ul.gfield_radio,
-.column .gform_fields.top_label > li.gfield.gf_left_half ul.gfield_checkbox,
-.column .gform_fields.top_label > li.gfield.gf_right_half ul.gfield_checkbox {
-  width: 100%;
-}
-
-.column .gform_fields.top_label > li.gfield > div.gfield_description {
+.gform_wrapper.gravity-theme .field_sublabel_above .instruction {
+  margin-top: 0.25rem;
   padding: 0;
-  margin: 0;
-  color: #360b12;
 }
 
-.column .gform_fields.top_label > li.gfield > div.gfield_description ul li {
-  list-style: disc inside none !important;
+.gform_wrapper.gravity-theme .gfield {
+  margin-top: 1rem;
 }
 
-.column .gform_fields.top_label > li.gfield > div.gfield_description p + ul {
-  margin-top: 0;
+.gform_wrapper.gravity-theme .gfield input,
+.gform_wrapper.gravity-theme .gfield select,
+.gform_wrapper.gravity-theme .gfield textarea {
+  padding: 0.5rem;
 }
 
-.column .gform_fields.top_label > li.gfield > div.ginput_complex {
-  margin-top: 0;
+.gform_wrapper.gravity-theme .gfield input,
+.gform_wrapper.gravity-theme .gfield select,
+.gform_wrapper.gravity-theme .gfield textarea,
+.gform_wrapper.gravity-theme .gfield .gfield_radio,
+.gform_wrapper.gravity-theme .gfield .gfield_checkbox {
+  background: #fff;
+  border: 1px solid #ccc;
+  border-bottom-color: #000;
+  border-radius: 0.3125rem;
 }
 
-.column .gform_fields.top_label > li.gfield + li.gfield:not(.gsection),
-.column .gform_fields.top_label li.gfield:first-child {
-  margin-top: 0.5em;
+.gform_wrapper.gravity-theme .gfield_label {
+  font-weight: 600;
+  margin-bottom: 0;
 }
 
-.column .gform_fields > .gfield.gfield_contains_required > .ginput_container_select > .gfield_select:not(.gf-value-entered) + .chosen-container-single:not(.chosen-with-drop) > .chosen-single {
-  background: linear-gradient(to bottom, rgba(255, 0, 0, 0.1) 0, rgba(255, 0, 0, 0) 0.6em);
+.gform_wrapper.gravity-theme .gfield_label + .ginput_container {
+  margin-top: 0.5rem;
 }
 
-.column .gform_fields > .gfield.gfield_contains_required > .ginput_container_select > .gfield_select + .chosen-container-single.chosen-with-drop > .chosen-single {
-  background: linear-gradient(to bottom, rgba(0, 0, 255, 0.1) 0, transparent 0.3em);
+.gform_wrapper.gravity-theme .gfield_html:not(.gfield_html--for-indicator) {
+  background: #ffffff;
+  border-radius: 0.3125rem;
+  padding: 2rem;
 }
 
-.column .gform_fields > .gfield.gfield_contains_required input,
-.column .gform_fields > .gfield.gfield_contains_required select,
-.column .gform_fields > .gfield.gfield_contains_required textarea {
-  transition: background 0.3s ease;
+.gform_wrapper.gravity-theme .gf_page_steps {
+  background-color: #f7f7f7;
+  margin-bottom: 0;
+  padding: 0.5rem 1rem 0.25rem;
 }
 
-.column .gform_fields > .gfield.gfield_contains_required input:focus,
-.column .gform_fields > .gfield.gfield_contains_required select:focus,
-.column .gform_fields > .gfield.gfield_contains_required textarea:focus {
-  background: linear-gradient(to bottom, rgba(0, 0, 255, 0.1) 0, transparent 0.3em);
+.gform_wrapper.gravity-theme .gf_step_completed .gf_step_number:before {
+  box-sizing: border-box;
 }
 
-.column .gform_fields > .gfield.gfield_contains_required input:not(.gf-value-entered):not(:focus),
-.column .gform_fields > .gfield.gfield_contains_required select:not(.gf-value-entered):not(:focus),
-.column .gform_fields > .gfield.gfield_contains_required textarea:not(.gf-value-entered):not(:focus) {
-  background-color: rgba(255, 0, 0, 0.1);
-  background: linear-gradient(to bottom, rgba(255, 0, 0, 0.1) 0, rgba(255, 0, 0, 0) 0.6em);
+.gform_wrapper.gravity-theme .ginput_complex label {
+  padding: 0;
 }
 
-.column .gform_fields > .gfield.gfield_contains_required .gfield_checkbox,
-.column .gform_fields > .gfield.gfield_contains_required .gfield_radio {
-  border: 1px solid #767676;
-  padding: 0.25em 0.5em 0.1em !important;
-  transition: background 0.3s ease;
+.gform_wrapper.gravity-theme label {
+  font-weight: 400;
 }
 
-.column .gform_fields > .gfield.gfield_contains_required .gfield_checkbox:not(.gf-value-entered),
-.column .gform_fields > .gfield.gfield_contains_required .gfield_radio:not(.gf-value-entered) {
-  background-color: rgba(255, 0, 0, 0.1);
-  background: linear-gradient(to bottom, rgba(255, 0, 0, 0.1) 0, rgba(255, 0, 0, 0) 0.6em);
+/**     ····························································································
+ *      >>> §2.3: Required field highlighting
+ */
+
+.gform_wrapper.gravity-theme .gfield_contains_required input:not(.gf-value-entered),
+.gform_wrapper.gravity-theme .gfield_contains_required select:not(.gf-value-entered),
+.gform_wrapper.gravity-theme .gfield_contains_required textarea:not(.gf-value-entered),
+.gform_wrapper.gravity-theme .gfield_contains_required .gfield_radio:not(.gf-value-entered),
+.gform_wrapper.gravity-theme .gfield_contains_required .gfield_checkbox:not(.gf-value-entered) {
+  border-left: 2px solid #a60f2d;
 }
 
-.column .gform_fields > .gfield.gfield_contains_required .address_line_2 input,
-.column .gform_fields > .gfield.gfield_contains_required .name_middle input,
-.column .gform_fields > .gfield.gfield_contains_required .name_suffix input {
-  background: #fff !important;
+.gform_wrapper.gravity-theme .gfield_contains_required input.gf-value-entered,
+.gform_wrapper.gravity-theme .gfield_contains_required select.gf-value-entered,
+.gform_wrapper.gravity-theme .gfield_contains_required textarea.gf-value-entered {
+  padding-left: calc(0.5rem + 1px);
 }
 
-.column .gform_fields > .gfield.gfield_contains_required .address_line_2 input:focus,
-.column .gform_fields > .gfield.gfield_contains_required .name_middle input:focus,
-.column .gform_fields > .gfield.gfield_contains_required .name_suffix input:focus {
-  background-color: #edf3f4 !important;
+.gform_wrapper.gravity-theme .gfield_contains_required .gfield_radio.gf-value-entered,
+.gform_wrapper.gravity-theme .gfield_contains_required .gfield_checkbox.gf-value-entered {
+  padding-left: 1px;
 }
+
+/**     ····························································································
+ *      >>> §2.4: Advanced form controls
+ */
+
+/**   ----------------------------------------------------------------------------------------------
+ *    §3: WSUWP password entry form
+ */
 
 .post-password-required {
   padding-left: 2rem;
   padding-top: 2rem;
 }
+
+/**   ----------------------------------------------------------------------------------------------
+ *    §4: DAESA styled progress indicators
+ */
 
 .progress-indicator {
   align-items: center;
@@ -3551,6 +3586,11 @@ figure figcaption {
   top: 0.3em;
 }
 
+.gform_wrapper.gravity-theme .progress-indicator {
+  max-width: none;
+  padding-top: 3rem;
+}
+
 body .gform_wrapper div.gform_body ul.gform_fields li.gfield.gfield_html ol.progress-indicator,
 body .gform_wrapper form div.gform_body ul.gform_fields li.gfield.gfield_html ol.progress-indicator {
   list-style-type: none !important;
@@ -3568,9 +3608,9 @@ body .gform_wrapper form div.gform_body ul.gform_fields li.gfield.gfield_html ol
 .progress-indicator__r-connector {
   background-color: #e5e6e8;
   position: absolute;
-  height: 5px;
+  height: 0.3125rem;
   top: 50%;
-  width: 18px;
+  width: 1rem;
 }
 
 .progress-indicator__section-complete .progress-indicator__l-connector,
@@ -3599,6 +3639,11 @@ body .gform_wrapper form div.gform_body ul.gform_fields li.gfield.gfield_html ol
   padding: 0.5em 1em;
   position: relative;
   text-align: center;
+}
+
+.gform_wrapper.gravity-theme .progress-indicator__section {
+  margin-right: 2rem;
+  margin-bottom: 1.5rem;
 }
 
 body .gform_wrapper div.gform_body ul.gform_fields li.gfield.gfield_html ol .progress-indicator__section,
@@ -4743,7 +4788,55 @@ div.auto-scroller ul li {
 }
 
 /**   --------------------------------------------------------------------------------------------
- *    >>> §4.3: Other components
+ *    >>> §4.3: DAESA Grids
+ */
+
+.daesa-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-auto-rows: minmax(4.5em, auto);
+  grid-gap: 1rem;
+}
+
+.daesa-grid--narrow-gap {
+  grid-gap: 0.5rem;
+}
+
+.daesa-grid--wide-gap {
+  grid-gap: 2rem;
+}
+
+.daesa-grid__cell {
+  grid-row: auto;
+  grid-column: auto;
+}
+
+.daesa-grid__cell--2w {
+  grid-column: auto / span 2;
+}
+
+.daesa-grid__cell--3w {
+  grid-column: auto / span 3;
+}
+
+.daesa-grid__cell--2h {
+  grid-row: auto / span 2;
+}
+
+.daesa-grid__cell--3h {
+  grid-row: auto / span 3;
+}
+
+.daesa-grid__cell--4h {
+  grid-row: auto / span 4;
+}
+
+.daesa-grid--3-cols {
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+/**   --------------------------------------------------------------------------------------------
+ *    >>> §4.4: Other components
  */
 
 /** ────────────────────────────────────────────────────────────────────────────────────────────────
@@ -7929,7 +8022,7 @@ div.auto-scroller ul li {
 *** Fully documented, precompiled source code from which this section of the custom stylesheet was
 ***   built is developed and maintained on the GitHub project linked below.
 ***
-*** @version 1.0.0
+*** @version 1.1.0
 ***
 *** @link https://undergraduateresearch.wsu.edu
 *** @link https://github.com/invokeImmediately/undergraduateresearch.wsu.edu/
@@ -9768,28 +9861,6 @@ body.home .builder-section-banner .cycle-next {
   }
 }
 
-@media only screen and (min-width: 641px) {
-  .column .gform_wrapper .top_label li ul.gfield_radio {
-    width: 100%;
-  }
-
-  .column .gform_wrapper.gf_browser_chrome .gform_body {
-    width: calc(100% + 15px);
-  }
-
-  .column li.gfield.gf_left_half.expands-to-two-thirds {
-    width: 67% !important;
-  }
-
-  .column li.gfield.gf_left_half.expands-to-two-thirds + li.gfield.gf_right_half {
-    width: 33% !important;
-  }
-
-  .column li.gfield.has-label-spacer > div.ginput_container {
-    margin-top: 21px;
-  }
-}
-
 @media all and (min-width: 694px) {
   section.thirds img.show-when-adjacent {
     width: 100%;
@@ -9854,12 +9925,6 @@ body.home .builder-section-banner .cycle-next {
   }
 }
 
-@media only screen and (min-width: 792px) {
-  .column li.gfield.has-label-spacer > div.ginput_container {
-    margin-top: 23px;
-  }
-}
-
 @media all and (min-width: 792px) {
   .show-on-tablet {
     display: none !important;
@@ -9873,10 +9938,6 @@ body.home .builder-section-banner .cycle-next {
 
   body.use-max-width-1386 #binder.max-1188 .row {
     max-width: 1386px;
-  }
-
-  .column li.gfield.has-label-spacer > div.ginput_container {
-    margin-top: 21px;
   }
 
   body.use-max-width-1386 #binder.max-1188 {
@@ -9903,7 +9964,7 @@ body.home .builder-section-banner .cycle-next {
   .row.single .column,
   .row.side-right .column.one,
   .row.side-left .column.two {
-    font-size: 1.118em;
+    font-size: 1em;
   }
 
   .row.mimic-two-column-sections .column,
@@ -9925,12 +9986,6 @@ body.home .builder-section-banner .cycle-next {
 
   .tablepress thead th {
     font-size: 0.98384em;
-  }
-}
-
-@media only screen and (min-width: 1073px) {
-  .column li.gfield.has-label-spacer > div.ginput_container {
-    margin-top: 23px;
   }
 }
 
@@ -10229,20 +10284,22 @@ body.home .builder-section-banner .cycle-next {
 }
 
 @media (max-width: 693px) {
+  .daesa-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .daesa-grid__cell--2w,
+  .daesa-grid__cell--3w {
+    grid-column: auto;
+  }
+
+  .daesa-grid__cell--2h,
+  .daesa-grid__cell--3h,
+  .daesa-grid__cell--4h {
+    grid-row: auto;
+  }
+
   .notice {
-    width: 100%;
-  }
-}
-
-@media only screen and (max-width: 641px) {
-  .column li.gfield > .ginput_container_select > .chosen-container-single > .chosen-single > div > b {
-    top: calc(0.99em - 3px);
-    background-position: 0 -7px;
-  }
-}
-
-@media only screen and (max-width: 640px) {
-  .column .gform_wrapper.gf_browser_chrome .gform_body {
     width: 100%;
   }
 }
@@ -10651,7 +10708,7 @@ body.home .builder-section-banner .cycle-next {
   .row.single .column,
   .row.side-right .column.one,
   .row.side-left .column.two {
-    font-size: 1em;
+    font-size: 0.941em;
   }
 
   .row.mimic-two-column-sections .column,
@@ -10685,7 +10742,7 @@ body.home .builder-section-banner .cycle-next {
   .row.single .column,
   .row.side-right .column.one,
   .row.side-left .column.two {
-    font-size: 1.118em;
+    font-size: 0.941em;
   }
 
   .row.mimic-two-column-sections .column,
