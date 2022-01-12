@@ -9,7 +9,7 @@
 FOR THE UNDERGRADUATE RESEARCH
   WEBSITE
 ---------------------
-@version 1.2.0
+@version 1.3.0
 @author Daniel Rieck
   [daniel.rieck@wsu.edu]
   (github.com/invokeImmediately)
@@ -377,4 +377,16 @@ body:not(.page-id-2462) #menu-item-4324 {
  **************************************/
 .page-header--news {
   background-color: black;
+}
+
+/*!*************************************
+ * PER-PAGE STYLING
+ * @author Daniel Rieck
+ **************************************/
+
+/*! -------- HOME PAGE ---------- */
+
+.home__whats-new {
+  border-bottom: 1px solid #efefef;
+  border-top: 1px solid #efefef;
 }
