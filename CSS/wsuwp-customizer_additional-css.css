@@ -9,7 +9,7 @@
 FOR THE UNDERGRADUATE RESEARCH
   WEBSITE
 ---------------------
-@version 1.1.0
+@version 1.2.0
 @author Daniel Rieck
   [daniel.rieck@wsu.edu]
   (github.com/invokeImmediately)
@@ -19,16 +19,51 @@ FOR THE UNDERGRADUATE RESEARCH
 ***********************************/
 
 /*!*************************************
- * SPINE NAVIGATION MENU FIX
- * Visually show which menu items in the spine can be expanded; the default design provides no visual indicator.
+ * SPINE NAVIGATION MENU TWEAKS
  * @author Daniel Rieck
  **************************************/
-#spine nav li.parent>a:not(:hover):after {
-  display:block;
+
+.spine-offsitenav {
+  margin-top: 12px;
 }
 
-#spine nav li.parent:not(.opened)>a:not(:hover):after {
-  color:rgba(117, 117, 117, 0.5);
+#spine nav ul li#menu-item-2280 {
+  border-bottom-width: 0;
+}
+
+#spine.darker .spine-global-links,
+#spine nav ul li#menu-item-2247 {
+  border-color: rgba(255,255,255,.3);
+}
+
+#spine nav ul li#menu-item-3623,
+#spine nav ul li#menu-item-2263,
+#spine nav ul li#menu-item-2280 {
+  padding-bottom: 12px;
+  position: relative;
+}
+
+#spine nav ul li#menu-item-3623:after,
+#spine nav ul li#menu-item-2263:after,
+#spine nav ul li#menu-item-2280:after {
+  background-color: rgba(255,255,255,.3);
+  bottom: 0;
+  content: "";
+  left: 25%;
+  position: absolute;
+  height: 1px;
+  width: 50%;
+}
+
+#spine nav ul li#menu-item-3623 + li,
+#spine nav ul li#menu-item-2263 + li {
+  border-top-width: 0;
+  padding-top: 12px;
+}
+
+#spine nav ul li#menu-item-3623 + li > a:after,
+#spine nav ul li#menu-item-2263 + li > a:after {
+  top: calc(.5em + 12px);
 }
 
 /*!*************************************
@@ -203,4 +238,143 @@ FOR THE UNDERGRADUATE RESEARCH
   .daesa-grid__cell--4h {
     grid-row: auto;
   }
+}
+
+/*!*************************************
+ * PADDING FIX FOR EVENTS CALENDAR
+ * @author Daniel Rieck
+ **************************************/
+
+#tribe-events-pg-template .tribe-events-before-html {
+  padding-top: 2rem;
+}
+
+@media all and (min-width: 481px) {
+.single.gutter #tribe-events-pg-template.column:not(.gutterless) {
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+}
+
+@media all and (max-width: 480px) and (min-width: 361px) {
+.single.gutter #tribe-events-pg-template.column:not(.gutterless) {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+}
+
+
+@media all and (max-width: 360px) {
+.single.gutter #tribe-events-pg-template.column:not(.gutterless) {
+  padding-left: .5rem;
+  padding-right: .5rem;
+}
+}
+
+/*!*************************************
+ * PEER MENTOR BIOS
+ * @author Daniel Rieck
+ **************************************/
+.pm-bios {
+  max-width: none;
+  padding-left: 0;
+}
+
+.pm-bios__mentor {
+  background-color: #eff0f1;
+  background-position: center;
+  height: 297px;
+  margin-left: -1rem;
+  margin-right: -1rem;
+  margin-top: -1rem;
+  position: relative;
+  white-space: nowrap;
+}
+
+.pm-bios__mentor-name {
+  background-color: rgba(0,0,0,0.75);
+  border-radius: .2rem;
+  bottom: .5rem;
+  color: white;
+  display: inline;
+  font-size: 1.6rem;
+  font-weight: 600;
+  left: 50%;
+  padding: .5rem;
+  position: absolute;
+  transform: translateX(-50%);
+}
+
+.pm-bios__profile {
+  overflow: hidden;
+}
+
+.pm-bios__profile#allison-jensen .pm-bios__mentor {
+  background-image: url(https://s3.wp.wsu.edu/uploads/sites/51/2021/09/peer-mentors_2021-22-ay_allison-jensen_594w297h.jpg);
+}
+
+
+.pm-bios__profile#anna-mcdonald .pm-bios__mentor {
+  background-image: url(https://s3.wp.wsu.edu/uploads/sites/51/2021/09/peer-mentors_2021-22-ay_anna-mcdonald_594w297h.jpg);
+}
+
+.pm-bios__profile#christi-webster .pm-bios__mentor {
+  background-image: url(https://s3.wp.wsu.edu/uploads/sites/51/2021/09/peer-mentors_2021-22-ay_christi-webster_594w297h.jpg);
+}
+
+.pm-bios__profile#megan-johnsen .pm-bios__mentor {
+  background-image: url(https://s3.wp.wsu.edu/uploads/sites/51/2021/09/peer-mentors_2021-22-ay_megan-johnsen_594w297h.jpg);
+}
+
+.pm-bios__profile#parker-johnson .pm-bios__mentor {
+  background-image: url(https://s3.wp.wsu.edu/uploads/sites/51/2021/09/peer-mentors_2021-22-ay_parker-johnson_594w297h.jpg);
+}
+
+.pm-bios__profile#scott-stevison .pm-bios__mentor {
+  background-image: url(https://s3.wp.wsu.edu/uploads/sites/51/2021/09/peer-mentors_2021-22-ay_scott-stevison_594w297h.jpg);
+}
+
+.pm-bios__profile#sean-thompson .pm-bios__mentor {
+  background-image: url(https://s3.wp.wsu.edu/uploads/sites/51/2021/09/peer-mentors_2021-22-ay_sean-thompson_594w297h.jpg);
+}
+
+.pm-bios__profile#stella-cao .pm-bios__mentor {
+  background-image: url(https://s3.wp.wsu.edu/uploads/sites/51/2021/09/peer-mentors_2021-22-ay_stella-cao_594w297h.jpg);
+}
+
+.pm-bios__profile#stevie-fawcett .pm-bios__mentor {
+  background-image: url(https://s3.wp.wsu.edu/uploads/sites/51/2021/09/peer-mentors_2021-22-ay_stevie-fawcett_594w297h.jpg);
+}
+
+.pm-bios__profile#tanya-rivera .pm-bios__mentor {
+  background-image: url(https://s3.wp.wsu.edu/uploads/sites/51/2021/09/peer-mentors_2021-22-ay_tanya-rivera_594w297h.jpg);
+}
+
+.pm-bios__profile#zakora-moore .pm-bios__mentor {
+  background-image: url(https://s3.wp.wsu.edu/uploads/sites/51/2021/09/peer-mentors_2021-22-ay_zakora-moore_594w297h.jpg);
+}
+
+.pm-bios__profile#rebecca-hseih .pm-bios__mentor {
+  background-image: url(https://s3.wp.wsu.edu/uploads/sites/51/2021/09/peer-mentors_2021-22-ay_rebecca-hseih_594w297h.jpg);
+}
+
+/*!*************************************
+ * CONTEXT-DEPENDENT AREAS OF SPINE MENU
+ * @author Daniel Rieck
+ **************************************/
+
+body:not(.page-id-2462) #menu-item-4324 {
+  display: none !important;
+}
+
+/*#gform_wrapper_32.gform_wrapper.gravity-theme .gfield_date_day {
+  display: none;
+}*/
+
+/*!*************************************
+ * FALLBACK BACKGROUND ON NEWS HEADERS
+ * @author Daniel Rieck
+ **************************************/
+.page-header--news {
+  background-color: black;
 }
