@@ -7,11 +7,11 @@
  *  Contains settings, implemented as Less variables, that the process for compiling Less files
  *    into a custom stylesheet for use on a [WSU DAESA](https://daesa.wsu.edu/) websites.
  * 
- *  @version 1.1.2
+ *  @version 1.1.3
  * 
  *  @link https://github.com/invokeImmediately/WSU-DAESA-CSS/main/blob/Settings/build-settings.less
  *  @author Daniel Rieck [daniel.rieck@wsu.edu] (https://github.com/invokeImmediately)
- *  @license MIT Copyright (c) 2021 Washington State University
+ *  @license MIT Copyright (c) 2022 Washington State University
  *    Permission is hereby granted, free of charge, to any person obtaining a copy of this software
  *      and associated documentation files (the "Software"), to deal in the Software without
  *      restriction, including without limitation the rights to use, copy, modify, merge, publish,
@@ -157,7 +157,7 @@
  *  See §1 for a full description of the contents of this file.
  *
  *  @author Daniel Rieck [daniel.rieck@wsu.edu] (https://github.com/invokeImmediately)
- *  @license MIT — Copyright (c) 2021 Washington State University. (See §1 for full license.)
+ *  @license MIT — Copyright (c) 2022 Washington State University. (See §1 for full license.)
  *  ────────────────────────────────────────────────────────────────────────────────────────────────
  *   TABLE OF CONTENTS:
  *   ────────────────────────────────────────────────────────────────────────────────────────────
@@ -238,11 +238,11 @@
  *
  *  Please refer to the linked GitHub project for fully documented, precompiled source code.
  *
- *  @version 1.2.0-rc0.0.2
+ *  @version 1.2.0-rc0.0.5
  *
  *  @link https://github.com/invokeImmediately/WSU-DAESA-CSS
  *  @author Daniel Rieck [daniel.rieck@wsu.edu] (https://github.com/invokeImmediately)
- *  @license MIT Copyright (c) 2021 Washington State University
+ *  @license MIT Copyright (c) 2022 Washington State University
  *    Permission is hereby granted, free of charge, to any person obtaining a copy of this software
  *      and associated documentation files (the "Software"), to deal in the Software without
  *      restriction, including without limitation the rights to use, copy, modify, merge, publish,
@@ -338,11 +338,11 @@ span.accentuated-text {
  *    invocation or inclusion of these mixins are designed to accompany or supersede styling
  *    associated with the active theme.
  *
- *  @version 1.1.2
+ *  @version 1.1.3
  *
  *  @author Daniel Rieck <daniel.rieck@wsu.edu> (https://github.com/invokeImmediately)
  *  @link https://github.com/invokeImmediately/WSU-DAESA-CSS/blob/main/mixins.less
- *  @license MIT Copyright (c) 2021 Washington State University
+ *  @license MIT Copyright (c) 2022 Washington State University
  *    Permission is hereby granted, free of charge, to any person obtaining a copy of this software
  *      and associated documentation files (the "Software"), to deal in the Software without
  *      restriction, including without limitation the rights to use, copy, modify, merge, publish,
@@ -521,11 +521,11 @@ span.accentuated-text {
  *    functional style declarations and creating utility classes. Designed as a dependency to be
  *    imported upstream of other Less files in the final stylesheet build.
  *
- *  @version 1.0.3
+ *  @version 1.0.5
  *
  *  @link https://github.com/invokeImmediately/WSU-DAESA-CSS/
  *  @author Daniel Rieck [daniel.rieck@wsu.edu] (https://github.com/invokeImmediately)
- *  @license MIT Copyright (c) 2021 Washington State University
+ *  @license MIT Copyright (c) 2022 Washington State University
  *    Permission is hereby granted, free of charge, to any person obtaining a copy of this software
  *      and associated documentation files (the "Software"), to deal in the Software without
  *      restriction, including without limitation the rights to use, copy, modify, merge, publish,
@@ -893,11 +893,11 @@ html {
  *    accompany or supersede the theme's stylesheet via application to the site using the CSS
  *    Stylesheet Editor, set to add-on mode, in the WordPress administration area.
  *  
- *  @version 1.0.0
+ *  @version 1.0.1
  *  
  *  @link https://github.com/invokeImmediately/WSU-DAESA-CSS/blob/master/Spine-Theme/nav.less
  *  @author Daniel Rieck [daniel.rieck@wsu.edu] (https://github.com/invokeImmediately)
- *  @license MIT Copyright (c) 2021 Washington State University
+ *  @license MIT Copyright (c) 2022 Washington State University
  *    Permission is hereby granted, free of charge, to any person obtaining a copy of this software
  *      and associated documentation files (the "Software"), to deal in the Software without
  *      restriction, including without limitation the rights to use, copy, modify, merge, publish,
@@ -1049,165 +1049,36 @@ main .row {
  *       └> §3.2.6: Aside
  */
 
-aside.shield-themed {
-  padding: 0.5rem;
-  border-left: 4px solid #8d959a;
-  background: #eff0f1;
-  color: #3b4042;
-  font-size: 0.925rem;
-}
-
-aside.shield-themed.floats-left {
-  float: left;
-}
-
-aside.shield-themed.floats-right {
-  float: right;
-}
-
-aside.shield-themed > h1:first-child,
-aside.shield-themed > h2:first-child,
-aside.shield-themed > h3:first-child,
-aside.shield-themed > h4:first-child,
-aside.shield-themed > h5:first-child,
-aside.shield-themed > h6:first-child,
-aside.shield-themed > header:first-child > * {
-  box-sizing: content-box;
-  width: 100%;
-  padding: 0.5rem;
-  margin-top: -0.5rem;
-  margin-left: -0.5rem;
-  margin-bottom: 0.5rem;
-  background-color: #a60f2d;
-  color: #fff;
-}
-
-aside.shield-themed p + * {
-  margin-top: 1em;
-}
-
-aside.shield-themed p + .has-learn-more-link {
-  margin-top: 0.33333333em;
-}
-
-aside.shield-themed:not(:last-child) {
-  margin-bottom: 2rem;
-}
-
-.column aside.article-sidebar {
-  background: #f8f1eb;
-  border: 1px solid #6d441f;
-  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-  color: #464e54;
-  float: right;
-  font-size: 0.8rem;
-  margin-bottom: 1rem;
-  margin-left: 1rem;
-  min-width: 230px;
-  padding: 0.8rem;
-  width: 33%;
-}
-
-.column aside.article-sidebar:first-child + h1,
-.column aside.article-sidebar:first-child + h2,
-.column aside.article-sidebar:first-child + h3,
-.column aside.article-sidebar:first-child + h4 {
-  margin-top: 0;
-}
-
-.column aside.article-sidebar p,
-.column aside.article-sidebar ol,
-.column aside.article-sidebar ul {
-  font-size: inherit;
-  line-height: normal;
-}
-
-.column aside.article-sidebar p {
-  text-align: left;
-}
-
-.column aside.article-sidebar p:not(:last-child) {
-  margin-bottom: 0.8rem;
-}
-
-.column aside.article-sidebar ol,
-.column aside.article-sidebar ul {
-  padding-bottom: 0;
-}
-
-.column aside.article-sidebar h2 + hr {
-  background-color: rgba(70, 78, 84, 0.75);
-  margin-top: 0.25rem;
-}
-
-.column aside.article-sidebar h3 {
-  font-size: 1.275rem;
-  margin-bottom: 0;
-  margin-top: 1.2rem;
-}
-
-.column aside.article-sidebar h3:first-child {
-  margin-top: 0;
-}
-
-.column aside.article-sidebar h4 {
-  font-size: 1.05rem;
-}
-
-.column aside.article-sidebar h4:first-child {
-  margin-top: 0;
-}
-
-body.single-post #wsuwp-main .row .column.one aside,
-.column > aside.quote {
-  float: right;
-  clear: right;
-  padding: 0.5rem;
-  margin-left: 0.5rem;
-  border-left: 4px solid #b5babe;
-  background: #d7dadb;
-  font-size: 0.9rem;
-}
-
-body.single-post #wsuwp-main .row .column.one aside.full-width,
-.column > aside.quote.full-width {
-  width: 94%;
-  width: calc(100% - 0.5rem * 2);
-  margin-top: 1rem;
-  margin-bottom: 2rem;
-}
-
-body.single-post #wsuwp-main .row .column.one aside:not(.full-width),
-.column > aside.quote:not(.full-width) {
-  width: 33%;
-  margin-top: 0.5rem;
-  margin-bottom: 0.5rem;
-}
-
-body.single-post #wsuwp-main .row .column.one aside > h2:first-child,
-.column > aside.quote > h2:first-child,
-body.single-post #wsuwp-main .row .column.one aside > h3:first-child,
-.column > aside.quote > h3:first-child,
-body.single-post #wsuwp-main .row .column.one aside > h4:first-child,
-.column > aside.quote > h4:first-child {
-  padding: 0.5rem;
-  margin: -0.5rem;
-  background-color: #a60f2d;
-  color: #fff;
-}
-
-body.single-post #wsuwp-main .row .column.one aside > h2:first-child + *,
-.column > aside.quote > h2:first-child + *,
-body.single-post #wsuwp-main .row .column.one aside > h3:first-child + *,
-.column > aside.quote > h3:first-child + *,
-body.single-post #wsuwp-main .row .column.one aside > h4:first-child + *,
-.column > aside.quote > h4:first-child + * {
-  margin-top: 1rem;
-}
-
-body.blog .article-summary aside {
-  display: none;
-}
+/** ────────────────────────────────────────────────────────────────────────────────────────────────
+ *  ▄▀▀▄ ▄▀▀▀ ▀█▀ █▀▀▄ █▀▀▀   █    █▀▀▀ ▄▀▀▀ ▄▀▀▀
+ *  █▄▄█ ▀▀▀█  █  █  █ █▀▀    █  ▄ █▀▀  ▀▀▀█ ▀▀▀█
+ *  █  ▀ ▀▀▀  ▀▀▀ ▀▀▀  ▀▀▀▀ ▀ ▀▀▀  ▀▀▀▀ ▀▀▀  ▀▀▀
+ * 
+ *  Involves styles for aside elements on the websites of the WSU Division of Academic Engagement
+ *    and Student Achievement built using the Spine parent theme of WSUWP. Styles are designed to
+ *    accompany or supersede the theme's styling via application to the site using the CSS
+ *    Stylesheet Editor, set to add-on mode, in the WordPress administration area.
+ * 
+ *  @version 1.1.0
+ * 
+ *  @link https://github.com/invokeImmediately/WSU-DAESA-CSS/blob/master/Spine-Theme/aside.less
+ *  @author Daniel Rieck [daniel.rieck@wsu.edu] (https://github.com/invokeImmediately)
+ *  @license MIT Copyright (c) 2022 Washington State University
+ *    Permission is hereby granted, free of charge, to any person obtaining a copy of this software
+ *      and associated documentation files (the "Software"), to deal in the Software without
+ *      restriction, including without limitation the rights to use, copy, modify, merge, publish,
+ *      distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom
+ *      the Software is furnished to do so, subject to the following conditions:
+ *    The above copyright notice and this permission notice shall be included in all copies or
+ *      substantial portions of the Software.
+ *    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING
+ *      BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+ *      NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
+ *      CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE,
+ *      ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ *      SOFTWARE.
+ *  ────────────────────────────────────────────────────────────────────────────────────────────────
+ */
 
 /**     ························································································
  *       └> §3.2.7: Heading
@@ -3402,11 +3273,11 @@ figure figcaption {
  *  Custom styling for forms appearing on WSUWP websites that is generally used on websites managed
  *    by WSU DAESA.
  * 
- *  @version 1.0.1
+ *  @version 1.0.2
  * 
  *  @link https://github.com/invokeImmediately/WSU-DAESA-CSS/main/blob/forms.less
  *  @author Daniel Rieck [daniel.rieck@wsu.edu] (https://github.com/invokeImmediately)
- *  @license MIT Copyright (c) 2021 Washington State University
+ *  @license MIT Copyright (c) 2022 Washington State University
  *    Permission is hereby granted, free of charge, to any person obtaining a copy of this software
  *      and associated documentation files (the "Software"), to deal in the Software without
  *      restriction, including without limitation the rights to use, copy, modify, merge, publish,
@@ -4473,12 +4344,12 @@ x:-o-prefocus {
  *    Academic Engagement web pages built using the builder template of the Spine parent theme of
  *    WSUWP. Styles are designed to accompany or supersede styling associated with the theme.
  *
- *  @version 1.1.2
+ *  @version 1.1.3
  *
  *  @author Daniel Rieck <daniel.rieck@wsu.edu> (https://github.com/invokeImmediately)
  *  @link https://github.com/invokeImmediately/WSU-DAESA-CSS/blob/master/…→
  *    ←…/events-calendar.less
- *  @license MIT Copyright (c) 2021 Washington State University
+ *  @license MIT Copyright (c) 2022 Washington State University
  *    Permission is hereby granted, free of charge, to any person obtaining a copy of this software
  *      and associated documentation files (the "Software"), to deal in the Software without
  *      restriction, including without limitation the rights to use, copy, modify, merge, publish,
@@ -4847,12 +4718,12 @@ div.auto-scroller ul li {
  *  Less import that contains style rules designed according to component-based CSS conventions and
  *    which are commonly used on all WSU DAESA websites.
  *
- *  @version 1.0.1
+ *  @version 1.0.2
  * 
  *  @author Daniel Rieck <daniel.rieck@wsu.edu> (https://github.com/invokeImmediately)
  *  @link https://github.com/invokeImmediately/WSU-DAESA-CSS/blob/main/…→
  *    ←…/BEM/components.less
- *  @license MIT Copyright (c) 2021 Washington State University
+ *  @license MIT Copyright (c) 2022 Washington State University
  *    Permission is hereby granted, free of charge, to any person obtaining a copy of this software
  *      and associated documentation files (the "Software"), to deal in the Software without
  *      restriction, including without limitation the rights to use, copy, modify, merge, publish,
@@ -5308,12 +5179,12 @@ div.auto-scroller ul li {
  *  Designed to be imported downstream of other Less files in the final stylesheet build so its
  *    rules will have the greatest possible weight in style conflict resolution.
  *
- *  @version 1.1.1
+ *  @version 1.1.2
  *
  *  @author Daniel Rieck <daniel.rieck@wsu.edu> (https://github.com/invokeImmediately)
  *  @link https://github.com/invokeImmediately/WSU-DAESA-CSS/blob/master/…→
  *    ←…/Atomic-CSS/utility-classes.less
- *  @license MIT Copyright (c) 2021 Washington State University
+ *  @license MIT Copyright (c) 2022 Washington State University
  *    Permission is hereby granted, free of charge, to any person obtaining a copy of this software
  *      and associated documentation files (the "Software"), to deal in the Software without
  *      restriction, including without limitation the rights to use, copy, modify, merge, publish,
@@ -7922,51 +7793,51 @@ div.auto-scroller ul li {
   color: #fff7f4;
 }
 
-.goldfinch-back {
+.sunshine-back {
   background-color: #f3e700;
 }
 
-.goldfinch-text {
+.sunshine-text {
   color: #f3e700;
 }
 
-.goldfinch-light-back {
+.sunshine-light-back {
   background-color: #fffef1;
 }
 
-.goldfinch-light-text {
+.sunshine-light-text {
   color: #fffef1;
 }
 
-.vineyard-back {
+.spring-back {
   background-color: #aadc24;
 }
 
-.vineyard-text {
+.spring-text {
   color: #aadc24;
 }
 
-.vineyard-light-back {
+.spring-light-back {
   background-color: #f7fcea;
 }
 
-.vineyard-light-text {
+.spring-light-text {
   color: #f7fcea;
 }
 
-.pacific-sky-back {
+.sky-back {
   background-color: #5bc3f5;
 }
 
-.pacific-sky-text {
+.sky-text {
   color: #5bc3f5;
 }
 
-.pacific-sky-light-back {
+.sky-light-back {
   background-color: #f3fbfe;
 }
 
-.pacific-sky-light-text {
+.sky-light-text {
   color: #f3fbfe;
 }
 
@@ -9870,11 +9741,6 @@ body.home .builder-section-banner .cycle-next {
     display: none;
   }
 
-  aside.shield-themed.floats-left,
-  aside.shield-themed.floats-right {
-    width: 33.3333%;
-  }
-
   section.side-right .column.one h2.fancy,
   section.row.side-right .column.one h2.fancy,
   section.side-right .column.one h3.fancy,
@@ -10150,29 +10016,6 @@ body.home .builder-section-banner .cycle-next {
   .row:not(.pad-top).side-right .one ~ .column,
   .row:not(.pad-top).side-left .one ~ .column {
     margin-top: 2rem;
-  }
-
-  .row.single .column aside.article-sidebar {
-    position: absolute;
-    right: -2rem;
-    top: 0px;
-    width: 230px;
-    transform-origin: 100% 0% 0;
-    transform: rotate(-90deg) translateY(-2rem);
-    transition: transform .25s ease-out;
-    z-index: 99352;
-  }
-
-  .row.single .column aside.article-sidebar:hover {
-    transform: none;
-  }
-
-  body.single-post #wsuwp-main .row .column.one aside:not(.full-width),
-  .column > aside.quote:not(.full-width) {
-    width: 94%;
-    width: calc(100% - 0.5rem * 2);
-    margin-top: 1rem;
-    margin-bottom: 2rem;
   }
 
   ul.cascaded-layout.blank > li {
