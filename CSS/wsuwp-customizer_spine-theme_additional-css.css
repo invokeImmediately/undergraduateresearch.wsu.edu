@@ -1,43 +1,21 @@
 /*!***********************************************
- * █▀▀▀▐▄ ▄▌▐▀█▀▌█▀▀▄ ▄▀▀▄   ▄▀▀▀ ▄▀▀▀ ▄▀▀▀
- * █▀▀   █    █  █▄▄▀ █▄▄█   █    ▀▀▀█ ▀▀▀█
- * ▀▀▀▀▐▀ ▀▌  █  ▀  ▀▄█  ▀    ▀▀▀ ▀▀▀  ▀▀▀
- *
- * FOR THE UNDERGRADUATE RESEARCH WEBSITE.
- *
- * This additional CSS is written assuming use of
- *   the Stylus web browser extension to widen the
- *   customizer panel to >= 50 characters wide.
+ * █▀▀▀▐▄ ▄▌▐▀█▀▌█▀▀▄ ▄▀▀▄
+ * █▀▀   █    █  █▄▄▀ █▄▄█
+ * ▀▀▀▀▐▀ ▀▌  █  ▀  ▀▄█  ▀
+ * 
+ *    ▄▀▀▀ ▄▀▀▀ ▄▀▀▀
+ *    █    ▀▀▀█ ▀▀▀█
+ *     ▀▀▀ ▀▀▀  ▀▀▀ 
+ * FOR THE UNDERGRADUATE RESEARCH WEBSITE
  * -----------------------------------------------
  * @version 1.3.2
  * @author Daniel Rieck
  *   [daniel.rieck@wsu.edu]
  *   (github.com/invokeImmediately)
- * @link https://undergraduateresearch.wsu.edu/wp-
- *   admin/customize.php  --»  Additional CSS
  * @license MIT - Copyright © 2022
  *   Washington State University
  *   https://mit-license.org
  ************************************************/
-
-/*!***********************************************
- * -------------  TABLE OF CONTENTS  -------------
- * ===============================================
- * §1: SPINE NAVIGATION MENU TWEAKS.............41
- * §2: BREADCRUMB LINKS TWEAKS..................88
- * §3: TYPOGRAPHY TWEAK........................117
- * §4: COLOR OVERRIDES.........................125
- * §5: NEWS FEED TWEAKS........................132
- * §6: FIXES TO GRAVITY FORM STYLING...........139
- * §7: MARC MENU ENTRY.........................162
- * §8: MICROSOFT BOOKINGS EMBEDS...............171
- * §9: ATOMIC CSS ADDITIONS....................180
- * §10: PADDING FIX FOR EVENTS CALENDAR........196
- * §11: PEER MENTOR BIOS.......................226
- * §12: CONTEXT-DEPENDENT AREAS OF SPINE MENU..312
- * §13: FALLBACK BACKGROUND ON NEWS HEADERS....324
- * §14: PER-PAGE STYLING.......................331
- *************************************************/
 
 /*!***********************************************
  * §1: SPINE NAVIGATION MENU TWEAKS
@@ -261,54 +239,46 @@
   overflow: hidden;
 }
 
+.pm-bios__profile#jacob-buursma .pm-bios__mentor {
+  background-image: url(https://s3.wp.wsu.edu/uploads/sites/51/2022/08/peer-mentors_2022-23-ay_jacob-buursma_594w297h.jpg);
+}
+
+.pm-bios__profile#ryan-faddis .pm-bios__mentor {
+  background-image: url(https://s3.wp.wsu.edu/uploads/sites/51/2022/08/peer-mentors_2022-23-ay_ryan-faddis_594w297h.jpg);
+}
+
 .pm-bios__profile#allison-jensen .pm-bios__mentor {
-  background-image: url(https://s3.wp.wsu.edu/uploads/sites/51/2021/09/peer-mentors_2021-22-ay_allison-jensen_594w297h.jpg);
-}
-
-
-.pm-bios__profile#anna-mcdonald .pm-bios__mentor {
-  background-image: url(https://s3.wp.wsu.edu/uploads/sites/51/2021/09/peer-mentors_2021-22-ay_anna-mcdonald_594w297h.jpg);
-}
-
-.pm-bios__profile#christi-webster .pm-bios__mentor {
-  background-image: url(https://s3.wp.wsu.edu/uploads/sites/51/2021/09/peer-mentors_2021-22-ay_christi-webster_594w297h.jpg);
+  background-image: url(https://s3.wp.wsu.edu/uploads/sites/51/2022/08/peer-mentors_2022-23-ay_allison-jensen_594w297h.jpg);
 }
 
 .pm-bios__profile#megan-johnsen .pm-bios__mentor {
-  background-image: url(https://s3.wp.wsu.edu/uploads/sites/51/2021/09/peer-mentors_2021-22-ay_megan-johnsen_594w297h.jpg);
+  background-image: url(https://s3.wp.wsu.edu/uploads/sites/51/2022/08/peer-mentors_2022-23-ay_megan-johnsen_594w297h.jpg);
 }
 
 .pm-bios__profile#parker-johnson .pm-bios__mentor {
-  background-image: url(https://s3.wp.wsu.edu/uploads/sites/51/2021/09/peer-mentors_2021-22-ay_parker-johnson_594w297h.jpg);
+  background-image: url(https://s3.wp.wsu.edu/uploads/sites/51/2022/08/peer-mentors_2022-23-ay_parker-johnson_594w297h.jpg);
+}
+
+.pm-bios__profile#anna-mcdonald .pm-bios__mentor {
+  background-image: url(https://s3.wp.wsu.edu/uploads/sites/51/2022/08/peer-mentors_2022-23-ay_anna-mcdonald_594w297h.jpg);
+}
+
+.pm-bios__profile#natasha-puzon .pm-bios__mentor {
+  background-image: url(https://s3.wp.wsu.edu/uploads/sites/51/2022/08/peer-mentors_2022-23-ay_natasha-puzon_594w297h.jpg);
 }
 
 .pm-bios__profile#scott-stevison .pm-bios__mentor {
-  background-image: url(https://s3.wp.wsu.edu/uploads/sites/51/2021/09/peer-mentors_2021-22-ay_scott-stevison_594w297h.jpg);
-}
-
-.pm-bios__profile#sean-thompson .pm-bios__mentor {
-  background-image: url(https://s3.wp.wsu.edu/uploads/sites/51/2021/09/peer-mentors_2021-22-ay_sean-thompson_594w297h.jpg);
-}
-
-.pm-bios__profile#stella-cao .pm-bios__mentor {
-  background-image: url(https://s3.wp.wsu.edu/uploads/sites/51/2021/09/peer-mentors_2021-22-ay_stella-cao_594w297h.jpg);
+  background-image: url(https://s3.wp.wsu.edu/uploads/sites/51/2022/08/peer-mentors_2022-23-ay_scott-stevison_594w297h.jpg);
 }
 
 .pm-bios__profile#stevie-fawcett .pm-bios__mentor {
-  background-image: url(https://s3.wp.wsu.edu/uploads/sites/51/2021/09/peer-mentors_2021-22-ay_stevie-fawcett_594w297h.jpg);
-}
-
-.pm-bios__profile#tanya-rivera .pm-bios__mentor {
-  background-image: url(https://s3.wp.wsu.edu/uploads/sites/51/2021/09/peer-mentors_2021-22-ay_tanya-rivera_594w297h.jpg);
+  background-image: url(https://s3.wp.wsu.edu/uploads/sites/51/2022/08/peer-mentors_2022-23-ay_stevie-fawcett_594w297h.jpg);
 }
 
 .pm-bios__profile#zakora-moore .pm-bios__mentor {
-  background-image: url(https://s3.wp.wsu.edu/uploads/sites/51/2021/09/peer-mentors_2021-22-ay_zakora-moore_594w297h.jpg);
+  background-image: url(https://s3.wp.wsu.edu/uploads/sites/51/2022/08/peer-mentors_2022-23-ay_zakora-moore_594w297h.jpg);
 }
 
-.pm-bios__profile#rebecca-hseih .pm-bios__mentor {
-  background-image: url(https://s3.wp.wsu.edu/uploads/sites/51/2021/09/peer-mentors_2021-22-ay_rebecca-hseih_594w297h.jpg);
-}
 
 /*!***********************************************
  * §12: CONTEXT-DEPENDENT AREAS OF SPINE MENU
