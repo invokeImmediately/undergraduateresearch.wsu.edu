@@ -1,0 +1,738 @@
+/*!*****************************************************************************
+ * ▄▀▀▀ █  █ ▄▀▀▀▐▀█▀▌▄▀▀▄ ▐▀▄▀▌   ▄▀▀▀▐▀█▀▌█  █ █    ▀█▀ ▐▀▀▄ █▀▀▀ ▄
+ * █    █  █ ▀▀▀█  █  █  █ █ ▀ ▌   ▀▀▀█  █  ▀▄▄█ █  ▄  █  █  ▐ █ ▀▄ ▄
+ *  ▀▀▀  ▀▀  ▀▀▀   █   ▀▀  █   ▀   ▀▀▀   █  ▄▄▄▀ ▀▀▀  ▀▀▀ ▀  ▐ ▀▀▀▀
+ *
+ *      █  █ ▐▀▀▄ █▀▀▄ █▀▀▀ █▀▀▄ █▀▀▀ █▀▀▄ ▄▀▀▄ █▀▀▄ █  █ ▄▀▀▄▐▀█▀▌█▀▀▀
+ *      █  █ █  ▐ █  █ █▀▀  █▄▄▀ █ ▀▄ █▄▄▀ █▄▄█ █  █ █  █ █▄▄█  █  █▀▀
+ *       ▀▀  ▀  ▐ ▀▀▀  ▀▀▀▀ ▀  ▀▄▀▀▀▀ ▀  ▀▄█  ▀ ▀▀▀   ▀▀  █  ▀  █  ▀▀▀▀
+ *
+ *      █▀▀▄ █▀▀▀ ▄▀▀▀ █▀▀▀ ▄▀▀▄ █▀▀▄ ▄▀▀▀ █  █
+ *      █▄▄▀ █▀▀  ▀▀▀█ █▀▀  █▄▄█ █▄▄▀ █    █▀▀█
+ *      ▀  ▀▄▀▀▀▀ ▀▀▀  ▀▀▀▀ █  ▀ ▀  ▀▄ ▀▀▀ █  ▀
+ * -----------------------------------------------------------------------------
+ * The following section of this stylesheet contains CSS code built from Less
+ *   modules written for use on the WSU Office of Undergraduate Research
+ *   website to customize the layout and presentation of WDS elements,
+ *   components, modules, and assemblies. This stylesheet is designed, built,
+ *   and maintained by the Division of Academic Engagement and Student
+ *   Achievement (DAESA) in the Office of the Provost at Washington State
+ *   University (WSU).
+ *
+ * Specifically, the CSS code in the following section was generated from
+ *   precompiled CSS written in the Less language extension of CSS. It is
+ *   designed to be applied via the WSUWP CSS Stylesheet Editor functioning in
+ *   add-on mode. It was written for use with the Web Design System 2.0 theme.
+ *
+ * Please refer to the linked GitHub project for fully documented, precompiled
+ *   source code.
+ *
+ * @version 0.0.0
+ *
+ * @link https://github.com/invokeImmediately/distinguishedscholarships.wsu.edu…
+ *   …/blob/main/CSS/wsuwp-wds_css-styl5t-ed3r.prod5n.css
+ * @link https://github.com/invokeImmediately/WSU-DAESA-CSS-WDS
+ * @link https://github.com/wsuwebteam/wsuwp-theme-wds
+ *
+ * @author Daniel Rieck
+ *   [daniel.rieck@wsu.edu]
+ *   (https://github.com/invokeImmediately)
+ *
+ * @license MIT Copyright (c) 2023 Washington State University
+ *   Permission is hereby granted, free of charge, to any person obtaining a
+ *     copy of this software and associated documentation files (the
+ *     "Software"), to deal in the Software without restriction, including
+ *     without limitation the rights to use, copy, modify, merge, publish,
+ *     distribute, sublicense, and/or sell copies of the Software, and to permit
+ *     persons to whom the Software is furnished to do so, subject to the
+ *     following conditions:
+ *   The above copyright notice and this permission notice shall be included in
+ *     all copies or substantial portions of the Software.
+ *   THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ *     IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ *     FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL
+ *     THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR
+ *     OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE,
+ *     ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
+ *     OTHER DEALINGS IN THE SOFTWARE.
+ ******************************************************************************/
+
+/*! —» Issue Fix: Legacy Spine Content → Hide QTips «— */
+
+.is-qtip {
+  display: none !important;
+}
+
+/*! —» Customization: Link WDS Elements → Pop-out links contained in Column WDS Components  «— */
+
+.wsu-column a.pop-out-link {
+  transition: color .4s linear, background .4s ease-in, font-size .25s linear;
+}
+
+.wsu-column a.pop-out-link:hover {
+  font-size: 1.05em;
+}
+
+/*! —» Customization: Container WDS Components → Connected-button "On This Page" design «— */
+
+.on-this-page {
+  padding-bottom: 0.75em;
+}
+
+.on-this-page:not(.on-this-page--colored) {
+  background-color: #e6e6e6;
+}
+
+.on-this-page__heading {
+  font-size: 1.7rem;
+  padding-bottom: 0.6667rem;
+}
+
+:not(.on-this-page--colored) .on-this-page__heading {
+  color: #323232;
+}
+
+.on-this-page__menu {
+  background-color: inherit;
+  list-style-type: none;
+  margin: 0 !important;
+  padding: 0;
+}
+
+.on-this-page__menu-item {
+  float: left;
+  list-style-image: none !important;
+  margin-right: -1px !important;
+  margin-top: -1px !important;
+  padding: 0;
+}
+
+.on-this-page__menu-item a {
+  background-color: #3b4042;
+  border: 1px solid #8d959a;
+  border-radius: 3px;
+  box-shadow: none;
+  color: white;
+  display: inline-block;
+  padding: 5px 12px;
+  text-align: center;
+  text-decoration: none;
+}
+
+.on-this-page__menu-item a:focus,
+.on-this-page__menu-item a:hover {
+  background-color: #23272a;
+  border-color: #ffffff;
+  border-width: 1px;
+  text-decoration: underline;
+}
+
+.on-this-page__menu-item.--crimson a,
+.on-this-page__menu-item.menu-item--crimson a {
+  background-color: #54464e;
+}
+
+.on-this-page__menu-item.--crimson a:focus,
+.on-this-page__menu-item.menu-item--crimson a:focus,
+.on-this-page__menu-item.--crimson a:hover,
+.on-this-page__menu-item.menu-item--crimson a:hover {
+  background-color: #58111d;
+}
+
+.on-this-page__menu-item.--related a,
+.on-this-page__menu-item.menu-item--related a {
+  position: relative;
+  margin-right: 5px;
+}
+
+.on-this-page__menu-item.--related a::before,
+.on-this-page__menu-item.menu-item--related a::before,
+.on-this-page__menu-item.--related a::after,
+.on-this-page__menu-item.menu-item--related a::after {
+  content: "";
+  border-top: 3px solid #8d959a;
+  position: absolute;
+  top: 50%;
+  width: 5px;
+}
+
+.on-this-page__menu-item.--related a::before,
+.on-this-page__menu-item.menu-item--related a::before {
+  right: 0;
+  transform: translateX(5px);
+}
+
+.on-this-page__menu-item.--related a::after,
+.on-this-page__menu-item.menu-item--related a::after {
+  left: 0;
+  transform: translateX(-5px);
+}
+
+.on-this-page__menu-item.--related.--start a::after,
+.on-this-page__menu-item.menu-item--related.--start a::after,
+.on-this-page__menu-item.--related.menu-item--start a::after,
+.on-this-page__menu-item.menu-item--related.menu-item--start a::after {
+  content: none;
+}
+
+.on-this-page__menu-item.--related.--end a::before,
+.on-this-page__menu-item.menu-item--related.--end a::before,
+.on-this-page__menu-item.--related.menu-item--end a::before,
+.on-this-page__menu-item.menu-item--related.menu-item--end a::before {
+  content: none;
+}
+
+.on-this-page__menu-item.--shifted,
+.on-this-page__menu-item.menu-item--shifted {
+  margin-left: 14px;
+}
+
+.on-this-page__menu-item.--shifts-next,
+.on-this-page__menu-item.menu-item--shifts-next {
+  margin-right: 14px !important;
+}
+
+.on-this-page.--has-gutter,
+.on-this-page.on-this-page--has-gutter {
+  padding-bottom: 0.75em;
+}
+
+.on-this-page.--has-gutter .on-this-page__menu-item,
+.on-this-page.on-this-page--has-gutter .on-this-page__menu-item {
+  margin-top: 0 !important;
+  margin-bottom: 0.75em !important;
+}
+
+.on-this-page__back {
+  position: relative;
+  padding-left: 1rem;
+  font-size: 0.9em;
+}
+
+.on-this-page__back::before {
+  content: "";
+  position: absolute;
+  width: 1rem;
+  left: -3px;
+  height: 0.9rem;
+  background: url(https://s3.wp.wsu.edu/uploads/sites/50/2017/10/micon_returnKey_rotated-90-deg-cw_54x64.png) center center / auto 100% no-repeat;
+}
+
+/*! —» Customization: Container WDS Components → Legacy DAESA accordions «— */
+
+.drop-down-toggle,
+.accordion-toggle {
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.drop-down-toggle:after,
+.accordion-toggle:after {
+  content: "";
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  width: 0;
+  height: 0;
+  border-top: none;
+  border-right: 8px solid transparent;
+  border-bottom: 8px solid #a60f2d;
+  border-left: 8px solid transparent;
+  transform: translateY(-50%);
+  transition: all 0.3s ease;
+}
+
+.drop-down-toggle:before,
+.accordion-toggle:before {
+  content: "Click to expand";
+  position: absolute;
+  top: 50%;
+  right: 0;
+  color: #a60f2d;
+  font-size: 12px;
+  text-transform: none;
+  opacity: 0;
+  transform: translate(-35px, -50%);
+  transition: all 0.3s ease;
+}
+
+.drop-down-toggle:hover,
+.accordion-toggle:hover {
+  background-color: rgba(219, 120, 121, 0.3);
+}
+
+.drop-down-toggle:hover:after,
+.accordion-toggle:hover:after {
+  border-top: none;
+  border-right: 8px solid transparent;
+  border-bottom: 8px solid #ca1237;
+  border-left: 8px solid transparent;
+}
+
+.drop-down-toggle:hover:before,
+.accordion-toggle:hover:before {
+  opacity: 0.5;
+}
+
+.drop-down-toggle.activated,
+.accordion-toggle.activated {
+  background-color: rgba(219, 120, 121, 0.15);
+}
+
+.drop-down-toggle.activated:after,
+.accordion-toggle.activated:after {
+  border-top: 8px solid #a60f2d;
+  border-right: 8px solid transparent;
+  border-bottom: none;
+  border-left: 8px solid transparent;
+}
+
+.drop-down-toggle.activated:before,
+.accordion-toggle.activated:before {
+  content: "Click to collapse";
+}
+
+.drop-down-toggle.activated:hover:after,
+.accordion-toggle.activated:hover:after {
+  border-top: 8px solid #ca1237;
+  border-right: 8px solid transparent;
+  border-bottom: none;
+  border-left: 8px solid transparent;
+}
+
+.drop-down-toggle.boxed,
+.accordion-toggle.boxed {
+  padding-left: 44px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  margin-bottom: 0 !important;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.drop-down-toggle.boxed:after,
+.accordion-toggle.boxed:after,
+.drop-down-toggle.boxed:before,
+.accordion-toggle.boxed:before {
+  background-color: #a60f2d;
+  border-radius: 4px;
+  border: none;
+  color: #fff;
+  content: "+";
+  font-family: 'Roboto Mono', monospace, sans-serif;
+  font-size: 18px;
+  height: 18px;
+  left: 18px;
+  line-height: 16px;
+  text-align: center;
+  top: 50%;
+  width: 18px;
+  transform: translate(-50%, -50%);
+}
+
+.drop-down-toggle.boxed:after,
+.accordion-toggle.boxed:after {
+  content: "+";
+  opacity: 1;
+}
+
+.drop-down-toggle.boxed:before,
+.accordion-toggle.boxed:before {
+  content: "-";
+  opacity: 0;
+}
+
+.drop-down-toggle.boxed:hover,
+.accordion-toggle.boxed:hover {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.drop-down-toggle.boxed:hover:after,
+.accordion-toggle.boxed:hover:after,
+.drop-down-toggle.boxed:hover:before,
+.accordion-toggle.boxed:hover:before {
+  background-color: #be4f65;
+}
+
+.drop-down-toggle.boxed.activated,
+.accordion-toggle.boxed.activated {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.drop-down-toggle.boxed.activated:hover,
+.accordion-toggle.boxed.activated:hover {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.drop-down-toggle.boxed.activated:after,
+.accordion-toggle.boxed.activated:after {
+  opacity: 0;
+}
+
+.drop-down-toggle.boxed.activated:before,
+.accordion-toggle.boxed.activated:before {
+  opacity: 1;
+}
+
+.drop-down-toggle.boxed + .toggled-panel,
+.accordion-toggle.boxed + .toggled-panel {
+  padding: 0.5rem;
+  border-right: 1px solid rgba(0, 0, 0, 0.2);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  border-left: 1px solid rgba(0, 0, 0, 0.2);
+  margin-top: 0 !important;
+  padding-top: 1rem !important;
+}
+
+.drop-down-toggle.boxed + .toggled-panel > :last-child,
+.accordion-toggle.boxed + .toggled-panel > :last-child {
+  padding-bottom: 0.5rem;
+}
+
+.drop-down-toggle.boxed + .drop-down-toggle.boxed,
+.drop-down-toggle.boxed + .accordion-toggle.boxed,
+.accordion-toggle.boxed + .drop-down-toggle.boxed,
+.accordion-toggle.boxed + .accordion-toggle.boxed,
+.drop-down-toggle.boxed + .toggled-panel + .drop-down-toggle.boxed,
+.drop-down-toggle.boxed + .toggled-panel + .accordion-toggle.boxed,
+.accordion-toggle.boxed + .toggled-panel + .drop-down-toggle.boxed,
+.accordion-toggle.boxed + .toggled-panel + .accordion-toggle.boxed {
+  margin-top: 0.5rem;
+}
+
+.drop-down-toggle.boxed + .toggled-panel + :not(.drop-down-toggle),
+.accordion-toggle.boxed + .toggled-panel + :not(.drop-down-toggle) {
+  margin-top: 1rem;
+}
+
+.drop-down-toggle.boxed.blue,
+.accordion-toggle.boxed.blue {
+  background-color: rgba(0, 165, 189, 0.1);
+  color: #0076bd;
+}
+
+.drop-down-toggle.boxed.blue:after,
+.accordion-toggle.boxed.blue:after,
+.drop-down-toggle.boxed.blue:before,
+.accordion-toggle.boxed.blue:before {
+  background-color: #0076bd;
+}
+
+.drop-down-toggle.boxed.blue:hover,
+.accordion-toggle.boxed.blue:hover {
+  background-color: rgba(0, 165, 189, 0.3);
+}
+
+.drop-down-toggle.boxed.blue:hover:after,
+.accordion-toggle.boxed.blue:hover:after,
+.drop-down-toggle.boxed.blue:hover:before,
+.accordion-toggle.boxed.blue:hover:before {
+  background-color: #449bcf;
+}
+
+.drop-down-toggle.boxed.blue.activated,
+.accordion-toggle.boxed.blue.activated {
+  background-color: rgba(0, 165, 189, 0.2);
+}
+
+.drop-down-toggle.boxed.blue.activated:hover,
+.accordion-toggle.boxed.blue.activated:hover {
+  background-color: rgba(0, 165, 189, 0.3);
+}
+
+.drop-down-toggle.boxed.blue + .toggled-panel,
+.accordion-toggle.boxed.blue + .toggled-panel {
+  border-right: 1px solid rgba(0, 165, 189, 0.2);
+  border-bottom: 1px solid rgba(0, 165, 189, 0.2);
+  border-left: 1px solid rgba(0, 165, 189, 0.2);
+}
+
+.drop-down-toggle + .toggled-panel,
+.accordion-toggle + .toggled-panel {
+  opacity: 1;
+  overflow: hidden;
+  transition: all 0.5s ease;
+}
+
+.drop-down-toggle:not(.activated) + .toggled-panel,
+.accordion-toggle:not(.activated) + .toggled-panel {
+  height: 0 !important;
+  padding: 0 !important;
+  border: none !important;
+  opacity: 0 !important;
+}
+
+/*! —» Customization: Container WDS Components → Content flippers «— */
+
+.flipped-content-back {
+  display: none;
+  width: 100%;
+}
+
+.content-flipper {
+  padding-right: 2rem;
+  position: relative;
+}
+
+.content-flipper:hover,
+.content-flipper:focus {
+  color: #ca1237;
+}
+
+.content-flipper:before,
+.content-flipper:after {
+  color: inherit;
+  content: "";
+  filter: invert(0%) sepia(0%) saturate(4166%) hue-rotate(145deg) brightness(101%) contrast(67%);
+  height: 1.5rem;
+  opacity: 0;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1.5rem;
+}
+
+.content-flipper:before {
+  background: url(https://daesa.wsu.edu/documents/2021/09/genericons-neue_expand.svg);
+  transition: opacity .2s ease;
+}
+
+.content-flipper:after {
+  background: url(https://daesa.wsu.edu/documents/2021/09/genericons-neue_collapse.svg);
+  transition: opacity .4s cubic-bezier( 1, 0, 0.34, 0.3 );
+  transition: opacity .2s ease;
+}
+
+.content-flipper[aria-pressed=false]:before {
+  opacity: 1;
+  transition: opacity .4s cubic-bezier( 1, 0, 0.34, 0.3 );
+}
+
+.content-flipper[aria-pressed=true]:after {
+  opacity: 1;
+  transition: opacity .4s cubic-bezier( 1, 0, 0.34, 0.3 );
+}
+
+.content-flipper:hover:after,
+.content-flipper:focus:after,
+.content-flipper:hover:before,
+.content-flipper:focus:before {
+  filter: invert(16%) sepia(94%) saturate(3860%) hue-rotate(339deg) brightness(80%) contrast(98%);
+}
+
+/*! —» Customization: WDS Gravity Forms → DAESA styled forms «— */
+.gform_wrapper.gravity-theme .gf_page_steps {
+  background-color: #f7f7f7;
+  margin-bottom: 0;
+  padding: .5rem 1rem .25rem;
+}
+
+.gform_wrapper.gravity-theme .gform_body {
+  background-color: #f7f7f7;
+  border-radius: 5px;
+  box-shadow: 0 0 3px rgb(0 0 0 / 15%) inset, 2px 2px 6px rgb(0 0 0 / 5%) inset, -2px 2px 6px rgb(0 0 0 / 5%) inset;
+  padding: 2rem;
+}
+
+.gform_wrapper.gravity-theme .gf_page_steps + .gform_body {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.gform_wrapper.gravity-theme .gfield_html:not(.gfield_html--for-indicator) {
+  background: #fff;
+  border: 1px solid #d7d7d7;
+  border-radius: .3125rem;
+  padding: 2rem;
+}
+
+.gform_wrapper.gravity-theme .gfield_html--for-indicator hr {
+  background-color: #fff;
+  border-color: #d7d7d7;
+}
+
+.gform_wrapper.gravity-theme .gsection_title {
+  font-weight: 700;
+}
+
+.gform_wrapper.gravity-theme .gfield_label {
+  font-weight: 600;
+}
+
+.gform_wrapper.gravity-theme .gpnf-nested-entries {
+  background-color: #fff;
+}
+
+.gform_confirmation_wrapper table table {
+  border-top: 0;
+  margin-bottom: 0;
+}
+
+.gform_confirmation_wrapper table table {
+  border-top: 0;
+  margin-bottom: 0;
+}
+
+.gform_confirmation_wrapper table table tr:first-child td {
+  background-color: #fff !important;
+}
+
+.gform_confirmation_wrapper table table td:not([colspan]):first-child {
+  border-right: 0;
+}
+
+.gform_confirmation_wrapper table table td:not([colspan]):last-child {
+  border-left: 0;
+}
+
+.gform_confirmation_wrapper table table td:not([colspan]) ul {
+  margin: .875em 0 0;
+}
+
+.gform_wrapper.gravity-theme .gfield_contains_required .gfield_checkbox:not(.gf-value-entered),.gform_wrapper.gravity-theme .gfield_contains_required .gfield_radio:not(.gf-value-entered),.gform_wrapper.gravity-theme .gfield_contains_required input:not(.gf-value-entered),.gform_wrapper.gravity-theme .gfield_contains_required select:not(.gf-value-entered),.gform_wrapper.gravity-theme .gfield_contains_required textarea:not(.gf-value-entered) {
+  border-left: 2px solid #a60f2d;
+}
+
+.gform_wrapper.gravity-theme .gfield_contains_required input.gf-value-entered,.gform_wrapper.gravity-theme .gfield_contains_required select.gf-value-entered,.gform_wrapper.gravity-theme .gfield_contains_required textarea.gf-value-entered {
+  padding-left: calc(.5rem + 1px);
+}
+
+.gform_wrapper.gravity-theme .gfield_contains_required .gfield_checkbox.gf-value-entered,.gform_wrapper.gravity-theme .gfield_contains_required .gfield_radio.gf-value-entered {
+  padding-left: 1px;
+}
+
+/*! —» Customization: WDS Gravity Forms → DAESA styled progress indicators «— */
+.progress-indicator {
+  align-items: center;
+  border-top: 1px dotted #ccc;
+  display: flex;
+  font-size: .925em;
+  justify-content: center;
+  margin-bottom: 0;
+  list-style-type: none;
+  position: relative;
+}
+
+@media screen and (max-width: 875px) {
+  .progress-indicator {
+    flex-wrap: wrap;
+  }
+}
+
+.progress-indicator::before {
+  color: #5e5e5e;
+  content: "Application Progress:";
+  position: absolute;
+  left: 0;
+  text-transform: uppercase;
+  top: .3em;
+}
+
+ol.progress-indicator li {
+  list-style-type: none;
+}
+
+.gform_wrapper.gravity-theme .progress-indicator {
+  max-width: none;
+  padding-top: 3rem;
+}
+
+body .gform_wrapper div.gform_body ul.gform_fields li.gfield.gfield_html ol.progress-indicator,
+body .gform_wrapper form div.gform_body ul.gform_fields li.gfield.gfield_html ol.progress-indicator {
+  list-style-type: none !important;
+  margin-bottom: 0;
+  margin-left: 0;
+  padding-top: 2.3em;
+}
+
+body .gform_wrapper div.gform_body ul.gform_fields li.gfield.gfield_html ol.progress-indicator li,
+body .gform_wrapper form div.gform_body ul.gform_fields li.gfield.gfield_html ol.progress-indicator li {
+  list-style-type: none !important;
+}
+
+.progress-indicator__l-connector,
+.progress-indicator__r-connector {
+  background-color: #e5e6e8;
+  position: absolute;
+  height: .3125rem;
+  top: 50%;
+  width: 1rem;
+}
+
+.progress-indicator__section-complete .progress-indicator__l-connector,
+.progress-indicator__section-complete .progress-indicator__r-connector {
+  background-color: #981e32;
+}
+
+.progress-indicator__l-connector {
+  left: 0;
+  transform: translate(-100%,-50%);
+}
+
+.progress-indicator__section-active .progress-indicator__l-connector {
+  background-color: #981e32;
+}
+
+.progress-indicator__r-connector {
+  right: 0;
+  transform: translate(100%,-50%);
+}
+
+.progress-indicator__section {
+  background-color: #e5e6e8;
+  border-radius: .25em;
+  color: black;
+  padding: .5em 1em;
+  position: relative;
+  text-align: center;
+}
+
+.gform_wrapper.gravity-theme .progress-indicator__section {
+  margin-right: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+body .gform_wrapper div.gform_body ul.gform_fields li.gfield.gfield_html ol .progress-indicator__section,
+body .gform_wrapper form div.gform_body ul.gform_fields li.gfield.gfield_html ol .progress-indicator__section {
+  margin-right: 18px;
+  padding: .5em 1em;
+}
+
+.progress-indicator__section-active {
+  background-color: #58111d;
+  color: white;
+}
+
+.progress-indicator__section-complete {
+  background-color: #981e32;
+  color: white;
+}
+
+/*! —» Customization: Separator WDS Component → Crimson, Crest, and Tower design variants «— */
+
+hr.bc--crimson {
+  border-bottom: 1px solid rgba(202, 18, 55, 0.25);
+  border-top: 1px solid #a60f2d;
+}
+
+hr.icon--crest::before {
+  background: url(/wp-content/uploads/sites/50/2018/07/icon_wsu-shield_crimson.png);
+  content: "";
+  height: 18px;
+  left: 16px;
+  position: absolute;
+  top: -7px;
+  width: 16px;
+}
+
+hr.icon--tower::before {
+  background: url(/wp-content/uploads/sites/50/2018/07/icon_bryan-tower_rendered.png);
+  content: "";
+  height: 25px;
+  position: absolute;
+  right: 16px;
+  top: -18px;
+  width: 16px;
+}
