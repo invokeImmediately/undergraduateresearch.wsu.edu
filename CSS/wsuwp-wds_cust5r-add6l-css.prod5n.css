@@ -1,0 +1,1484 @@
+/*!***************************************
+ * ▄▀▀▄ █▀▀▄ █▀▀▄ ▀█ █      ▄▀▀▀ ▄▀▀▀ ▄▀▀▀
+ * █▄▄█ █  █ █  █    █  ▄   █    ▀▀▀█ ▀▀▀█
+ * █  ▀ ▀▀▀  ▀▀▀     ▀▀▀     ▀▀▀ ▀▀▀  ▀▀▀
+ * ADDITIONAL CSS FOR CUSTOMIZATION OF
+ *  WDS-THEMED DAESA WEBSITES BUILT ON
+ *  THE WSUWP PLATFORM.
+ * ---------------------------------------
+ * Issue Fixes = Improvements to and
+ *  corrections of upstream stylesheets.
+ * Enhancements = Tweaks to default
+ *  layout and/or presentation of WDS
+ *  elements, components, and modules.
+ * Customizations = Customized styling
+ *  uniquely available on DAESA sub-
+ *  branded WSU websites.
+ * Atomic CSS = Custom utility classes.
+ * ---------------------------------------
+ * @version 0.14.0
+ * @author Daniel Rieck
+ *  [daniel.rieck@wsu.edu]
+ *  (https://github.com/invokeImmediately)
+ * @license MIT - Copyright © 2023
+ *   Washington State University
+ *   https://mit-license.org/
+ ****************************************/
+
+/*! —» Issue Fix: Web Browsers → Avoid fuzzy downsampled images on Chrome «— */
+
+body {
+  image-rendering: -webkit-optimize-contrast;
+}
+
+/*! —» Issue fix: WDS Websites → Responsive design: Padding (Fix overly generous padding and text sizing on site content wrapper, hero banners, cards, footers, etc.) «— */
+
+@media screen and (max-width: 480px) {
+  .wsu-wrapper-content {
+    padding: 5.125rem 1.25rem 4.125rem;
+  }
+
+  .wsu-card[class*=wsu-color-background]:not([class*=wsu-card--style-horizontal-]) .wsu-card__content {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+
+  .wsu-hero:not([class*="-hero--style-"]):not([class*=wsu-style--]) .wsu-hero__caption {
+    padding: 3.125rem 1.25rem;
+  }
+
+  .wsu-footer-global {
+    padding: 1.5rem 1.25rem;
+  }
+
+  .wsu-footer-site {
+    padding: 2.25rem 1.25rem;
+  }
+}
+
+/*! —» Issue fix: WDS Websites → Responsive design: Font sizing (Slightly reduce default sizing on smallest mobile devices) «— */
+
+@media screen and (max-width: 480px) {
+  :is(blockquote, p, ol, ul) {
+    font-size:1rem;
+  }
+
+  .wsu-font-size--large {
+    font-size: 1.3125rem!important;
+  }
+
+  .wsu-font-size--xxmedium {
+    font-size: 1.25rem!important;
+  }
+
+  .wsu-font-size--xmedium {
+    font-size: 1rem!important;
+  }
+
+  .wsu-font-size--medium {
+    font-size: .9375rem!important;
+  }
+}
+
+/*! —» Issue fix: WDS Websites → Responsive design: Compensate for width-changing effects of classic scrollbars «— */
+
+:root {
+  --scrollbar-w: 0px;
+}
+
+@media screen and (pointer: fine) and (min-width: 1260px) {
+  .wsu-navigation-site-vertical~.wsu-wrapper-site .wsu-width--full {
+    margin-left: calc(((100vw - 100%) - 280px - var(--scrollbar-w))/ -2);
+    margin-right: calc(((100vw - 100%) - 280px - var(--scrollbar-w))/ -2);
+  }
+
+  .wsu-navigation-site-vertical--is-closed .wsu-navigation-site-vertical~.wsu-wrapper-site .wsu-width--full {
+    margin-left: calc(((100vw - 100%) - 60px - var(--scrollbar-w))/ -2);
+    margin-right: calc(((100vw - 100%) - 60px - var(--scrollbar-w))/ -2);
+  }
+}
+
+@media screen and (pointer: fine) and (min-width: 1260px) {
+  .wsu-navigation-site-vertical~.wsu-wrapper-site .wsu-width--full {
+    margin-left: calc(((100vw - 100%) - 280px - var(--scrollbar-w))/ -2);
+    margin-right: calc(((100vw - 100%) - 280px - var(--scrollbar-w))/ -2);
+  }
+
+  .wsu-navigation-site-vertical--is-closed .wsu-navigation-site-vertical~.wsu-wrapper-site .wsu-width--full {
+    margin-left: calc(((100vw - 100%) - 60px - var(--scrollbar-w))/ -2);
+    margin-right: calc(((100vw - 100%) - 60px - var(--scrollbar-w))/ -2);
+  }
+}
+
+@media screen and (pointer: fine) and (min-width: 769px) and (max-width: 1259px) {
+  .wsu-navigation-site-vertical~.wsu-wrapper-site .wsu-width--full {
+    margin-left: calc(((100vw - 100%) - 60px - var(--scrollbar-w))/ -2);
+    margin-right: calc(((100vw - 100%) - 60px - var(--scrollbar-w))/ -2);
+  }
+}
+
+@media screen and (pointer: fine) and (max-width: 768px) {
+  .wsu-wrapper-site .wsu-width--full {
+    margin-left: calc((100vw - 100% - var(--scrollbar-w))/ -2);
+    margin-right: calc((100vw - 100% - var(--scrollbar-w))/ -2);
+    width: auto;
+  }
+}
+
+/*! —» Issue fix: WDS Websites → Responsive design: Hide navigation menu and recolor header and footers when printing  «— */
+@media print {
+  .wsu-navigation-site-vertical {
+    display: none !important;
+  }
+
+  .wsu-header-site {
+    background-color: #f7f7f7;
+    color: #000;
+  }
+
+  .wsu-footer-site {
+    background-color: #f7f7f7;
+    color: #000;
+  }
+
+  .wsu-footer-site .wsu-coug-head {
+    fill: black;
+  }
+
+  .wsu-footer-global {
+    background-color: #f0f0f0;
+    color: #000;
+  }
+
+  .wsu-card-group--per-row-3 .wsu-card, .wsu-card-wrapper--per-row-3 .wsu-card {
+    width: calc(100% - (.875rem * 2));
+  }
+
+  .wsu-row--halves .wsu-column {
+    width: 100%;
+    flex-grow: 0;
+    flex-shrink: 0;
+  }
+
+  .wsu-row--sidebar-right .wsu-column, .wsu-row--sidebar-right .wsu-column:last-child {
+    flex-grow: 0;
+    flex-shrink: 0;
+    width: 100%;
+  }
+
+  .wsu-row--thirds .wsu-column {
+    flex-grow: 0;
+    flex-shrink: 0;
+    width: 100%;
+  }
+
+  .wsu-accordion__content {
+    visibility: visible !important;
+    max-height: none !important;
+  }
+}
+
+/*! —» Issue Fix: Link WDS Elements → Coloring «— */
+
+.wsu-color-background--gray-85 a,
+.wsu-color-background--gray-95 a {
+  color: white;
+  text-decoration-color: white;
+}
+
+.wsu-footer-site a {
+    outline-color: white;
+}
+
+.wsu-footer-site__offsite-menu li a:before {
+    background-color: white;
+}
+
+.wsu-footer-site__offsite-menu li a:focus::before {
+  height: 0;
+}
+
+.wsu-meta-address a {
+  text-decoration-color: white;
+}
+
+h1 a::after,
+h2 a::after,
+h3 a::after,
+h4 a::after,
+h5 a::after,
+h6 a::after {
+  font-size: .65em;
+  margin-left: .5em;
+}
+
+.wsu-footer-site__offsite-menu a,
+.wsu-menu-deep-links a {
+   border-bottom-color: transparent;
+}
+
+.wsu-menu-deep-links a:after {
+  background-color: white;
+}
+
+/*! —» Issue Fix: List WDS Elements → Marker color inheritance «— */
+
+[class*=wsu-color-text--] li::marker {
+  color: inherit;
+}
+
+/*! —» Issue Fix: List WDS Elements → Typography: Font sizing «— */
+
+ul ul,
+ol ol,
+ul ol,
+ol ul {
+  font-size: inherit;
+}
+
+/*! —» Issue Fix: List WDS Elements → Presentation: Improve list presentation when ordered and nested «— */
+
+ol li li li {
+  list-style-type: lower-roman;
+}
+
+/*! —» Issue Fix: Paragraph WDS Elements → Layout: Hide paragraphs when empty «— */
+
+p:empty {
+  display: none !important;
+}
+
+/*! —» Issue Fix: Breadcrumb WDS Components → Presentation: Adjust home icon spacing «— */
+
+.breadcrumbs .wsu-i-home {
+  margin-right: .5rem;
+}
+
+/*! —» Issue Fix: Content Wrapper WDS Components → Overall presentation «— */
+
+.wsu-wrapper-site {
+  background-color: #f7f7f7;
+}
+
+.wsu-wrapper-content {
+  background-color: #fff;
+}
+
+.wsu-wrapper-content::before {
+  background-color: transparent;
+}
+
+.wsu-wrapper-content:first-child::before {
+  box-shadow: 0 2px 2px rgb(0 0 0 / 20%);
+  top: -3px;
+}
+
+.wsu-wrapper-content::after {
+  background-color: #e6e6e6;
+  bottom: 0;
+  content: "";
+  display: block;
+  height: 3px;
+  left: calc((100vw - 100%)/ -2);
+  position: absolute;
+  right: calc((100vw - 100%)/ -2);
+  width: auto;
+}
+
+@media screen and (min-width: 99rem) {
+  .wsu-wrapper-site {
+    background-image: repeating-linear-gradient(-45deg, #f2f2f2 0, white 1px, white 8px, #f2f2f2 9px, #f2f2f2 10px);
+  }
+
+  .wsu-wrapper-content {
+    background: white;
+    border-left: 1px solid #e7e7e7;
+    border-right: 1px solid #e7e7e7;
+  }
+
+  .wsu-hero:not([class*="-hero--style-"]):not([class*=wsu-style--])::after {
+    left: calc(((100vw - 1200px) - 278px - var(--scrollbar-w)) / 2);
+    right: calc(((100vw - 1200px) - 278px - var(--scrollbar-w)) / 2);
+  }
+
+  .wsu-navigation-site-vertical--is-closed .wsu-navigation-site-vertical~.wsu-wrapper-site .wsu-hero:not([class*="-hero--style-"])::after {
+    left: calc(((100vw - 1200px) - 58px - var(--scrollbar-w)) / 2);
+    right: calc(((100vw - 1200px) - 58px - var(--scrollbar-w)) / 2);
+  }
+
+  .wsu-hero:not([class*="-hero--style-"]):not([class*=wsu-style--]) .wsu-image-frame {
+    background-color: transparent;
+  }
+
+  .wsu-hero .wsu-image-frame img {
+    clip-path: polygon(0% 0%, 100% 0%, 100% 83.3333%, calc(100% - ((100vw - 1200px) - 277px - var(--scrollbar-w)) / 2) 83.3333%, calc(100% - ((100vw - 1200px) - 277px - var(--scrollbar-w)) / 2) 100%, calc(((100vw - 1200px) - 277px - var(--scrollbar-w)) / 2) 100%, calc(((100vw - 1200px) - 277px - var(--scrollbar-w)) / 2) 83.3333%, 0% 83.3333%);
+  }
+
+  .wsu-navigation-site-vertical--is-closed .wsu-navigation-site-vertical~.wsu-wrapper-site .wsu-hero .wsu-image-frame img {
+    clip-path: polygon(0% 0%, 100% 0%, 100% 83.3333%, calc(100% - ((100vw - 1200px) - 59px - var(--scrollbar-w)) / 2) 83.3333%, calc(100% - ((100vw - 1200px) - 59px - var(--scrollbar-w)) / 2) 100%, calc(((100vw - 1200px) - 57px - var(--scrollbar-w)) / 2) 100%, calc(((100vw - 1200px) - 57px - var(--scrollbar-w)) / 2) 83.3333%, 0% 83.3333%);
+  }
+}
+
+/*! —» Issue Fix: Section WDS Components → Responsive design «— */
+
+@media screen and (max-width: 576px) {
+  .wsu-section__inner {
+    padding-left: 2.25rem;
+    padding-right: 2.25rem;
+  }
+}
+
+/*! —» Issue Fix: Accordion WDS Components → Layout of nested accordions «— */
+
+.wsu-accordion--open .wsu-accordion:not(.wsu-accordion--open) .wsu-accordion__content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height cubic-bezier(0,0,.03,1) .3s,visibility 0s .4s;
+  visibility: hidden;
+}
+
+.wsu-accordion--open .wsu-accordion:not(.wsu-accordion--open) .wsu-accordion__title::before {
+  content: "\F137";
+}
+
+/*! —» Issue Fix: Global Header WDS Modules → Bordering «— */
+
+.wsu-header-global:after {
+  background-color: #e6e6e6;
+  content: "";
+  display: block;
+  height: 3px;
+  left: calc((100vw - 100%)/ -2);
+  position: absolute;
+  right: calc((100vw - 100%)/ -2);
+  top: 100%;
+  width: auto;
+}
+
+/*! —» Issue Fix: Hero Banner WDS Modules → Presentation «— */
+
+.wsu-hero--no-bottom-bleed .wsu-image-frame--fill {
+  bottom: 0;
+}
+
+.wsu-hero--no-bottom-bleed:after {
+  content: none;
+}
+
+/*! —» Issue Fix: Hero Slider WDS Modules → Layout «— */
+
+.wsu-wrapper-content .wsu-hero-slider:has(.wsu-hero--size-small) .wsu-hero:first-child {
+  margin-top: 0;
+}
+
+.wsu-hero-slider:has(.wsu-hero--size-small) .wsu-hero-slider__slider-elements {
+    bottom: calc(12.375rem * .6);
+}
+
+/*! —» Issue Fix: Primary Navigation WDS Modules → Presentation «— */
+
+.wsu-navigation-site-vertical--color-dark .wsu-navigation-site-vertical__panel {
+  border: 0;
+}
+
+.wsu-navigation-site-vertical--is-closed .wsu-navigation-site-vertical__open-button:focus,
+.wsu-navigation-site-vertical--is-closed .wsu-navigation-site-vertical__open-button:hover {
+  border-right: 0;
+  color: black;
+}
+
+.wsu-navigation-site-vertical__open-button {
+  border: 0;
+}
+
+.wsu-navigation-site-vertical .wsu-menu a+button:focus::before,
+.wsu-navigation-site-vertical .wsu-menu a+button:hover::before,
+.wsu-navigation-site-vertical .wsu-menu button:first-child:focus::before,
+.wsu-navigation-site-vertical .wsu-menu button:first-child:hover::before {
+  bottom: 50%;
+  transform: translateY(0.65rem);
+}
+
+.wsu-navigation-site-vertical .wsu-menu button:first-child {
+    padding-right: 50px;
+}
+
+/*! —» Issue Fix: Card WDS Modules → Overall presentation «— */
+
+.wsu-card.wsu-color-background--white {
+  border-bottom: 1px solid #e6e6e6;
+  border-left: 1px solid #e6e6e6;
+  border-right: 1px solid #e6e6e6;
+}
+
+.wsu-card[class*=wsu-color-background] {
+  border-radius: 4px;
+}
+
+.wsu-card-wrapper--univ-courses .wsu-card p + p {
+  margin-top: 1.675rem;
+}
+
+.wsu-card-wrapper--univ-courses h3 {
+  font-size: 1.5rem;
+}
+
+/*! —» Issue Fix: Sticky Nav WDS Modules → Background «— */
+
+.wsu-sticky-nav--style-crimson .wsu-anchor-menu {
+  justify-content: center;
+}
+
+nav.wsu-sticky-nav--style-crimson {
+  position: relative;
+}
+
+.wsu-sticky-nav--style-crimson .wsu-sticky-box__content {
+  margin-bottom: 0;
+}
+
+@media screen and (min-width: 1260px) {
+  nav.wsu-sticky-nav--style-crimson:after {
+    background-color: white;
+    bottom: 0;
+    content: "";
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+
+  .wsu-navigation-site-vertical~.wsu-wrapper-site nav.wsu-sticky-nav--style-crimson:after {
+    margin-left: calc(((100vw - 100%) - 280px)/ -2);
+    margin-right: calc(((100vw - 100%) - 280px)/ -2);
+  }
+}
+
+/*! —» Issue Fix: WDS Utility Classes → Specification of default border coloring «— */
+
+.wsu-border-top--color-default {
+  border-top: 4px solid #5a5a5a; /* Desaturated #a60f2d */
+}
+
+/*! —» Issue Fix: Content Syndicate WDS Modules → Typography: Font sizing «— */
+
+.wsuwp-content-syndicate-list {
+  font-size: inherit;
+}
+
+/*! —» Issue Fix: TablePress Plugin Block Assemblies → Overall presentation «— */
+
+.tablepress thead th,
+.dataTables_wrapper .tablepress.dataTable thead th:not(:hover):not(:focus) {
+  background: #f0f0f0!important;
+}
+
+.tablepress:not(.dataTable) {
+  border-top: 4px solid #a60f2d;
+}
+
+.tablepress thead th {
+  border-bottom-color: #bbb;
+}
+
+/*! —» Issue Fix: Tribe Events Calendar Plugin Block Assemblies → Overall presentation «— */
+
+#tribe-events,
+.tribe-events-view .tribe-common-l-container.tribe-events-l-container
+{
+  padding-top: 0!important;
+}
+
+.wsu-article-header__title:empty {
+  height: 5.25rem;
+}
+
+.wsu-article-header__title:empty:after {
+  margin-top: 4.875rem;
+}
+
+@media all and (max-width: 768px) {
+  .wsu-article-header__title:empty {
+    height: 3.9375rem;
+  }
+
+  .wsu-article-header__title:empty:after {
+    margin-top: 3.5625rem;
+  }
+}
+
+.single-tribe_events .wsu-article-header {
+  display: none;
+}
+
+.post-type-archive-tribe_events h3 a::after {
+  margin-left: 0.1em;
+}
+
+.tribe-events-notices li {
+  color: #767676;
+  position: relative;
+  padding-left: 1.5em;
+}
+
+.tribe-events-notices li:before {
+  content: "\F123";
+  display: inline-block;
+  position: absolute;
+  font-family: wsu-icons;
+  left: 0;
+  top: 48%;
+  transform: translateY(-50%);
+}
+
+.tribe-events .tribe-events-calendar-latest-past__event-title-link:active, .tribe-events .tribe-events-calendar-latest-past__event-title-link:focus, .tribe-events .tribe-events-calendar-latest-past__event-title-link:hover {
+  border-color: transparent!important;
+}
+
+.tribe-common .tribe-common-anchor-thin:active, .tribe-common .tribe-common-anchor-thin:focus, .tribe-common .tribe-common-anchor-thin:hover {
+  border-color: transparent!important;
+}
+
+/*! —» Issue Fix: News Page Block Assemblies → Overall presentation «— */
+
+.archive .wsu-meta-byline {
+  display: none;
+}
+
+.archive .wsu-wrapper-sidebar p,
+.archive .wsu-wrapper-sidebar ol,
+.archive .wsu-wrapper-sidebar ul,
+.blog .wsu-wrapper-sidebar p,
+.blog .wsu-wrapper-sidebar ol,
+.blog .wsu-wrapper-sidebar ul,
+.single-post .wsu-wrapper-sidebar p,
+.single-post .wsu-wrapper-sidebar ol,
+.single-post .wsu-wrapper-sidebar ul {
+  font-size: .875rem;
+}
+
+.single-post .wsu-article p,
+.single-post .wsu-article ol,
+.single-post .wsu-article ul {
+  font-size: .95rem;
+}
+
+.single-post .wsu-article > p:first-of-type {
+  margin-top: 1.75rem;
+  font-size: 1.125rem;
+}
+
+.single-post .wsu-article-hero {
+  margin-top: .3rem;
+}
+
+.archive .wsu-widget + .wsu-widget,
+.blog .wsu-widget + .wsu-widget,
+.single-post .wsu-widget + .wsu-widget {
+  border-top: 1px solid #e7e7e7;
+  padding-top: 1.5rem;
+}
+
+.archive .wsu-article + .wsu-article,
+.blog .wsu-article + .wsu-article {
+  border-top: 1px solid #e7e7e7;
+  margin-top: -2.25rem;
+  padding-top: .5rem;
+}
+
+@media screen and (min-width: 769px) {
+  .archive .wsu-article-header__title,
+  .blog .wsu-article-header__title,
+  .single-post .wsu-article-header__title {
+    font-size: 2.4rem;
+  }
+
+  .single-post .wsu-article > h2 {
+    font-size: 1.7rem;
+  }
+}
+
+/*! —» Issue fix: Gravity Forms Block Assemblies → Radio and checkbox fields: Font weights «— */
+
+.gfield_radio .gchoice label,
+.gfield_checkbox .gchoice label {
+  font-weight: 400;
+}
+
+/*! —» Issue Fix: Gravity Forms Block Assemblies → Input fields: Maximum width «— */
+
+.gform_wrapper.gravity-theme .gfield-choice-input+label {
+  max-width: calc(100% - 32px - 1.8em);
+}
+
+/*! —» Issue Fix: Gravity Forms Block Assemblies → Whitespace: Reduce overly wide grid gap «— */
+
+.gform_wrapper.gravity-theme .gform_fields {
+  grid-row-gap: 1.75rem;
+}
+
+/*! —» Issue Fix: Gravity Forms Block Assemblies → Layout: Address junky layout of nested entries «— */
+
+.gpnf-nested-entries,
+.gpnf-row-actions > ul {
+  margin-bottom: 0;
+}
+
+.gpnf-nested-entries .gfield_list {
+  margin-bottom: 0;
+}
+
+/*! —» Issue Fix: Home Page WDS Block Assemblies → Typography: Font sizing «— */
+
+@media only screen and (min-width: 993px) {
+  .home .wsu-hero .wsu-title,
+  .page-id-3252 .wsu-hero .wsu-title {
+    font-size: 3.5rem;
+    line-height: 1.2;
+  }
+
+  .home .wsu-hero .wsu-caption {
+    font-weight: 500;
+    margin-top: 2.25rem;
+  }
+}
+
+.home .breadcrumbs {
+  display: none;
+}
+
+.home h1.daesa-smaller-home-h1 {
+  font-size: 2.75rem;
+}
+
+@media screen and (max-width: 768px) {
+  .home h1.daesa-smaller-home-h1 {
+    font-size: 2rem;
+  }
+}
+
+.daesa-hx-tail-text {
+  display: block;
+  font-size: .5em;
+  margin-top: .5rem;
+}
+
+/*! —» Enhancement: Site Header WDS Modules → Coloring «— */
+
+.wsu-header-site {
+  background-color: #333;
+  color: #fff;
+}
+
+.wsu-header-site__title {
+    color: inherit;
+}
+
+/*! —» Enhancement: Heading WDS Elements → Presentation option: Heading tail text «— */
+
+.hX-tail-text {
+  display: block;
+  font-size: 1rem;
+}
+
+/*! —» Enhancement: Column WDS Components → Full-bleed row coloring «— */
+
+.wsu-wrapper-site .wsu-row.wsu-row--full-bleed:after {
+  margin-left: calc((100vw - 100%)/ -2);
+  margin-right: calc((100vw - 100%)/ -2);
+}
+
+@media screen and (min-width: 1260px) {
+  .wsu-navigation-site-vertical--is-closed .wsu-navigation-site-vertical~.wsu-wrapper-site .wsu-row.wsu-row--full-bleed:after {
+    margin-left: calc(((100vw - 100%) - 60px)/ -2);
+    margin-right: calc(((100vw - 100%) - 60px)/ -2);
+  }
+}
+
+@media screen and (min-width: 1260px) {
+  .wsu-navigation-site-vertical~.wsu-wrapper-site .wsu-row.wsu-row--full-bleed:after {
+    margin-left: calc(((100vw - 100%) - 280px)/ -2);
+    margin-right: calc(((100vw - 100%) - 280px)/ -2);
+  }
+
+  .wsu-navigation-site-vertical--is-closed .wsu-navigation-site-vertical~.wsu-wrapper-site .wsu-row.wsu-row--full-bleed:after {
+    margin-left: calc(((100vw - 100%) - 60px)/ -2);
+    margin-right: calc(((100vw - 100%) - 60px)/ -2);
+  }
+}
+
+.wsu-row--full-bleed.wsu-color-background--gray-0:after {
+  background-color: #f7f7f7;
+}
+
+.wsu-row--full-bleed.wsu-color-background--gray-5:after {
+  background-color: #f2f2f2;
+}
+
+.wsu-row--full-bleed.wsu-color-background--gray-10:after {
+  background-color: #e6e6e6;
+}
+
+.wsu-row--full-bleed.wsu-color-background--gray-85:after {
+  background-color: #262626;
+}
+
+.wsu-row--full-bleed.wsu-color-background--gray-95:after {
+  background-color: #080808;
+}
+
+/*! —» Enhancement: Hero Banner WDS Modules → Overall presentation «— */
+
+.wsu-hero:not([class*="-hero--style-"]) .wsu-title,
+.wsu-hero:not([class*="-hero--style-"]) .wsu-caption {
+  text-shadow: 0 0 8px #000,
+    1px 2px 3px #000,
+    -1px -1px 1px #000;
+}
+
+.page .wsu-hero:not([class*="-hero--style-"]).wsu-hero--smaller-title .wsu-title {
+  font-size: 3.125rem;
+  line-height: 1.25;
+}
+
+/*! —» Enhancement: Hero Banner WDS Modules → Presentation options: Design variants «— */
+
+.wsu-hero--hide-tail {
+  overflow-y: hidden;
+}
+
+.wsu-hero--shadow-text .wsu-title {
+  text-shadow: 0 0 1px #000, 0 0 3px rgb(0 0 0 / 50%), 0 0 5px  rgb(0 0 0 / 50%), 0 0 16px #000, 0 0 24px #000, 0 0 32px #000;
+}
+
+.wsu-hero--box-bg .wsu-hero__caption:before {
+  background: rgb(0 0 0 / 65%);
+}
+
+.wsu-hero--box-bg-darker .wsu-hero__caption:before {
+  background: rgb(0 0 0 / 85%);
+}
+
+.wsu-hero--invert-axis .wsu-hero__caption {
+  margin-left: auto;
+}
+
+.wsu-hero--invert-axis .wsu-hero__caption:before {
+  clip-path: polygon(100% 0, 100% 100%, 80px 100%, 0 calc(100% - 100px), 0 0);
+}
+
+/*! —» Enhancement: Accordion WDS Components → Responsive design: Improved interaction reactivity «— */
+
+.wsu-accordion__content {
+  border-left: 1px solid transparent;
+  border-right: 1px solid transparent;
+}
+
+.wsu-accordion--open .wsu-accordion__title:hover + .wsu-accordion__content {
+  border-color: #ccc;
+}
+
+/*! —» Enhancement: Icon WDS Components → Design variants «— */
+
+.wsu-i-arrow-right--offsite {
+  margin-right: 0;
+  position: relative;
+}
+
+.wsu-i-arrow-right--offsite:before {
+  display: inline-block;
+  font-size: .6em;
+  transform: translate(-15%, 40%) rotate(-45deg);
+  margin-left: .5em;
+}
+
+@media not all and (prefers-reduced-motion) {
+  a:hover .wsu-i-arrow-right--offsite:before {
+    transform: rotate(-45deg);
+    transition: transform 0.2s ease;
+  }
+}
+
+/*! —» Enhancement: Image WDS Components → Design variants «— */
+
+.wp-block-image.img--capped-resize img {
+  max-width: attr(width);
+  max-width: attr(width px);
+}
+
+/*! —» Enhancement: Separator WDS Components → Sharper presentation «— */
+
+hr:not([class*=separator--style-]) {
+  background-color: #f7f7f7;
+  border: 1px solid #e7e7e7;
+  box-sizing: border-box;
+  height: .375rem;
+  margin: 3.125rem 0;
+}
+
+/*! —» Enhancement: Block Table WDS Components → Better default styling «— */
+
+.wp-block-table th {
+  background-color: #f0f0f0;
+  text-align: left;
+}
+
+/*! —» Customization: Page Header Block Assemblies → Sharper presentation «— */
+
+.breadcrumbs {
+  border-bottom: 1px solid #e6e6e6;
+  box-sizing: border-box;
+  margin-bottom: 1.125rem;
+  padding-bottom: .625rem;
+}
+
+.wsu-column--white-text .breadcrumbs {
+  border-color: rgb(230 230 230 / 60%);
+}
+
+:where(h1:not(.wsu-hero__title)) {
+  border-bottom: 1px solid #e6e6e6;
+  padding-bottom: 1.375rem;
+}
+
+.wsu-column--white-text h1 {
+  border-bottom: 1px solid rgb(230 230 230 / 60%);
+}
+
+h1::after {
+  background: repeating-linear-gradient(-45deg, #e6e6e6 0, transparent 1px, transparent 3px, #e6e6e6 4px, #e6e6e6 5px);
+  bottom: calc(-.375rem - 1px);
+  margin: 0;
+  position: absolute;
+  right:0;
+  width: 6.55rem;
+}
+
+.wsu-column--white-text h1::after {
+  background: repeating-linear-gradient(-45deg, rgb(230 230 230 / 60%) 0, transparent 1px, transparent 3px, rgb(230 230 230 / 60%) 4px, rgb(230 230 230 / 60%) 5px);
+}
+
+h1::before {
+  border-right: .375rem solid transparent;
+  border-top: .375rem solid #a60f2d;
+  bottom: -.375rem;
+  box-sizing: border-box;
+  box-sizing: border-box;
+  content: '';
+  display: inline-block;
+  height: .375rem;
+  position: absolute;
+  width: 6.87rem;
+}
+
+.wsu-hero__caption h1::before {
+  content: none;
+}
+
+.wsu-heading--style-marked::after, .wsu-heading--style-marked::before {
+    background-color: transparent;
+    box-sizing: border-box;
+    border-right: 6px solid transparent;
+    border-top: 6px solid #a60f2d;
+    width: 56px;
+}
+
+.wsu-heading--mark-color-gray::after,
+.wsu-heading--mark-color-gray::before {
+  border-top-color: #b3b3b3;
+}
+
+.wsu-heading--mark-color-autumn::after,
+.wsu-heading--mark-color-autumn::before {
+  border-top-color: #ff6727;
+}
+
+.wsu-heading--mark-color-goldfinch::after,
+.wsu-heading--mark-color-goldfinch::before {
+    border-top-color: #f3e700
+}
+
+.wsu-heading--mark-color-vineyard::after,
+.wsu-heading--mark-color-vineyard::before {
+    border-top-color: #aadc24
+}
+
+.wsu-heading--mark-color-pacificsky::after,
+.wsu-heading--mark-color-pacificsky::before {
+    border-top-color: #5bc3f5
+}
+
+.wsu-heading--mark-color-midnight::after,
+.wsu-heading--mark-color-midnight::before {
+    border-top-color: #002d61
+}
+
+/*! —» Customization: Link WDS Elements → Presentation option: Heading/hX-style presentation «— */
+
+.hx-style-link:not(:hover) {
+  color: inherit;
+  text-decoration-color: transparent;
+}
+
+.hx-style-link:hover {
+  text-decoration-color: inherit;
+}
+
+.hx-style-link::after {
+  content: '\F126';
+  font-family: wsu-icons;
+  font-size: .7em;
+  color: inherit;
+  margin-left: .5em;
+  text-decoration: none;
+}
+
+/*! —» Customization: Column WDS Components → Presentation option: Full-bleed row design «— */
+
+.wsu-row.wsu-row--full-bleed:after {
+  bottom: 0;
+  content: "";
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.wsu-row--full-bleed > .wsu-column {
+  z-index: 1;
+}
+
+/*! —» Customization: Accordion WDS Components → Presentation options: Typographic title variants «— */
+
+.wsu-accordion--semi-bold-title .wsu-accordion__title-button {
+  font-weight: 600;
+}
+
+.wsu-accordion--bold-title .wsu-accordion__title-button {
+  font-weight: 700;
+}
+
+/*! —» Customization: Separator WDS Components → Presentation options: Subtle design variant «— */
+
+.wsu-separator--subtle {
+  border: 1px solid #e7e7e7 !important;
+}
+
+/*! —» Customization: Row WDS Sub-components → Fixed height rows «— */
+
+@media all and (min-width: 861px) {
+  .wsu-row-fixed-h {
+    box-sizing: content-box;
+    display: flex;
+    height: 650px;
+  }
+
+  .wsu-row-fixed-h .wsu-column {
+    height: 100% !important;
+  }
+
+  .wsu-row-fixed-h--xsmall {
+    height: 300px;
+  }
+
+  .wsu-row-fixed-h--small {
+    height: 500px;
+  }
+
+  .wsu-row-fixed-h--medium {
+    height: 800px;
+  }
+
+  .wsu-row-fixed-h--large {
+    height: 800px;
+  }
+
+  .wsu-row-fixed-h--medium {
+    height: 800px;
+  }
+
+  .wsu-row-fixed-h .wsu-column {
+    overflow-y: auto;
+    position: relative;
+  }
+
+  .wsu-row-fixed-h .wsu-row-fixed-h__btm-scroll-indctr,
+  .wsu-row-fixed-h .wsu-row-fixed-h__top-scroll-indctr {
+    position: absolute;
+    right: 0.375rem;
+    transition: opacity .4s 3s ease;
+  }
+
+  .wsu-row-fixed-h .wsu-row-fixed-h__btm-scroll-indctr {
+    bottom: 0;
+  }
+
+  .wsu-row-fixed-h .wsu-row-fixed-h__top-scroll-indctr {
+    top: 0;
+  }
+
+  .wsu-row-fixed-h__btm-scroll-indctr .wsu-i-arrow-down,
+  .wsu-row-fixed-h__top-scroll-indctr .wsu-i-arrow-up {
+    margin: 0;
+  }
+
+  .wsu-column:hover .wsu-row-fixed-h__btm-scroll-indctr,
+  .wsu-column:hover .wsu-row-fixed-h__top-scroll-indctr,
+  .wsu-column--scrolled-at-bottom .wsu-row-fixed-h__btm-scroll-indctr,
+  .wsu-column--scrolled-at-top .wsu-row-fixed-h__top-scroll-indctr {
+    opacity: 0;
+    transition: opacity .4s .5s ease;
+  }
+}
+
+@media all and (max-width: 860px) {
+  .wsu-row-fixed-h__btm-scroll-indctr,
+  .wsu-row-fixed-h__top-scroll-indctr {
+    display: none;
+  }
+}
+
+/*! —» Customization: Decorator WDS Components → Presentation options: Background art variations «— */
+
+.wsu-decorator--bg-zigzag-gray {
+  background:
+    linear-gradient(135deg, #e8e8e8 25%, transparent 25%) -2rem 0,
+    linear-gradient(225deg, #e8e8e8 25%, transparent 25%) -2rem 0,
+    linear-gradient(315deg, #e8e8e8 25%, transparent 25%),
+    linear-gradient(45deg, #e8e8e8 25%, transparent 25%);
+  background-color: #f2f2f2;
+  background-size: 4rem 4rem;
+}
+
+.wsu-decorator--bg-wavy-zigzag-gray {
+  background:
+    linear-gradient(135deg, #e8e8e8 25%, transparent 25%) -2rem 0,
+    linear-gradient(225deg, #e8e8e8 25%, transparent 25%) -2rem 0,
+    linear-gradient(315deg, #e8e8e8 25%, transparent 25%),
+    linear-gradient(45deg, #e8e8e8 25%, transparent 25%);
+  background-color: #f2f2f2;
+  background-size: 2.5rem 2rem;
+}
+
+.wsu-decorator--bg-steps-gray {
+  background-color: #e8e8e8;
+  background-size: 58px 58px;
+  background-position: 0px 2px, 4px 35px, 29px 31px, 33px 6px, 0px 36px, 4px 2px, 29px 6px, 33px 30px;
+  background-image:
+    linear-gradient(335deg, #f2f2f2 23px, transparent 23px),
+    linear-gradient(155deg, #f2f2f2 23px, transparent 23px),
+    linear-gradient(335deg, #f2f2f2 23px, transparent 23px),
+    linear-gradient(155deg, #f2f2f2 23px, transparent 23px),
+    linear-gradient(335deg, #f2f2f2 10px, transparent 10px),
+    linear-gradient(155deg, #f2f2f2 10px, transparent 10px),
+    linear-gradient(335deg, #f2f2f2 10px, transparent 10px),
+    linear-gradient(155deg, #f2f2f2 10px, transparent 10px);
+}
+
+.wsu-decorator--bg-steps-dark-gray {
+  background-color: #777;
+  background-size: 58px 58px;
+  background-position: 0px 2px, 4px 35px, 29px 31px, 33px 6px, 0px 36px, 4px 2px, 29px 6px, 33px 30px;
+  background-image:
+    linear-gradient(335deg, #303030 23px, transparent 23px),
+    linear-gradient(155deg, #303030 23px, transparent 23px),
+    linear-gradient(335deg, #303030 23px, transparent 23px),
+    linear-gradient(155deg, #303030 23px, transparent 23px),
+    linear-gradient(335deg, #303030 10px, transparent 10px),
+    linear-gradient(155deg, #303030 10px, transparent 10px),
+    linear-gradient(335deg, #303030 10px, transparent 10px),
+    linear-gradient(155deg, #303030 10px, transparent 10px);
+}
+
+/*! —» Customization: General WDS Components → Presentation options: Background art variations «— */
+
+.wsu-background--style-wsu-crimson.wsu-background--style-no-pattern {
+  background-image: radial-gradient(ellipse at center,#ca1237 0,#78001e 100%);
+  color: #fff;
+}
+
+.wsu-bg-acronym-white {
+  background-color: white;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 163.87 108'%3E%3Cdefs%3E%3Cstyle%3E.cls-1%7Bfill:none;stroke:%23fff;%7D%3C/style%3E%3C/defs%3E%3Cg id='Layer_2' data-name='Layer 2'%3E%3Cg id='Layer_1-2' data-name='Layer 1'%3E%3Cpolygon stroke='%230000001a' fill='none' points='64.91 1.24 53.35 33.66 42.93 1.24 33.95 1.24 23.49 33.7 12.04 1.57 11.94 1.24 0.71 1.24 18.38 50.89 29.23 50.89 38.42 22.21 47.64 50.89 58.44 50.89 76.16 1.24 64.91 1.24'/%3E%3Cpath stroke='%230000001a' fill='none' d='M86.63,14.71c0-3,2.53-5,7.07-5a21.29,21.29,0,0,1,14.43,5.43L114,7.42C109.1,2.88,102.55.5,94.67.5,83,.5,75.84,7.35,75.84,15.61c0,18.67,28.57,12.65,28.57,21.43,0,2.83-2.82,5.5-8.63,5.5A21.77,21.77,0,0,1,80,35.85l-5.73,8c4.61,4.69,11.46,7.89,21,7.89,13.4,0,19.87-6.85,19.87-15.92C115.13,17.32,86.63,22.6,86.63,14.71Z'/%3E%3Cpath stroke='%230000001a' fill='none' d='M118.37,31.08V1.24h10.71V30.71c0,6.92,4,11.68,11.68,11.68s11.61-4.76,11.61-11.68V1.24h10.79V31c0,12.35-7.29,20.76-22.4,20.76S118.37,43.29,118.37,31.08Z'/%3E%3Cpolygon stroke='%230000001a' fill='none' points='98.96 105.3 110.52 72.88 120.94 105.3 129.91 105.3 140.38 72.84 151.83 104.97 151.93 105.3 163.16 105.3 145.49 55.66 134.64 55.66 125.45 84.33 116.23 55.66 105.43 55.66 87.72 105.3 98.96 105.3'/%3E%3Cpath stroke='%230000001a' fill='none' d='M77.24,91.83c0,3-2.53,5-7.07,5a21.3,21.3,0,0,1-14.43-5.44l-5.88,7.74C54.77,103.66,61.32,106,69.2,106,80.89,106,88,99.2,88,90.94c0-18.68-28.57-12.65-28.57-21.43,0-2.83,2.82-5.51,8.63-5.51a21.71,21.71,0,0,1,15.77,6.7l5.73-8C85,58,78.13,54.77,68.61,54.77c-13.4,0-19.87,6.85-19.87,15.93C48.74,89.23,77.24,83.94,77.24,91.83Z'/%3E%3Cpath stroke='%230000001a' fill='none' d='M45.51,75.46V105.3H34.79V75.83c0-6.92-4-11.68-11.68-11.68S11.5,68.91,11.5,75.83V105.3H.71V75.53C.71,63.18,8,54.77,23.11,54.77S45.51,63.26,45.51,75.46Z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 100px;
+  background-position: center center;
+}
+
+/*! —» Customization: Sticky Nav WDS Modules → Presentation option: "On this page" design variant «— */
+
+.wsu-section--on-this-page {
+  border-bottom: 2px solid #f0f0f0;
+  margin-bottom: 1.25rem;
+  padding: 0;
+  position: relative;
+  overflow: show;
+}
+
+.wsu-section--on-this-page::after {
+  display: block;
+  background: linear-gradient(to bottom,rgba(0,0,0,.1) 0,rgba(0,0,0,0) 100%);
+  bottom: -1.25rem;
+  content: "";
+  height: 1.25rem;
+  position: absolute;
+  width: 200vw;
+  z-index: 1;
+}
+
+.wsu-section--on-this-page .wsu-sticky-nav {
+  padding: 0;
+  background-color: #fff;
+  justify-content: space-between;
+  position: relative;
+}
+
+.wsu-section--on-this-page .wsu-anchor-menu {
+  background-color: #fff;
+  display: flex;
+  flex-grow: 1;
+  flex-wrap: wrap;
+  list-style-type: none;
+  justify-content: center;
+  position: relative;
+  margin: 0;
+  padding: 0;
+}
+
+.wsu-section--on-this-page .wsu-anchor-menu li {
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+
+.wsu-section--on-this-page .wsu-anchor-menu li::after {
+  content: '';
+  background-color: #ca1237;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: auto;
+  height: 0;
+  transition: height cubic-bezier(0,0,.03,1) 150ms;
+}
+
+.wsu-section--on-this-page .wsu-anchor-menu li:hover::after{
+  height: 6px;
+}
+
+.wsu-section--on-this-page .wsu-sticky-box__content {
+  border: 0!important;
+  padding: 0!important;
+}
+
+.wsu-section--on-this-page .wsu-anchor-menu a {
+  display: block;
+  font-weight: 600;
+  color: #a60f2d;
+  text-decoration: none;
+  font-size: inherit;
+  line-height: 1.5;
+  padding: .75rem 1.25rem;
+  position: relative;
+}
+
+.wsu-section--on-this-page .wsu-anchor-menu a::before {
+  content: '';
+  border-left: 2px solid #d9d9d9;
+  bottom: .65rem;
+  display: block;
+  height: auto;
+  left: -1px;
+  position: absolute;
+  top: .65rem;
+  width: 0;
+  transition: height cubic-bezier(0,0,.03,1) 150ms;
+}
+
+.wsu-section--on-this-page .wsu-anchor-menu li:first-child a::before {
+  content: none;
+}
+
+.wsu-section--on-this-page .wsu-sticky-box--stuck {
+  visibility: hidden!important;
+}
+
+.wsu-section--on-this-page .wsu-sticky-box--stuck {
+  visibility: hidden!important;
+}
+
+.wsu-section--on-this-page .wsu-sticky-box--stuck .wsu-sticky-box__content {
+  position: relative!important;
+  top: 0!important;
+}
+
+.wsu-section__title--on-this-page + .wsu-sticky-nav {
+  padding-top: 0 !important;
+}
+
+.wsu-section__title--on-this-page + .wsu-sticky-nav:before {
+  content: none !important;
+}
+
+@media screen and (min-width: 1201px) {
+  .wsu-section__title--on-this-page {
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .wsu-section--on-this-page .wsu-sticky-nav {
+    padding: 2rem 0;
+  }
+
+  .wsu-section--on-this-page .wsu-sticky-nav::before {
+    content: "On this page";
+    color: #4d4d4d;
+    display: block;
+    font-weight: 800;
+    font-size: 1.25rem;
+    margin-bottom: .375rem;
+  }
+
+  .wsu-section--on-this-page .wsu-anchor-menu {
+    justify-content: flex-start;
+  }
+
+  .wsu-section--on-this-page .wsu-anchor-menu li {
+    border-bottom: 1px solid #d9d9d9;
+    margin-right: 2rem;
+    width: calc( 33% - 2rem );
+  }
+
+  .wsu-section--on-this-page .wsu-anchor-menu a {
+    padding: .5rem 0 !important;
+    font-size: inherit !important;
+    display: inline-block !important;
+  }
+
+  .wsu-section--on-this-page .wsu-anchor-menu a::before {
+    content: none;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .wsu-section--on-this-page .wsu-anchor-menu li {
+    width: calc(50% - 2rem);
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .wsu-section--on-this-page .wsu-anchor-menu li {
+    width: calc(100% - 2rem);
+  }
+}
+
+/*! —» Customization: Sticky Nav WDS Modules → Minimalist "On This Page" design variant «— */
+
+.wsu-section--on-this-page.wsu-section--minimalist-on-this-page {
+  background-color: transparent;
+  border-bottom-color: transparent;
+}
+
+.wsu-section--on-this-page.wsu-section--minimalist-on-this-page:after {
+  content: none;
+}
+
+.wsu-section__title--on-this-page {
+  color: #4d4d4d;
+  font-weight: 800;
+  font-size: 1.25rem;
+  margin-bottom: .375rem;
+}
+
+@media screen and (min-width: 1201px) {
+  .wsu-section--on-this-page.wsu-section--minimalist-on-this-page .wsu-anchor-menu a {
+    padding-bottom: .5rem !important;
+    padding-top: .5rem !important;
+  }
+
+  .wsu-section--on-this-page.wsu-section--minimalist-on-this-page.wsu-section--left-aligned-on-this-page {
+    position: relative;
+  }
+
+  .wsu-section--on-this-page.wsu-section--minimalist-on-this-page.wsu-section--left-aligned-on-this-page:before {
+    background-color: #d9d9d9;
+    bottom: 0;
+    content: '';
+    left: 0;
+    left: calc(1.75rem - 2px);
+    position: absolute;
+    top: 0;
+    width: 2px;
+  }
+
+  .wsu-section--on-this-page.wsu-section--minimalist-on-this-page.wsu-section--left-aligned-on-this-page .wsu-section__title--on-this-page {
+    padding-left: 1.25rem;
+    text-align: left;
+  }
+
+  .wsu-section--on-this-page.wsu-section--minimalist-on-this-page.wsu-section--left-aligned-on-this-page .wsu-anchor-menu {
+    justify-content: start;
+    padding-left: 2rem;
+  }
+
+  .wsu-section--on-this-page.wsu-section--minimalist-on-this-page.wsu-section--left-aligned-on-this-page .wsu-anchor-menu > li:first-child {
+    margin-left: -2rem;
+  }
+}
+
+/*! —» Customization: Overlap Spotlight WDS Modules → Design variants «— */
+
+.wsu-overlap-spotlight--clear-caption .wsu-overlap-spotlight__caption {
+  background-color: transparent;
+  padding: 0;
+}
+
+/*! —» Customization: WordPress Gutenberg Blocks → Container-based presentation modifications: Typographic weights «— */
+
+.block-with-eb-strongs strong {
+  font-weight: 800;
+}
+
+.block-with-sb-strongs strong {
+  font-weight: 600;
+}
+
+/*! —» Atomic CSS: Display modes «— */
+
+.dy-0,
+.dy-no {
+  display: none;
+}
+
+.dy-il,
+.dy-in {
+  display: inline;
+}
+
+.dy-bl {
+  display: block;
+}
+
+.dy-ilbl,
+.dy-inbl {
+  display: inline-block;
+}
+
+/*! —» Atomic CSS: Width «— */
+
+.mw-1x {
+  max-width: 900px;
+}
+
+.w-full {
+  width: 100%;
+}
+
+/*! —» Atomic CSS: Height «— */
+
+.h-100,
+.h-full {
+  height: 100%;
+}
+
+/*! —» Atomic CSS: Grid «— */
+
+.dy-gr {
+  display: grid;
+}
+
+.alni-start {
+  align-items: start;
+}
+
+.alns-end {
+  align-self: end;
+}
+
+/*! —» Atomic CSS: Font Weights «— */
+
+.fw-lb {
+  font-weight: 300;
+}
+
+.fw-nb {
+  font-weight: 400;
+}
+
+.fw-mb {
+  font-weight: 500;
+}
+
+.fw-sb {
+  font-weight: 600;
+}
+
+.fw-b {
+  font-weight: 700;
+}
+
+.fw-eb {
+  font-weight: 800;
+}
+
+/*! —» Atomic CSS: Text Transformations «— */
+
+.tt-upper {
+  text-transform: uppercase;
+}
+
+/*! —» Atomic CSS: Responsive Design «— */
+
+@media (max-width: 768px) {
+  .hide-on-tablet {
+    display: none !important;
+  }
+}
+
+@media (min-width: 769px) {
+  .show-on-tablet {
+    display: none !important;
+  }
+}
+
+@media screen and (min-width:861px) {
+  .wsu-breakpoint-hide-above--stacked-columns {
+    display: none !important
+  }
+}
+
+@media screen and (max-width:860px) {
+  .wsu-breakpoint-hide-below--stacked-columns {
+    display: none !important
+  }
+}
+
+/*! —» Atomic CSS: Additional spacing utility classes «— */
+
+.wsu-spacing-after--xxxmedium {
+  margin-bottom: 3.125rem!important;
+}
+
+.wsu-spacing-before--xxxmedium {
+  margin-top: 3.125rem!important;
+}
+
+.wsu-spacing-after--ssxsmall,
+.wsu-spacing-margin-bottom--ssxsmall {
+  margin-bottom: .25rem!important;
+}
+
+.wsu-spacing-margin-left--ssxsmall {
+  margin-left: .25rem!important;
+}
+
+.wsu-spacing-margin-right--ssxsmall {
+  margin-right: .25rem!important;
+}
+
+.wsu-spacing-before--ssxsmall,
+.wsu-spacing-margin-top--ssxsmall {
+  margin-top: .25rem!important;
+}
